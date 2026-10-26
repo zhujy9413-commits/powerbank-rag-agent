@@ -1,0 +1,27 @@
+# 充电宝研发评审与知识助手
+
+面向公司内部，聚焦中国大陆充电宝整机保护功能。目标是减少资料核对遗漏、缩短取得正确依据和完成测试报告评审的时间。
+
+## AI Work｜整机测试报告评审
+
+- [模块入口](docs/ai-work/README.md)
+- [MVP 范围](docs/ai-work/MVP.md)
+- [完整 PRD](docs/ai-work/PRD.md)
+- [知识库与 RAG 方案](docs/ai-work/RAG-and-knowledge-base.md)
+
+## 内部智能客服｜知识检索与问答
+
+- [模块入口](docs/internal-assistant/README.md)
+- [MVP 范围](docs/internal-assistant/MVP.md)
+- [完整 PRD](docs/internal-assistant/PRD.md)
+- [知识库与 RAG 方案](docs/internal-assistant/RAG-and-knowledge-base.md)
+
+## 共用基线与原始阅读版
+
+- [产品总览与整体 MVP](docs/shared/product-overview-mvp.md)
+- [知识库与 RAG 共用规范](docs/shared/knowledge-base-rag.md)
+- [原始 HTML 阅读入口](产品需求文档-v1.0/index.html)（下载后本地打开）
+
+## 文档状态
+
+v1.0 · 2026-10-26。业务范围、优先级和页面交互已梳理，当前为需求设计成果。真实规则白名单、标准使用权限、代表性语料、定量性能目标与部署条件仍待落实。模拟材料单独标注；不将设计方案当成已完成开发或已验证业务收益。
