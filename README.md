@@ -25,3 +25,12 @@
 ## 文档状态
 
 v1.0 · 2026-10-26。业务范围、优先级和页面交互已梳理，当前为需求设计成果。真实规则白名单、标准使用权限、代表性语料、定量性能目标与部署条件仍待落实。模拟材料单独标注；不将设计方案当成已完成开发或已验证业务收益。
+
+## 飞书分类入口
+
+- [项目根页面](https://my.feishu.cn/wiki/NKZ4wE0T4iFHTLkTcfrcKR10nAe)
+- [AI Work｜整机测试报告评审](https://my.feishu.cn/wiki/UlodwHIzJidrjDkQXVvcApD1nbe)
+- [内部智能客服｜知识检索与问答](https://my.feishu.cn/wiki/G5ErwipsTiq0lxkZpbvcSj8snQb)
+
+- [飞书整体总览与 MVP](https://my.feishu.cn/wiki/GrUkwdeLfi1Orgkrpn9cUupznid)
+- [同步记录与逐份文档对应关系](docs/SYNC.md)

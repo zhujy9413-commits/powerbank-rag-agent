@@ -7,3 +7,9 @@
 - [完整知识库与 RAG 方案](RAG-and-knowledge-base.md)
 
 状态：需求设计 v1.0，未开发、未实测。
+
+## 飞书在线文档
+
+- [MVP 范围](https://my.feishu.cn/wiki/Q2GnwQhJDiXzjWkmqLRccBfbneW)
+- [完整 PRD](https://my.feishu.cn/wiki/K71fwnJo8iDBy9kgkRBchCvcn0g)
+- [知识库与 RAG 方案](https://my.feishu.cn/wiki/Gs9Xw9YpHiVB6wknPDVcsMw7nUf)
