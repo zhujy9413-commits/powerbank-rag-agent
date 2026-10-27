@@ -67,3 +67,16 @@
 | `docs/internal-assistant/sample-pack.md` | `1a90d83bb5deb1843f086ccedb349e21b772d5fdc931e73b370f9bb4320d43cc` |
 
 本地数据校验已通过，检查范围包括24份样本文件校验值、证据引用、角色与任务范围、版本状态、10项检查覆盖、数值换算、4页PDF文字及本地阅读链接；四页PDF已逐页渲染检查。校验不代表RAG效果或专业验收。
+
+## 2026-10-27 单轮问答原型 v0.1
+
+应用代码、运行入口、功能测试和关键词检索基线同步到私有GitHub仓库。19项自动测试通过；页面搜索、引用查看、反馈、缺依据与归档版本行为已检查。真实百炼/DeepSeek生成和Embedding调用仍待本机配置后验证，未对外部署。
+
+| 分类 | GitHub 维护源 | 飞书文档 |
+| --- | --- | --- |
+| 内部智能客服 | [原型与模型接入说明](internal-assistant/prototype-v0.1.md) | [05-单轮知识问答原型与接入说明](https://my.feishu.cn/wiki/JjGuwIRVziJB9nkzAlgcoUj9nQc) |
+| 共用方法 | [工作流与验证方法补充](shared/workflow-verification-notes.md) | [02-工作流与验证方法补充](https://my.feishu.cn/wiki/S6z8wBu7Ai19fHkhWXKcYtxOnDc) |
+
+原型说明导入后在原页面更新至19项测试，并追加提示词及规范化请求摘要方法；保留原有文档位置和格式。方法补充仅吸收用户既有项目的工作流与验证经验，没有复制其业务数据、认证配置或改变当前产品范围。
+
+本机密钥、向量缓存和运行记录均位于忽略的`.local/`目录，不纳入仓库或飞书正文。开发集检索结果保存在`eval-results/retrieval-baseline-v0.1.json`，不能当成回答准确率或业务收益证明。

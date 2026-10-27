@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>充电宝研发知识助手</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<aside class="sidebar">
+  <a class="brand" href="/" aria-label="知识助手首页"><span class="brand-mark">P<span>+</span></span><span>研发知识助手<small>POWERBANK KNOWLEDGE</small></span></a>
+  <div class="workspace-label">内部工作空间</div>
+  <button class="nav-item active" id="navAsk"><span>◌</span> 知识检索与问答</button>
+  <button class="nav-item" id="navLibrary"><span>▤</span> 资料库 <b id="docCount">—</b></button>
+  <div class="side-note"><span class="dot"></span> 当前范围<p>中国大陆 · 充电宝整机<br>保护功能研发知识</p></div>
+  <div class="sidebar-bottom"><span class="avatar">研</span><div id="identity">本机演示身份<small>正在读取配置</small></div></div>
+</aside>
+<main>
+  <header><div class="breadcrumb">内部智能客服 <span>/</span> 知识检索与问答</div><button class="subtle" id="openSettings">连接模型</button></header>
+  <section class="page" id="askPage">
+    <div class="eyebrow">知识检索与问答 <span class="version">原型 v0.1</span></div>
+    <h1>查找研发要求，保留每一处依据。</h1>
+    <p class="intro">搜索规格、标准资料与评审规范。每次提问独立处理，回答保留来源和适用范围。</p>
+    <div class="notice" id="modelNotice"><span class="notice-icon">i</span><div><strong id="modeHeadline">正在读取运行状态</strong><p id="modeDescription"></p></div><button id="connectInline">连接模型</button></div>
+    <form id="queryForm" class="query-box">
+      <div class="query-modes"><label><input type="radio" name="mode" value="search" checked> 仅搜索资料</label><label><input type="radio" name="mode" value="answer"> 基于资料回答</label><span class="single-turn">单轮提问</span></div>
+      <label class="sr-only" for="query">输入研发问题</label>
+      <textarea id="query" maxlength="1500" placeholder="例如：演示规格 RevB 的恢复电压范围是什么？" required></textarea>
+      <div class="query-bottom"><span><span id="charCount">0</span> / 1500</span><button class="primary" id="submitQuery" type="submit">搜索资料 <span>↗</span></button></div>
+      <div class="scope-row"><label><input type="checkbox" id="archived"> 包含归档版本（历史查询）</label><label for="taskScope">任务资料</label><select id="taskScope"><option value="">不使用任务报告</option></select></div>
+    </form>
+    <div id="examples" class="examples"><span>可以这样开始</span><button data-query="GB/T 35590-2017是什么类型，何时实施？">查询标准信息</button><button data-query="演示任务选用的RevB恢复电压范围是什么？">查模拟规格要求</button><button data-query="请给GB/T 35590-2017短路条款原文和准确限值。">试试缺少依据的问题</button></div>
+    <div id="liveStatus" class="live-status" role="status" aria-live="polite"></div>
+    <section id="results" hidden>
+      <div class="result-top"><h2 id="resultTitle">相关资料</h2><span id="resultMeta"></span></div>
+      <section class="answer-panel" id="answerPanel" hidden><div class="answer-heading"><strong id="answerState"></strong><span id="answerKind"></span></div><div id="claims"></div><div id="limitations"></div></section>
+      <div class="evidence-heading"><h3>来源与证据</h3><span>查看版本与原文后，再用于研发判断</span></div>
+      <div id="sourceCards" class="source-cards"></div>
+      <div id="feedback" class="feedback"><span>这次结果有帮助吗？</span><button data-feedback="useful">有帮助</button><button id="showFeedback">有问题，反馈一下</button><span id="feedbackSaved" role="status"></span></div>
+      <details class="trace"><summary>本次检索记录</summary><pre id="trace"></pre></details>
+    </section>
+    <div class="empty-guide" id="emptyGuide"><div><span class="guide-number">01</span><h3>先找得到</h3><p>保留型号、标准号和关键参数，减少资料查找中的遗漏。</p></div><div><span class="guide-number">02</span><h3>再核对依据</h3><p>结果显示来源、版本和章节，支持打开原文复核。</p></div><div><span class="guide-number">03</span><h3>缺证据就说明</h3><p>未收录的条款、模糊数据和权限限制，明确说明。</p></div></div>
+    <footer>公开资料摘要与模拟样本 · 未启用真实产品合规判定 · 本机演示，尚未接入企业登录</footer>
+  </section>
+  <section class="page" id="libraryPage" hidden><div class="eyebrow">当前可访问的知识</div><h1>资料库</h1><p class="intro">这里只列当前版本的授权资料。任务报告按任务隔离，归档资料可通过历史查询检索。</p><div id="libraryCards" class="source-cards"></div></section>
+</main>
+<dialog id="sourceDialog"><div class="dialog-head"><h2 id="sourceTitle">查看原文</h2><button class="close" data-close="sourceDialog" aria-label="关闭原文">×</button></div><p id="sourceMetadata" class="dialog-meta"></p><div id="sourceLinks"></div><h3 class="excerpt-title">本次证据片段</h3><p id="sourceExcerpt" class="source-excerpt"></p><h3 class="excerpt-title">资料正文</h3><pre id="originalText" class="original-text"></pre></dialog>
+<dialog id="settingsDialog"><form id="settingsForm"><div class="dialog-head"><h2>连接模型服务</h2><button class="close" type="button" data-close="settingsDialog" aria-label="关闭模型设置">×</button></div><p class="dialog-meta">密钥仅存本机，不会回显到页面或写入运行记录。保存配置后，提交问答会调用所选服务并产生相应费用。</p><label for="provider">模型服务</label><select id="provider"><option value="bailian">阿里云百炼</option><option value="deepseek">DeepSeek</option></select><label for="baseUrl">兼容接口 Base URL</label><input id="baseUrl" type="url" placeholder="从百炼控制台复制当前业务空间的接入地址" required><p class="field-help">地域、业务空间和密钥需匹配；不要把 /chat/completions 附在地址后面。</p><label for="chatModel">回答模型 ID</label><input id="chatModel" value="qwen-flash" required><p class="field-help">本适配器采用 JSON 非思考模式；可先使用账号中可用的 qwen-flash 验证。</p><div id="embeddingGroup"><label for="embeddingModel">文本向量模型 ID</label><input id="embeddingModel" value="text-embedding-v4"><p class="field-help">保存后可单独建立向量索引。尚未建立时使用关键词检索。</p></div><label for="apiKey">API 密钥</label><input id="apiKey" type="password" autocomplete="new-password" placeholder="已配置时可留空保留原密钥"><p id="settingsStatus" class="form-status" role="status"></p><div class="dialog-actions"><button class="subtle" id="buildIndex" type="button">建立向量索引</button><button class="primary" type="submit">保存本机配置</button></div><p class="field-help">建立索引将把本包的公开摘要和模拟资料发给所选百炼向量模型。当前没有真实公司资料。</p></form></dialog>
+<dialog id="feedbackDialog"><form id="feedbackForm"><div class="dialog-head"><h2>反馈本次结果</h2><button class="close" type="button" data-close="feedbackDialog" aria-label="关闭反馈">×</button></div><label for="feedbackType">问题类型</label><select id="feedbackType"><option value="wrong_answer">回答有误</option><option value="wrong_citation">引用不符</option><option value="missing_retrieval">检索遗漏</option><option value="missing_material">资料缺失</option></select><label for="feedbackNote">补充说明（可选）</label><textarea id="feedbackNote" maxlength="1000" placeholder="哪一处需要修正？"></textarea><p id="feedbackStatus" class="form-status" role="status"></p><button class="primary" type="submit">提交反馈</button></form></dialog>
+</body></html>

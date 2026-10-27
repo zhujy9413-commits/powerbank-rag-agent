@@ -6,6 +6,7 @@
 - [完整 PRD](PRD.md)
 - [完整知识库与 RAG 方案](RAG-and-knowledge-base.md)
 - [首批模拟报告、规格与逐项参考标注](sample-pack.md)
+- [工作流与验证方法补充](../shared/workflow-verification-notes.md)
 
 状态：需求设计 v1.0，未开发、未实测。
 

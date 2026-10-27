@@ -38,6 +38,22 @@ v0.1 · 2026-10-26 准备，2026-10-27 校验。使用官方资料摘要和明�
 
 v1.0 · 2026-10-26。业务范围、优先级和页面交互已梳理，当前为需求设计成果。真实规则白名单、标准使用权限、代表性语料、定量性能目标与部署条件仍待落实。模拟材料单独标注；不将设计方案当成已完成开发或已验证业务收益。
 
+## 本机单轮知识问答原型
+
+2026-10-27 新增 v0.1。已实现关键词检索、版本与权限筛选、证据片段及原文查看、反馈、本机模型设置；百炼Embedding及百炼/DeepSeek生成接口已适配，真实调用待配置后验证。
+
+```bash
+python3 -m app.knowledge_assistant.server --open
+```
+
+Python 3.9及以上，无Web框架依赖。macOS也可双击`start-assistant.command`。本机地址由程序启动时打印；不对外部署。
+
+- [使用说明、接入步骤及验证结果](docs/internal-assistant/prototype-v0.1.md)
+- [关键词检索开发集结果](eval-results/retrieval-baseline-v0.1.json)
+- [工作流与验证方法补充](docs/shared/workflow-verification-notes.md)
+
+无模型配置时只展示检索与范围检查结果。19项自动测试通过；24题关键词检索基线中20题命中全部预期证据组。生成效果、专业复核与真实业务收益均未验证。
+
 ## 飞书分类入口
 
 - [项目根页面](https://my.feishu.cn/wiki/NKZ4wE0T4iFHTLkTcfrcKR10nAe)
