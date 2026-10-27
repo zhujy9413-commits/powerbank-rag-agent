@@ -5,9 +5,10 @@ from pathlib import Path
 import tempfile
 import threading
 import unittest
+from unittest.mock import patch
 
 from app.knowledge_assistant.core import Assistant, Corpus, Principal, validate_answer
-from app.knowledge_assistant.providers import Settings, ProviderError, embeddings, generate
+from app.knowledge_assistant.providers import Settings, ProviderError, embeddings, generate, unit_calculations
 from app.knowledge_assistant.server import LocalServer
 
 
@@ -74,6 +75,50 @@ class CoreTests(unittest.TestCase):
             value=self.assistant.ask(query,ENGINEER,mode="answer")
             self.assertEqual(value["status"],"insufficient_evidence")
             self.assertEqual(value["trace"]["generation"],"skipped_insufficient_scope_or_evidence")
+
+    def test_standard_in_announcement_body_is_available_metadata(self):
+        result=self.assistant.ask("2024年自动套用GB 47372-2026吗？",ENGINEER,mode="answer")
+        self.assertEqual(result["status"],"model_not_configured")
+        self.assertIn("PUB-05-C1",result["trace"]["retrieved_chunk_ids"])
+
+    def test_missing_clauses_still_preserve_requested_metadata_date(self):
+        result=self.assistant.ask("GB 4943.1-2022什么时候实施？本包能回答具体条款吗？",ENGINEER,mode="answer")
+        self.assertEqual(result["status"],"partial")
+        self.assertIn("2023-08-01",result["claims"][0]["text"])
+        self.assertIn("未收录完整技术条款",result["limitations"][0])
+        self.assertEqual(result["trace"]["generation"],"skipped_insufficient_scope_or_evidence")
+        validate_answer({k:result[k] for k in ["status","claims","limitations"]},result["sources"])
+
+    def test_unit_arithmetic_is_exact_and_does_not_repair_ambiguous_inputs(self):
+        calculations=unit_calculations("0.68 s、0.125 s、3?.0 s、-0.8 s、1e3 s",[])
+        self.assertEqual([c["formula"] for c in calculations],["0.68 s = 680 ms","0.125 s = 125 ms"])
+        self.assertEqual(calculations[0]["input_sources"],["question"])
+
+    def test_unit_arithmetic_is_supplied_to_generation_without_labels(self):
+        captured={}
+        def fake(config,path,payload):
+            captured.update(json.loads(payload["messages"][1]["content"]))
+            return {"choices":[{"finish_reason":"stop","message":{"content":json.dumps({"status":"insufficient_evidence","claims":[],"limitations":["测试返回"]})}}]}
+        _,usage=generate(dict(provider="bailian",model="qwen-flash"),"0.68 s如何换算？",[self.corpus.by_id["SYN-NORM-RESPONSE"]],{},fake)
+        self.assertEqual(captured["unit_calculations"][0]["formula"],"0.68 s = 680 ms")
+        self.assertNotIn("expected_points",captured)
+        self.assertEqual(usage["_unit_calculations"],captured["unit_calculations"])
+
+    def test_report_recovery_fetches_current_basis_and_retains_conflicting_record(self):
+        ranked=[(self.corpus.by_id[cid],10-i) for i,cid in enumerate([
+            "TR-P2-RECOVERY","TR-P1-SUMMARY","SYN-NORM-RANGE","SYN-NORM-RECOVERY","TR-P2-RESPONSE","POL-DECISION"])]
+        with patch("app.knowledge_assistant.core.rank_bm25",return_value=ranked):
+            result=self.assistant.ask("报告把R04的5.31 V写通过，按任务RevB应如何处理？",ENGINEER,task_id="DEMO-TASK-001")
+        ids=set(result["trace"]["retrieved_chunk_ids"])
+        self.assertTrue({"TR-P2-RECOVERY","TR-P1-SUMMARY","SYN-SPEC-PB01-RevB-REC","SYN-NORM-CONFLICT"} <= ids)
+        self.assertNotIn("SYN-SPEC-PB01-RevA-REC",ids)
+        forbidden=self.assistant.ask("R04恢复电压",EMPLOYEE)
+        self.assertFalse(any(s["material_type"]=="synthetic" for s in forbidden["sources"]))
+
+    def test_report_observation_question_keeps_both_requirements(self):
+        result=self.assistant.ask("C1的外观和恢复方式能判通过吗？",ENGINEER,task_id="DEMO-TASK-001")
+        ids=set(result["trace"]["retrieved_chunk_ids"])
+        self.assertTrue({"TR-P3-OBS","SYN-NORM-APPEARANCE","SYN-NORM-METHOD"} <= ids)
 
     def test_no_key_does_not_fake_a_model_answer(self):
         result=self.assistant.ask("RevB恢复电压范围",ENGINEER,mode="answer")

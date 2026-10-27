@@ -1,0 +1,420 @@
+{
+  "evaluation": "keyword_retrieval_baseline_only",
+  "created_at": "2026-10-27T12:27:51.575832+00:00",
+  "snapshot": "BOOTSTRAP-20261026-01",
+  "corpus_digest": "cb67946e0a0f0a6732214b6488b3b5c1a6ef0a2213516ef5e5bc32b19a28b1ef",
+  "split": "dev_author_draft_expert_pending",
+  "top_k": 6,
+  "generation": "not_run",
+  "embedding": "not_run",
+  "business_effect": "not_measured",
+  "cases": 24,
+  "required_groups": 41,
+  "hit_groups": 39,
+  "fully_hit_cases": 22,
+  "rows": [
+    {
+      "case_id": "QA-01",
+      "module": "internal_assistant",
+      "required_groups": 1,
+      "hit_groups": 1,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "PUB-01-C1",
+        "PUB-05-C1",
+        "PUB-02-C1",
+        "PUB-03-C1",
+        "POL-EVIDENCE"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-02",
+      "module": "internal_assistant",
+      "required_groups": 1,
+      "hit_groups": 1,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "PUB-02-C1",
+        "PUB-03-C1",
+        "PUB-01-C1",
+        "POL-EVIDENCE",
+        "PUB-05-C1",
+        "POL-ISOLATION"
+      ],
+      "missing_groups": [],
+      "status": "insufficient_evidence"
+    },
+    {
+      "case_id": "QA-03",
+      "module": "internal_assistant",
+      "required_groups": 1,
+      "hit_groups": 1,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "PUB-03-C1",
+        "PUB-04-C1",
+        "PUB-01-C1",
+        "SYN-NORM-RESPONSE",
+        "PUB-02-C1",
+        "SYN-SPEC-PB01-RevB-SCOPE"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-04",
+      "module": "internal_assistant",
+      "required_groups": 1,
+      "hit_groups": 1,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "PUB-04-C1",
+        "PUB-01-C1",
+        "PUB-05-C1",
+        "PUB-02-C1",
+        "PUB-03-C1",
+        "POL-DECISION"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-05",
+      "module": "internal_assistant",
+      "required_groups": 2,
+      "hit_groups": 2,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "PUB-05-C1",
+        "SYN-SPEC-PB01-RevB-SCOPE",
+        "SYN-NORM-RANGE",
+        "POL-ISOLATION",
+        "PUB-03-C1",
+        "POL-EVIDENCE"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-06",
+      "module": "internal_assistant",
+      "required_groups": 1,
+      "hit_groups": 1,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "PUB-05-C1",
+        "PUB-04-C1",
+        "SYN-NORM-RANGE",
+        "SYN-NORM-ACCESS",
+        "PUB-02-C1",
+        "POL-DECISION"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-07",
+      "module": "internal_assistant",
+      "required_groups": 2,
+      "hit_groups": 2,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "PUB-01-C1",
+        "PUB-02-C1",
+        "PUB-04-C1",
+        "PUB-03-C1",
+        "SYN-SPEC-PB01-RevB-REC",
+        "POL-EVIDENCE"
+      ],
+      "missing_groups": [],
+      "status": "insufficient_evidence"
+    },
+    {
+      "case_id": "QA-08",
+      "module": "internal_assistant",
+      "required_groups": 1,
+      "hit_groups": 1,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "SYN-SPEC-PB01-RevB-REC",
+        "SYN-SPEC-PB01-RevB-SCOPE",
+        "SYN-NORM-RECOVERY",
+        "SYN-NORM-RANGE",
+        "PUB-05-C1",
+        "POL-DECISION"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-09",
+      "module": "internal_assistant",
+      "required_groups": 1,
+      "hit_groups": 1,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "SYN-SPEC-PB01-RevA-REC",
+        "SYN-SPEC-PB01-RevA-SCOPE",
+        "PUB-05-C1",
+        "PUB-02-C1"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-10",
+      "module": "internal_assistant",
+      "required_groups": 1,
+      "hit_groups": 1,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "SYN-NORM-RESPONSE",
+        "PUB-01-C1",
+        "SYN-NORM-ACCESS",
+        "SYN-NORM-TEMP",
+        "SYN-NORM-METHOD",
+        "SYN-NORM-RECOVERY"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-11",
+      "module": "internal_assistant",
+      "required_groups": 1,
+      "hit_groups": 1,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "SYN-SPEC-PB01-RevB-REC",
+        "SYN-SPEC-PB01-RevB-SCOPE",
+        "SYN-NORM-RANGE",
+        "SYN-NORM-RECOVERY",
+        "POL-DECISION",
+        "SYN-NORM-RESPONSE"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-12",
+      "module": "internal_assistant",
+      "required_groups": 2,
+      "hit_groups": 2,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "SYN-SPEC-PB01-RevB-SCOPE",
+        "SYN-NORM-RECOVERY",
+        "SYN-SPEC-PB01-RevB-REC",
+        "SYN-NORM-RANGE",
+        "POL-DECISION",
+        "PUB-03-C1"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-13",
+      "module": "internal_assistant",
+      "required_groups": 1,
+      "hit_groups": 1,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "SYN-NORM-METHOD",
+        "SYN-NORM-APPEARANCE",
+        "SYN-NORM-CONFLICT",
+        "POL-EVIDENCE"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-14",
+      "module": "internal_assistant",
+      "required_groups": 1,
+      "hit_groups": 1,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "POL-ISOLATION",
+        "SYN-NORM-ACCESS",
+        "SYN-NORM-RECOVERY",
+        "PUB-04-C1"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-15",
+      "module": "internal_assistant",
+      "required_groups": 1,
+      "hit_groups": 0,
+      "all_groups_hit": false,
+      "retrieved_chunk_ids": [
+        "PUB-01-C1",
+        "PUB-05-C1",
+        "PUB-03-C1"
+      ],
+      "missing_groups": [
+        [
+          "POL-EVIDENCE"
+        ]
+      ],
+      "status": "insufficient_evidence"
+    },
+    {
+      "case_id": "QA-16",
+      "module": "internal_assistant",
+      "required_groups": 2,
+      "hit_groups": 2,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "POL-DECISION",
+        "PUB-04-C1",
+        "PUB-05-C1"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-17",
+      "module": "report_qa",
+      "required_groups": 4,
+      "hit_groups": 4,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "TR-P2-RESPONSE",
+        "SYN-NORM-RESPONSE",
+        "TR-P1-SUMMARY",
+        "SYN-NORM-CONFLICT",
+        "SYN-NORM-RECOVERY",
+        "SYN-NORM-RANGE"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-18",
+      "module": "report_qa",
+      "required_groups": 4,
+      "hit_groups": 4,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "TR-P2-RECOVERY",
+        "SYN-SPEC-PB01-RevB-SCOPE",
+        "TR-P1-SUMMARY",
+        "SYN-NORM-RANGE",
+        "SYN-SPEC-PB01-RevB-REC",
+        "SYN-NORM-CONFLICT"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-19",
+      "module": "report_qa",
+      "required_groups": 2,
+      "hit_groups": 2,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "TR-P3-TEMP",
+        "SYN-NORM-RANGE",
+        "SYN-SPEC-PB01-RevB-SCOPE",
+        "SYN-NORM-TEMP",
+        "SYN-NORM-RECOVERY",
+        "TR-P2-RESPONSE"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-20",
+      "module": "report_qa",
+      "required_groups": 2,
+      "hit_groups": 2,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "TR-P3-TEMP",
+        "SYN-NORM-TEMP",
+        "SYN-NORM-RANGE",
+        "SYN-SPEC-PB01-RevB-SCOPE",
+        "SYN-NORM-RESPONSE",
+        "SYN-NORM-CONFLICT"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-21",
+      "module": "report_qa",
+      "required_groups": 3,
+      "hit_groups": 3,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "TR-P3-OBS",
+        "SYN-NORM-METHOD",
+        "TR-P2-RECOVERY",
+        "TR-P1-SUMMARY",
+        "TR-P2-RESPONSE",
+        "SYN-NORM-APPEARANCE"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-22",
+      "module": "report_qa",
+      "required_groups": 2,
+      "hit_groups": 1,
+      "all_groups_hit": false,
+      "retrieved_chunk_ids": [
+        "TR-P4-INJECTION",
+        "TR-P1-SUMMARY",
+        "TR-P2-RESPONSE",
+        "TR-P2-RECOVERY",
+        "PUB-05-C1",
+        "SYN-NORM-CONFLICT"
+      ],
+      "missing_groups": [
+        [
+          "SYN-NORM-ACCESS"
+        ]
+      ],
+      "status": "search_results"
+    },
+    {
+      "case_id": "QA-23",
+      "module": "internal_assistant",
+      "required_groups": 1,
+      "hit_groups": 1,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "SYN-NORM-ACCESS",
+        "SYN-SPEC-PB01-RevB-SCOPE",
+        "POL-EVIDENCE",
+        "PUB-04-C1",
+        "SYN-NORM-RANGE",
+        "SYN-NORM-RECOVERY"
+      ],
+      "missing_groups": [],
+      "status": "needs_scope"
+    },
+    {
+      "case_id": "QA-24",
+      "module": "report_qa",
+      "required_groups": 3,
+      "hit_groups": 3,
+      "all_groups_hit": true,
+      "retrieved_chunk_ids": [
+        "SYN-SPEC-PB01-RevB-SCOPE",
+        "POL-DECISION",
+        "SYN-NORM-RANGE",
+        "TR-P1-SUMMARY",
+        "SYN-NORM-ACCESS",
+        "TR-P2-RESPONSE"
+      ],
+      "missing_groups": [],
+      "status": "search_results"
+    }
+  ]
+}

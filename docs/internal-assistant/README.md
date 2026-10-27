@@ -7,8 +7,9 @@
 - [完整知识库与 RAG 方案](RAG-and-knowledge-base.md)
 - [首批知识样本与问答评测集](sample-pack.md)
 - [单轮知识问答原型与模型接入说明](prototype-v0.1.md)
+- [百炼真实接口验证与问题记录](live-validation-v0.1.md)
 
-状态：需求设计 v1.0；单轮原型 v0.1 已实现本机检索、引用查看与模型接口适配，外部模型及业务效果待实测。
+状态：需求设计 v1.0；单轮原型 v0.1 已完成百炼生成、向量索引与24题真实开发集验证。存在引用和语义缺陷，尚未完成业务验收。
 
 ## 飞书在线文档
 
@@ -17,3 +18,4 @@
 - [知识库与 RAG 方案](https://my.feishu.cn/wiki/KHnnwa5J8i9yZzkI4gfcvDEQntf)
 - [知识样本与问答评测集](https://my.feishu.cn/wiki/AATmwtAHsiJ8c3kvQIpcUGv6n7c)
 - [单轮知识问答原型与模型接入说明](https://my.feishu.cn/wiki/JjGuwIRVziJB9nkzAlgcoUj9nQc)
+- [百炼真实接口验证与问题记录](https://my.feishu.cn/wiki/PPdkwtH45iFHsakhbJ3cYxVPnyh)

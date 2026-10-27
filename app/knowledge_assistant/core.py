@@ -222,11 +222,31 @@ class Assistant:
             supplements.append("POL-EVIDENCE")
         if any(t in question for t in ["未配置","放行","证书"]):
             supplements.append("POL-DECISION")
+        # Explicit source relationships in this bootstrap corpus. These are
+        # domain retrieval policies, not evaluation labels. All dependencies
+        # are resolved through the already-authorized, version-filtered set.
+        if task_id:
+            records = re.findall(r"(?<![a-z0-9])R\d{2}(?![a-z0-9])", question, re.I)
+            if records:
+                supplements.append("SYN-NORM-CONFLICT")
+                if any(re.search(re.escape(record) + r"\s+\w+恢复", c["text"], re.I)
+                       for record in records for c in candidates):
+                    supplements.extend(c["chunk_id"] for c in candidates
+                        if c["document_id"].startswith("SYN-SPEC") and c["section"].startswith("SPEC-REC ")
+                        and c["publication_status"] == "active")
+            for terms, dependency in [(["外观", "起火", "爆炸", "漏液"], "SYN-NORM-APPEARANCE"),
+                                      (["恢复方式", "恢复方法"], "SYN-NORM-METHOD")]:
+                if any(t in question for t in terms):
+                    supplements.append(dependency)
+            if "范围" in question and "未配置" in question:
+                supplements.extend(c["chunk_id"] for c in candidates
+                    if c["document_id"].startswith("SYN-SPEC") and c["section"] == "身份与适用范围"
+                    and c["publication_status"] == "active")
         by_id={c["chunk_id"]:c for c in candidates}
-        selected=[c for c,_ in ranked[:top_k]]
-        for cid in supplements:
-            if cid in by_id and cid not in {c["chunk_id"] for c in selected}:
-                selected=selected[:top_k-1]+[by_id[cid]]
+        pinned=list(dict.fromkeys(cid for cid in supplements if cid in by_id))
+        selected=([by_id[cid] for cid in pinned]+[c for c,_ in ranked if c["chunk_id"] not in pinned])[:top_k]
+        positions={c["chunk_id"]:i for i,(c,_) in enumerate(ranked)}
+        selected.sort(key=lambda c:positions.get(c["chunk_id"],len(ranked)))
         return selected,method,warning
 
     def ask(self, question, principal, *, mode="search", include_archived=False, task_id=None):
@@ -244,7 +264,7 @@ class Assistant:
             snapshot=self.corpus.snapshot,corpus_digest=self.corpus.digest,
             scope=dict(include_archived=include_archived,task_id=task_id),
             trace=dict(retrieval_method=method,retrieved_chunk_ids=[c["chunk_id"] for c in evidence],
-                       generation="not_requested",prompt_version="grounded-qa-v0.1",citation_check="not_run",semantic_review="pending"),usage={})
+                       generation="not_requested",prompt_version="grounded-qa-v0.3",citation_check="not_run",semantic_review="pending"),usage={})
         if warning:
             result["limitations"].append("向量查询失败，已使用关键词检索。"+warning)
         guard=None
@@ -258,7 +278,7 @@ class Assistant:
         elif not task_id and (re.search(r"(?<![a-z0-9])R\d{2}(?![a-z0-9])",question,re.I) or any(x in question for x in ["实测值","报告里","报告中的数值"])):
             result["status"]="needs_scope"
             guard="当前没有选择可访问的任务报告，无法回答报告实测内容。"
-        elif standards(question) and not any(set(standards(question)) & set(standards(c["title"])) for c in evidence):
+        elif standards(question) and not any(set(standards(question)) & set(standards(c["title"] + " " + c["text"])) for c in evidence):
             guard="当前未找到该标准的可用资料，不能用其他标准的内容替代。"
         elif (standards(question) or any(t in question for t in ["国标","国家标准"])) and any(t in question for t in ["条款","限值","阈值","准确要求"]):
             guard="当前标准资料仅为题录或公告摘要，未收录完整技术条款，无法确认条款原文与数值限值。"
@@ -267,6 +287,17 @@ class Assistant:
                 result["status"]="insufficient_evidence"
             result["limitations"].append(guard)
             result["trace"]["generation"]="skipped_insufficient_scope_or_evidence"
+            # A missing full standard does not erase a date already available
+            # in its public metadata. This extract is deterministic, not AI.
+            if mode == "answer" and "实施" in question and any(x in question for x in ["何时", "什么时候", "日期"]):
+                for c in evidence:
+                    date = re.search(r"实施日期(\d{4}-\d{2}-\d{2})。", c["text"])
+                    if c["material_type"] == "public_metadata" and date and set(standards(question)) & set(standards(c["title"] + " " + c["text"])):
+                        result["claims"].append(dict(text=f"{c['title']}记载的实施日期为{date.group(1)}；当前资料未包含技术条款全文。",is_inference=False,
+                            evidence=[dict(chunk_id=c["chunk_id"],quote=date.group(0))]))
+                if result["claims"]:
+                    result["status"]="partial"
+                    result["trace"]["citation_check"]="ids_and_quotes_verified"
         elif mode=="answer":
             config=self.settings.snapshot()
             if not config:
@@ -283,6 +314,7 @@ class Assistant:
                     result["limitations"].extend(answer["limitations"])
                     result["trace"]["prompt_sha256"]=usage.pop("_prompt_sha256",None)
                     result["trace"]["canonical_payload_sha256"]=usage.pop("_canonical_payload_sha256",None)
+                    result["trace"]["unit_calculations"]=usage.pop("_unit_calculations",[])
                     result["usage"]=usage
                     result["trace"].update(generation="completed",citation_check="ids_and_quotes_verified")
                 except ProviderError as exc:

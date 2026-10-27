@@ -1,0 +1,151 @@
+{
+  "run_started_at": "2026-10-27T12:17:47.448191+00:00",
+  "provider": "bailian",
+  "model": "qwen-flash",
+  "embedding_model": "text-embedding-v4",
+  "initial_vector_ready": false,
+  "keyword_generation_baseline": {
+    "request_id": "cac46215-e8d4-4b70-8b53-7ea7d77da38d",
+    "status": "answered",
+    "mode": "answer",
+    "query": "演示任务选用的RevB恢复电压范围是什么？",
+    "claims": [
+      {
+        "text": "演示任务选用的RevB恢复电压范围是4.75 V至5.25 V，含边界。",
+        "is_inference": false,
+        "evidence": [
+          {
+            "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+            "quote": "恢复电压4.75 V 至 5.25 V，含边界。"
+          }
+        ]
+      }
+    ],
+    "limitations": [],
+    "sources": [
+      {
+        "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+        "document_id": "SYN-SPEC-PB01-RevB",
+        "title": "SYN-SPEC-PB01-RevB",
+        "section": "SPEC-REC 恢复电压",
+        "text": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+        "version": "B",
+        "publication_status": "active",
+        "material_type": "synthetic",
+        "page": null,
+        "source_url": null,
+        "scope": "knowledge"
+      },
+      {
+        "chunk_id": "SYN-SPEC-PB01-RevB-SCOPE",
+        "document_id": "SYN-SPEC-PB01-RevB",
+        "title": "SYN-SPEC-PB01-RevB",
+        "section": "身份与适用范围",
+        "text": "RevB；active。本次模拟任务显式选择的规格版本。 虚构整机PB-DEMO-01；A1输出口，C1双向口。本任务仅A1、C1的5 V输出角色。其他角色、电压、组合和保护项目未配置。",
+        "version": "B",
+        "publication_status": "active",
+        "material_type": "synthetic",
+        "page": null,
+        "source_url": null,
+        "scope": "knowledge"
+      },
+      {
+        "chunk_id": "SYN-NORM-RECOVERY",
+        "document_id": "SYN-QA-SC-1.0",
+        "title": "模拟内部评审规范",
+        "section": "DEMO-02",
+        "text": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+        "version": "1.0",
+        "publication_status": "active",
+        "material_type": "synthetic",
+        "page": null,
+        "source_url": null,
+        "scope": "knowledge"
+      },
+      {
+        "chunk_id": "SYN-NORM-RANGE",
+        "document_id": "SYN-QA-SC-1.0",
+        "title": "模拟内部评审规范",
+        "section": "DEMO-00",
+        "text": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+        "version": "1.0",
+        "publication_status": "active",
+        "material_type": "synthetic",
+        "page": null,
+        "source_url": null,
+        "scope": "knowledge"
+      },
+      {
+        "chunk_id": "PUB-05-C1",
+        "document_id": "PUB-05",
+        "title": "国家认监委2026年第7号公告",
+        "section": "可引用事实与使用边界",
+        "text": "公告明确GB 47372-2026将于2027-04-01实施，并规定新旧认证实施规则的过渡安排。2027-04-01起按新版规则开展CCC活动。\n发布日期2026-05-31。实施日期2027-04-01。\n发布日至2027-03-31可按公告规定选择旧版或新版规则；不自动追溯用于2024模拟任务，也不能说新标准在过渡期绝不能选用。",
+        "version": "1.0",
+        "publication_status": "active",
+        "material_type": "public_metadata",
+        "page": null,
+        "source_url": "https://www.cnca.gov.cn/zwxx/gg/2026/art/2026/art_f87e199f351c46e59e392a87570d5a74.html",
+        "scope": "knowledge"
+      },
+      {
+        "chunk_id": "POL-DECISION",
+        "document_id": "POLICY-REVIEW",
+        "title": "流程与回答边界",
+        "section": "POLICY-02",
+        "text": "单项无发现问题仅限选定范围。未配置未知失败不算通过。不据此认定CCC认证或量产放行，专业结论由负责人复核。",
+        "version": "1.0",
+        "publication_status": "active",
+        "material_type": "product_policy",
+        "page": null,
+        "source_url": null,
+        "scope": "knowledge"
+      }
+    ],
+    "snapshot": "BOOTSTRAP-20261026-01",
+    "corpus_digest": "cb67946e0a0f0a6732214b6488b3b5c1a6ef0a2213516ef5e5bc32b19a28b1ef",
+    "scope": {
+      "include_archived": false,
+      "task_id": null
+    },
+    "trace": {
+      "retrieval_method": "bm25",
+      "retrieved_chunk_ids": [
+        "SYN-SPEC-PB01-RevB-REC",
+        "SYN-SPEC-PB01-RevB-SCOPE",
+        "SYN-NORM-RECOVERY",
+        "SYN-NORM-RANGE",
+        "PUB-05-C1",
+        "POL-DECISION"
+      ],
+      "generation": "completed",
+      "prompt_version": "grounded-qa-v0.1",
+      "citation_check": "ids_and_quotes_verified",
+      "semantic_review": "pending",
+      "provider": "bailian",
+      "model": "qwen-flash",
+      "prompt_sha256": "e392753f25e4e470c34af082d4aa887f3592cc9b89317ece0136a3ecd9713299",
+      "canonical_payload_sha256": "d9ba190f0ffb830d2e444270c2e0460d4844955af43aebeac56cb1a61a52cf17"
+    },
+    "usage": {
+      "prompt_tokens": 1117,
+      "completion_tokens": 120,
+      "total_tokens": 1237
+    },
+    "elapsed_ms": 1554
+  },
+  "index_build": {
+    "chunks": 26,
+    "snapshot": "BOOTSTRAP-20261026-01"
+  },
+  "vector_ready_after_build": true,
+  "final_server_public_status": {
+    "checked_at": "2026-10-27T12:43:29.846779+00:00",
+    "provider": "bailian",
+    "model": "qwen-flash",
+    "embedding_model": "text-embedding-v4",
+    "configured": true,
+    "vector_ready": true,
+    "snapshot": "BOOTSTRAP-20261026-01"
+  }
+}
