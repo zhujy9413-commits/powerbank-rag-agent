@@ -1,0 +1,2715 @@
+{
+  "evaluation": "live_hybrid_generation_dev",
+  "started_at": "2026-10-27T13:17:26.605467+00:00",
+  "snapshot": "BOOTSTRAP-20261026-01",
+  "corpus_digest": "cb67946e0a0f0a6732214b6488b3b5c1a6ef0a2213516ef5e5bc32b19a28b1ef",
+  "dataset_sha256": "5c413c91536691df8fcc3a4573f6498739327bac06f765f0c0576d4d50239df9",
+  "runner_sha256": "fc157297ae737996979c91ae297511ec28adb6ab0c067bc0d331dd9f90fd071b",
+  "application_sha256": {
+    "core.py": "d55ed0785ec1d50021778611a6833f3d2c033d9b741e4367bd567f13de5a34fd",
+    "providers.py": "fa283e7d6e9aee3d986425dce58896ac7c459fb9b5eb42cc448ceb1619001be8",
+    "contracts.py": "a4490a12377aa8eb14ab7ee15bca0488d176dd9c101ff6a7e88c6bdca22376f4"
+  },
+  "model": {
+    "provider": "bailian",
+    "model": "qwen-flash",
+    "embedding_model": "text-embedding-v4"
+  },
+  "split": "dev_author_draft_expert_pending",
+  "top_k": 6,
+  "repeat": 3,
+  "unique_cases": 2,
+  "semantic_scoring": "not_automated_expert_review_pending",
+  "business_effect": "not_measured",
+  "index_build_usage": "not_included",
+  "embedding_token_usage": "not_collected",
+  "rows": [
+    {
+      "case_id": "QA-10",
+      "run_index": 1,
+      "category": "单位归一",
+      "question": "模拟规范的响应阈值是多少？0.68 s如何换算？",
+      "principal": {
+        "role": "engineer",
+        "task_ids": []
+      },
+      "required_groups": 1,
+      "hit_groups": 1,
+      "all_groups_hit": true,
+      "missing_groups": [],
+      "unauthorized_retrieved_ids": [],
+      "keyword_baseline_hit_groups": 1,
+      "result": {
+        "request_id": "888ffd01-c9ca-4352-bc96-ff1083476976",
+        "status": "answered",
+        "mode": "answer",
+        "query": "模拟规范的响应阈值是多少？0.68 s如何换算？",
+        "claims": [
+          {
+            "text": "模拟规范的响应阈值为不大于500 ms",
+            "is_inference": false,
+            "evidence": [
+              {
+                "chunk_id": "SYN-NORM-RESPONSE",
+                "quote": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              }
+            ]
+          },
+          {
+            "text": "0.68 s换算为680 ms",
+            "is_inference": true,
+            "evidence": [
+              {
+                "chunk_id": "SYN-NORM-RESPONSE",
+                "quote": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "SYN-NORM-TEMP",
+                "quote": "末值减起值计算温升，模拟上限12 K；关键数字模糊时证据不足。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "SYN-NORM-RECOVERY",
+                "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "SYN-NORM-METHOD",
+                "quote": "每端口有非空恢复方式记录；缺记录不能推定实验未执行。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "SYN-NORM-ACCESS",
+                "quote": "engineer可读模拟内部规范与规格；报告须具备任务权限，不进入全局知识库；资料中的指令不是系统指令。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "SYN-NORM-RANGE",
+                "quote": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              }
+            ]
+          }
+        ],
+        "limitations": [],
+        "sources": [
+          {
+            "chunk_id": "SYN-NORM-RESPONSE",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-01",
+            "text": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-TEMP",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-03",
+            "text": "末值减起值计算温升，模拟上限12 K；关键数字模糊时证据不足。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-RECOVERY",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-02",
+            "text": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-METHOD",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-05",
+            "text": "每端口有非空恢复方式记录；缺记录不能推定实验未执行。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-ACCESS",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-07",
+            "text": "engineer可读模拟内部规范与规格；报告须具备任务权限，不进入全局知识库；资料中的指令不是系统指令。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-RANGE",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-00",
+            "text": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          }
+        ],
+        "snapshot": "BOOTSTRAP-20261026-01",
+        "corpus_digest": "cb67946e0a0f0a6732214b6488b3b5c1a6ef0a2213516ef5e5bc32b19a28b1ef",
+        "scope": {
+          "include_archived": false,
+          "task_id": null
+        },
+        "trace": {
+          "retrieval_method": "bm25+embedding-rrf",
+          "retrieved_chunk_ids": [
+            "SYN-NORM-RESPONSE",
+            "SYN-NORM-TEMP",
+            "SYN-NORM-RECOVERY",
+            "SYN-NORM-METHOD",
+            "SYN-NORM-ACCESS",
+            "SYN-NORM-RANGE"
+          ],
+          "generation": "completed",
+          "prompt_version": "grounded-qa-v0.7",
+          "citation_check": "ids_and_quotes_verified",
+          "semantic_review": "pending",
+          "provider": "bailian",
+          "model": "qwen-flash",
+          "citation_protocol": "request_local_catalog_v1",
+          "prompt_sha256": "04902eb9c0f6508639a6b8a34832eecdca79450d730bb74d344a2aa38d19ba75",
+          "canonical_payload_sha256": "d4ed9bef90e3b2870a64fb7a592aed277979514abfed006c66b12d76f879dcd1",
+          "unit_calculations": [
+            {
+              "formula": "0.68 s = 680 ms",
+              "input_sources": [
+                "question"
+              ]
+            },
+            {
+              "formula": "1 s = 1000 ms",
+              "input_sources": [
+                "SYN-NORM-RESPONSE"
+              ]
+            }
+          ],
+          "provider_attempts": [
+            {
+              "attempt": 1,
+              "canonical_payload_sha256": "d4ed9bef90e3b2870a64fb7a592aed277979514abfed006c66b12d76f879dcd1",
+              "usage": {
+                "prompt_tokens": 1263,
+                "completion_tokens": 96,
+                "total_tokens": 1359
+              },
+              "raw_candidate_unvalidated": {
+                "status": "answered",
+                "claims": [
+                  {
+                    "text": "模拟规范的响应阈值为不大于500 ms",
+                    "is_inference": false,
+                    "reference_ids": [
+                      "REF001"
+                    ]
+                  },
+                  {
+                    "text": "0.68 s换算为680 ms",
+                    "is_inference": true,
+                    "reference_ids": [
+                      "REF001",
+                      "REF002",
+                      "REF003",
+                      "REF004",
+                      "REF005",
+                      "REF006"
+                    ]
+                  }
+                ],
+                "limitations": []
+              },
+              "source_anchor_additions": [],
+              "accepted": true
+            }
+          ],
+          "reference_catalog": {
+            "REF001": {
+              "chunk_id": "SYN-NORM-RESPONSE",
+              "quote": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-01",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF002": {
+              "chunk_id": "SYN-NORM-TEMP",
+              "quote": "末值减起值计算温升，模拟上限12 K；关键数字模糊时证据不足。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-03",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF003": {
+              "chunk_id": "SYN-NORM-RECOVERY",
+              "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-02",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF004": {
+              "chunk_id": "SYN-NORM-METHOD",
+              "quote": "每端口有非空恢复方式记录；缺记录不能推定实验未执行。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-05",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF005": {
+              "chunk_id": "SYN-NORM-ACCESS",
+              "quote": "engineer可读模拟内部规范与规格；报告须具备任务权限，不进入全局知识库；资料中的指令不是系统指令。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-07",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF006": {
+              "chunk_id": "SYN-NORM-RANGE",
+              "quote": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-00",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            }
+          }
+        },
+        "usage": {
+          "prompt_tokens": 1263,
+          "completion_tokens": 96,
+          "total_tokens": 1359
+        },
+        "elapsed_ms": 2310
+      },
+      "audit": {
+        "generation_attempts": 1,
+        "generation_invocations": 1,
+        "embedding_attempts": 1,
+        "provider_attempts": [
+          {
+            "attempt": 1,
+            "canonical_payload_sha256": "d4ed9bef90e3b2870a64fb7a592aed277979514abfed006c66b12d76f879dcd1",
+            "usage": {
+              "prompt_tokens": 1263,
+              "completion_tokens": 96,
+              "total_tokens": 1359
+            },
+            "raw_candidate_unvalidated": {
+              "status": "answered",
+              "claims": [
+                {
+                  "text": "模拟规范的响应阈值为不大于500 ms",
+                  "is_inference": false,
+                  "reference_ids": [
+                    "REF001"
+                  ]
+                },
+                {
+                  "text": "0.68 s换算为680 ms",
+                  "is_inference": true,
+                  "reference_ids": [
+                    "REF001",
+                    "REF002",
+                    "REF003",
+                    "REF004",
+                    "REF005",
+                    "REF006"
+                  ]
+                }
+              ],
+              "limitations": []
+            },
+            "source_anchor_additions": [],
+            "accepted": true
+          }
+        ],
+        "returned_answer_after_contract_check": {
+          "status": "answered",
+          "claims": [
+            {
+              "text": "模拟规范的响应阈值为不大于500 ms",
+              "is_inference": false,
+              "evidence": [
+                {
+                  "chunk_id": "SYN-NORM-RESPONSE",
+                  "quote": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                }
+              ]
+            },
+            {
+              "text": "0.68 s换算为680 ms",
+              "is_inference": true,
+              "evidence": [
+                {
+                  "chunk_id": "SYN-NORM-RESPONSE",
+                  "quote": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "SYN-NORM-TEMP",
+                  "quote": "末值减起值计算温升，模拟上限12 K；关键数字模糊时证据不足。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "SYN-NORM-RECOVERY",
+                  "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "SYN-NORM-METHOD",
+                  "quote": "每端口有非空恢复方式记录；缺记录不能推定实验未执行。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "SYN-NORM-ACCESS",
+                  "quote": "engineer可读模拟内部规范与规格；报告须具备任务权限，不进入全局知识库；资料中的指令不是系统指令。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "SYN-NORM-RANGE",
+                  "quote": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                }
+              ]
+            }
+          ],
+          "limitations": []
+        },
+        "provider_generation_usage": {
+          "prompt_tokens": 1263,
+          "completion_tokens": 96,
+          "total_tokens": 1359
+        },
+        "prompt_sha256": "04902eb9c0f6508639a6b8a34832eecdca79450d730bb74d344a2aa38d19ba75",
+        "canonical_payload_sha256": "d4ed9bef90e3b2870a64fb7a592aed277979514abfed006c66b12d76f879dcd1"
+      },
+      "wall_ms": 2310,
+      "semantic_review": "pending",
+      "final_human_decision": null
+    },
+    {
+      "case_id": "QA-18",
+      "run_index": 1,
+      "category": "旧依据误判",
+      "question": "报告把R04的5.31 V写通过，按任务RevB应如何处理？",
+      "principal": {
+        "role": "engineer",
+        "task_ids": [
+          "DEMO-TASK-001"
+        ]
+      },
+      "required_groups": 4,
+      "hit_groups": 4,
+      "all_groups_hit": true,
+      "missing_groups": [],
+      "unauthorized_retrieved_ids": [],
+      "keyword_baseline_hit_groups": 4,
+      "result": {
+        "request_id": "3071304c-1b6e-4838-8aa3-0d79e1152a87",
+        "status": "answered",
+        "mode": "answer",
+        "query": "报告把R04的5.31 V写通过，按任务RevB应如何处理？",
+        "claims": [
+          {
+            "text": "R04的5.31 V在RevB规格下不通过，因RevB要求恢复电压为4.75 V至5.25 V（含边界），5.31 V超出上限。",
+            "is_inference": true,
+            "evidence": [
+              {
+                "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+                "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "TR-P2-RECOVERY",
+                "quote": "R03 A1恢复电压5.08 V；R04 C1恢复电压5.31 V。报告按RevA均填写通过。"
+              }
+            ]
+          },
+          {
+            "text": "报告按RevA填写通过不符合任务RevB的要求，因任务清单已显式选择RevB，应以RevB规格为准。",
+            "is_inference": true,
+            "evidence": [
+              {
+                "chunk_id": "SYN-NORM-RANGE",
+                "quote": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "SYN-NORM-RECOVERY",
+                "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              }
+            ]
+          },
+          {
+            "text": "R04 C1恢复电压5.31 V的实测值虽在RevA允许范围（4.50 V至5.50 V）内，但因任务采用RevB，该值不满足当前版本要求。",
+            "is_inference": true,
+            "evidence": [
+              {
+                "chunk_id": "TR-P1-SUMMARY",
+                "quote": "报告填写依据RevA，恢复电压4.50 V至5.50 V。S01：C1保护响应80 ms，摘要填写通过。S02按上述电压区间填写通过。"
+              },
+              {
+                "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+                "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "TR-P2-RECOVERY",
+                "quote": "R03 A1恢复电压5.08 V；R04 C1恢复电压5.31 V。报告按RevA均填写通过。"
+              }
+            ]
+          }
+        ],
+        "limitations": [],
+        "sources": [
+          {
+            "chunk_id": "TR-P2-RECOVERY",
+            "document_id": "SYN-TR-001-R1",
+            "title": "模拟测试报告",
+            "section": "P2-RECOVERY",
+            "text": "R03 A1恢复电压5.08 V；R04 C1恢复电压5.31 V。报告按RevA均填写通过。",
+            "version": "R1",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": 2,
+            "source_url": null,
+            "scope": "task:DEMO-TASK-001"
+          },
+          {
+            "chunk_id": "TR-P1-SUMMARY",
+            "document_id": "SYN-TR-001-R1",
+            "title": "模拟测试报告",
+            "section": "P1-SUMMARY",
+            "text": "报告填写依据RevA，恢复电压4.50 V至5.50 V。S01：C1保护响应80 ms，摘要填写通过。S02按上述电压区间填写通过。",
+            "version": "R1",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": 1,
+            "source_url": null,
+            "scope": "task:DEMO-TASK-001"
+          },
+          {
+            "chunk_id": "SYN-NORM-RANGE",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-00",
+            "text": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-RECOVERY",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-02",
+            "text": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-CONFLICT",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-06",
+            "text": "摘要与记录冲突须同时引用，保留未决；只可作条件性比较，不静默取值或通过。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+            "document_id": "SYN-SPEC-PB01-RevB",
+            "title": "SYN-SPEC-PB01-RevB",
+            "section": "SPEC-REC 恢复电压",
+            "text": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "B",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          }
+        ],
+        "snapshot": "BOOTSTRAP-20261026-01",
+        "corpus_digest": "cb67946e0a0f0a6732214b6488b3b5c1a6ef0a2213516ef5e5bc32b19a28b1ef",
+        "scope": {
+          "include_archived": false,
+          "task_id": "DEMO-TASK-001"
+        },
+        "trace": {
+          "retrieval_method": "bm25+embedding-rrf",
+          "retrieved_chunk_ids": [
+            "TR-P2-RECOVERY",
+            "TR-P1-SUMMARY",
+            "SYN-NORM-RANGE",
+            "SYN-NORM-RECOVERY",
+            "SYN-NORM-CONFLICT",
+            "SYN-SPEC-PB01-RevB-REC"
+          ],
+          "generation": "completed",
+          "prompt_version": "grounded-qa-v0.7",
+          "citation_check": "ids_and_quotes_verified",
+          "semantic_review": "pending",
+          "provider": "bailian",
+          "model": "qwen-flash",
+          "citation_protocol": "request_local_catalog_v1",
+          "prompt_sha256": "04902eb9c0f6508639a6b8a34832eecdca79450d730bb74d344a2aa38d19ba75",
+          "canonical_payload_sha256": "f7ac81d38e80774b77d4197851e86759a6fe0529457c6dd114e25fedc126eb53",
+          "unit_calculations": [],
+          "provider_attempts": [
+            {
+              "attempt": 1,
+              "canonical_payload_sha256": "f7ac81d38e80774b77d4197851e86759a6fe0529457c6dd114e25fedc126eb53",
+              "usage": {
+                "prompt_tokens": 1244,
+                "completion_tokens": 202,
+                "total_tokens": 1446
+              },
+              "raw_candidate_unvalidated": {
+                "status": "answered",
+                "claims": [
+                  {
+                    "text": "R04的5.31 V在RevB规格下不通过，因RevB要求恢复电压为4.75 V至5.25 V（含边界），5.31 V超出上限。",
+                    "is_inference": true,
+                    "reference_ids": [
+                      "REF006"
+                    ]
+                  },
+                  {
+                    "text": "报告按RevA填写通过不符合任务RevB的要求，因任务清单已显式选择RevB，应以RevB规格为准。",
+                    "is_inference": true,
+                    "reference_ids": [
+                      "REF003",
+                      "REF004"
+                    ]
+                  },
+                  {
+                    "text": "R04 C1恢复电压5.31 V的实测值虽在RevA允许范围（4.50 V至5.50 V）内，但因任务采用RevB，该值不满足当前版本要求。",
+                    "is_inference": true,
+                    "reference_ids": [
+                      "REF002",
+                      "REF006"
+                    ]
+                  }
+                ],
+                "limitations": []
+              },
+              "source_anchor_additions": [
+                {
+                  "claim_index": 0,
+                  "reference_id": "REF001",
+                  "chunk_id": "TR-P2-RECOVERY",
+                  "reason": "record:R04"
+                },
+                {
+                  "claim_index": 2,
+                  "reference_id": "REF001",
+                  "chunk_id": "TR-P2-RECOVERY",
+                  "reason": "record:R04"
+                }
+              ],
+              "accepted": true
+            }
+          ],
+          "reference_catalog": {
+            "REF001": {
+              "chunk_id": "TR-P2-RECOVERY",
+              "quote": "R03 A1恢复电压5.08 V；R04 C1恢复电压5.31 V。报告按RevA均填写通过。",
+              "title": "模拟测试报告",
+              "section": "P2-RECOVERY",
+              "version": "R1",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": 2,
+              "scope": "task:DEMO-TASK-001"
+            },
+            "REF002": {
+              "chunk_id": "TR-P1-SUMMARY",
+              "quote": "报告填写依据RevA，恢复电压4.50 V至5.50 V。S01：C1保护响应80 ms，摘要填写通过。S02按上述电压区间填写通过。",
+              "title": "模拟测试报告",
+              "section": "P1-SUMMARY",
+              "version": "R1",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": 1,
+              "scope": "task:DEMO-TASK-001"
+            },
+            "REF003": {
+              "chunk_id": "SYN-NORM-RANGE",
+              "quote": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-00",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF004": {
+              "chunk_id": "SYN-NORM-RECOVERY",
+              "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-02",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF005": {
+              "chunk_id": "SYN-NORM-CONFLICT",
+              "quote": "摘要与记录冲突须同时引用，保留未决；只可作条件性比较，不静默取值或通过。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-06",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF006": {
+              "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+              "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "SYN-SPEC-PB01-RevB",
+              "section": "SPEC-REC 恢复电压",
+              "version": "B",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            }
+          }
+        },
+        "usage": {
+          "prompt_tokens": 1244,
+          "completion_tokens": 202,
+          "total_tokens": 1446
+        },
+        "elapsed_ms": 3975
+      },
+      "audit": {
+        "generation_attempts": 1,
+        "generation_invocations": 1,
+        "embedding_attempts": 1,
+        "provider_attempts": [
+          {
+            "attempt": 1,
+            "canonical_payload_sha256": "f7ac81d38e80774b77d4197851e86759a6fe0529457c6dd114e25fedc126eb53",
+            "usage": {
+              "prompt_tokens": 1244,
+              "completion_tokens": 202,
+              "total_tokens": 1446
+            },
+            "raw_candidate_unvalidated": {
+              "status": "answered",
+              "claims": [
+                {
+                  "text": "R04的5.31 V在RevB规格下不通过，因RevB要求恢复电压为4.75 V至5.25 V（含边界），5.31 V超出上限。",
+                  "is_inference": true,
+                  "reference_ids": [
+                    "REF006"
+                  ]
+                },
+                {
+                  "text": "报告按RevA填写通过不符合任务RevB的要求，因任务清单已显式选择RevB，应以RevB规格为准。",
+                  "is_inference": true,
+                  "reference_ids": [
+                    "REF003",
+                    "REF004"
+                  ]
+                },
+                {
+                  "text": "R04 C1恢复电压5.31 V的实测值虽在RevA允许范围（4.50 V至5.50 V）内，但因任务采用RevB，该值不满足当前版本要求。",
+                  "is_inference": true,
+                  "reference_ids": [
+                    "REF002",
+                    "REF006"
+                  ]
+                }
+              ],
+              "limitations": []
+            },
+            "source_anchor_additions": [
+              {
+                "claim_index": 0,
+                "reference_id": "REF001",
+                "chunk_id": "TR-P2-RECOVERY",
+                "reason": "record:R04"
+              },
+              {
+                "claim_index": 2,
+                "reference_id": "REF001",
+                "chunk_id": "TR-P2-RECOVERY",
+                "reason": "record:R04"
+              }
+            ],
+            "accepted": true
+          }
+        ],
+        "returned_answer_after_contract_check": {
+          "status": "answered",
+          "claims": [
+            {
+              "text": "R04的5.31 V在RevB规格下不通过，因RevB要求恢复电压为4.75 V至5.25 V（含边界），5.31 V超出上限。",
+              "is_inference": true,
+              "evidence": [
+                {
+                  "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+                  "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "TR-P2-RECOVERY",
+                  "quote": "R03 A1恢复电压5.08 V；R04 C1恢复电压5.31 V。报告按RevA均填写通过。"
+                }
+              ]
+            },
+            {
+              "text": "报告按RevA填写通过不符合任务RevB的要求，因任务清单已显式选择RevB，应以RevB规格为准。",
+              "is_inference": true,
+              "evidence": [
+                {
+                  "chunk_id": "SYN-NORM-RANGE",
+                  "quote": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "SYN-NORM-RECOVERY",
+                  "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                }
+              ]
+            },
+            {
+              "text": "R04 C1恢复电压5.31 V的实测值虽在RevA允许范围（4.50 V至5.50 V）内，但因任务采用RevB，该值不满足当前版本要求。",
+              "is_inference": true,
+              "evidence": [
+                {
+                  "chunk_id": "TR-P1-SUMMARY",
+                  "quote": "报告填写依据RevA，恢复电压4.50 V至5.50 V。S01：C1保护响应80 ms，摘要填写通过。S02按上述电压区间填写通过。"
+                },
+                {
+                  "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+                  "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "TR-P2-RECOVERY",
+                  "quote": "R03 A1恢复电压5.08 V；R04 C1恢复电压5.31 V。报告按RevA均填写通过。"
+                }
+              ]
+            }
+          ],
+          "limitations": []
+        },
+        "provider_generation_usage": {
+          "prompt_tokens": 1244,
+          "completion_tokens": 202,
+          "total_tokens": 1446
+        },
+        "prompt_sha256": "04902eb9c0f6508639a6b8a34832eecdca79450d730bb74d344a2aa38d19ba75",
+        "canonical_payload_sha256": "f7ac81d38e80774b77d4197851e86759a6fe0529457c6dd114e25fedc126eb53"
+      },
+      "wall_ms": 3975,
+      "semantic_review": "pending",
+      "final_human_decision": null
+    },
+    {
+      "case_id": "QA-10",
+      "run_index": 2,
+      "category": "单位归一",
+      "question": "模拟规范的响应阈值是多少？0.68 s如何换算？",
+      "principal": {
+        "role": "engineer",
+        "task_ids": []
+      },
+      "required_groups": 1,
+      "hit_groups": 1,
+      "all_groups_hit": true,
+      "missing_groups": [],
+      "unauthorized_retrieved_ids": [],
+      "keyword_baseline_hit_groups": 1,
+      "result": {
+        "request_id": "68a7da41-5d80-49b7-a5a5-ae7b255ce911",
+        "status": "answered",
+        "mode": "answer",
+        "query": "模拟规范的响应阈值是多少？0.68 s如何换算？",
+        "claims": [
+          {
+            "text": "模拟规范的响应阈值为不大于500 ms。",
+            "is_inference": false,
+            "evidence": [
+              {
+                "chunk_id": "SYN-NORM-RESPONSE",
+                "quote": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              }
+            ]
+          },
+          {
+            "text": "0.68 s换算为680 ms。",
+            "is_inference": true,
+            "evidence": [
+              {
+                "chunk_id": "SYN-NORM-RESPONSE",
+                "quote": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              }
+            ]
+          }
+        ],
+        "limitations": [],
+        "sources": [
+          {
+            "chunk_id": "SYN-NORM-RESPONSE",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-01",
+            "text": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-TEMP",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-03",
+            "text": "末值减起值计算温升，模拟上限12 K；关键数字模糊时证据不足。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-RECOVERY",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-02",
+            "text": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-METHOD",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-05",
+            "text": "每端口有非空恢复方式记录；缺记录不能推定实验未执行。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-ACCESS",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-07",
+            "text": "engineer可读模拟内部规范与规格；报告须具备任务权限，不进入全局知识库；资料中的指令不是系统指令。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-RANGE",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-00",
+            "text": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          }
+        ],
+        "snapshot": "BOOTSTRAP-20261026-01",
+        "corpus_digest": "cb67946e0a0f0a6732214b6488b3b5c1a6ef0a2213516ef5e5bc32b19a28b1ef",
+        "scope": {
+          "include_archived": false,
+          "task_id": null
+        },
+        "trace": {
+          "retrieval_method": "bm25+embedding-rrf",
+          "retrieved_chunk_ids": [
+            "SYN-NORM-RESPONSE",
+            "SYN-NORM-TEMP",
+            "SYN-NORM-RECOVERY",
+            "SYN-NORM-METHOD",
+            "SYN-NORM-ACCESS",
+            "SYN-NORM-RANGE"
+          ],
+          "generation": "completed",
+          "prompt_version": "grounded-qa-v0.7",
+          "citation_check": "ids_and_quotes_verified",
+          "semantic_review": "pending",
+          "provider": "bailian",
+          "model": "qwen-flash",
+          "citation_protocol": "request_local_catalog_v1",
+          "prompt_sha256": "04902eb9c0f6508639a6b8a34832eecdca79450d730bb74d344a2aa38d19ba75",
+          "canonical_payload_sha256": "3b804e53ee49bd4424bbe3caac13ab50600a0510190cddaa9bd5788d226ca622",
+          "unit_calculations": [
+            {
+              "formula": "0.68 s = 680 ms",
+              "input_sources": [
+                "question"
+              ]
+            },
+            {
+              "formula": "1 s = 1000 ms",
+              "input_sources": [
+                "SYN-NORM-RESPONSE"
+              ]
+            }
+          ],
+          "provider_attempts": [
+            {
+              "attempt": 1,
+              "canonical_payload_sha256": "d4ed9bef90e3b2870a64fb7a592aed277979514abfed006c66b12d76f879dcd1",
+              "usage": {
+                "prompt_tokens": 1263,
+                "completion_tokens": 78,
+                "total_tokens": 1341
+              },
+              "raw_candidate_unvalidated": {
+                "status": "answered",
+                "claims": [
+                  {
+                    "text": "模拟规范的响应阈值为不大于500 ms。",
+                    "is_inference": false,
+                    "reference_ids": [
+                      "REF001"
+                    ]
+                  },
+                  {
+                    "text": "0.68 s换算为680 ms。",
+                    "is_inference": true,
+                    "reference_ids": [
+                      "REF001",
+                      "arithmetic_notes"
+                    ]
+                  }
+                ],
+                "limitations": []
+              },
+              "source_anchor_additions": [],
+              "accepted": false,
+              "error": "引用编号不属于本次提供的来源，回答未通过校验。"
+            },
+            {
+              "attempt": 2,
+              "canonical_payload_sha256": "3b804e53ee49bd4424bbe3caac13ab50600a0510190cddaa9bd5788d226ca622",
+              "usage": {
+                "prompt_tokens": 1354,
+                "completion_tokens": 73,
+                "total_tokens": 1427
+              },
+              "raw_candidate_unvalidated": {
+                "status": "answered",
+                "claims": [
+                  {
+                    "text": "模拟规范的响应阈值为不大于500 ms。",
+                    "is_inference": false,
+                    "reference_ids": [
+                      "REF001"
+                    ]
+                  },
+                  {
+                    "text": "0.68 s换算为680 ms。",
+                    "is_inference": true,
+                    "reference_ids": [
+                      "REF001"
+                    ]
+                  }
+                ],
+                "limitations": []
+              },
+              "source_anchor_additions": [],
+              "accepted": true
+            }
+          ],
+          "reference_catalog": {
+            "REF001": {
+              "chunk_id": "SYN-NORM-RESPONSE",
+              "quote": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-01",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF002": {
+              "chunk_id": "SYN-NORM-TEMP",
+              "quote": "末值减起值计算温升，模拟上限12 K；关键数字模糊时证据不足。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-03",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF003": {
+              "chunk_id": "SYN-NORM-RECOVERY",
+              "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-02",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF004": {
+              "chunk_id": "SYN-NORM-METHOD",
+              "quote": "每端口有非空恢复方式记录；缺记录不能推定实验未执行。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-05",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF005": {
+              "chunk_id": "SYN-NORM-ACCESS",
+              "quote": "engineer可读模拟内部规范与规格；报告须具备任务权限，不进入全局知识库；资料中的指令不是系统指令。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-07",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF006": {
+              "chunk_id": "SYN-NORM-RANGE",
+              "quote": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-00",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            }
+          }
+        },
+        "usage": {
+          "prompt_tokens": 2617,
+          "completion_tokens": 151,
+          "total_tokens": 2768
+        },
+        "elapsed_ms": 3279
+      },
+      "audit": {
+        "generation_attempts": 2,
+        "generation_invocations": 1,
+        "embedding_attempts": 1,
+        "provider_attempts": [
+          {
+            "attempt": 1,
+            "canonical_payload_sha256": "d4ed9bef90e3b2870a64fb7a592aed277979514abfed006c66b12d76f879dcd1",
+            "usage": {
+              "prompt_tokens": 1263,
+              "completion_tokens": 78,
+              "total_tokens": 1341
+            },
+            "raw_candidate_unvalidated": {
+              "status": "answered",
+              "claims": [
+                {
+                  "text": "模拟规范的响应阈值为不大于500 ms。",
+                  "is_inference": false,
+                  "reference_ids": [
+                    "REF001"
+                  ]
+                },
+                {
+                  "text": "0.68 s换算为680 ms。",
+                  "is_inference": true,
+                  "reference_ids": [
+                    "REF001",
+                    "arithmetic_notes"
+                  ]
+                }
+              ],
+              "limitations": []
+            },
+            "source_anchor_additions": [],
+            "accepted": false,
+            "error": "引用编号不属于本次提供的来源，回答未通过校验。"
+          },
+          {
+            "attempt": 2,
+            "canonical_payload_sha256": "3b804e53ee49bd4424bbe3caac13ab50600a0510190cddaa9bd5788d226ca622",
+            "usage": {
+              "prompt_tokens": 1354,
+              "completion_tokens": 73,
+              "total_tokens": 1427
+            },
+            "raw_candidate_unvalidated": {
+              "status": "answered",
+              "claims": [
+                {
+                  "text": "模拟规范的响应阈值为不大于500 ms。",
+                  "is_inference": false,
+                  "reference_ids": [
+                    "REF001"
+                  ]
+                },
+                {
+                  "text": "0.68 s换算为680 ms。",
+                  "is_inference": true,
+                  "reference_ids": [
+                    "REF001"
+                  ]
+                }
+              ],
+              "limitations": []
+            },
+            "source_anchor_additions": [],
+            "accepted": true
+          }
+        ],
+        "returned_answer_after_contract_check": {
+          "status": "answered",
+          "claims": [
+            {
+              "text": "模拟规范的响应阈值为不大于500 ms。",
+              "is_inference": false,
+              "evidence": [
+                {
+                  "chunk_id": "SYN-NORM-RESPONSE",
+                  "quote": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                }
+              ]
+            },
+            {
+              "text": "0.68 s换算为680 ms。",
+              "is_inference": true,
+              "evidence": [
+                {
+                  "chunk_id": "SYN-NORM-RESPONSE",
+                  "quote": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                }
+              ]
+            }
+          ],
+          "limitations": []
+        },
+        "provider_generation_usage": {
+          "prompt_tokens": 2617,
+          "completion_tokens": 151,
+          "total_tokens": 2768
+        },
+        "prompt_sha256": "04902eb9c0f6508639a6b8a34832eecdca79450d730bb74d344a2aa38d19ba75",
+        "canonical_payload_sha256": "3b804e53ee49bd4424bbe3caac13ab50600a0510190cddaa9bd5788d226ca622"
+      },
+      "wall_ms": 3279,
+      "semantic_review": "pending",
+      "final_human_decision": null
+    },
+    {
+      "case_id": "QA-18",
+      "run_index": 2,
+      "category": "旧依据误判",
+      "question": "报告把R04的5.31 V写通过，按任务RevB应如何处理？",
+      "principal": {
+        "role": "engineer",
+        "task_ids": [
+          "DEMO-TASK-001"
+        ]
+      },
+      "required_groups": 4,
+      "hit_groups": 4,
+      "all_groups_hit": true,
+      "missing_groups": [],
+      "unauthorized_retrieved_ids": [],
+      "keyword_baseline_hit_groups": 4,
+      "result": {
+        "request_id": "f35538bb-726a-4dac-be1f-8b2d67bdb8e3",
+        "status": "answered",
+        "mode": "answer",
+        "query": "报告把R04的5.31 V写通过，按任务RevB应如何处理？",
+        "claims": [
+          {
+            "text": "报告将R04的5.31 V判定为通过，但根据任务RevB的要求，恢复电压应为4.75 V至5.25 V（含边界），5.31 V超出上限，不应通过。",
+            "is_inference": true,
+            "evidence": [
+              {
+                "chunk_id": "SYN-NORM-RECOVERY",
+                "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+                "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "TR-P2-RECOVERY",
+                "quote": "R03 A1恢复电压5.08 V；R04 C1恢复电压5.31 V。报告按RevA均填写通过。"
+              }
+            ]
+          },
+          {
+            "text": "报告依据RevA填写通过，但任务清单已显式选择RevB，因此应以RevB为准，不能沿用RevA的限值。",
+            "is_inference": true,
+            "evidence": [
+              {
+                "chunk_id": "SYN-NORM-RANGE",
+                "quote": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "SYN-NORM-RECOVERY",
+                "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              }
+            ]
+          },
+          {
+            "text": "R04 C1的恢复电压5.31 V高于RevB规定的5.25 V上限，不符合规格要求。",
+            "is_inference": true,
+            "evidence": [
+              {
+                "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+                "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "TR-P2-RECOVERY",
+                "quote": "R03 A1恢复电压5.08 V；R04 C1恢复电压5.31 V。报告按RevA均填写通过。"
+              }
+            ]
+          },
+          {
+            "text": "模拟材料不代表实测结果或实际要求，但本问题中需按任务指定的RevB规范进行判断。",
+            "is_inference": false,
+            "evidence": [
+              {
+                "chunk_id": "SYN-NORM-RANGE",
+                "quote": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "SYN-NORM-RECOVERY",
+                "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              }
+            ]
+          },
+          {
+            "text": "报告未按RevB重新评估，直接沿用RevA结论，存在判定错误。",
+            "is_inference": true,
+            "evidence": [
+              {
+                "chunk_id": "SYN-NORM-RECOVERY",
+                "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+                "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              }
+            ]
+          },
+          {
+            "text": "任务RevB的恢复电压限值为4.75 V至5.25 V，5.31 V不在该区间内。",
+            "is_inference": true,
+            "evidence": [
+              {
+                "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+                "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              }
+            ]
+          },
+          {
+            "text": "报告中对R04 C1的判定‘通过’与RevB规格不符，应修正为‘不通过’。",
+            "is_inference": true,
+            "evidence": [
+              {
+                "chunk_id": "SYN-NORM-RECOVERY",
+                "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+                "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "TR-P2-RECOVERY",
+                "quote": "R03 A1恢复电压5.08 V；R04 C1恢复电压5.31 V。报告按RevA均填写通过。"
+              }
+            ]
+          }
+        ],
+        "limitations": [],
+        "sources": [
+          {
+            "chunk_id": "TR-P2-RECOVERY",
+            "document_id": "SYN-TR-001-R1",
+            "title": "模拟测试报告",
+            "section": "P2-RECOVERY",
+            "text": "R03 A1恢复电压5.08 V；R04 C1恢复电压5.31 V。报告按RevA均填写通过。",
+            "version": "R1",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": 2,
+            "source_url": null,
+            "scope": "task:DEMO-TASK-001"
+          },
+          {
+            "chunk_id": "TR-P1-SUMMARY",
+            "document_id": "SYN-TR-001-R1",
+            "title": "模拟测试报告",
+            "section": "P1-SUMMARY",
+            "text": "报告填写依据RevA，恢复电压4.50 V至5.50 V。S01：C1保护响应80 ms，摘要填写通过。S02按上述电压区间填写通过。",
+            "version": "R1",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": 1,
+            "source_url": null,
+            "scope": "task:DEMO-TASK-001"
+          },
+          {
+            "chunk_id": "SYN-NORM-RANGE",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-00",
+            "text": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-RECOVERY",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-02",
+            "text": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-CONFLICT",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-06",
+            "text": "摘要与记录冲突须同时引用，保留未决；只可作条件性比较，不静默取值或通过。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+            "document_id": "SYN-SPEC-PB01-RevB",
+            "title": "SYN-SPEC-PB01-RevB",
+            "section": "SPEC-REC 恢复电压",
+            "text": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "B",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          }
+        ],
+        "snapshot": "BOOTSTRAP-20261026-01",
+        "corpus_digest": "cb67946e0a0f0a6732214b6488b3b5c1a6ef0a2213516ef5e5bc32b19a28b1ef",
+        "scope": {
+          "include_archived": false,
+          "task_id": "DEMO-TASK-001"
+        },
+        "trace": {
+          "retrieval_method": "bm25+embedding-rrf",
+          "retrieved_chunk_ids": [
+            "TR-P2-RECOVERY",
+            "TR-P1-SUMMARY",
+            "SYN-NORM-RANGE",
+            "SYN-NORM-RECOVERY",
+            "SYN-NORM-CONFLICT",
+            "SYN-SPEC-PB01-RevB-REC"
+          ],
+          "generation": "completed",
+          "prompt_version": "grounded-qa-v0.7",
+          "citation_check": "ids_and_quotes_verified",
+          "semantic_review": "pending",
+          "provider": "bailian",
+          "model": "qwen-flash",
+          "citation_protocol": "request_local_catalog_v1",
+          "prompt_sha256": "04902eb9c0f6508639a6b8a34832eecdca79450d730bb74d344a2aa38d19ba75",
+          "canonical_payload_sha256": "f7ac81d38e80774b77d4197851e86759a6fe0529457c6dd114e25fedc126eb53",
+          "unit_calculations": [],
+          "provider_attempts": [
+            {
+              "attempt": 1,
+              "canonical_payload_sha256": "f7ac81d38e80774b77d4197851e86759a6fe0529457c6dd114e25fedc126eb53",
+              "usage": {
+                "prompt_tokens": 1244,
+                "completion_tokens": 377,
+                "total_tokens": 1621
+              },
+              "raw_candidate_unvalidated": {
+                "status": "answered",
+                "claims": [
+                  {
+                    "text": "报告将R04的5.31 V判定为通过，但根据任务RevB的要求，恢复电压应为4.75 V至5.25 V（含边界），5.31 V超出上限，不应通过。",
+                    "is_inference": true,
+                    "reference_ids": [
+                      "REF004",
+                      "REF006"
+                    ]
+                  },
+                  {
+                    "text": "报告依据RevA填写通过，但任务清单已显式选择RevB，因此应以RevB为准，不能沿用RevA的限值。",
+                    "is_inference": true,
+                    "reference_ids": [
+                      "REF003",
+                      "REF004"
+                    ]
+                  },
+                  {
+                    "text": "R04 C1的恢复电压5.31 V高于RevB规定的5.25 V上限，不符合规格要求。",
+                    "is_inference": true,
+                    "reference_ids": [
+                      "REF006"
+                    ]
+                  },
+                  {
+                    "text": "模拟材料不代表实测结果或实际要求，但本问题中需按任务指定的RevB规范进行判断。",
+                    "is_inference": false,
+                    "reference_ids": [
+                      "REF003",
+                      "REF004"
+                    ]
+                  },
+                  {
+                    "text": "报告未按RevB重新评估，直接沿用RevA结论，存在判定错误。",
+                    "is_inference": true,
+                    "reference_ids": [
+                      "REF004",
+                      "REF006"
+                    ]
+                  },
+                  {
+                    "text": "任务RevB的恢复电压限值为4.75 V至5.25 V，5.31 V不在该区间内。",
+                    "is_inference": true,
+                    "reference_ids": [
+                      "REF006"
+                    ]
+                  },
+                  {
+                    "text": "报告中对R04 C1的判定‘通过’与RevB规格不符，应修正为‘不通过’。",
+                    "is_inference": true,
+                    "reference_ids": [
+                      "REF004",
+                      "REF006"
+                    ]
+                  }
+                ],
+                "limitations": []
+              },
+              "source_anchor_additions": [
+                {
+                  "claim_index": 0,
+                  "reference_id": "REF001",
+                  "chunk_id": "TR-P2-RECOVERY",
+                  "reason": "record:R04"
+                },
+                {
+                  "claim_index": 2,
+                  "reference_id": "REF001",
+                  "chunk_id": "TR-P2-RECOVERY",
+                  "reason": "record:R04"
+                },
+                {
+                  "claim_index": 6,
+                  "reference_id": "REF001",
+                  "chunk_id": "TR-P2-RECOVERY",
+                  "reason": "record:R04"
+                }
+              ],
+              "accepted": true
+            }
+          ],
+          "reference_catalog": {
+            "REF001": {
+              "chunk_id": "TR-P2-RECOVERY",
+              "quote": "R03 A1恢复电压5.08 V；R04 C1恢复电压5.31 V。报告按RevA均填写通过。",
+              "title": "模拟测试报告",
+              "section": "P2-RECOVERY",
+              "version": "R1",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": 2,
+              "scope": "task:DEMO-TASK-001"
+            },
+            "REF002": {
+              "chunk_id": "TR-P1-SUMMARY",
+              "quote": "报告填写依据RevA，恢复电压4.50 V至5.50 V。S01：C1保护响应80 ms，摘要填写通过。S02按上述电压区间填写通过。",
+              "title": "模拟测试报告",
+              "section": "P1-SUMMARY",
+              "version": "R1",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": 1,
+              "scope": "task:DEMO-TASK-001"
+            },
+            "REF003": {
+              "chunk_id": "SYN-NORM-RANGE",
+              "quote": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-00",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF004": {
+              "chunk_id": "SYN-NORM-RECOVERY",
+              "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-02",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF005": {
+              "chunk_id": "SYN-NORM-CONFLICT",
+              "quote": "摘要与记录冲突须同时引用，保留未决；只可作条件性比较，不静默取值或通过。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-06",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF006": {
+              "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+              "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "SYN-SPEC-PB01-RevB",
+              "section": "SPEC-REC 恢复电压",
+              "version": "B",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            }
+          }
+        },
+        "usage": {
+          "prompt_tokens": 1244,
+          "completion_tokens": 377,
+          "total_tokens": 1621
+        },
+        "elapsed_ms": 4711
+      },
+      "audit": {
+        "generation_attempts": 1,
+        "generation_invocations": 1,
+        "embedding_attempts": 1,
+        "provider_attempts": [
+          {
+            "attempt": 1,
+            "canonical_payload_sha256": "f7ac81d38e80774b77d4197851e86759a6fe0529457c6dd114e25fedc126eb53",
+            "usage": {
+              "prompt_tokens": 1244,
+              "completion_tokens": 377,
+              "total_tokens": 1621
+            },
+            "raw_candidate_unvalidated": {
+              "status": "answered",
+              "claims": [
+                {
+                  "text": "报告将R04的5.31 V判定为通过，但根据任务RevB的要求，恢复电压应为4.75 V至5.25 V（含边界），5.31 V超出上限，不应通过。",
+                  "is_inference": true,
+                  "reference_ids": [
+                    "REF004",
+                    "REF006"
+                  ]
+                },
+                {
+                  "text": "报告依据RevA填写通过，但任务清单已显式选择RevB，因此应以RevB为准，不能沿用RevA的限值。",
+                  "is_inference": true,
+                  "reference_ids": [
+                    "REF003",
+                    "REF004"
+                  ]
+                },
+                {
+                  "text": "R04 C1的恢复电压5.31 V高于RevB规定的5.25 V上限，不符合规格要求。",
+                  "is_inference": true,
+                  "reference_ids": [
+                    "REF006"
+                  ]
+                },
+                {
+                  "text": "模拟材料不代表实测结果或实际要求，但本问题中需按任务指定的RevB规范进行判断。",
+                  "is_inference": false,
+                  "reference_ids": [
+                    "REF003",
+                    "REF004"
+                  ]
+                },
+                {
+                  "text": "报告未按RevB重新评估，直接沿用RevA结论，存在判定错误。",
+                  "is_inference": true,
+                  "reference_ids": [
+                    "REF004",
+                    "REF006"
+                  ]
+                },
+                {
+                  "text": "任务RevB的恢复电压限值为4.75 V至5.25 V，5.31 V不在该区间内。",
+                  "is_inference": true,
+                  "reference_ids": [
+                    "REF006"
+                  ]
+                },
+                {
+                  "text": "报告中对R04 C1的判定‘通过’与RevB规格不符，应修正为‘不通过’。",
+                  "is_inference": true,
+                  "reference_ids": [
+                    "REF004",
+                    "REF006"
+                  ]
+                }
+              ],
+              "limitations": []
+            },
+            "source_anchor_additions": [
+              {
+                "claim_index": 0,
+                "reference_id": "REF001",
+                "chunk_id": "TR-P2-RECOVERY",
+                "reason": "record:R04"
+              },
+              {
+                "claim_index": 2,
+                "reference_id": "REF001",
+                "chunk_id": "TR-P2-RECOVERY",
+                "reason": "record:R04"
+              },
+              {
+                "claim_index": 6,
+                "reference_id": "REF001",
+                "chunk_id": "TR-P2-RECOVERY",
+                "reason": "record:R04"
+              }
+            ],
+            "accepted": true
+          }
+        ],
+        "returned_answer_after_contract_check": {
+          "status": "answered",
+          "claims": [
+            {
+              "text": "报告将R04的5.31 V判定为通过，但根据任务RevB的要求，恢复电压应为4.75 V至5.25 V（含边界），5.31 V超出上限，不应通过。",
+              "is_inference": true,
+              "evidence": [
+                {
+                  "chunk_id": "SYN-NORM-RECOVERY",
+                  "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+                  "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "TR-P2-RECOVERY",
+                  "quote": "R03 A1恢复电压5.08 V；R04 C1恢复电压5.31 V。报告按RevA均填写通过。"
+                }
+              ]
+            },
+            {
+              "text": "报告依据RevA填写通过，但任务清单已显式选择RevB，因此应以RevB为准，不能沿用RevA的限值。",
+              "is_inference": true,
+              "evidence": [
+                {
+                  "chunk_id": "SYN-NORM-RANGE",
+                  "quote": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "SYN-NORM-RECOVERY",
+                  "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                }
+              ]
+            },
+            {
+              "text": "R04 C1的恢复电压5.31 V高于RevB规定的5.25 V上限，不符合规格要求。",
+              "is_inference": true,
+              "evidence": [
+                {
+                  "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+                  "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "TR-P2-RECOVERY",
+                  "quote": "R03 A1恢复电压5.08 V；R04 C1恢复电压5.31 V。报告按RevA均填写通过。"
+                }
+              ]
+            },
+            {
+              "text": "模拟材料不代表实测结果或实际要求，但本问题中需按任务指定的RevB规范进行判断。",
+              "is_inference": false,
+              "evidence": [
+                {
+                  "chunk_id": "SYN-NORM-RANGE",
+                  "quote": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "SYN-NORM-RECOVERY",
+                  "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                }
+              ]
+            },
+            {
+              "text": "报告未按RevB重新评估，直接沿用RevA结论，存在判定错误。",
+              "is_inference": true,
+              "evidence": [
+                {
+                  "chunk_id": "SYN-NORM-RECOVERY",
+                  "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+                  "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                }
+              ]
+            },
+            {
+              "text": "任务RevB的恢复电压限值为4.75 V至5.25 V，5.31 V不在该区间内。",
+              "is_inference": true,
+              "evidence": [
+                {
+                  "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+                  "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                }
+              ]
+            },
+            {
+              "text": "报告中对R04 C1的判定‘通过’与RevB规格不符，应修正为‘不通过’。",
+              "is_inference": true,
+              "evidence": [
+                {
+                  "chunk_id": "SYN-NORM-RECOVERY",
+                  "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+                  "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "TR-P2-RECOVERY",
+                  "quote": "R03 A1恢复电压5.08 V；R04 C1恢复电压5.31 V。报告按RevA均填写通过。"
+                }
+              ]
+            }
+          ],
+          "limitations": []
+        },
+        "provider_generation_usage": {
+          "prompt_tokens": 1244,
+          "completion_tokens": 377,
+          "total_tokens": 1621
+        },
+        "prompt_sha256": "04902eb9c0f6508639a6b8a34832eecdca79450d730bb74d344a2aa38d19ba75",
+        "canonical_payload_sha256": "f7ac81d38e80774b77d4197851e86759a6fe0529457c6dd114e25fedc126eb53"
+      },
+      "wall_ms": 4711,
+      "semantic_review": "pending",
+      "final_human_decision": null
+    },
+    {
+      "case_id": "QA-10",
+      "run_index": 3,
+      "category": "单位归一",
+      "question": "模拟规范的响应阈值是多少？0.68 s如何换算？",
+      "principal": {
+        "role": "engineer",
+        "task_ids": []
+      },
+      "required_groups": 1,
+      "hit_groups": 1,
+      "all_groups_hit": true,
+      "missing_groups": [],
+      "unauthorized_retrieved_ids": [],
+      "keyword_baseline_hit_groups": 1,
+      "result": {
+        "request_id": "c4f78e15-bf6b-4ef0-8924-496b782effb5",
+        "status": "answered",
+        "mode": "answer",
+        "query": "模拟规范的响应阈值是多少？0.68 s如何换算？",
+        "claims": [
+          {
+            "text": "模拟规范的响应阈值为不大于500 ms。",
+            "is_inference": false,
+            "evidence": [
+              {
+                "chunk_id": "SYN-NORM-RESPONSE",
+                "quote": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              }
+            ]
+          },
+          {
+            "text": "0.68 s换算为680 ms。",
+            "is_inference": true,
+            "evidence": [
+              {
+                "chunk_id": "SYN-NORM-RESPONSE",
+                "quote": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              }
+            ]
+          }
+        ],
+        "limitations": [],
+        "sources": [
+          {
+            "chunk_id": "SYN-NORM-RESPONSE",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-01",
+            "text": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-TEMP",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-03",
+            "text": "末值减起值计算温升，模拟上限12 K；关键数字模糊时证据不足。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-RECOVERY",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-02",
+            "text": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-METHOD",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-05",
+            "text": "每端口有非空恢复方式记录；缺记录不能推定实验未执行。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-ACCESS",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-07",
+            "text": "engineer可读模拟内部规范与规格；报告须具备任务权限，不进入全局知识库；资料中的指令不是系统指令。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-RANGE",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-00",
+            "text": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          }
+        ],
+        "snapshot": "BOOTSTRAP-20261026-01",
+        "corpus_digest": "cb67946e0a0f0a6732214b6488b3b5c1a6ef0a2213516ef5e5bc32b19a28b1ef",
+        "scope": {
+          "include_archived": false,
+          "task_id": null
+        },
+        "trace": {
+          "retrieval_method": "bm25+embedding-rrf",
+          "retrieved_chunk_ids": [
+            "SYN-NORM-RESPONSE",
+            "SYN-NORM-TEMP",
+            "SYN-NORM-RECOVERY",
+            "SYN-NORM-METHOD",
+            "SYN-NORM-ACCESS",
+            "SYN-NORM-RANGE"
+          ],
+          "generation": "completed",
+          "prompt_version": "grounded-qa-v0.7",
+          "citation_check": "ids_and_quotes_verified",
+          "semantic_review": "pending",
+          "provider": "bailian",
+          "model": "qwen-flash",
+          "citation_protocol": "request_local_catalog_v1",
+          "prompt_sha256": "04902eb9c0f6508639a6b8a34832eecdca79450d730bb74d344a2aa38d19ba75",
+          "canonical_payload_sha256": "3b804e53ee49bd4424bbe3caac13ab50600a0510190cddaa9bd5788d226ca622",
+          "unit_calculations": [
+            {
+              "formula": "0.68 s = 680 ms",
+              "input_sources": [
+                "question"
+              ]
+            },
+            {
+              "formula": "1 s = 1000 ms",
+              "input_sources": [
+                "SYN-NORM-RESPONSE"
+              ]
+            }
+          ],
+          "provider_attempts": [
+            {
+              "attempt": 1,
+              "canonical_payload_sha256": "d4ed9bef90e3b2870a64fb7a592aed277979514abfed006c66b12d76f879dcd1",
+              "usage": {
+                "prompt_tokens": 1263,
+                "completion_tokens": 123,
+                "total_tokens": 1386
+              },
+              "raw_candidate_unvalidated": {
+                "status": "answered",
+                "claims": [
+                  {
+                    "text": "模拟规范的响应阈值不大于500 ms。",
+                    "is_inference": false,
+                    "reference_ids": [
+                      "REF001"
+                    ]
+                  },
+                  {
+                    "text": "0.68 s换算为680 ms。",
+                    "is_inference": true,
+                    "reference_ids": [
+                      "REF001",
+                      "arithmetic_notes"
+                    ]
+                  },
+                  {
+                    "text": "0.68 s（即680 ms）超过模拟规范响应阈值限值500 ms。",
+                    "is_inference": true,
+                    "reference_ids": [
+                      "REF001",
+                      "arithmetic_notes"
+                    ]
+                  }
+                ],
+                "limitations": []
+              },
+              "source_anchor_additions": [],
+              "accepted": false,
+              "error": "引用编号不属于本次提供的来源，回答未通过校验。"
+            },
+            {
+              "attempt": 2,
+              "canonical_payload_sha256": "3b804e53ee49bd4424bbe3caac13ab50600a0510190cddaa9bd5788d226ca622",
+              "usage": {
+                "prompt_tokens": 1354,
+                "completion_tokens": 73,
+                "total_tokens": 1427
+              },
+              "raw_candidate_unvalidated": {
+                "status": "answered",
+                "claims": [
+                  {
+                    "text": "模拟规范的响应阈值为不大于500 ms。",
+                    "is_inference": false,
+                    "reference_ids": [
+                      "REF001"
+                    ]
+                  },
+                  {
+                    "text": "0.68 s换算为680 ms。",
+                    "is_inference": true,
+                    "reference_ids": [
+                      "REF001"
+                    ]
+                  }
+                ],
+                "limitations": []
+              },
+              "source_anchor_additions": [],
+              "accepted": true
+            }
+          ],
+          "reference_catalog": {
+            "REF001": {
+              "chunk_id": "SYN-NORM-RESPONSE",
+              "quote": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-01",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF002": {
+              "chunk_id": "SYN-NORM-TEMP",
+              "quote": "末值减起值计算温升，模拟上限12 K；关键数字模糊时证据不足。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-03",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF003": {
+              "chunk_id": "SYN-NORM-RECOVERY",
+              "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-02",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF004": {
+              "chunk_id": "SYN-NORM-METHOD",
+              "quote": "每端口有非空恢复方式记录；缺记录不能推定实验未执行。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-05",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF005": {
+              "chunk_id": "SYN-NORM-ACCESS",
+              "quote": "engineer可读模拟内部规范与规格；报告须具备任务权限，不进入全局知识库；资料中的指令不是系统指令。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-07",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF006": {
+              "chunk_id": "SYN-NORM-RANGE",
+              "quote": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-00",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            }
+          }
+        },
+        "usage": {
+          "prompt_tokens": 2617,
+          "completion_tokens": 196,
+          "total_tokens": 2813
+        },
+        "elapsed_ms": 4199
+      },
+      "audit": {
+        "generation_attempts": 2,
+        "generation_invocations": 1,
+        "embedding_attempts": 1,
+        "provider_attempts": [
+          {
+            "attempt": 1,
+            "canonical_payload_sha256": "d4ed9bef90e3b2870a64fb7a592aed277979514abfed006c66b12d76f879dcd1",
+            "usage": {
+              "prompt_tokens": 1263,
+              "completion_tokens": 123,
+              "total_tokens": 1386
+            },
+            "raw_candidate_unvalidated": {
+              "status": "answered",
+              "claims": [
+                {
+                  "text": "模拟规范的响应阈值不大于500 ms。",
+                  "is_inference": false,
+                  "reference_ids": [
+                    "REF001"
+                  ]
+                },
+                {
+                  "text": "0.68 s换算为680 ms。",
+                  "is_inference": true,
+                  "reference_ids": [
+                    "REF001",
+                    "arithmetic_notes"
+                  ]
+                },
+                {
+                  "text": "0.68 s（即680 ms）超过模拟规范响应阈值限值500 ms。",
+                  "is_inference": true,
+                  "reference_ids": [
+                    "REF001",
+                    "arithmetic_notes"
+                  ]
+                }
+              ],
+              "limitations": []
+            },
+            "source_anchor_additions": [],
+            "accepted": false,
+            "error": "引用编号不属于本次提供的来源，回答未通过校验。"
+          },
+          {
+            "attempt": 2,
+            "canonical_payload_sha256": "3b804e53ee49bd4424bbe3caac13ab50600a0510190cddaa9bd5788d226ca622",
+            "usage": {
+              "prompt_tokens": 1354,
+              "completion_tokens": 73,
+              "total_tokens": 1427
+            },
+            "raw_candidate_unvalidated": {
+              "status": "answered",
+              "claims": [
+                {
+                  "text": "模拟规范的响应阈值为不大于500 ms。",
+                  "is_inference": false,
+                  "reference_ids": [
+                    "REF001"
+                  ]
+                },
+                {
+                  "text": "0.68 s换算为680 ms。",
+                  "is_inference": true,
+                  "reference_ids": [
+                    "REF001"
+                  ]
+                }
+              ],
+              "limitations": []
+            },
+            "source_anchor_additions": [],
+            "accepted": true
+          }
+        ],
+        "returned_answer_after_contract_check": {
+          "status": "answered",
+          "claims": [
+            {
+              "text": "模拟规范的响应阈值为不大于500 ms。",
+              "is_inference": false,
+              "evidence": [
+                {
+                  "chunk_id": "SYN-NORM-RESPONSE",
+                  "quote": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                }
+              ]
+            },
+            {
+              "text": "0.68 s换算为680 ms。",
+              "is_inference": true,
+              "evidence": [
+                {
+                  "chunk_id": "SYN-NORM-RESPONSE",
+                  "quote": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                }
+              ]
+            }
+          ],
+          "limitations": []
+        },
+        "provider_generation_usage": {
+          "prompt_tokens": 2617,
+          "completion_tokens": 196,
+          "total_tokens": 2813
+        },
+        "prompt_sha256": "04902eb9c0f6508639a6b8a34832eecdca79450d730bb74d344a2aa38d19ba75",
+        "canonical_payload_sha256": "3b804e53ee49bd4424bbe3caac13ab50600a0510190cddaa9bd5788d226ca622"
+      },
+      "wall_ms": 4199,
+      "semantic_review": "pending",
+      "final_human_decision": null
+    },
+    {
+      "case_id": "QA-18",
+      "run_index": 3,
+      "category": "旧依据误判",
+      "question": "报告把R04的5.31 V写通过，按任务RevB应如何处理？",
+      "principal": {
+        "role": "engineer",
+        "task_ids": [
+          "DEMO-TASK-001"
+        ]
+      },
+      "required_groups": 4,
+      "hit_groups": 4,
+      "all_groups_hit": true,
+      "missing_groups": [],
+      "unauthorized_retrieved_ids": [],
+      "keyword_baseline_hit_groups": 4,
+      "result": {
+        "request_id": "cc31b113-7e9f-423c-864a-a25dd9e59f25",
+        "status": "answered",
+        "mode": "answer",
+        "query": "报告把R04的5.31 V写通过，按任务RevB应如何处理？",
+        "claims": [
+          {
+            "text": "报告将R04的5.31 V判定为通过，但根据任务RevB的要求，恢复电压应为4.75 V至5.25 V（含边界），5.31 V超出该范围，不应通过。",
+            "is_inference": true,
+            "evidence": [
+              {
+                "chunk_id": "SYN-NORM-RECOVERY",
+                "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+                "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "TR-P2-RECOVERY",
+                "quote": "R03 A1恢复电压5.08 V；R04 C1恢复电压5.31 V。报告按RevA均填写通过。"
+              }
+            ]
+          },
+          {
+            "text": "报告依据RevA填写通过，但任务清单已显式选择RevB，因此应以RevB为准，不得沿用RevA的判断标准。",
+            "is_inference": true,
+            "evidence": [
+              {
+                "chunk_id": "SYN-NORM-RANGE",
+                "quote": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              },
+              {
+                "chunk_id": "SYN-NORM-RECOVERY",
+                "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+              }
+            ]
+          }
+        ],
+        "limitations": [],
+        "sources": [
+          {
+            "chunk_id": "TR-P2-RECOVERY",
+            "document_id": "SYN-TR-001-R1",
+            "title": "模拟测试报告",
+            "section": "P2-RECOVERY",
+            "text": "R03 A1恢复电压5.08 V；R04 C1恢复电压5.31 V。报告按RevA均填写通过。",
+            "version": "R1",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": 2,
+            "source_url": null,
+            "scope": "task:DEMO-TASK-001"
+          },
+          {
+            "chunk_id": "TR-P1-SUMMARY",
+            "document_id": "SYN-TR-001-R1",
+            "title": "模拟测试报告",
+            "section": "P1-SUMMARY",
+            "text": "报告填写依据RevA，恢复电压4.50 V至5.50 V。S01：C1保护响应80 ms，摘要填写通过。S02按上述电压区间填写通过。",
+            "version": "R1",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": 1,
+            "source_url": null,
+            "scope": "task:DEMO-TASK-001"
+          },
+          {
+            "chunk_id": "SYN-NORM-RANGE",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-00",
+            "text": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-RECOVERY",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-02",
+            "text": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-NORM-CONFLICT",
+            "document_id": "SYN-QA-SC-1.0",
+            "title": "模拟内部评审规范",
+            "section": "DEMO-06",
+            "text": "摘要与记录冲突须同时引用，保留未决；只可作条件性比较，不静默取值或通过。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "1.0",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          },
+          {
+            "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+            "document_id": "SYN-SPEC-PB01-RevB",
+            "title": "SYN-SPEC-PB01-RevB",
+            "section": "SPEC-REC 恢复电压",
+            "text": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+            "version": "B",
+            "publication_status": "active",
+            "material_type": "synthetic",
+            "page": null,
+            "source_url": null,
+            "scope": "knowledge"
+          }
+        ],
+        "snapshot": "BOOTSTRAP-20261026-01",
+        "corpus_digest": "cb67946e0a0f0a6732214b6488b3b5c1a6ef0a2213516ef5e5bc32b19a28b1ef",
+        "scope": {
+          "include_archived": false,
+          "task_id": "DEMO-TASK-001"
+        },
+        "trace": {
+          "retrieval_method": "bm25+embedding-rrf",
+          "retrieved_chunk_ids": [
+            "TR-P2-RECOVERY",
+            "TR-P1-SUMMARY",
+            "SYN-NORM-RANGE",
+            "SYN-NORM-RECOVERY",
+            "SYN-NORM-CONFLICT",
+            "SYN-SPEC-PB01-RevB-REC"
+          ],
+          "generation": "completed",
+          "prompt_version": "grounded-qa-v0.7",
+          "citation_check": "ids_and_quotes_verified",
+          "semantic_review": "pending",
+          "provider": "bailian",
+          "model": "qwen-flash",
+          "citation_protocol": "request_local_catalog_v1",
+          "prompt_sha256": "04902eb9c0f6508639a6b8a34832eecdca79450d730bb74d344a2aa38d19ba75",
+          "canonical_payload_sha256": "f7ac81d38e80774b77d4197851e86759a6fe0529457c6dd114e25fedc126eb53",
+          "unit_calculations": [],
+          "provider_attempts": [
+            {
+              "attempt": 1,
+              "canonical_payload_sha256": "f7ac81d38e80774b77d4197851e86759a6fe0529457c6dd114e25fedc126eb53",
+              "usage": {
+                "prompt_tokens": 1244,
+                "completion_tokens": 142,
+                "total_tokens": 1386
+              },
+              "raw_candidate_unvalidated": {
+                "status": "answered",
+                "claims": [
+                  {
+                    "text": "报告将R04的5.31 V判定为通过，但根据任务RevB的要求，恢复电压应为4.75 V至5.25 V（含边界），5.31 V超出该范围，不应通过。",
+                    "is_inference": true,
+                    "reference_ids": [
+                      "REF004",
+                      "REF006"
+                    ]
+                  },
+                  {
+                    "text": "报告依据RevA填写通过，但任务清单已显式选择RevB，因此应以RevB为准，不得沿用RevA的判断标准。",
+                    "is_inference": true,
+                    "reference_ids": [
+                      "REF003",
+                      "REF004"
+                    ]
+                  }
+                ],
+                "limitations": []
+              },
+              "source_anchor_additions": [
+                {
+                  "claim_index": 0,
+                  "reference_id": "REF001",
+                  "chunk_id": "TR-P2-RECOVERY",
+                  "reason": "record:R04"
+                }
+              ],
+              "accepted": true
+            }
+          ],
+          "reference_catalog": {
+            "REF001": {
+              "chunk_id": "TR-P2-RECOVERY",
+              "quote": "R03 A1恢复电压5.08 V；R04 C1恢复电压5.31 V。报告按RevA均填写通过。",
+              "title": "模拟测试报告",
+              "section": "P2-RECOVERY",
+              "version": "R1",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": 2,
+              "scope": "task:DEMO-TASK-001"
+            },
+            "REF002": {
+              "chunk_id": "TR-P1-SUMMARY",
+              "quote": "报告填写依据RevA，恢复电压4.50 V至5.50 V。S01：C1保护响应80 ms，摘要填写通过。S02按上述电压区间填写通过。",
+              "title": "模拟测试报告",
+              "section": "P1-SUMMARY",
+              "version": "R1",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": 1,
+              "scope": "task:DEMO-TASK-001"
+            },
+            "REF003": {
+              "chunk_id": "SYN-NORM-RANGE",
+              "quote": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-00",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF004": {
+              "chunk_id": "SYN-NORM-RECOVERY",
+              "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-02",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF005": {
+              "chunk_id": "SYN-NORM-CONFLICT",
+              "quote": "摘要与记录冲突须同时引用，保留未决；只可作条件性比较，不静默取值或通过。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "模拟内部评审规范",
+              "section": "DEMO-06",
+              "version": "1.0",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            },
+            "REF006": {
+              "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+              "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+              "title": "SYN-SPEC-PB01-RevB",
+              "section": "SPEC-REC 恢复电压",
+              "version": "B",
+              "publication_status": "active",
+              "material_type": "synthetic",
+              "page": null,
+              "scope": "knowledge"
+            }
+          }
+        },
+        "usage": {
+          "prompt_tokens": 1244,
+          "completion_tokens": 142,
+          "total_tokens": 1386
+        },
+        "elapsed_ms": 2729
+      },
+      "audit": {
+        "generation_attempts": 1,
+        "generation_invocations": 1,
+        "embedding_attempts": 1,
+        "provider_attempts": [
+          {
+            "attempt": 1,
+            "canonical_payload_sha256": "f7ac81d38e80774b77d4197851e86759a6fe0529457c6dd114e25fedc126eb53",
+            "usage": {
+              "prompt_tokens": 1244,
+              "completion_tokens": 142,
+              "total_tokens": 1386
+            },
+            "raw_candidate_unvalidated": {
+              "status": "answered",
+              "claims": [
+                {
+                  "text": "报告将R04的5.31 V判定为通过，但根据任务RevB的要求，恢复电压应为4.75 V至5.25 V（含边界），5.31 V超出该范围，不应通过。",
+                  "is_inference": true,
+                  "reference_ids": [
+                    "REF004",
+                    "REF006"
+                  ]
+                },
+                {
+                  "text": "报告依据RevA填写通过，但任务清单已显式选择RevB，因此应以RevB为准，不得沿用RevA的判断标准。",
+                  "is_inference": true,
+                  "reference_ids": [
+                    "REF003",
+                    "REF004"
+                  ]
+                }
+              ],
+              "limitations": []
+            },
+            "source_anchor_additions": [
+              {
+                "claim_index": 0,
+                "reference_id": "REF001",
+                "chunk_id": "TR-P2-RECOVERY",
+                "reason": "record:R04"
+              }
+            ],
+            "accepted": true
+          }
+        ],
+        "returned_answer_after_contract_check": {
+          "status": "answered",
+          "claims": [
+            {
+              "text": "报告将R04的5.31 V判定为通过，但根据任务RevB的要求，恢复电压应为4.75 V至5.25 V（含边界），5.31 V超出该范围，不应通过。",
+              "is_inference": true,
+              "evidence": [
+                {
+                  "chunk_id": "SYN-NORM-RECOVERY",
+                  "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+                  "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "TR-P2-RECOVERY",
+                  "quote": "R03 A1恢复电压5.08 V；R04 C1恢复电压5.31 V。报告按RevA均填写通过。"
+                }
+              ]
+            },
+            {
+              "text": "报告依据RevA填写通过，但任务清单已显式选择RevB，因此应以RevB为准，不得沿用RevA的判断标准。",
+              "is_inference": true,
+              "evidence": [
+                {
+                  "chunk_id": "SYN-NORM-RANGE",
+                  "quote": "仅A1、C1的5 V输出角色；5项乘2端口，共10项。任务清单显式选RevB。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                },
+                {
+                  "chunk_id": "SYN-NORM-RECOVERY",
+                  "quote": "恢复电压按已选RevB的SPEC-REC，区间含边界，报告判定不能覆盖规格。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+                }
+              ]
+            }
+          ],
+          "limitations": []
+        },
+        "provider_generation_usage": {
+          "prompt_tokens": 1244,
+          "completion_tokens": 142,
+          "total_tokens": 1386
+        },
+        "prompt_sha256": "04902eb9c0f6508639a6b8a34832eecdca79450d730bb74d344a2aa38d19ba75",
+        "canonical_payload_sha256": "f7ac81d38e80774b77d4197851e86759a6fe0529457c6dd114e25fedc126eb53"
+      },
+      "wall_ms": 2729,
+      "semantic_review": "pending",
+      "final_human_decision": null
+    }
+  ],
+  "keyword_baseline_comparable_corpus": true,
+  "keyword_baseline_file": "retrieval-keyword-v0.4.json",
+  "finished_at": "2026-10-27T13:17:47.833567+00:00",
+  "cases": 6,
+  "required_groups": 15,
+  "hit_groups": 15,
+  "fully_hit_cases": 6,
+  "statuses": {
+    "answered": 6
+  },
+  "generation_attempts": 8,
+  "generation_invocations": 6,
+  "correction_requests": 2,
+  "corrected_generations": 2,
+  "rejected_candidates": 2,
+  "scope_template_cases": 0,
+  "record_template_cases": 0,
+  "source_anchor_additions": 6,
+  "embedding_query_attempts": 6,
+  "citation_verified_responses": 6,
+  "unauthorized_retrieval_cases": 0,
+  "recorded_generation_usage": {
+    "prompt_tokens": 10229,
+    "completion_tokens": 1164,
+    "total_tokens": 11393
+  }
+}

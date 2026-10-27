@@ -16,7 +16,7 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from app.knowledge_assistant.core import Assistant, Corpus, Principal
-from app.knowledge_assistant.providers import Settings, embeddings, generate
+from app.knowledge_assistant.providers import Settings, embeddings, generate, ProviderError
 
 
 def now():
@@ -27,8 +27,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--case", action="append", default=[])
+    parser.add_argument("--repeat",type=int,default=1)
     parser.add_argument("--keyword-baseline", type=Path, default=ROOT/"eval-results/retrieval-baseline-v0.1.json")
     args = parser.parse_args()
+    if not 1 <= args.repeat <= 5:
+        parser.error("重复次数需为1至5。")
     if args.output.exists():
         parser.error("结果文件已存在；请使用新文件名保留原始运行记录。")
     source = ROOT / "data/bootstrap-v0.1/evaluation/questions.jsonl"
@@ -36,6 +39,8 @@ def main():
     if set(args.case) - {c["case_id"] for c in cases}:
         parser.error("包含未知用例ID。")
     cases = [c for c in cases if not args.case or c["case_id"] in args.case]
+    unique_cases=len(cases)
+    cases=[{**case,"run_index":run+1} for run in range(args.repeat) for case in cases]
     corpus = Corpus()
     settings = Settings(ROOT / ".local/assistant/model.json")
     public = settings.public()
@@ -44,9 +49,17 @@ def main():
     audit = {}
 
     def audited_generate(config, question, evidence, scope):
-        audit["generation_attempts"] += 1
-        value, usage = generate(config, question, evidence, scope)
-        audit["raw_candidate_unvalidated"] = value
+        audit["generation_invocations"] += 1
+        try:
+            value, usage = generate(config, question, evidence, scope)
+        except ProviderError as exc:
+            audit["provider_attempts"] = exc.audit.get("attempts",[])
+            audit["generation_attempts"] += len(audit["provider_attempts"]) or 1
+            audit["provider_generation_usage"] = exc.audit.get("usage",{})
+            raise
+        audit["provider_attempts"] = usage.get("_provider_attempts",[])
+        audit["generation_attempts"] += len(audit["provider_attempts"]) or 1
+        audit["returned_answer_after_contract_check"] = value
         audit["provider_generation_usage"] = {k: v for k, v in usage.items() if not k.startswith("_")}
         audit["prompt_sha256"] = usage.get("_prompt_sha256")
         audit["canonical_payload_sha256"] = usage.get("_canonical_payload_sha256")
@@ -64,9 +77,9 @@ def main():
         snapshot=corpus.snapshot, corpus_digest=corpus.digest,
         dataset_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
         runner_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-        application_sha256={name:hashlib.sha256((ROOT/"app/knowledge_assistant"/name).read_bytes()).hexdigest() for name in ["core.py","providers.py"]},
+        application_sha256={name:hashlib.sha256((ROOT/"app/knowledge_assistant"/name).read_bytes()).hexdigest() for name in ["core.py","providers.py","contracts.py"]},
         model={k: public[k] for k in ["provider", "model", "embedding_model"]},
-        split="dev_author_draft_expert_pending", top_k=6,
+        split="dev_author_draft_expert_pending", top_k=6,repeat=args.repeat,unique_cases=unique_cases,
         semantic_scoring="not_automated_expert_review_pending", business_effect="not_measured",
         index_build_usage="not_included", embedding_token_usage="not_collected", rows=[])
     baseline_path = args.keyword_baseline
@@ -78,7 +91,7 @@ def main():
     args.output.parent.mkdir(parents=True, exist_ok=True)
     for case in cases:
         audit.clear()
-        audit.update(generation_attempts=0, embedding_attempts=0)
+        audit.update(generation_attempts=0, generation_invocations=0, embedding_attempts=0)
         principal = Principal("live-eval-" + case["user_role"], case["user_role"], tuple(case["authorized_task_ids"]))
         started = time.monotonic()
         result = assistant.ask(case["question"], principal, mode="answer",
@@ -87,7 +100,7 @@ def main():
         groups = case["required_evidence_groups"]
         found = [bool(set(g) & actual) for g in groups]
         expected = {c["chunk_id"] for c in corpus.candidates(principal, case["include_archived"], case["task_id"])}
-        row = dict(case_id=case["case_id"], category=case["category"], question=case["question"],
+        row = dict(case_id=case["case_id"], run_index=case["run_index"],category=case["category"], question=case["question"],
             principal=dict(role=principal.role, task_ids=list(principal.task_ids)),
             required_groups=len(groups), hit_groups=sum(found), all_groups_hit=all(found),
             missing_groups=[g for g, ok in zip(groups, found) if not ok],
@@ -97,7 +110,7 @@ def main():
             semantic_review="pending", final_human_decision=None)
         output["rows"].append(row)
         args.output.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n")
-        print(json.dumps(dict(case_id=row["case_id"], status=result["status"],
+        print(json.dumps(dict(case_id=row["case_id"], run_index=row["run_index"],status=result["status"],
             hit_groups=row["hit_groups"], required_groups=row["required_groups"],
             citation_check=result["trace"]["citation_check"], elapsed_ms=result["elapsed_ms"]), ensure_ascii=False), flush=True)
     rows = output["rows"]
@@ -109,6 +122,13 @@ def main():
         hit_groups=sum(r["hit_groups"] for r in rows), fully_hit_cases=sum(r["all_groups_hit"] for r in rows),
         statuses=dict(Counter(r["result"]["status"] for r in rows)),
         generation_attempts=sum(r["audit"]["generation_attempts"] for r in rows),
+        generation_invocations=sum(r["audit"]["generation_invocations"] for r in rows),
+        correction_requests=sum(max(0,r["audit"]["generation_attempts"]-r["audit"]["generation_invocations"]) for r in rows),
+        corrected_generations=sum(r["audit"]["generation_attempts"]>1 and r["result"]["trace"]["generation"]=="completed" for r in rows),
+        rejected_candidates=sum(not attempt.get("accepted",False) for r in rows for attempt in r["audit"].get("provider_attempts",[])),
+        scope_template_cases=sum(r["result"]["trace"]["generation"]=="not_requested_scope_template" for r in rows),
+        record_template_cases=sum(r["result"]["trace"]["generation"]=="not_requested_record_template" for r in rows),
+        source_anchor_additions=sum(len(attempt.get("source_anchor_additions",[])) for r in rows for attempt in r["audit"].get("provider_attempts",[])),
         embedding_query_attempts=sum(r["audit"]["embedding_attempts"] for r in rows),
         citation_verified_responses=sum(r["result"]["trace"]["citation_check"] == "ids_and_quotes_verified" for r in rows),
         unauthorized_retrieval_cases=sum(bool(r["unauthorized_retrieved_ids"]) for r in rows),

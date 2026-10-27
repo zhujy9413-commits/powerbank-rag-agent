@@ -15,7 +15,8 @@ import time
 import unicodedata
 from uuid import uuid4
 
-from .providers import embeddings, generate, ProviderError
+from .providers import embeddings, generate, ProviderError, PROMPT_VERSION
+from .contracts import validate_answer, scope_answer, response_record_answer
 
 ROOT = Path(__file__).resolve().parents[2]
 BASE = ROOT / "data/bootstrap-v0.1"
@@ -119,33 +120,6 @@ def rank_bm25(question, candidates):
         if score > 0:
             scored.append((c,score))
     return sorted(scored,key=lambda row:(-row[1],row[0]["chunk_id"]))
-
-
-def validate_answer(value, evidence):
-    if not isinstance(value, dict) or set(value) != {"status","claims","limitations"}:
-        raise ProviderError("回答结构校验失败，已保留检索结果。")
-    if value["status"] not in {"answered","partial","insufficient_evidence","conflict"}:
-        raise ProviderError("回答状态无效。")
-    claims = value["claims"]
-    if not isinstance(claims,list) or len(claims)>12 or (not claims and value["status"] in {"answered","conflict"}):
-        raise ProviderError("回答缺少可核对结论。")
-    if not isinstance(value["limitations"],list) or len(value["limitations"])>12 or any(not isinstance(x,str) or len(x)>1000 for x in value["limitations"]):
-        raise ProviderError("回答的限制说明格式无效。")
-    if not claims and not value["limitations"]:
-        raise ProviderError("回答为空，未作为正式结果展示。")
-    by_id = {c["chunk_id"]: c for c in evidence}
-    for claim in claims:
-        if not isinstance(claim,dict) or set(claim)!={"text","is_inference","evidence"} or not isinstance(claim["text"],str) or not 1<=len(claim["text"])<=1200 or type(claim["is_inference"]) is not bool:
-            raise ProviderError("回答结论格式无效。")
-        refs=claim["evidence"]
-        if not isinstance(refs,list) or not 1<=len(refs)<=8:
-            raise ProviderError("回答结论缺少引用。")
-        for ref in refs:
-            if not isinstance(ref,dict) or set(ref)!={"chunk_id","quote"} or ref["chunk_id"] not in by_id or not isinstance(ref["quote"],str) or not 4<=len(ref["quote"])<=600:
-                raise ProviderError("引用不在本次授权证据范围内，回答未通过校验。")
-            if compact(ref["quote"]) not in compact(by_id[ref["chunk_id"]]["text"]):
-                raise ProviderError("引用短句与来源不符，回答未通过校验。")
-    return value
 
 
 class Assistant:
@@ -264,7 +238,7 @@ class Assistant:
             snapshot=self.corpus.snapshot,corpus_digest=self.corpus.digest,
             scope=dict(include_archived=include_archived,task_id=task_id),
             trace=dict(retrieval_method=method,retrieved_chunk_ids=[c["chunk_id"] for c in evidence],
-                       generation="not_requested",prompt_version="grounded-qa-v0.3",citation_check="not_run",semantic_review="pending"),usage={})
+                       generation="not_requested",prompt_version=PROMPT_VERSION,citation_check="not_run",semantic_review="pending"),usage={})
         if warning:
             result["limitations"].append("向量查询失败，已使用关键词检索。"+warning)
         guard=None
@@ -282,6 +256,8 @@ class Assistant:
             guard="当前未找到该标准的可用资料，不能用其他标准的内容替代。"
         elif (standards(question) or any(t in question for t in ["国标","国家标准"])) and any(t in question for t in ["条款","限值","阈值","准确要求"]):
             guard="当前标准资料仅为题录或公告摘要，未收录完整技术条款，无法确认条款原文与数值限值。"
+        scoped = scope_answer(question,evidence) if mode == "answer" and not guard else None
+        recorded = response_record_answer(question,evidence) if mode == "answer" and not guard and not scoped else None
         if guard:
             if result["status"] not in {"needs_scope"}:
                 result["status"]="insufficient_evidence"
@@ -298,6 +274,18 @@ class Assistant:
                 if result["claims"]:
                     result["status"]="partial"
                     result["trace"]["citation_check"]="ids_and_quotes_verified"
+        elif scoped:
+            answer,facts=scoped
+            result.update(status=answer["status"],claims=answer["claims"])
+            result["limitations"].extend(answer["limitations"])
+            result["trace"].update(generation="not_requested_scope_template",citation_check="ids_and_quotes_verified",
+                scope_check="template_from_explicit_scope",scope_facts=facts)
+        elif recorded:
+            answer,facts=recorded
+            result.update(status=answer["status"],claims=answer["claims"])
+            result["limitations"].extend(answer["limitations"])
+            result["trace"].update(generation="not_requested_record_template",citation_check="ids_and_quotes_verified",
+                record_check="matched_by_document_port_and_field",record_facts=facts)
         elif mode=="answer":
             config=self.settings.snapshot()
             if not config:
@@ -307,17 +295,27 @@ class Assistant:
             else:
                 result["trace"]["provider"]=config["provider"]
                 result["trace"]["model"]=config["model"]
+                result["trace"]["citation_protocol"]="request_local_catalog_v1"
                 try:
                     raw,usage=self.generator(config,question,evidence,result["scope"])
-                    answer=validate_answer(raw,evidence)
-                    result.update(status=answer["status"],claims=answer["claims"])
-                    result["limitations"].extend(answer["limitations"])
                     result["trace"]["prompt_sha256"]=usage.pop("_prompt_sha256",None)
                     result["trace"]["canonical_payload_sha256"]=usage.pop("_canonical_payload_sha256",None)
                     result["trace"]["unit_calculations"]=usage.pop("_unit_calculations",[])
+                    result["trace"]["provider_attempts"]=usage.pop("_provider_attempts",[])
+                    result["trace"]["reference_catalog"]=usage.pop("_reference_catalog",{})
                     result["usage"]=usage
+                    answer=validate_answer(raw,evidence)
+                    result.update(status=answer["status"],claims=answer["claims"])
+                    result["limitations"].extend(answer["limitations"])
                     result["trace"].update(generation="completed",citation_check="ids_and_quotes_verified")
                 except ProviderError as exc:
+                    if exc.audit:
+                        result["trace"]["provider_attempts"]=exc.audit.get("attempts",[])
+                        result["trace"]["reference_catalog"]=exc.audit.get("reference_catalog",{})
+                        result["trace"]["prompt_sha256"]=exc.audit.get("prompt_sha256")
+                        if exc.audit.get("attempts"):
+                            result["trace"]["canonical_payload_sha256"]=exc.audit["attempts"][-1]["canonical_payload_sha256"]
+                        result["usage"]=exc.audit.get("usage",{})
                     result["status"]="generation_failed"
                     result["limitations"].append(str(exc))
                     result["trace"]["generation"]="failed"

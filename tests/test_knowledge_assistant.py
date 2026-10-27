@@ -100,9 +100,10 @@ class CoreTests(unittest.TestCase):
             captured.update(json.loads(payload["messages"][1]["content"]))
             return {"choices":[{"finish_reason":"stop","message":{"content":json.dumps({"status":"insufficient_evidence","claims":[],"limitations":["测试返回"]})}}]}
         _,usage=generate(dict(provider="bailian",model="qwen-flash"),"0.68 s如何换算？",[self.corpus.by_id["SYN-NORM-RESPONSE"]],{},fake)
-        self.assertEqual(captured["unit_calculations"][0]["formula"],"0.68 s = 680 ms")
+        self.assertEqual(captured["arithmetic_notes"][0],"0.68 s = 680 ms")
         self.assertNotIn("expected_points",captured)
-        self.assertEqual(usage["_unit_calculations"],captured["unit_calculations"])
+        self.assertEqual(usage["_unit_calculations"][0]["input_sources"],["question"])
+        self.assertNotIn("question",json.dumps(captured["reference_catalog"]))
 
     def test_report_recovery_fetches_current_basis_and_retains_conflicting_record(self):
         ranked=[(self.corpus.by_id[cid],10-i) for i,cid in enumerate([

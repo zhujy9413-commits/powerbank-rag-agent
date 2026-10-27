@@ -52,8 +52,9 @@ Python 3.9及以上，无Web框架依赖。macOS也可双击`start-assistant.com
 - [关键词检索开发集结果](eval-results/retrieval-baseline-v0.1.json)
 - [工作流与验证方法补充](docs/shared/workflow-verification-notes.md)
 - [百炼真实接口验证与问题记录](docs/internal-assistant/live-validation-v0.1.md)
+- [角色范围与引用修复回归](docs/internal-assistant/role-citation-regression-v0.1.md)
 
-25项自动测试通过。最后一轮24题混合检索命中41个预期证据组，但仍有错误引用被拦截、角色混淆等语义问题。结果只来自作者草拟开发集，不能当成回答准确率或业务验收通过；专业复核与真实业务收益尚未验证。
+39项自动测试通过。已修复已识别的输入输出混淆、摘要端口错配和引用编号问题；最后24题混合检索命中41个必要证据组，18个生成请求均通过结构和引文校验，其中1个经过一次校正。另有3题由程序回答，3题因缺依据或范围停止生成。结果来自作者草拟开发集，不代表回答准确率或专业业务验收通过。
 
 ## 飞书分类入口
 
