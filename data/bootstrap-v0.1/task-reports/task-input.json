@@ -1,0 +1,39 @@
+{
+  "task_id": "DEMO-TASK-001",
+  "input_revision": 1,
+  "warning": "模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+  "model": "PB-DEMO-01",
+  "market": "CN-mainland",
+  "review_date": "2024-06-30",
+  "received_at": "2026-10-26",
+  "report_document_id": "SYN-TR-001-R1",
+  "spec_document_id": "SYN-SPEC-PB01-RevB",
+  "internal_norm": "SYN-QA-SC-1.0",
+  "rule_set_id": "DEMO-SC-v0.1",
+  "purpose": "software_fixture_review",
+  "real_compliance_enabled": false,
+  "confirmed_by": "fixture_author",
+  "expert_review": "pending",
+  "task_allowed_roles": [
+    "engineer"
+  ],
+  "configured_scope": [
+    {
+      "port": "A1",
+      "role": "output",
+      "voltage_v": 5
+    },
+    {
+      "port": "C1",
+      "role": "output",
+      "voltage_v": 5
+    }
+  ],
+  "unconfigured_scope": [
+    "充电输入角色",
+    "其他电压档",
+    "多口组合",
+    "其他保护功能"
+  ],
+  "knowledge_snapshot": "BOOTSTRAP-20261026-01"
+}

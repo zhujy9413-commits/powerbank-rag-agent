@@ -46,3 +46,24 @@
 | `docs/internal-assistant/PRD.md` | `87460ae658ff6750df64cb1a59eb125314abe33cb0e32caef58350376db32661` |
 | `docs/internal-assistant/RAG-and-knowledge-base.md` | `2e859a9b8317221f667e88dbbf6ed237bd0d2de875acb8bd31d5dc1dbeeffc2d` |
 | `docs/shared/product-overview-mvp.md` | `ace14564d0bb3e6770c0af7c5645daea156508fb0ddb6b30c3215d4ef7c037f6` |
+
+## 2026-10-27 首批样本包 v0.1
+
+新增内容使用5份官方资料摘要和明确标注的模拟资料。未使用公司原始资料；公开资料不含标准全文。24题问答开发集与12项报告参考标注均由作者拟定，专业复核待完成，未运行模型评测。
+
+| 分类 | GitHub 维护文件 | 飞书在线文档或原件 |
+| --- | --- | --- |
+| 共用资料 | [资料清单与公开来源](shared/bootstrap-materials.md) | [01-首批知识样本与资料清单](https://my.feishu.cn/wiki/RGJWwDAjji4laIkaBNUcroAlndd) |
+| AI Work | [模拟规格、报告与参考标注](ai-work/sample-pack.md) | [04-模拟报告与逐项标注](https://my.feishu.cn/wiki/KqKQwhIzsi2KQukyfh2czZAvnZd) |
+| AI Work | [四页模拟PDF](../output/pdf/SYN-TR-001-R1.pdf) | [SYN-TR-001-R1.pdf](https://my.feishu.cn/wiki/CdWGwp7NviGQQgkiJCgc5YOhnab) |
+| 内部智能客服 | [知识样本与问答开发集](internal-assistant/sample-pack.md) | [04-知识样本与问答评测集](https://my.feishu.cn/wiki/AATmwtAHsiJ8c3kvQIpcUGv6n7c) |
+
+可导入的JSON/JSONL及完整来源登记保存在[样本包](../data/bootstrap-v0.1/README.md)。飞书在线阅读版保留对应GitHub维护源，导入文档与维护源的正文一致；并非自动双向同步。
+
+| 在线阅读版维护源 | 本次导入正文 SHA-256 |
+| --- | --- |
+| `docs/shared/bootstrap-materials.md` | `5487a4ed45a04548ebc8cc6b54b35256d67499794398625beea0e9b9bb868990` |
+| `docs/ai-work/sample-pack.md` | `87e719c20db4f3da1627ff339158a29dfd1fcb37ac350c08dc47de40765b6629` |
+| `docs/internal-assistant/sample-pack.md` | `1a90d83bb5deb1843f086ccedb349e21b772d5fdc931e73b370f9bb4320d43cc` |
+
+本地数据校验已通过，检查范围包括24份样本文件校验值、证据引用、角色与任务范围、版本状态、10项检查覆盖、数值换算、4页PDF文字及本地阅读链接；四页PDF已逐页渲染检查。校验不代表RAG效果或专业验收。

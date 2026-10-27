@@ -1,0 +1,72 @@
+[
+  {
+    "source_id": "PUB-01",
+    "title": "GB/T 35590-2017 题录",
+    "publisher": "全国标准信息公共服务平台",
+    "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=B687rwGxs5k%3D&mode=p",
+    "published_at": "2017-12-29",
+    "effective_from": "2018-07-01",
+    "facts": "题录显示为推荐性国家标准，名称为《信息技术 便携式数字设备用移动电源通用规范》。核验日页面显示现行。",
+    "boundary": "本包只收题录摘要，未收录全文，不能据此生成短路试验阈值或完整检查清单。",
+    "verified_at": "2026-10-26",
+    "full_text_included": false,
+    "ingestion_rights": "仅本包原创元数据摘要与链接；全文使用权限未确认",
+    "clause_rules_enabled": false
+  },
+  {
+    "source_id": "PUB-02",
+    "title": "GB 4943.1-2022 题录",
+    "publisher": "国家标准全文公开系统",
+    "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=862145EBF14F5CC3771FC64CE94A48DF",
+    "published_at": "2022-07-19",
+    "effective_from": "2023-08-01",
+    "facts": "名称为《音视频、信息技术和通信技术设备 第1部分：安全要求》。题录给出实施日期；页面因采标版权不提供文本阅读服务。",
+    "boundary": "不能从题录补写条款号、限值或声称已取得全文使用权；实际适用性需结合产品与认证路径确认。",
+    "verified_at": "2026-10-26",
+    "full_text_included": false,
+    "ingestion_rights": "仅本包原创元数据摘要与链接；全文使用权限未确认",
+    "clause_rules_enabled": false
+  },
+  {
+    "source_id": "PUB-03",
+    "title": "GB 31241-2022 题录",
+    "publisher": "国家标准全文公开系统",
+    "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=F104E2B65DDB847B6FB1F9BFAAE8405E",
+    "published_at": "2022-12-29",
+    "effective_from": "2024-01-01",
+    "facts": "名称为《便携式电子产品用锂离子电池和电池组 安全技术规范》，对象是锂离子电池和电池组。",
+    "boundary": "电池或电池组条款不能未经适用性映射就当作充电宝整机端口的判定依据。未收录全文。",
+    "verified_at": "2026-10-26",
+    "full_text_included": false,
+    "ingestion_rights": "仅本包原创元数据摘要与链接；全文使用权限未确认",
+    "clause_rules_enabled": false
+  },
+  {
+    "source_id": "PUB-04",
+    "title": "市场监管总局2023年第10号公告",
+    "publisher": "国家认监委网站",
+    "url": "https://www.cnca.gov.cn/zwxx/gg/2023/art/2023/art_9b1f71e55d06483d9cbdd35e791a4e60.html",
+    "published_at": "2023-03-16",
+    "effective_from": null,
+    "facts": "公告涉及移动电源等产品的CCC管理。2023-08-01起受理委托；2024-08-01起，未获证并标注认证标志的相关产品不得出厂、销售、进口或用于其他经营活动。",
+    "boundary": "这是管理时间节点，不是短路试验判定条款；单份研发报告不能证明已获CCC认证。",
+    "verified_at": "2026-10-26",
+    "full_text_included": false,
+    "ingestion_rights": "仅本包原创元数据摘要与链接；全文使用权限未确认",
+    "clause_rules_enabled": false
+  },
+  {
+    "source_id": "PUB-05",
+    "title": "国家认监委2026年第7号公告",
+    "publisher": "国家认监委",
+    "url": "https://www.cnca.gov.cn/zwxx/gg/2026/art/2026/art_f87e199f351c46e59e392a87570d5a74.html",
+    "published_at": "2026-05-31",
+    "effective_from": "2027-04-01",
+    "facts": "公告明确GB 47372-2026将于2027-04-01实施，并规定新旧认证实施规则的过渡安排。2027-04-01起按新版规则开展CCC活动。",
+    "boundary": "发布日至2027-03-31可按公告规定选择旧版或新版规则；不自动追溯用于2024模拟任务，也不能说新标准在过渡期绝不能选用。",
+    "verified_at": "2026-10-26",
+    "full_text_included": false,
+    "ingestion_rights": "仅本包原创元数据摘要与链接；全文使用权限未确认",
+    "clause_rules_enabled": false
+  }
+]

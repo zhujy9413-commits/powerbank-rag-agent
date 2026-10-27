@@ -5,6 +5,7 @@
 - [MVP 范围](MVP.md)
 - [完整 PRD](PRD.md)
 - [完整知识库与 RAG 方案](RAG-and-knowledge-base.md)
+- [首批知识样本与问答评测集](sample-pack.md)
 
 状态：需求设计 v1.0，未开发、未实测。
 
@@ -13,3 +14,4 @@
 - [MVP 范围](https://my.feishu.cn/wiki/BXA1weYkFiBxJkkLlxwc5MaFnWf)
 - [完整 PRD](https://my.feishu.cn/wiki/YTAXwN0qBirjsKkTiMfcWe56nPc)
 - [知识库与 RAG 方案](https://my.feishu.cn/wiki/KHnnwa5J8i9yZzkI4gfcvDEQntf)
+- [知识样本与问答评测集](https://my.feishu.cn/wiki/AATmwtAHsiJ8c3kvQIpcUGv6n7c)

@@ -1,0 +1,106 @@
+{
+  "rule_set_id": "DEMO-SC-v0.1",
+  "warning": "模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+  "real_compliance_enabled": false,
+  "applicable": {
+    "model": "PB-DEMO-01",
+    "market": "CN-mainland",
+    "review_date": "2024-06-30",
+    "role": "output",
+    "voltage_v": 5
+  },
+  "rules": [
+    {
+      "rule_id": "D-SC-01",
+      "name": "保护响应记录",
+      "field": "response_ms",
+      "operator": "lte",
+      "limit": 500,
+      "unit": "ms",
+      "clause": "DEMO-01",
+      "basis_document": "SYN-QA-SC-1.0",
+      "ports": [
+        "A1",
+        "C1"
+      ],
+      "approval_state": "fixture_enabled_only",
+      "real_standard_clause": null,
+      "usage": "demo_only",
+      "version": "0.1"
+    },
+    {
+      "rule_id": "D-SC-02",
+      "name": "恢复电压记录",
+      "field": "recovery_v",
+      "operator": "closed_range",
+      "lower": 4.75,
+      "upper": 5.25,
+      "unit": "V",
+      "clause": "SPEC-REC",
+      "basis_document": "SYN-SPEC-PB01-RevB",
+      "ports": [
+        "A1",
+        "C1"
+      ],
+      "approval_state": "fixture_enabled_only",
+      "real_standard_clause": null,
+      "usage": "demo_only",
+      "version": "0.1"
+    },
+    {
+      "rule_id": "D-SC-03",
+      "name": "壳温变化记录",
+      "field": "rise_k",
+      "operator": "lte",
+      "limit": 12,
+      "unit": "K",
+      "clause": "DEMO-03",
+      "basis_document": "SYN-QA-SC-1.0",
+      "ports": [
+        "A1",
+        "C1"
+      ],
+      "approval_state": "fixture_enabled_only",
+      "real_standard_clause": null,
+      "usage": "demo_only",
+      "version": "0.1"
+    },
+    {
+      "rule_id": "D-SC-04",
+      "name": "外观观察记录",
+      "field": "appearance",
+      "operator": "all_explicit_false",
+      "fields": [
+        "fire",
+        "explosion",
+        "leakage"
+      ],
+      "clause": "DEMO-04",
+      "basis_document": "SYN-QA-SC-1.0",
+      "ports": [
+        "A1",
+        "C1"
+      ],
+      "approval_state": "fixture_enabled_only",
+      "real_standard_clause": null,
+      "usage": "demo_only",
+      "version": "0.1"
+    },
+    {
+      "rule_id": "D-SC-05",
+      "name": "恢复方式记录",
+      "field": "recovery_method",
+      "operator": "nonempty",
+      "clause": "DEMO-05",
+      "basis_document": "SYN-QA-SC-1.0",
+      "ports": [
+        "A1",
+        "C1"
+      ],
+      "approval_state": "fixture_enabled_only",
+      "real_standard_clause": null,
+      "usage": "demo_only",
+      "version": "0.1"
+    }
+  ]
+}

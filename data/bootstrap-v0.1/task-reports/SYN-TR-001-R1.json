@@ -1,0 +1,95 @@
+{
+  "document_id": "SYN-TR-001-R1",
+  "material_type": "synthetic",
+  "warning": "模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。",
+  "report_revision": "R1",
+  "review_date": "2024-06-30",
+  "created_at": "2026-10-26",
+  "model": "PB-DEMO-01",
+  "task_id": "DEMO-TASK-001",
+  "pdf_path": "output/pdf/SYN-TR-001-R1.pdf",
+  "report_claimed_spec": "SYN-SPEC-PB01-RevA",
+  "summary_c1_response_ms": 80,
+  "records": [
+    {
+      "record_id": "R01",
+      "port": "A1",
+      "field": "response_ms",
+      "raw": "80 ms",
+      "value": 80,
+      "unit": "ms",
+      "page": 2
+    },
+    {
+      "record_id": "R02",
+      "port": "C1",
+      "field": "response_ms",
+      "raw": "0.68 s",
+      "value": 0.68,
+      "unit": "s",
+      "page": 2
+    },
+    {
+      "record_id": "R03",
+      "port": "A1",
+      "field": "recovery_v",
+      "raw": "5.08 V",
+      "value": 5.08,
+      "unit": "V",
+      "page": 2
+    },
+    {
+      "record_id": "R04",
+      "port": "C1",
+      "field": "recovery_v",
+      "raw": "5.31 V",
+      "value": 5.31,
+      "unit": "V",
+      "page": 2
+    },
+    {
+      "record_id": "R05",
+      "port": "A1",
+      "field": "rise_k",
+      "raw": "起值25.0摄氏度；末值34.0摄氏度",
+      "initial": 25,
+      "final": 34,
+      "unit": "K",
+      "page": 3
+    },
+    {
+      "record_id": "R06",
+      "port": "C1",
+      "field": "rise_k",
+      "raw": "起值25.0摄氏度；末值3?.0摄氏度（关键位无法确认）",
+      "initial": 25,
+      "final": null,
+      "unit": "K",
+      "page": 3
+    },
+    {
+      "record_id": "R07",
+      "port": "A1",
+      "field": "appearance",
+      "raw": "无起火、无爆炸、无漏液",
+      "value": {
+        "fire": false,
+        "explosion": false,
+        "leakage": false
+      },
+      "page": 3
+    },
+    {
+      "record_id": "R08",
+      "port": "A1",
+      "field": "recovery_method",
+      "raw": "记录为断开后重新连接",
+      "value": "断开后重新连接",
+      "page": 3
+    }
+  ],
+  "missing_records": [
+    "C1.appearance",
+    "C1.recovery_method"
+  ]
+}
