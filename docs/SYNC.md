@@ -303,3 +303,26 @@ G01已在受控模拟范围内修复。当前权限保留时可读取历史任�
 - 机器协议：`717d0e74760c99c311ddd4c84d323d09d62ac09b4c5d5301d51f3e398f56217c`。
 - 48项机器清单：`1840cdf07f9cc62abe7dcc14787db10fb3c8d51256f8cbdd0709deef78c5a646`。
 - 方案一致性校验：`73e75c809afcb546cce643823f0377e6f7cbbe4fc6e4af9720d3067f3c33cff4`。
+
+## 2026-10-29 AI Work RAG开发材料 v0.1
+
+按既定范围完成16个开发场景：12份两页模拟报告、4份离线权限/异常夹具，参考标注覆盖120个固定检查单元及4个一致性查询。每份报告含20个有权限的任务附件干扰块，共240块；单份索引39至41块，总计481块。117个核心单元有记录，3个缺原始记录，缺证没有伪造引文。32个留出场景尚未制作，候选链路未冻结，应用行为测试、RAG组运行与模型请求均为0。
+
+| 交付物 | GitHub维护源 | 飞书AI Work目录 |
+| --- | --- | --- |
+| 开发样本包说明 | [开发场景及使用边界](ai-work/rag-gain-dev-sample-pack-v0.1.md) | [15 AI Work RAG 开发样本包](https://my.feishu.cn/wiki/Qv6twselVij87akhUquc3ODhnCd) |
+| 完整参考标注 | [要求与报告必要组、逐字引文及缺证状态](ai-work/rag-gain-dev-reference-v0.1.md) | [16 AI Work RAG 开发参考标注](https://my.feishu.cn/wiki/P2WpwS5eTiuo1LkAJc3c3w0BnZe) |
+| 材料核验报告 | [核验范围、修正与R02口径问题](ai-work/rag-gain-dev-material-audit-v0.1.md) | [17 AI Work RAG 开发材料核验报告](https://my.feishu.cn/wiki/SGC1wDubRi8CCDktyFYcL4MVn0c) |
+| 完整ZIP | [118文件开发包](../output/packages/ai-work-rag-gain-dev-v0.1.zip) | [AI Work下完整ZIP](https://my.feishu.cn/wiki/QTrAwLDt9iAmUokXwJEcTYVbnib) |
+
+15至17均原生Markdown导入并刷新读回，位置6,4,0,15至17。共18张原生表格；16的14张表及147条去重后的预期原文/场景标记全部读回，三份均读到正文结束标记，并查看了实际排版。ZIP上传面板确认2.32 MB / 2.32 MB，随后原生移动至AI Work，刷新确认位置6,4,0,18。云端未再下载逐字节验哈希；源包哈希与封包校验另列。AI Work入口在原空白段落追加三份文档、ZIP和R02状态，等待保存后刷新读回。13/14在线正文及原48项机器清单保留方案制定时快照，当前开发状态以15至17和开发内容清单为准。
+
+最终材料核验[1693/1693项通过](../eval-results/rag-gain-dev-material-validation-v0.2.json)，两种PDF提取引擎对账145个报告片段、96个要求实例，24页全部渲染查看。原索引部分要求为摘要，开发补充语料改取原文章节，不修改旧应用索引；单位表头初稿的两行范围已修正并新增顺序断言。仅核验材料完整性与对应关系，不是检索、生成或专业验收。4份离线夹具仅完成契约核验，构造种子不冒充实际A0输出。
+
+对R02做[静态可达性预检](../eval-results/rag-gain-dev-metric-readiness-v0.1.json)：按当前必要组作为相关性标签，245个正例查询与来源组合的精度上限20%至60%，原固定5槽分母使80%门槛不可达。报告提出冻结独立种子相关性标签、按实际返回不同种子数计精度、继续用R01/R03约束完整性的建议。建议尚未应用，原验收标准不改，正式效果计分前需先明确口径。
+
+最终包[216/216项校验通过](../eval-results/rag-gain-dev-package-validation-v0.3.json)，118个文件含原文、样本、附件、JSON标注、夹具、核验记录、联系图及离线验包脚本。最终ZIP SHA-256为`34220560d3fcd9b1f8299308204703e91a0a9c4b96c992639259eee1f6726245`，大小2435451字节。早期材料v0.1和封包v0.1/v0.2记录保留为本地制作中间证据，当前分别以材料v0.2及封包v0.3为准；它们不属于应用首次效果成绩。
+
+88份既有冻结资产、72份已有结果文件及7个锁定来源文件哈希一致。应用、用户任务、数据库、模型配置与密钥未改动。GitHub再次核实PRIVATE。完整状态见[交付摘要](../eval-results/rag-gain-dev-delivery-v0.1.json)、[飞书同步读回](../eval-results/rag-gain-dev-feishu-v0.1.json)与[开发内容清单](../data/ai-work-rag-gain-dev-v0.1/material-manifest.json)。
+
+飞书悬停菜单多次未展开时均先读取状态，没有重复上传；参考标注上传成功但侧栏未更新，刷新核对了原文档，未重建。ZIP通过稳定的文档库入口上传一次，再移动一次。最后的只读导航被浏览器任务中断，核对原任务已结束及页面实际落点后，在新任务中读取并保存入口；未重放未知写入。最终浏览器任务正常结束，保留原标签，closedTabIds为空。

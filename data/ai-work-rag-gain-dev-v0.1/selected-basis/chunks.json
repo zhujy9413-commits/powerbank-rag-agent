@@ -1,0 +1,146 @@
+[
+  {
+    "chunk_id": "SYN-NORM-RANGE",
+    "text": "以任务清单显式选定的规格RevB为准，不按文件名猜最新版。模拟任务日期2024-06-30，收件时间2026-10-26。\n仅A1、C1的5 V输出角色。每个端口独立核对下列5项，共10项。\n本文件只规定如何核对已有记录，不提供短路实验操作步骤。",
+    "namespace": "requirement",
+    "source_role": "selected_requirement",
+    "source_path": "data/bootstrap-v0.1/knowledge/synthetic/SYN-QA-SC-1.0.md",
+    "page": null,
+    "section": "DEMO-00",
+    "version": "1.0",
+    "publication_status": "active",
+    "material_type": "synthetic",
+    "allowed_roles": [
+      "engineer"
+    ],
+    "task_id": null,
+    "conditions": null,
+    "context_ids": []
+  },
+  {
+    "chunk_id": "SYN-NORM-RESPONSE",
+    "text": "保护响应时间应有明确数值、单位与记录ID，模拟阈值不大于500 ms。1 s = 1000 ms，不能直接比较0.68和500。",
+    "namespace": "requirement",
+    "source_role": "selected_requirement",
+    "source_path": "data/bootstrap-v0.1/knowledge/synthetic/SYN-QA-SC-1.0.md",
+    "page": null,
+    "section": "DEMO-01",
+    "version": "1.0",
+    "publication_status": "active",
+    "material_type": "synthetic",
+    "allowed_roles": [
+      "engineer"
+    ],
+    "task_id": null,
+    "conditions": null,
+    "context_ids": []
+  },
+  {
+    "chunk_id": "SYN-NORM-RECOVERY",
+    "text": "恢复电压依据已选规格SYN-SPEC-PB01-RevB的SPEC-REC，区间含两端。报告自带判定不能覆盖规格要求。",
+    "namespace": "requirement",
+    "source_role": "selected_requirement",
+    "source_path": "data/bootstrap-v0.1/knowledge/synthetic/SYN-QA-SC-1.0.md",
+    "page": null,
+    "section": "DEMO-02",
+    "version": "1.0",
+    "publication_status": "active",
+    "material_type": "synthetic",
+    "allowed_roles": [
+      "engineer"
+    ],
+    "task_id": null,
+    "conditions": null,
+    "context_ids": []
+  },
+  {
+    "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+    "text": "模拟条款 SPEC-REC：保护后恢复电压范围 4.75 V 至 5.25 V，含边界。",
+    "namespace": "requirement",
+    "source_role": "selected_requirement",
+    "source_path": "data/bootstrap-v0.1/knowledge/synthetic/SYN-SPEC-PB01-RevB.md",
+    "page": null,
+    "section": "SPEC-REC 恢复电压",
+    "version": "B",
+    "publication_status": "active",
+    "material_type": "synthetic",
+    "allowed_roles": [
+      "engineer"
+    ],
+    "task_id": null,
+    "conditions": null,
+    "context_ids": []
+  },
+  {
+    "chunk_id": "SYN-NORM-TEMP",
+    "text": "按同一记录的末值减起值计算，模拟上限12 K；温差1摄氏度对应1 K。\n关键位模糊或缺失时不猜数字，不做超限与否的最终数值判断。",
+    "namespace": "requirement",
+    "source_role": "selected_requirement",
+    "source_path": "data/bootstrap-v0.1/knowledge/synthetic/SYN-QA-SC-1.0.md",
+    "page": null,
+    "section": "DEMO-03",
+    "version": "1.0",
+    "publication_status": "active",
+    "material_type": "synthetic",
+    "allowed_roles": [
+      "engineer"
+    ],
+    "task_id": null,
+    "conditions": null,
+    "context_ids": []
+  },
+  {
+    "chunk_id": "SYN-NORM-APPEARANCE",
+    "text": "每个端口分别有明确的无起火、无爆炸、无漏液记录。无文字或只有横线表示证据不足。",
+    "namespace": "requirement",
+    "source_role": "selected_requirement",
+    "source_path": "data/bootstrap-v0.1/knowledge/synthetic/SYN-QA-SC-1.0.md",
+    "page": null,
+    "section": "DEMO-04",
+    "version": "1.0",
+    "publication_status": "active",
+    "material_type": "synthetic",
+    "allowed_roles": [
+      "engineer"
+    ],
+    "task_id": null,
+    "conditions": null,
+    "context_ids": []
+  },
+  {
+    "chunk_id": "SYN-NORM-METHOD",
+    "text": "每个端口需有非空的恢复方式文字记录。记录缺失只能判证据不足，不能推定实验未执行。",
+    "namespace": "requirement",
+    "source_role": "selected_requirement",
+    "source_path": "data/bootstrap-v0.1/knowledge/synthetic/SYN-QA-SC-1.0.md",
+    "page": null,
+    "section": "DEMO-05",
+    "version": "1.0",
+    "publication_status": "active",
+    "material_type": "synthetic",
+    "allowed_roles": [
+      "engineer"
+    ],
+    "task_id": null,
+    "conditions": null,
+    "context_ids": []
+  },
+  {
+    "chunk_id": "SYN-NORM-CONFLICT",
+    "text": "摘要和原始记录矛盾时输出双方位置，待人工确认；不能静默挑一方作为已核实事实。\n可对清晰的记录做条件性比较，但冲突未决前不能形成最终通过结论。",
+    "namespace": "requirement",
+    "source_role": "selected_requirement",
+    "source_path": "data/bootstrap-v0.1/knowledge/synthetic/SYN-QA-SC-1.0.md",
+    "page": null,
+    "section": "DEMO-06",
+    "version": "1.0",
+    "publication_status": "active",
+    "material_type": "synthetic",
+    "allowed_roles": [
+      "engineer"
+    ],
+    "task_id": null,
+    "conditions": null,
+    "context_ids": []
+  }
+]

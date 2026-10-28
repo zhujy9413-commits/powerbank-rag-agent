@@ -1,0 +1,83 @@
+{
+  "kind": "feishu_saved_content_readback",
+  "date": "2026-10-29",
+  "destination": "https://my.feishu.cn/wiki/UlodwHIzJidrjDkQXVvcApD1nbe",
+  "documents": [
+    {
+      "number": 15,
+      "url": "https://my.feishu.cn/wiki/Qv6twselVij87akhUquc3ODhnCd",
+      "parent_position": "6,4,0,15",
+      "source": "docs/ai-work/rag-gain-dev-sample-pack-v0.1.md",
+      "source_sha256": "fd5e8fb8d31cdc62180d950730f63bd826fb0796f43c6e2d3ee3f1822e2a44d2",
+      "import_body_sha256": "3a4036da187a7b48498ad5e419220b2ff2490e18cedf7f42b328fbe02dbf2e46",
+      "native_tables": 2,
+      "readback_expected_texts": 18,
+      "readback_missing": [],
+      "readback_tail": true,
+      "readback_after_new_navigation": true
+    },
+    {
+      "number": 16,
+      "url": "https://my.feishu.cn/wiki/P2WpwS5eTiuo1LkAJc3c3w0BnZe",
+      "parent_position": "6,4,0,16",
+      "source": "docs/ai-work/rag-gain-dev-reference-v0.1.md",
+      "source_sha256": "ea5dcc65fcea2b7234913d33e6d8d9804c970c80b77df5ad6293c49089266cf7",
+      "import_body_sha256": "e8767edc2d9b5a5666154662cae2fba162e89d4ce6b03ee2f6f91ca7a5aa906b",
+      "native_tables": 14,
+      "readback_expected_texts": 147,
+      "readback_missing": [],
+      "readback_tail": true,
+      "readback_after_new_navigation": true
+    },
+    {
+      "number": 17,
+      "url": "https://my.feishu.cn/wiki/SGC1wDubRi8CCDktyFYcL4MVn0c",
+      "parent_position": "6,4,0,17",
+      "source": "docs/ai-work/rag-gain-dev-material-audit-v0.1.md",
+      "source_sha256": "80e2f9d9bca5ce03ca472e59ab38bc77071030f6aa9f2ed116f4c1e6358c3aa2",
+      "import_body_sha256": "8a6508da74f1c82715fa03bc731422c16b181c08c0a6dcc76b4538295dbb93b4",
+      "native_tables": 2,
+      "readback_expected_texts": 7,
+      "readback_missing": [],
+      "readback_tail": true,
+      "readback_after_new_navigation": true
+    }
+  ],
+  "archive": {
+    "url": "https://my.feishu.cn/wiki/QTrAwLDt9iAmUokXwJEcTYVbnib",
+    "parent_position": "6,4,0,18",
+    "source": "output/packages/ai-work-rag-gain-dev-v0.1.zip",
+    "sha256": "34220560d3fcd9b1f8299308204703e91a0a9c4b96c992639259eee1f6726245",
+    "bytes": 2435451,
+    "upload_ui_success": "ai-work-rag-gain-dev-v0.1.zip\n2.32 MB / 2.32 MB",
+    "placement_verified_after_move_and_reload": true,
+    "cloud_download_byte_hash_verified": false
+  },
+  "parent_status_saved_and_reloaded": true,
+  "parent_status": "2026-10-29 RAG开发材料已核验：12份PDF、4份离线夹具、124个查询的参考标注；1693项材料校验及24页页面查看通过。实验未执行，32个留出场景未制作。R02计分口径问题及建议已登记，正式计分前先明确。15 开发样本包 https://my.feishu.cn/wiki/Qv6twselVij87akhUquc3ODhnCd ；16 参考标注 https://my.feishu.cn/wiki/P2WpwS5eTiuo1LkAJc3c3w0BnZe ；17 材料核验报告 https://my.feishu.cn/wiki/SGC1wDubRi8CCDktyFYcL4MVn0c ；完整ZIP https://my.feishu.cn/wiki/QTrAwLDt9iAmUokXwJEcTYVbnib 。上方48项待制作为方案制定时状态，开发材料以15至17及内容清单为准。​",
+  "layout_review": {
+    "viewed": [
+      {
+        "number": "15",
+        "screenshot_sha256": "b2b2eca1d4a120fedd565b33b029cd450526ff20402cb91cba89c5f502071d0a",
+        "status": "readable_native_tables_no_observed_clipping"
+      },
+      {
+        "number": "16",
+        "screenshot_sha256": "a848668c7443c049ac300867df2665e5c428a5a4cda2b5959afa97bbae65f188",
+        "status": "readable_native_tables_no_observed_clipping"
+      },
+      {
+        "number": "17",
+        "screenshot_sha256": "d59d2531d8eb30d88a97b05296e16bff8f84bb8db33370119d8cb3a99feade74",
+        "status": "readable_native_tables_no_observed_clipping"
+      }
+    ],
+    "screenshots_not_published": true
+  },
+  "original_plan_pages": "13/14 retain plan-creation snapshots; current development status and links added to AI Work parent and 15-17",
+  "recovery": "Menu hover failures occurred before upload; readback confirmed one copy of each new document. Reference import succeeded despite stale sidebar, verified after reload. ZIP uploaded once using stable library control, then moved once into AI Work. Interrupted final navigation performed no document write; new read-only task confirmed destination, then saved a previously empty parent paragraph and reloaded it.",
+  "experiment_runs": 0,
+  "model_requests": 0,
+  "holdout_materialized": 0
+}

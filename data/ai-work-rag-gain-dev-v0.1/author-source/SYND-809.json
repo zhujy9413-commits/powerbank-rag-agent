@@ -1,0 +1,152 @@
+{
+  "case_id": "RG-GAP-DEV-01",
+  "scenario": "C1外观观察记录缺失",
+  "family_id": "DEV-FAMILY-809",
+  "report_id": "SYND-809",
+  "task_id": "DEVTASK-809",
+  "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-809.pdf",
+  "input_dir": "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-809",
+  "report_version": "1",
+  "specification_declaration": "报告填写的规格版本：SYN-SPEC-PB01-RevB",
+  "global_condition": "本报告测试条件：电压=5 V；角色=输出；组合=单口。适用于记录表A及记录表B。",
+  "unit_header": null,
+  "records": [
+    {
+      "record_id": "R80901",
+      "port": "A1",
+      "field": "response",
+      "text": "R80901 A1 保护响应 328 ms",
+      "normalized_value": "328 ms",
+      "authored_comparison": "no_issue",
+      "page": 1,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    },
+    {
+      "record_id": "R80902",
+      "port": "A1",
+      "field": "recovery",
+      "text": "R80902 A1 恢复电压 4.86 V",
+      "normalized_value": "4.86 V",
+      "authored_comparison": "no_issue",
+      "page": 1,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    },
+    {
+      "record_id": "R80903",
+      "port": "A1",
+      "field": "temperature",
+      "text": "R80903 A1 壳温起值/末值 22.1摄氏度 / 31.8摄氏度",
+      "normalized_value": "22.1摄氏度 / 31.8摄氏度",
+      "authored_comparison": "no_issue",
+      "page": 2,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    },
+    {
+      "record_id": "R80904",
+      "port": "A1",
+      "field": "appearance",
+      "text": "R80904 A1 外观观察 无起火、无爆炸、无漏液",
+      "normalized_value": "无起火、无爆炸、无漏液",
+      "authored_comparison": "no_issue",
+      "page": 2,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    },
+    {
+      "record_id": "R80905",
+      "port": "A1",
+      "field": "method",
+      "text": "R80905 A1 恢复方式 记录为移除负载后重新接入",
+      "normalized_value": "记录为移除负载后重新接入",
+      "authored_comparison": "no_issue",
+      "page": 2,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    },
+    {
+      "record_id": "R80906",
+      "port": "C1",
+      "field": "response",
+      "text": "R80906 C1 保护响应 395 ms",
+      "normalized_value": "395 ms",
+      "authored_comparison": "no_issue",
+      "page": 1,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    },
+    {
+      "record_id": "R80907",
+      "port": "C1",
+      "field": "recovery",
+      "text": "R80907 C1 恢复电压 5.11 V",
+      "normalized_value": "5.11 V",
+      "authored_comparison": "no_issue",
+      "page": 1,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    },
+    {
+      "record_id": "R80908",
+      "port": "C1",
+      "field": "temperature",
+      "text": "R80908 C1 壳温起值/末值 23.0摄氏度 / 36.1摄氏度",
+      "normalized_value": "23.0摄氏度 / 36.1摄氏度",
+      "authored_comparison": "numeric_outside_demo_limit",
+      "page": 2,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    },
+    {
+      "record_id": "R80910",
+      "port": "C1",
+      "field": "method",
+      "text": "R80910 C1 恢复方式 记录为移除负载后重新接入",
+      "normalized_value": "记录为移除负载后重新接入",
+      "authored_comparison": "no_issue",
+      "page": 2,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    }
+  ],
+  "extras": [],
+  "expected_behavior": "没有可用证据时明确缺证，不能说实际未测或合格"
+}

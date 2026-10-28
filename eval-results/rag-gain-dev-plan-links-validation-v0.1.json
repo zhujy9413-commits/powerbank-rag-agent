@@ -1,0 +1,812 @@
+{
+  "validation_kind": "plan_consistency_only",
+  "experiments_executed": 0,
+  "model_requests": 0,
+  "sample_freeze_status": "not_frozen",
+  "checks": [
+    {
+      "name": "protocol_identity",
+      "passed": true
+    },
+    {
+      "name": "scope_locked_execution_not_run",
+      "passed": true
+    },
+    {
+      "name": "samples_not_frozen_or_materialized",
+      "passed": true
+    },
+    {
+      "name": "no_model_calls_or_spend_authorization",
+      "passed": true
+    },
+    {
+      "name": "48_unique_cases",
+      "passed": true
+    },
+    {
+      "name": "case_splits",
+      "passed": true
+    },
+    {
+      "name": "case_types",
+      "passed": true
+    },
+    {
+      "name": "content_stratum:TERM",
+      "passed": true
+    },
+    {
+      "name": "content_stratum:CONTEXT",
+      "passed": true
+    },
+    {
+      "name": "content_stratum:PORT",
+      "passed": true
+    },
+    {
+      "name": "content_stratum:CONDITION",
+      "passed": true
+    },
+    {
+      "name": "content_stratum:GAP",
+      "passed": true
+    },
+    {
+      "name": "content_stratum:NOISE",
+      "passed": true
+    },
+    {
+      "name": "offline_fault_splits",
+      "passed": true
+    },
+    {
+      "name": "five_arms_retain_real_baseline",
+      "passed": true
+    },
+    {
+      "name": "generation_arms",
+      "passed": true
+    },
+    {
+      "name": "retrieval_ablation",
+      "passed": true
+    },
+    {
+      "name": "scope_unchanged",
+      "passed": true
+    },
+    {
+      "name": "two_evidence_namespaces",
+      "passed": true
+    },
+    {
+      "name": "retrieval_budget",
+      "passed": true
+    },
+    {
+      "name": "nine_acceptance_metrics",
+      "passed": true
+    },
+    {
+      "name": "redlines",
+      "passed": true
+    },
+    {
+      "name": "retrieval_thresholds",
+      "passed": true
+    },
+    {
+      "name": "report_level_denominator",
+      "passed": true
+    },
+    {
+      "name": "model_and_reader_thresholds",
+      "passed": true
+    },
+    {
+      "name": "performance_deadlines",
+      "passed": true
+    },
+    {
+      "name": "cost_ceilings",
+      "passed": true
+    },
+    {
+      "name": "model_and_price_preflight_pending",
+      "passed": true
+    },
+    {
+      "name": "run_arithmetic",
+      "passed": true
+    },
+    {
+      "name": "generation_call_arithmetic",
+      "passed": true
+    },
+    {
+      "name": "preflight_generation_cap",
+      "passed": true
+    },
+    {
+      "name": "cold_warm_schedule_same_three_runs",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-TERM-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-TERM-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-TERM-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-TERM-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-TERM-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-TERM-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-TERM-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-TERM-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-TERM-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-TERM-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-TERM-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-TERM-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-TERM-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-TERM-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-TERM-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-TERM-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-TERM-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-TERM-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-CONTEXT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-CONTEXT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-CONTEXT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-CONTEXT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-CONTEXT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-CONTEXT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-CONTEXT-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-CONTEXT-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-CONTEXT-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-CONTEXT-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-CONTEXT-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-CONTEXT-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-CONTEXT-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-CONTEXT-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-CONTEXT-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-CONTEXT-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-CONTEXT-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-CONTEXT-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-PORT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-PORT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-PORT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-PORT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-PORT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-PORT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-PORT-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-PORT-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-PORT-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-PORT-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-PORT-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-PORT-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-PORT-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-PORT-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-PORT-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-PORT-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-PORT-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-PORT-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-CONDITION-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-CONDITION-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-CONDITION-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-CONDITION-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-CONDITION-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-CONDITION-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-CONDITION-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-CONDITION-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-CONDITION-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-CONDITION-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-CONDITION-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-CONDITION-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-CONDITION-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-CONDITION-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-CONDITION-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-CONDITION-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-CONDITION-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-CONDITION-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-GAP-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-GAP-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-GAP-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-GAP-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-GAP-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-GAP-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-GAP-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-GAP-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-GAP-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-GAP-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-GAP-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-GAP-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-GAP-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-GAP-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-GAP-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-GAP-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-GAP-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-GAP-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-NOISE-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-NOISE-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-NOISE-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-NOISE-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-NOISE-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-NOISE-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-NOISE-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-NOISE-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-NOISE-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-NOISE-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-NOISE-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-NOISE-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-NOISE-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-NOISE-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-NOISE-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-NOISE-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-NOISE-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-NOISE-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-OPS-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-OPS-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-OPS-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-OPS-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-OPS-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-OPS-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-OPS-DEV-03",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-OPS-DEV-03",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-OPS-DEV-03",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-OPS-DEV-04",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-OPS-DEV-04",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-OPS-DEV-04",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-OPS-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-OPS-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-OPS-HOLDOUT-01",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-OPS-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-OPS-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-OPS-HOLDOUT-02",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-OPS-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-OPS-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-OPS-HOLDOUT-03",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-OPS-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-OPS-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-OPS-HOLDOUT-04",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-OPS-HOLDOUT-05",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-OPS-HOLDOUT-05",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-OPS-HOLDOUT-05",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-OPS-HOLDOUT-06",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-OPS-HOLDOUT-06",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-OPS-HOLDOUT-06",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-OPS-HOLDOUT-07",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-OPS-HOLDOUT-07",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-OPS-HOLDOUT-07",
+      "passed": true
+    },
+    {
+      "name": "planned_and_unscored:RG-OPS-HOLDOUT-08",
+      "passed": true
+    },
+    {
+      "name": "mapped_acceptance:RG-OPS-HOLDOUT-08",
+      "passed": true
+    },
+    {
+      "name": "checklist_row:RG-OPS-HOLDOUT-08",
+      "passed": true
+    },
+    {
+      "name": "baseline_commit_format",
+      "passed": true
+    },
+    {
+      "name": "baseline_source:app/ai_work/review.py",
+      "passed": true
+    },
+    {
+      "name": "baseline_source:app/ai_work/parsing.py",
+      "passed": true
+    },
+    {
+      "name": "baseline_source:app/knowledge_assistant/core.py",
+      "passed": true
+    },
+    {
+      "name": "baseline_source:app/knowledge_assistant/providers.py",
+      "passed": true
+    },
+    {
+      "name": "baseline_source:data/bootstrap-v0.1/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "baseline_source:data/bootstrap-v0.1/index/knowledge-chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "baseline_source:data/bootstrap-v0.1/index/task-chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "local_reference:docs/ai-work/rag-gain-validation-plan-v0.1.md:rag-gain-evaluation-checklist-v0.1.md",
+      "passed": true
+    },
+    {
+      "name": "local_reference:docs/ai-work/rag-gain-validation-plan-v0.1.md:rag-gain-dev-sample-pack-v0.1.md",
+      "passed": true
+    },
+    {
+      "name": "local_reference:docs/ai-work/rag-gain-validation-plan-v0.1.md:rag-gain-dev-material-audit-v0.1.md",
+      "passed": true
+    },
+    {
+      "name": "local_reference:docs/ai-work/rag-gain-validation-plan-v0.1.md:rag-gain-dev-material-audit-v0.1.md",
+      "passed": true
+    },
+    {
+      "name": "local_reference:docs/ai-work/rag-gain-validation-plan-v0.1.md:basis-history-access-v0.4.3.md",
+      "passed": true
+    },
+    {
+      "name": "local_reference:docs/ai-work/rag-gain-validation-plan-v0.1.md:../internal-assistant/live-validation-v0.1.md",
+      "passed": true
+    },
+    {
+      "name": "local_reference:docs/ai-work/rag-gain-validation-plan-v0.1.md:../../data/ai-work-rag-gain-v0.1/protocol.json",
+      "passed": true
+    },
+    {
+      "name": "local_reference:docs/ai-work/rag-gain-validation-plan-v0.1.md:../../data/ai-work-rag-gain-v0.1/protocol.json",
+      "passed": true
+    },
+    {
+      "name": "local_reference:docs/ai-work/rag-gain-validation-plan-v0.1.md:../../data/ai-work-rag-gain-v0.1/cases.json",
+      "passed": true
+    },
+    {
+      "name": "local_reference:docs/ai-work/rag-gain-validation-plan-v0.1.md:../../data/ai-work-rag-gain-dev-v0.1/material-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "local_reference:docs/ai-work/rag-gain-evaluation-checklist-v0.1.md:rag-gain-dev-material-audit-v0.1.md",
+      "passed": true
+    },
+    {
+      "name": "local_reference:docs/ai-work/rag-gain-evaluation-checklist-v0.1.md:rag-gain-dev-reference-v0.1.md",
+      "passed": true
+    },
+    {
+      "name": "local_reference:docs/ai-work/rag-gain-evaluation-checklist-v0.1.md:rag-gain-validation-plan-v0.1.md",
+      "passed": true
+    },
+    {
+      "name": "local_reference:docs/ai-work/rag-gain-evaluation-checklist-v0.1.md:../../data/ai-work-rag-gain-v0.1/cases.json",
+      "passed": true
+    },
+    {
+      "name": "holdout_novelty_not_external_independence",
+      "passed": true
+    }
+  ],
+  "passed": 199,
+  "total": 199,
+  "asset_sha256": {
+    "docs/ai-work/rag-gain-validation-plan-v0.1.md": "2b7a6c7e5fae937d7353a630a60b7a2092e2fd4d65c485b42d01d3822a76c39d",
+    "docs/ai-work/rag-gain-evaluation-checklist-v0.1.md": "86eefb3b660f4f28f41843b0696c0e0998e027b0557c377448602f89efa22e65",
+    "data/ai-work-rag-gain-v0.1/protocol.json": "717d0e74760c99c311ddd4c84d323d09d62ac09b4c5d5301d51f3e398f56217c",
+    "data/ai-work-rag-gain-v0.1/cases.json": "1840cdf07f9cc62abe7dcc14787db10fb3c8d51256f8cbdd0709deef78c5a646"
+  }
+}

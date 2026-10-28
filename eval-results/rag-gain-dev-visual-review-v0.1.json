@@ -1,0 +1,242 @@
+{
+  "kind": "same_author_visual_material_review",
+  "reviewer": "Codex material author",
+  "date": "2026-10-29",
+  "method": "Viewed all 24 pages in six 100dpi Poppler contact sheets, then separately viewed corrected SYND-804 page 1.",
+  "pages_reviewed": 24,
+  "final_observed_visual_defects": 0,
+  "corrected_draft_defect": "SYND-804: interleaved recovery row broke the two-row ms header scope; response rows now contiguous, separate A2 recovery heading.",
+  "criteria": [
+    "readable_synthetic_identity",
+    "no_clipped_or_overlapping_text",
+    "complete_records_and_local_conditions",
+    "legible_footer_and_page_numbers",
+    "correct_unit_header_extent"
+  ],
+  "pdfs": [
+    {
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-801.pdf",
+      "sha256": "8a03d7f1c310ec8bcd1d930a93e6ea037fc74d3e42bd118c52b9a862efa5f008",
+      "pages": [
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-801-1.png",
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-801-2.png"
+      ],
+      "page_observations": [
+        {
+          "page": 1,
+          "status": "reviewed_no_observed_visual_defect"
+        },
+        {
+          "page": 2,
+          "status": "reviewed_no_observed_visual_defect"
+        }
+      ]
+    },
+    {
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-802.pdf",
+      "sha256": "ab380951724ebf96feb8732121e9e0236f1b1a16346c19a0a2d5b5dccf030311",
+      "pages": [
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-802-1.png",
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-802-2.png"
+      ],
+      "page_observations": [
+        {
+          "page": 1,
+          "status": "reviewed_no_observed_visual_defect"
+        },
+        {
+          "page": 2,
+          "status": "reviewed_no_observed_visual_defect"
+        }
+      ]
+    },
+    {
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-803.pdf",
+      "sha256": "db4da1a87e5c6eccd8557716cfe39ed9746097d7b151f65df89fbd19ad387acf",
+      "pages": [
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-803-1.png",
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-803-2.png"
+      ],
+      "page_observations": [
+        {
+          "page": 1,
+          "status": "reviewed_no_observed_visual_defect"
+        },
+        {
+          "page": 2,
+          "status": "reviewed_no_observed_visual_defect"
+        }
+      ]
+    },
+    {
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-804.pdf",
+      "sha256": "0b26882eedd6f328c50ed33a93ce9df87201051b8293a01a9242ed1907c12b30",
+      "pages": [
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-804-1.png",
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-804-2.png"
+      ],
+      "page_observations": [
+        {
+          "page": 1,
+          "status": "reviewed_no_observed_visual_defect"
+        },
+        {
+          "page": 2,
+          "status": "reviewed_no_observed_visual_defect"
+        }
+      ]
+    },
+    {
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-805.pdf",
+      "sha256": "c42e8c984e6835cf9820d2ff0a6ab044c1ab88ead40356f0adbd2eb706e40492",
+      "pages": [
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-805-1.png",
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-805-2.png"
+      ],
+      "page_observations": [
+        {
+          "page": 1,
+          "status": "reviewed_no_observed_visual_defect"
+        },
+        {
+          "page": 2,
+          "status": "reviewed_no_observed_visual_defect"
+        }
+      ]
+    },
+    {
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-806.pdf",
+      "sha256": "b8558c0339665d41a3efc659115ffa917f8b09051e2e8b4ea6129bdc83802a4f",
+      "pages": [
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-806-1.png",
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-806-2.png"
+      ],
+      "page_observations": [
+        {
+          "page": 1,
+          "status": "reviewed_no_observed_visual_defect"
+        },
+        {
+          "page": 2,
+          "status": "reviewed_no_observed_visual_defect"
+        }
+      ]
+    },
+    {
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-807.pdf",
+      "sha256": "3069e2234ee6399d9d1ab878f89012c273947141ef19899d77f0df9482c76c5a",
+      "pages": [
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-807-1.png",
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-807-2.png"
+      ],
+      "page_observations": [
+        {
+          "page": 1,
+          "status": "reviewed_no_observed_visual_defect"
+        },
+        {
+          "page": 2,
+          "status": "reviewed_no_observed_visual_defect"
+        }
+      ]
+    },
+    {
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-808.pdf",
+      "sha256": "4298859e84766789ec25972e1ffdba2ebc08e5548ed4f4e88ef96f1a93b3651d",
+      "pages": [
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-808-1.png",
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-808-2.png"
+      ],
+      "page_observations": [
+        {
+          "page": 1,
+          "status": "reviewed_no_observed_visual_defect"
+        },
+        {
+          "page": 2,
+          "status": "reviewed_no_observed_visual_defect"
+        }
+      ]
+    },
+    {
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-809.pdf",
+      "sha256": "18345a536ab216f725eda94bbee25f0ddd4583a913c37096fecf53fe65dd27fc",
+      "pages": [
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-809-1.png",
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-809-2.png"
+      ],
+      "page_observations": [
+        {
+          "page": 1,
+          "status": "reviewed_no_observed_visual_defect"
+        },
+        {
+          "page": 2,
+          "status": "reviewed_no_observed_visual_defect"
+        }
+      ]
+    },
+    {
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-810.pdf",
+      "sha256": "d4b1bb0ff505baa127e4f11b86b50bddcd0fe4617afd3fb0c8112c0b08c2008e",
+      "pages": [
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-810-1.png",
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-810-2.png"
+      ],
+      "page_observations": [
+        {
+          "page": 1,
+          "status": "reviewed_no_observed_visual_defect"
+        },
+        {
+          "page": 2,
+          "status": "reviewed_no_observed_visual_defect"
+        }
+      ]
+    },
+    {
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-811.pdf",
+      "sha256": "203ca467e94b700b0fad8446e8df3b9243c94962e338159b0c2be824af579f9e",
+      "pages": [
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-811-1.png",
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-811-2.png"
+      ],
+      "page_observations": [
+        {
+          "page": 1,
+          "status": "reviewed_no_observed_visual_defect"
+        },
+        {
+          "page": 2,
+          "status": "reviewed_no_observed_visual_defect"
+        }
+      ]
+    },
+    {
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-812.pdf",
+      "sha256": "261182aa2436d8a45e2912f9b42d910691f7e14200b1a0b213544fdc61975e36",
+      "pages": [
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-812-1.png",
+        "tmp/pdfs/rag-gain-dev-v0.1/SYND-812-2.png"
+      ],
+      "page_observations": [
+        {
+          "page": 1,
+          "status": "reviewed_no_observed_visual_defect"
+        },
+        {
+          "page": 2,
+          "status": "reviewed_no_observed_visual_defect"
+        }
+      ]
+    }
+  ],
+  "contact_sheets": {
+    "output/qa/rag-gain-dev-v0.1/contact-01.png": "e7d2fffbb4a685109d0af7f7988ffda8eb697385ff6247ea7185046338d53c76",
+    "output/qa/rag-gain-dev-v0.1/contact-02.png": "d9de82071f576771cf6175f80706eab98733b7cd1be91ada56996ac2a7bd5726",
+    "output/qa/rag-gain-dev-v0.1/contact-03.png": "e14c76da98b19170aab855a20416a7f496d96b1b2a3bbe37edada39eace1a044",
+    "output/qa/rag-gain-dev-v0.1/contact-04.png": "63f687ecb0473c4f20b9684161667def4a59b69014369d39df027d0cb67fd6db",
+    "output/qa/rag-gain-dev-v0.1/contact-05.png": "88b85ba4ecc1535f916cbd95114cb928de2083c9ea83fb19d464c2242ea5bf50",
+    "output/qa/rag-gain-dev-v0.1/contact-06.png": "144b8233b0dc643d567d8041f0360ce579643e8a3f314ea582f8bafc65558253"
+  }
+}

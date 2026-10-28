@@ -107,10 +107,23 @@
 
 ## RAG增益验证方案
 
-2026-10-29 RAG实验方案v0.1已定，实验未执行：保留现有完整基线，采用五组对照、48个待制作场景与分层验收。新增检索和说明分别决策，不改原规则或设计基线。见[AI Work RAG 增益验证方案](rag-gain-validation-plan-v0.1.md)及[评测清单](rag-gain-evaluation-checklist-v0.1.md)。
+2026-10-29 RAG实验方案v0.1已定，实验未执行：保留现有完整基线，采用五组对照、48个计划场景与分层验收。16个开发场景已完成材料核验，32个留出场景待制作。新增检索和说明分别决策，不改原规则或设计基线。见[AI Work RAG 增益验证方案](rag-gain-validation-plan-v0.1.md)及[评测清单](rag-gain-evaluation-checklist-v0.1.md)。
 
 - [48项计划与机器协议](../../data/ai-work-rag-gain-v0.1/protocol.json)
 - [方案一致性校验](../../eval-results/rag-gain-plan-validation-v0.1.json)，193项通过，仅核对方案及清单，不是应用测试或实验成绩。
 
 - [飞书13 AI Work RAG 增益验证方案](https://my.feishu.cn/wiki/NSMiwHelFiIY7ykVys4cJbL0nze)
 - [飞书14 AI Work RAG 增益评测清单](https://my.feishu.cn/wiki/Q5ZpwTcSTi485jkpDwkc2STsnLb)
+
+## RAG开发材料
+
+2026-10-29完成12份模拟报告、4份离线夹具及完整参考标注。1693项材料断言和24页页面核验通过；最终ZIP含118个文件，216项封包校验通过。没有RAG实验分数，4个夹具尚未对应用执行。静态预检发现R02原固定空槽分母在当前标注下使80%门槛不可达，修订建议已登记但未应用；先明确计分口径，再仅使用开发材料调试候选。
+
+- [开发样本包](rag-gain-dev-sample-pack-v0.1.md)与[完整ZIP](../../output/packages/ai-work-rag-gain-dev-v0.1.zip)
+- [参考标注](rag-gain-dev-reference-v0.1.md)
+- [材料核验报告](rag-gain-dev-material-audit-v0.1.md)及[1693项最终记录](../../eval-results/rag-gain-dev-material-validation-v0.2.json)
+- [开发内容哈希清单](../../data/ai-work-rag-gain-dev-v0.1/material-manifest.json)
+- [飞书15 开发样本包](https://my.feishu.cn/wiki/Qv6twselVij87akhUquc3ODhnCd)
+- [飞书16 开发参考标注](https://my.feishu.cn/wiki/P2WpwS5eTiuo1LkAJc3c3w0BnZe)
+- [飞书17 材料核验报告](https://my.feishu.cn/wiki/SGC1wDubRi8CCDktyFYcL4MVn0c)
+- [飞书完整ZIP](https://my.feishu.cn/wiki/QTrAwLDt9iAmUokXwJEcTYVbnib)

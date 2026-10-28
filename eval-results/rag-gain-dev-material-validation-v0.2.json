@@ -1,0 +1,7005 @@
+{
+  "validation_kind": "development_material_integrity_not_application_evaluation",
+  "date": "2026-10-29",
+  "checks": [
+    {
+      "name": "exact_16_planned_dev_cases",
+      "passed": true
+    },
+    {
+      "name": "types_12_content_4_offline",
+      "passed": true
+    },
+    {
+      "name": "unique_dev_families",
+      "passed": true
+    },
+    {
+      "name": "unscored_no_holdout_no_model",
+      "passed": true
+    },
+    {
+      "name": "baseline_unchanged:app/ai_work/review.py",
+      "passed": true
+    },
+    {
+      "name": "baseline_unchanged:app/ai_work/parsing.py",
+      "passed": true
+    },
+    {
+      "name": "baseline_unchanged:app/knowledge_assistant/core.py",
+      "passed": true
+    },
+    {
+      "name": "baseline_unchanged:app/knowledge_assistant/providers.py",
+      "passed": true
+    },
+    {
+      "name": "baseline_unchanged:data/bootstrap-v0.1/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "baseline_unchanged:data/bootstrap-v0.1/index/knowledge-chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "baseline_unchanged:data/bootstrap-v0.1/index/task-chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:data/review-holdout-v0.1/README.md",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:data/review-holdout-v0.1/visual-review.md",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:data/review-holdout-v0.1/cases.json",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:data/review-holdout-v0.1/preflight.json",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-05-long-id.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-01-boundaries.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-12-two-contexts.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-07-mixed-raster.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-20-encrypted.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-18-header-unit.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-17-summary-wrap.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-19-local-only.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-06-broken-label.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-04-foreign-id.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-02-outside.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-08-footnote.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-13-unknown-environment.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-10-repeated-dimension.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-15-specimen-context.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-03-canonical.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-14-load-context.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-09-section-scope.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-11-unknown-role.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/review-holdout-v0.1/HO-16-condition-before.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:scripts/build_review_holdout.py",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:scripts/evaluate_review_holdout.py",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:scripts/validate_review_holdout.py",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:tests/test_review_holdout_harness.py",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:eval-results/review-holdout-regression-v0.1.txt",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:eval-results/review-holdout-regression-unrestricted-v0.1.txt",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:data/p0-holdout-v0.1/README.md",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:data/p0-holdout-v0.1/visual-review.md",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:data/p0-holdout-v0.1/cases.json",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:data/p0-holdout-v0.1/preflight.json",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-18.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-19.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-09.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-08.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-20.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-05.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-11.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-10.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-04.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-12.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-06.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-07.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-13.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-17.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-03.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-02.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-16.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-14.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-15.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p0-holdout-v0.1/HN-01.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:scripts/build_p0_holdout.py",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:scripts/validate_p0_holdout.py",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:scripts/evaluate_p0_holdout.py",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:scripts/evaluate_review_holdout.py",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:data/p1-holdout-v0.1/README.md",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:data/p1-holdout-v0.1/cases.json",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:data/p1-holdout-v0.1/preflight.json",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:data/p1-holdout-v0.1/visual-review.md",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:eval-results/p1-regression-final-v0.2.txt",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-01.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-02.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-03.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-04.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-05.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-06.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-07.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-08.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-09.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-10.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-11.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-12.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-13.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-14.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-15.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-16.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-17.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-18.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-19.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:output/pdf/p1-holdout-v0.1/HP-20.pdf",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:scripts/build_p1_holdout.py",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:scripts/evaluate_p1_holdout.py",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:scripts/evaluate_review_holdout.py",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:scripts/validate_p1_holdout.py",
+      "passed": true
+    },
+    {
+      "name": "legacy_frozen_asset:tests/test_p1_holdout_harness.py",
+      "passed": true
+    },
+    {
+      "name": "88_legacy_assets",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/ai-work-control-v0.2.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/ai-work-review-final-v0.2.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/ai-work-review-intermediate-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/ai-work-tests-v0.1.txt",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/basis-history-access-feishu-v0.4.3.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/basis-history-access-regression-v0.4.3.txt",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/basis-history-access-ui-v0.4.3.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/basis-history-access-v0.4.3.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/basis-history-access-validation-v0.4.3.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/delegated-walkthrough-regression-v0.1.txt",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/delegated-walkthrough-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/live-citation-repeat-v0.9.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/live-dev-final-v0.4.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/live-dev-initial-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/live-dev-recheck-v0.2.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/live-dev-recheck-v0.3.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/live-role-citation-final-v0.9.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/live-role-citation-intermediate-v0.6.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/live-role-citation-intermediate-v0.7.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/live-role-citation-intermediate-v0.8.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/live-role-citation-v0.5.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/live-smoke-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p0-consumed-regression-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p0-consumed-regression-v0.2.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p0-control-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p0-control-v0.2.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p0-holdout-first-run-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p0-legacy-variants-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p0-legacy-variants-v0.2.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p0-regression-final-v0.2.txt",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p0-regression-final-v0.3.txt",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p0-regression-initial-v0.1.txt",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p0-targeted-initial-v0.1.txt",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p0-ui-validation-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p1-consumed-regression-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p1-control-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p1-holdout-first-run-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p1-legacy-variants-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p1-p0-and-adjudication-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p1-regression-final-v0.2.txt",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p1-regression-focused-v0.1.txt",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p1-regression-full-v0.1.txt",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/p1-ui-validation-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/pdf-variant-render-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/pdf-variants-after-initial-v0.2.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/pdf-variants-after-v0.3.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/pdf-variants-before-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/pdf-variants-final-input-baseline-v0.4.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/pdf-variants-final-v0.5.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/pdf-variants-tests-v0.1.txt",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/prd-implementation-audit-feishu-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/prd-implementation-audit-probes-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/prd-implementation-audit-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/prd-implementation-audit-validation-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/rag-gain-plan-feishu-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/rag-gain-plan-validation-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/retrieval-baseline-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/retrieval-keyword-v0.3.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/retrieval-keyword-v0.4.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/review-holdout-analysis-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/review-holdout-first-run-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/review-holdout-regression-unrestricted-v0.1.txt",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/review-holdout-regression-v0.1.txt",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/workflow-http-harness-initial-v0.1.txt",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/workflow-http-v0.2.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/workflow-http-v0.3.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/workflow-http-v0.4.3.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/workflow-http-v0.4.json",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/workflow-regression-v0.1.txt",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/workflow-regression-v0.2.txt",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/workflow-regression-v0.3.txt",
+      "passed": true
+    },
+    {
+      "name": "historical_result_unchanged:eval-results/workflow-ui-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "selected_eight_chunks",
+      "passed": true
+    },
+    {
+      "name": "verbatim_selected_source:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_selected_source:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_selected_source:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "verbatim_selected_source:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "verbatim_selected_source:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "verbatim_selected_source:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_selected_source:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "verbatim_selected_source:SYN-NORM-CONFLICT",
+      "passed": true
+    },
+    {
+      "name": "fixture_hash:RG-TERM-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "two_pages_and_identity:RG-TERM-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "index_budget_and_unique_ids:RG-TERM-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "exactly_20_authorized_distractors:RG-TERM-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "reference_and_runtime_query_ids:RG-TERM-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "no_gold_or_case_ids_in_runtime:RG-TERM-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "selected_requirement_namespace_only:RG-TERM-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "metadata_and_context_links:RG-TERM-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:SYN-NORM-CONFLICT",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-01:D801-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-01:D801-SPEC",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-01:D801-R80101",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-01:D801-R80102",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-01:D801-R80103",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-01:D801-R80104",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-01:D801-R80105",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-01:D801-R80106",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-01:D801-R80107",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-01:D801-R80108",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-01:D801-R80109",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-01:D801-R80110",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N01",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N02",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N03",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N04",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N05",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N06",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N07",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N08",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N09",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N10",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N11",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N12",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N13",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N14",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N15",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N16",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N17",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N18",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N19",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-01:D801-N20",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-01:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-01:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-01:D801-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-01:D801-R80101",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-01:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-01:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-01:D801-R80102",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-01:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-01:D801-R80103",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-01:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-01:D801-R80104",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-01:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-01:D801-R80105",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-01:D801-R80106",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-01:D801-R80107",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-01:D801-R80108",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-01:D801-R80109",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-01:D801-R80110",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:A1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:A1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-01:A1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-01:A1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-01:A1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:A1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:A1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-01:A1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-01:A1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-01:A1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:A1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:A1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-01:A1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-TERM-DEV-01:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-01:A1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-01:A1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:A1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:A1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-01:A1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-TERM-DEV-01:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-01:A1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-01:A1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:A1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:A1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-01:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-TERM-DEV-01:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-01:A1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-01:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:C1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:C1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-01:C1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-01:C1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-01:C1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:C1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:C1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-01:C1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-01:C1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-01:C1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:C1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:C1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-01:C1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-TERM-DEV-01:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-01:C1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-01:C1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:C1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:C1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-01:C1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-TERM-DEV-01:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-01:C1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-01:C1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:C1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-01:C1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-01:C1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-TERM-DEV-01:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-01:C1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-01:C1-05",
+      "passed": true
+    },
+    {
+      "name": "author_layout_bounds:RG-TERM-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "fixture_hash:RG-TERM-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "two_pages_and_identity:RG-TERM-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "index_budget_and_unique_ids:RG-TERM-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "exactly_20_authorized_distractors:RG-TERM-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "reference_and_runtime_query_ids:RG-TERM-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "no_gold_or_case_ids_in_runtime:RG-TERM-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "selected_requirement_namespace_only:RG-TERM-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "metadata_and_context_links:RG-TERM-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:SYN-NORM-CONFLICT",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-02:D802-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-02:D802-SPEC",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-02:D802-R80201",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-02:D802-R80202",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-02:D802-R80203",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-02:D802-R80204",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-02:D802-R80205",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-02:D802-R80206",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-02:D802-R80207",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-02:D802-R80208",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-02:D802-R80209",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-TERM-DEV-02:D802-R80210",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N01",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N02",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N03",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N04",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N05",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N06",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N07",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N08",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N09",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N10",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N11",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N12",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N13",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N14",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N15",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N16",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N17",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N18",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N19",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-TERM-DEV-02:D802-N20",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-02:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-02:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-02:D802-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-02:D802-R80201",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-02:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-02:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-02:D802-R80202",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-02:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-02:D802-R80203",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-02:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-02:D802-R80204",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-02:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-02:D802-R80205",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-02:D802-R80206",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-02:D802-R80207",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-02:D802-R80208",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-02:D802-R80209",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-TERM-DEV-02:D802-R80210",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:A1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:A1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-02:A1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-02:A1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-02:A1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:A1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:A1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-02:A1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-02:A1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-02:A1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:A1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:A1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-02:A1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-TERM-DEV-02:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-02:A1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-02:A1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:A1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:A1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-02:A1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-TERM-DEV-02:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-02:A1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-02:A1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:A1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:A1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-02:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-TERM-DEV-02:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-02:A1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-02:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:C1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:C1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-02:C1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-02:C1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-02:C1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:C1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:C1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-02:C1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-02:C1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-02:C1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:C1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:C1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-02:C1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-TERM-DEV-02:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-02:C1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-02:C1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:C1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:C1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-02:C1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-TERM-DEV-02:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-02:C1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-02:C1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:C1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-TERM-DEV-02:C1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-TERM-DEV-02:C1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-TERM-DEV-02:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-TERM-DEV-02:C1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-TERM-DEV-02:C1-05",
+      "passed": true
+    },
+    {
+      "name": "author_layout_bounds:RG-TERM-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "fixture_hash:RG-CONTEXT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "two_pages_and_identity:RG-CONTEXT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "index_budget_and_unique_ids:RG-CONTEXT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "exactly_20_authorized_distractors:RG-CONTEXT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "reference_and_runtime_query_ids:RG-CONTEXT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "no_gold_or_case_ids_in_runtime:RG-CONTEXT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "selected_requirement_namespace_only:RG-CONTEXT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "metadata_and_context_links:RG-CONTEXT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:SYN-NORM-CONFLICT",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-01:D803-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-01:D803-SPEC",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-01:D803-R80301",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-01:D803-R80302",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-01:D803-R80303",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-01:D803-R80304",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-01:D803-R80305",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-01:D803-R80306",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-01:D803-R80307",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-01:D803-R80308",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-01:D803-R80309",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-01:D803-R80310",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N01",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N02",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N03",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N04",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N05",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N06",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N07",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N08",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N09",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N10",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N11",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N12",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N13",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N14",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N15",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N16",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N17",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N18",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N19",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-01:D803-N20",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-01:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-01:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-01:D803-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-01:D803-R80301",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-01:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-01:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-01:D803-R80302",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-01:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-01:D803-R80303",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-01:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-01:D803-R80304",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-01:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-01:D803-R80305",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-01:D803-R80306",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-01:D803-R80307",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-01:D803-R80308",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-01:D803-R80309",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-01:D803-R80310",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:A1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:A1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-01:A1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-01:A1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-01:A1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:A1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:A1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-01:A1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-01:A1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-01:A1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:A1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:A1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-01:A1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-CONTEXT-DEV-01:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-01:A1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-01:A1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:A1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:A1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-01:A1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-CONTEXT-DEV-01:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-01:A1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-01:A1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:A1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:A1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-01:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-CONTEXT-DEV-01:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-01:A1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-01:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:C1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:C1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-01:C1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-01:C1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-01:C1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:C1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:C1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-01:C1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-01:C1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-01:C1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:C1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:C1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-01:C1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-CONTEXT-DEV-01:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-01:C1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-01:C1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:C1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:C1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-01:C1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-CONTEXT-DEV-01:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-01:C1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-01:C1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:C1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-01:C1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-01:C1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-CONTEXT-DEV-01:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-01:C1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-01:C1-05",
+      "passed": true
+    },
+    {
+      "name": "author_layout_bounds:RG-CONTEXT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "fixture_hash:RG-CONTEXT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "two_pages_and_identity:RG-CONTEXT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "index_budget_and_unique_ids:RG-CONTEXT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "exactly_20_authorized_distractors:RG-CONTEXT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "reference_and_runtime_query_ids:RG-CONTEXT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "no_gold_or_case_ids_in_runtime:RG-CONTEXT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "selected_requirement_namespace_only:RG-CONTEXT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "metadata_and_context_links:RG-CONTEXT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:SYN-NORM-CONFLICT",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-02:D804-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-02:D804-SPEC",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-02:D804-UNIT",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-02:D804-R80401",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-02:D804-R80402",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-02:D804-R80403",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-02:D804-R80404",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-02:D804-R80405",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-02:D804-R80406",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-02:D804-R80407",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-02:D804-R80408",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-02:D804-R80409",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONTEXT-DEV-02:D804-R80410",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N01",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N02",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N03",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N04",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N05",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N06",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N07",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N08",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N09",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N10",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N11",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N12",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N13",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N14",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N15",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N16",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N17",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N18",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N19",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONTEXT-DEV-02:D804-N20",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:D804-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:D804-R80401",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:D804-UNIT",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:D804-R80402",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:D804-R80403",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:D804-R80404",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:D804-R80405",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:D804-R80406",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:D804-R80407",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:D804-R80408",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:D804-R80409",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONTEXT-DEV-02:D804-R80410",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:A1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:A1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-02:A1-01",
+      "passed": true
+    },
+    {
+      "name": "unit_header_explicit:RG-CONTEXT-DEV-02:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-02:A1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-02:A1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:A1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:A1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-02:A1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-02:A1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-02:A1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:A1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:A1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-02:A1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-CONTEXT-DEV-02:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-02:A1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-02:A1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:A1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:A1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-02:A1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-CONTEXT-DEV-02:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-02:A1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-02:A1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:A1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:A1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-02:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-CONTEXT-DEV-02:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-02:A1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-02:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:C1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:C1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-02:C1-01",
+      "passed": true
+    },
+    {
+      "name": "unit_header_explicit:RG-CONTEXT-DEV-02:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-02:C1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-02:C1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:C1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:C1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-02:C1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-02:C1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-02:C1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:C1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:C1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-02:C1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-CONTEXT-DEV-02:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-02:C1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-02:C1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:C1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:C1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-02:C1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-CONTEXT-DEV-02:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-02:C1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-02:C1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:C1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONTEXT-DEV-02:C1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONTEXT-DEV-02:C1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-CONTEXT-DEV-02:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONTEXT-DEV-02:C1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONTEXT-DEV-02:C1-05",
+      "passed": true
+    },
+    {
+      "name": "author_layout_bounds:RG-CONTEXT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "fixture_hash:RG-PORT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "two_pages_and_identity:RG-PORT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "index_budget_and_unique_ids:RG-PORT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "exactly_20_authorized_distractors:RG-PORT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "reference_and_runtime_query_ids:RG-PORT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "no_gold_or_case_ids_in_runtime:RG-PORT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "selected_requirement_namespace_only:RG-PORT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "metadata_and_context_links:RG-PORT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:SYN-NORM-CONFLICT",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-01:D805-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-01:D805-SPEC",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-01:D805-R80501",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-01:D805-R80502",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-01:D805-R80503",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-01:D805-R80504",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-01:D805-R80505",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-01:D805-R80506",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-01:D805-R80507",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-01:D805-R80508",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-01:D805-R80509",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-01:D805-R80510",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N01",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N02",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N03",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N04",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N05",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N06",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N07",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N08",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N09",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N10",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N11",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N12",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N13",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N14",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N15",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N16",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N17",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N18",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N19",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-01:D805-N20",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-01:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-01:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-01:D805-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-01:D805-R80501",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-01:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-01:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-01:D805-R80502",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-01:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-01:D805-R80503",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-01:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-01:D805-R80504",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-01:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-01:D805-R80505",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-01:D805-R80506",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-01:D805-R80507",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-01:D805-R80508",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-01:D805-R80509",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-01:D805-R80510",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:A1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:A1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-01:A1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-01:A1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-01:A1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:A1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:A1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-01:A1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-01:A1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-01:A1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:A1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:A1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-01:A1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-PORT-DEV-01:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-01:A1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-01:A1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:A1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:A1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-01:A1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-PORT-DEV-01:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-01:A1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-01:A1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:A1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:A1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-01:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-PORT-DEV-01:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-01:A1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-01:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:C1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:C1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-01:C1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-01:C1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-01:C1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:C1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:C1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-01:C1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-01:C1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-01:C1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:C1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:C1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-01:C1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-PORT-DEV-01:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-01:C1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-01:C1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:C1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:C1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-01:C1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-PORT-DEV-01:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-01:C1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-01:C1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:C1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-01:C1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-01:C1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-PORT-DEV-01:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-01:C1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-01:C1-05",
+      "passed": true
+    },
+    {
+      "name": "author_layout_bounds:RG-PORT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "fixture_hash:RG-PORT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "two_pages_and_identity:RG-PORT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "index_budget_and_unique_ids:RG-PORT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "exactly_20_authorized_distractors:RG-PORT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "reference_and_runtime_query_ids:RG-PORT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "no_gold_or_case_ids_in_runtime:RG-PORT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "selected_requirement_namespace_only:RG-PORT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "metadata_and_context_links:RG-PORT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:SYN-NORM-CONFLICT",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-02:D806-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-02:D806-SPEC",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-02:D806-R80601",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-02:D806-R80602",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-02:D806-R80603",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-02:D806-R80604",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-02:D806-R80605",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-02:D806-R80606",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-02:D806-R80607",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-02:D806-R80608",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-02:D806-R80609",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-PORT-DEV-02:D806-R80610",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N01",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N02",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N03",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N04",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N05",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N06",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N07",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N08",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N09",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N10",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N11",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N12",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N13",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N14",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N15",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N16",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N17",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N18",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N19",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-PORT-DEV-02:D806-N20",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-02:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-02:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-02:D806-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-02:D806-R80601",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-02:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-02:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-02:D806-R80602",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-02:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-02:D806-R80603",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-02:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-02:D806-R80604",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-02:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-02:D806-R80605",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-02:D806-R80606",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-02:D806-R80607",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-02:D806-R80608",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-02:D806-R80609",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-PORT-DEV-02:D806-R80610",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:A1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:A1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-02:A1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-02:A1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-02:A1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:A1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:A1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-02:A1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-02:A1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-02:A1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:A1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:A1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-02:A1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-PORT-DEV-02:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-02:A1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-02:A1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:A1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:A1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-02:A1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-PORT-DEV-02:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-02:A1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-02:A1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:A1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:A1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-02:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-PORT-DEV-02:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-02:A1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-02:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:C1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:C1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-02:C1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-02:C1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-02:C1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:C1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:C1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-02:C1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-02:C1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-02:C1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:C1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:C1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-02:C1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-PORT-DEV-02:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-02:C1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-02:C1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:C1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:C1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-02:C1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-PORT-DEV-02:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-02:C1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-02:C1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:C1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-PORT-DEV-02:C1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-PORT-DEV-02:C1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-PORT-DEV-02:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-PORT-DEV-02:C1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-PORT-DEV-02:C1-05",
+      "passed": true
+    },
+    {
+      "name": "author_layout_bounds:RG-PORT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "fixture_hash:RG-CONDITION-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "two_pages_and_identity:RG-CONDITION-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "index_budget_and_unique_ids:RG-CONDITION-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "exactly_20_authorized_distractors:RG-CONDITION-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "reference_and_runtime_query_ids:RG-CONDITION-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "no_gold_or_case_ids_in_runtime:RG-CONDITION-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "selected_requirement_namespace_only:RG-CONDITION-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "metadata_and_context_links:RG-CONDITION-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:SYN-NORM-CONFLICT",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-01:D807-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-01:D807-SPEC",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-01:D807-R80701",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-01:D807-R80702",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-01:D807-R80703",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-01:D807-R80704",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-01:D807-R80705",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-01:D807-R80706",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-01:D807-R80707",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-01:D807-R80708",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-01:D807-R80709",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-01:D807-R80710",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-01:D807-OTHER",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N01",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N02",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N03",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N04",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N05",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N06",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N07",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N08",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N09",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N10",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N11",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N12",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N13",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N14",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N15",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N16",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N17",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N18",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N19",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-01:D807-N20",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:D807-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:D807-R80701",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:D807-OTHER",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:D807-R80702",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:D807-R80703",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:D807-R80704",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:D807-R80705",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:D807-R80706",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:D807-R80707",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:D807-R80708",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:D807-R80709",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-01:D807-R80710",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:A1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:A1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-01:A1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-01:A1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-01:A1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:A1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:A1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-01:A1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-01:A1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-01:A1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:A1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:A1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-01:A1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-CONDITION-DEV-01:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-01:A1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-01:A1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:A1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:A1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-01:A1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-CONDITION-DEV-01:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-01:A1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-01:A1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:A1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:A1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-01:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-CONDITION-DEV-01:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-01:A1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-01:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:C1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:C1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-01:C1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-01:C1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-01:C1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:C1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:C1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-01:C1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-01:C1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-01:C1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:C1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:C1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-01:C1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-CONDITION-DEV-01:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-01:C1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-01:C1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:C1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:C1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-01:C1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-CONDITION-DEV-01:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-01:C1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-01:C1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:C1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:C1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-01:C1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-CONDITION-DEV-01:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-01:C1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-01:C1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:CONDITION-CONSISTENCY:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-01:CONDITION-CONSISTENCY:report",
+      "passed": true
+    },
+    {
+      "name": "author_layout_bounds:RG-CONDITION-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "fixture_hash:RG-CONDITION-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "two_pages_and_identity:RG-CONDITION-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "index_budget_and_unique_ids:RG-CONDITION-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "exactly_20_authorized_distractors:RG-CONDITION-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "reference_and_runtime_query_ids:RG-CONDITION-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "no_gold_or_case_ids_in_runtime:RG-CONDITION-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "selected_requirement_namespace_only:RG-CONDITION-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "metadata_and_context_links:RG-CONDITION-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:SYN-NORM-CONFLICT",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-02:D808-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-02:D808-SPEC",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-02:D808-R80801",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-02:D808-R80802",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-02:D808-R80803",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-02:D808-R80804",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-02:D808-R80805",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-02:D808-R80806",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-02:D808-R80807",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-02:D808-R80808",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-02:D808-R80809",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-02:D808-R80810",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-CONDITION-DEV-02:D808-OTHER",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N01",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N02",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N03",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N04",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N05",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N06",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N07",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N08",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N09",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N10",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N11",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N12",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N13",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N14",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N15",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N16",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N17",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N18",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N19",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-CONDITION-DEV-02:D808-N20",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:D808-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:D808-R80801",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:D808-R80802",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:D808-R80803",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:D808-R80804",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:D808-R80805",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:D808-R80806",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:D808-OTHER",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:D808-R80807",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:D808-R80808",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:D808-R80809",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-CONDITION-DEV-02:D808-R80810",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:A1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:A1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-02:A1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-02:A1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-02:A1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:A1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:A1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-02:A1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-02:A1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-02:A1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:A1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:A1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-02:A1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-CONDITION-DEV-02:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-02:A1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-02:A1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:A1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:A1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-02:A1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-CONDITION-DEV-02:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-02:A1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-02:A1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:A1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:A1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-02:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-CONDITION-DEV-02:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-02:A1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-02:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:C1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:C1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-02:C1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-02:C1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-02:C1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:C1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:C1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-02:C1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-02:C1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-02:C1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:C1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:C1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-02:C1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-CONDITION-DEV-02:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-02:C1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-02:C1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:C1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:C1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-02:C1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-CONDITION-DEV-02:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-02:C1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-02:C1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:C1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:C1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-CONDITION-DEV-02:C1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-CONDITION-DEV-02:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-CONDITION-DEV-02:C1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-CONDITION-DEV-02:C1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:CONDITION-CONSISTENCY:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-CONDITION-DEV-02:CONDITION-CONSISTENCY:report",
+      "passed": true
+    },
+    {
+      "name": "author_layout_bounds:RG-CONDITION-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "fixture_hash:RG-GAP-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "two_pages_and_identity:RG-GAP-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "index_budget_and_unique_ids:RG-GAP-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "exactly_20_authorized_distractors:RG-GAP-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "reference_and_runtime_query_ids:RG-GAP-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "no_gold_or_case_ids_in_runtime:RG-GAP-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "selected_requirement_namespace_only:RG-GAP-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "metadata_and_context_links:RG-GAP-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:SYN-NORM-CONFLICT",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-01:D809-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-01:D809-SPEC",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-01:D809-R80901",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-01:D809-R80902",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-01:D809-R80903",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-01:D809-R80904",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-01:D809-R80905",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-01:D809-R80906",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-01:D809-R80907",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-01:D809-R80908",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-01:D809-R80910",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N01",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N02",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N03",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N04",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N05",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N06",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N07",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N08",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N09",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N10",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N11",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N12",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N13",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N14",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N15",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N16",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N17",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N18",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N19",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-01:D809-N20",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-01:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-01:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-01:D809-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-01:D809-R80901",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-01:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-01:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-01:D809-R80902",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-01:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-01:D809-R80903",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-01:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-01:D809-R80904",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-01:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-01:D809-R80905",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-01:D809-R80906",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-01:D809-R80907",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-01:D809-R80908",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-01:D809-R80910",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:A1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:A1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-01:A1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-01:A1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-01:A1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:A1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:A1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-01:A1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-01:A1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-01:A1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:A1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:A1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-01:A1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-GAP-DEV-01:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-01:A1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-01:A1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:A1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:A1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-01:A1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-GAP-DEV-01:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-01:A1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-01:A1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:A1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:A1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-01:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-GAP-DEV-01:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-01:A1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-01:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:C1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:C1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-01:C1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-01:C1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-01:C1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:C1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:C1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-01:C1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-01:C1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-01:C1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:C1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:C1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-01:C1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-GAP-DEV-01:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-01:C1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-01:C1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:C1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:C1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-01:C1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:C1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-01:C1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-01:C1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-GAP-DEV-01:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-01:C1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-01:C1-05",
+      "passed": true
+    },
+    {
+      "name": "author_layout_bounds:RG-GAP-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "fixture_hash:RG-GAP-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "two_pages_and_identity:RG-GAP-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "index_budget_and_unique_ids:RG-GAP-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "exactly_20_authorized_distractors:RG-GAP-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "reference_and_runtime_query_ids:RG-GAP-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "no_gold_or_case_ids_in_runtime:RG-GAP-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "selected_requirement_namespace_only:RG-GAP-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "metadata_and_context_links:RG-GAP-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:SYN-NORM-CONFLICT",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-02:D810-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-02:D810-SPEC",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-02:D810-R81001",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-02:D810-R81002",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-02:D810-R81003",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-02:D810-R81004",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-02:D810-R81005",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-02:D810-R81006",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-02:D810-R81007",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-02:D810-R81008",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-02:D810-R81009",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-GAP-DEV-02:D810-R81010",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N01",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N02",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N03",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N04",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N05",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N06",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N07",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N08",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N09",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N10",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N11",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N12",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N13",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N14",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N15",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N16",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N17",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N18",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N19",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-GAP-DEV-02:D810-N20",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:D810-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:D810-R81001",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:D810-R81002",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:D810-R81003",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:D810-R81004",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:D810-R81005",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:D810-R81006",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:D810-R81007",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:D810-R81008",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:D810-R81009",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:D810-R81010",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-GAP-DEV-02:D810-SPEC",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:A1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:A1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-02:A1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-02:A1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-02:A1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:A1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:A1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-02:A1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-02:A1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-02:A1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:A1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:A1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-02:A1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-GAP-DEV-02:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-02:A1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-02:A1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:A1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:A1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-02:A1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-GAP-DEV-02:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-02:A1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-02:A1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:A1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:A1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-02:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-GAP-DEV-02:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-02:A1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-02:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:C1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:C1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-02:C1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-02:C1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-02:C1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:C1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:C1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-02:C1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-02:C1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-02:C1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:C1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:C1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-02:C1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-GAP-DEV-02:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-02:C1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-02:C1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:C1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:C1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-02:C1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-GAP-DEV-02:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-02:C1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-02:C1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:C1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:C1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-GAP-DEV-02:C1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-GAP-DEV-02:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-GAP-DEV-02:C1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-GAP-DEV-02:C1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:SPEC-VERSION:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-GAP-DEV-02:SPEC-VERSION:report",
+      "passed": true
+    },
+    {
+      "name": "author_layout_bounds:RG-GAP-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "fixture_hash:RG-NOISE-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "two_pages_and_identity:RG-NOISE-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "index_budget_and_unique_ids:RG-NOISE-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "exactly_20_authorized_distractors:RG-NOISE-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "reference_and_runtime_query_ids:RG-NOISE-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "no_gold_or_case_ids_in_runtime:RG-NOISE-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "selected_requirement_namespace_only:RG-NOISE-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "metadata_and_context_links:RG-NOISE-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:SYN-NORM-CONFLICT",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-01:D811-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-01:D811-SPEC",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-01:D811-R81101",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-01:D811-R81102",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-01:D811-R81103",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-01:D811-R81104",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-01:D811-R81105",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-01:D811-R81106",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-01:D811-R81107",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-01:D811-R81108",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-01:D811-R81109",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-01:D811-R81110",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N01",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N02",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N03",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N04",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N05",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N06",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N07",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N08",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N09",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N10",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N11",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N12",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N13",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N14",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N15",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N16",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N17",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N18",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N19",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-01:D811-N20",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-01:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-01:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-01:D811-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-01:D811-R81101",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-01:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-01:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-01:D811-R81102",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-01:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-01:D811-R81103",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-01:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-01:D811-R81104",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-01:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-01:D811-R81105",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-01:D811-R81106",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-01:D811-R81107",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-01:D811-R81108",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-01:D811-R81109",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-01:D811-R81110",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:A1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:A1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-01:A1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-NOISE-DEV-01:A1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-NOISE-DEV-01:A1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:A1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:A1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-01:A1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-NOISE-DEV-01:A1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-NOISE-DEV-01:A1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:A1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:A1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-01:A1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-NOISE-DEV-01:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-NOISE-DEV-01:A1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-NOISE-DEV-01:A1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:A1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:A1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-01:A1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-NOISE-DEV-01:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-NOISE-DEV-01:A1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-NOISE-DEV-01:A1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:A1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:A1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-01:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-NOISE-DEV-01:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-NOISE-DEV-01:A1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-NOISE-DEV-01:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:C1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:C1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-01:C1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-NOISE-DEV-01:C1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-NOISE-DEV-01:C1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:C1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:C1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-01:C1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-NOISE-DEV-01:C1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-NOISE-DEV-01:C1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:C1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:C1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-01:C1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-NOISE-DEV-01:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-NOISE-DEV-01:C1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-NOISE-DEV-01:C1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:C1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:C1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-01:C1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-NOISE-DEV-01:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-NOISE-DEV-01:C1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-NOISE-DEV-01:C1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:C1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-01:C1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-01:C1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-NOISE-DEV-01:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-NOISE-DEV-01:C1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-NOISE-DEV-01:C1-05",
+      "passed": true
+    },
+    {
+      "name": "author_layout_bounds:RG-NOISE-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "fixture_hash:RG-NOISE-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "two_pages_and_identity:RG-NOISE-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "index_budget_and_unique_ids:RG-NOISE-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "exactly_20_authorized_distractors:RG-NOISE-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "reference_and_runtime_query_ids:RG-NOISE-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "no_gold_or_case_ids_in_runtime:RG-NOISE-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "selected_requirement_namespace_only:RG-NOISE-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "metadata_and_context_links:RG-NOISE-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:SYN-NORM-CONFLICT",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-02:D812-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-02:D812-SPEC",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-02:D812-R81201",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-02:D812-R81202",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-02:D812-R81203",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-02:D812-R81204",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-02:D812-R81206",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-02:D812-R81207",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-02:D812-R81208",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-02:D812-R81210",
+      "passed": true
+    },
+    {
+      "name": "dual_engine_pdf_quote:RG-NOISE-DEV-02:D812-BACKGROUND",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N01",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N02",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N03",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N04",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N05",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N06",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N07",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N08",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N09",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N10",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N11",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N12",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N13",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N14",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N15",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N16",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N17",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N18",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N19",
+      "passed": true
+    },
+    {
+      "name": "verbatim_text_source:RG-NOISE-DEV-02:D812-N20",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-02:SYN-NORM-RANGE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-02:SYN-NORM-RESPONSE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-02:D812-CONDITION",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-02:D812-R81201",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-02:SYN-NORM-RECOVERY",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-02:SYN-SPEC-PB01-RevB-REC",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-02:D812-R81202",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-02:SYN-NORM-TEMP",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-02:D812-R81203",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-02:SYN-NORM-APPEARANCE",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-02:D812-R81204",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-02:SYN-NORM-METHOD",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-02:D812-R81206",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-02:D812-R81207",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-02:D812-R81208",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-02:D812-R81210",
+      "passed": true
+    },
+    {
+      "name": "citation_identity_hash:RG-NOISE-DEV-02:D812-BACKGROUND",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:A1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:A1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-02:A1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-NOISE-DEV-02:A1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-NOISE-DEV-02:A1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:A1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:A1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-02:A1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-NOISE-DEV-02:A1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-NOISE-DEV-02:A1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:A1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:A1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-02:A1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-NOISE-DEV-02:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-NOISE-DEV-02:A1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-NOISE-DEV-02:A1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:A1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:A1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-02:A1-04",
+      "passed": true
+    },
+    {
+      "name": "explicit_three_observations:RG-NOISE-DEV-02:A1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-NOISE-DEV-02:A1-04",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-NOISE-DEV-02:A1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:A1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:A1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-02:A1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:C1-01:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:C1-01:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-02:C1-01",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-NOISE-DEV-02:C1-01",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-NOISE-DEV-02:C1-01",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:C1-02:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:C1-02:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-02:C1-02",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-NOISE-DEV-02:C1-02",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-NOISE-DEV-02:C1-02",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:C1-03:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:C1-03:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-02:C1-03",
+      "passed": true
+    },
+    {
+      "name": "two_temperature_values:RG-NOISE-DEV-02:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-NOISE-DEV-02:C1-03",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-NOISE-DEV-02:C1-03",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:C1-04:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:C1-04:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-02:C1-04",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:C1-05:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:C1-05:report",
+      "passed": true
+    },
+    {
+      "name": "absence_label_no_invented_quote:RG-NOISE-DEV-02:C1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_method:RG-NOISE-DEV-02:C1",
+      "passed": true
+    },
+    {
+      "name": "independent_numeric_reference:RG-NOISE-DEV-02:C1-05",
+      "passed": true
+    },
+    {
+      "name": "correct_record_and_port:RG-NOISE-DEV-02:C1-05",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:BACKGROUND-CONSISTENCY:requirement",
+      "passed": true
+    },
+    {
+      "name": "nonempty_groups:RG-NOISE-DEV-02:BACKGROUND-CONSISTENCY:report",
+      "passed": true
+    },
+    {
+      "name": "author_layout_bounds:RG-NOISE-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "fixture_hash:RG-OPS-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "offline_contract_only:RG-OPS-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "immutable_seed_hash:RG-OPS-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "declared_deadlines:RG-OPS-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "permission_injection_unreadable",
+      "passed": true
+    },
+    {
+      "name": "fixture_hash:RG-OPS-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "offline_contract_only:RG-OPS-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "immutable_seed_hash:RG-OPS-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "declared_deadlines:RG-OPS-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "new_vs_history_expected_separately",
+      "passed": true
+    },
+    {
+      "name": "fixture_hash:RG-OPS-DEV-03",
+      "passed": true
+    },
+    {
+      "name": "offline_contract_only:RG-OPS-DEV-03",
+      "passed": true
+    },
+    {
+      "name": "immutable_seed_hash:RG-OPS-DEV-03",
+      "passed": true
+    },
+    {
+      "name": "declared_deadlines:RG-OPS-DEV-03",
+      "passed": true
+    },
+    {
+      "name": "two_invalid_citation_responses",
+      "passed": true
+    },
+    {
+      "name": "fixture_hash:RG-OPS-DEV-04",
+      "passed": true
+    },
+    {
+      "name": "offline_contract_only:RG-OPS-DEV-04",
+      "passed": true
+    },
+    {
+      "name": "immutable_seed_hash:RG-OPS-DEV-04",
+      "passed": true
+    },
+    {
+      "name": "declared_deadlines:RG-OPS-DEV-04",
+      "passed": true
+    },
+    {
+      "name": "virtual_timeout_arithmetic",
+      "passed": true
+    },
+    {
+      "name": "term_narrative_challenges",
+      "passed": true
+    },
+    {
+      "name": "context_challenges",
+      "passed": true
+    },
+    {
+      "name": "header_applies_to_exactly_two_response_rows",
+      "passed": true
+    },
+    {
+      "name": "same_port_values:RG-PORT-DEV-01",
+      "passed": true
+    },
+    {
+      "name": "same_port_values:RG-PORT-DEV-02",
+      "passed": true
+    },
+    {
+      "name": "same_digits_different_fields",
+      "passed": true
+    },
+    {
+      "name": "5v_and_9v_explicit",
+      "passed": true
+    },
+    {
+      "name": "input_and_output_explicit",
+      "passed": true
+    },
+    {
+      "name": "reva_declaration_revb_task",
+      "passed": true
+    },
+    {
+      "name": "untrusted_document_instruction",
+      "passed": true
+    },
+    {
+      "name": "three_genuine_missing_units",
+      "passed": true
+    },
+    {
+      "name": "120_fixed_core_units_124_queries",
+      "passed": true
+    }
+  ],
+  "passed": 1693,
+  "total": 1693,
+  "stats": {
+    "pdfs": 12,
+    "pages": 24,
+    "offline_fixtures": 4,
+    "core_units": 120,
+    "queries": 124,
+    "missing_core_units": 3,
+    "authorized_distractor_fragments": 240,
+    "indexed_chunks": 481,
+    "exact_pdf_quotes": 145,
+    "exact_requirement_quotes": 96
+  },
+  "pdfs": [
+    {
+      "case_id": "RG-TERM-DEV-01",
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-801.pdf",
+      "sha256": "8a03d7f1c310ec8bcd1d930a93e6ea037fc74d3e42bd118c52b9a862efa5f008",
+      "pages": 2,
+      "index_chunks": 40,
+      "distractors": 20,
+      "queries": 10
+    },
+    {
+      "case_id": "RG-TERM-DEV-02",
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-802.pdf",
+      "sha256": "ab380951724ebf96feb8732121e9e0236f1b1a16346c19a0a2d5b5dccf030311",
+      "pages": 2,
+      "index_chunks": 40,
+      "distractors": 20,
+      "queries": 10
+    },
+    {
+      "case_id": "RG-CONTEXT-DEV-01",
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-803.pdf",
+      "sha256": "db4da1a87e5c6eccd8557716cfe39ed9746097d7b151f65df89fbd19ad387acf",
+      "pages": 2,
+      "index_chunks": 40,
+      "distractors": 20,
+      "queries": 10
+    },
+    {
+      "case_id": "RG-CONTEXT-DEV-02",
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-804.pdf",
+      "sha256": "0b26882eedd6f328c50ed33a93ce9df87201051b8293a01a9242ed1907c12b30",
+      "pages": 2,
+      "index_chunks": 41,
+      "distractors": 20,
+      "queries": 10
+    },
+    {
+      "case_id": "RG-PORT-DEV-01",
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-805.pdf",
+      "sha256": "c42e8c984e6835cf9820d2ff0a6ab044c1ab88ead40356f0adbd2eb706e40492",
+      "pages": 2,
+      "index_chunks": 40,
+      "distractors": 20,
+      "queries": 10
+    },
+    {
+      "case_id": "RG-PORT-DEV-02",
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-806.pdf",
+      "sha256": "b8558c0339665d41a3efc659115ffa917f8b09051e2e8b4ea6129bdc83802a4f",
+      "pages": 2,
+      "index_chunks": 40,
+      "distractors": 20,
+      "queries": 10
+    },
+    {
+      "case_id": "RG-CONDITION-DEV-01",
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-807.pdf",
+      "sha256": "3069e2234ee6399d9d1ab878f89012c273947141ef19899d77f0df9482c76c5a",
+      "pages": 2,
+      "index_chunks": 41,
+      "distractors": 20,
+      "queries": 11
+    },
+    {
+      "case_id": "RG-CONDITION-DEV-02",
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-808.pdf",
+      "sha256": "4298859e84766789ec25972e1ffdba2ebc08e5548ed4f4e88ef96f1a93b3651d",
+      "pages": 2,
+      "index_chunks": 41,
+      "distractors": 20,
+      "queries": 11
+    },
+    {
+      "case_id": "RG-GAP-DEV-01",
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-809.pdf",
+      "sha256": "18345a536ab216f725eda94bbee25f0ddd4583a913c37096fecf53fe65dd27fc",
+      "pages": 2,
+      "index_chunks": 39,
+      "distractors": 20,
+      "queries": 10
+    },
+    {
+      "case_id": "RG-GAP-DEV-02",
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-810.pdf",
+      "sha256": "d4b1bb0ff505baa127e4f11b86b50bddcd0fe4617afd3fb0c8112c0b08c2008e",
+      "pages": 2,
+      "index_chunks": 40,
+      "distractors": 20,
+      "queries": 11
+    },
+    {
+      "case_id": "RG-NOISE-DEV-01",
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-811.pdf",
+      "sha256": "203ca467e94b700b0fad8446e8df3b9243c94962e338159b0c2be824af579f9e",
+      "pages": 2,
+      "index_chunks": 40,
+      "distractors": 20,
+      "queries": 10
+    },
+    {
+      "case_id": "RG-NOISE-DEV-02",
+      "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-812.pdf",
+      "sha256": "261182aa2436d8a45e2912f9b42d910691f7e14200b1a0b213544fdc61975e36",
+      "pages": 2,
+      "index_chunks": 39,
+      "distractors": 20,
+      "queries": 11
+    }
+  ],
+  "app_behavior_tests_executed": 0,
+  "retrieval_arm_jobs_executed": 0,
+  "model_requests": 0,
+  "offline_fixtures_executed_against_application": 0,
+  "holdout_materialized": 0,
+  "visual_review_status": "see_separate_24_page_visual_record",
+  "professional_review_status": "pending",
+  "source_correction": "Selected requirement chunks use source-section verbatim text; legacy bootstrap summaries and application remain unchanged.",
+  "asset_sha256": {
+    "data/ai-work-rag-gain-dev-v0.1/README.md": "8dd95dec6bc363c92a9b1533d648ee84794d388866458d48c14d10d6a7368005",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-801/chunks.jsonl": "71579c7df75f633916baae13831f0094704f226b761b393477b52a488c7fd717",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-801/task-background.md": "98e47b51efa03300423dfd14d90a8766b851060d805213b53660f1e1b60584c1",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-801/task.json": "dc0a6bb4a219801413378f71f6be00d1ca306df866950dad9231dc771b713658",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-802/chunks.jsonl": "32c11ff8139f56f0c3dba09d8923c9c20b3fb3075aea5ba9f3a37fc1e5de5659",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-802/task-background.md": "98e47b51efa03300423dfd14d90a8766b851060d805213b53660f1e1b60584c1",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-802/task.json": "0dd25bc5f7af4b9bda80be45142be296b90502376f6e6be9053f52e6ff77e9d2",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-803/chunks.jsonl": "cd78868fdeea949ac0a0ce656d1d3d937521d7af78c80a0f80c18a600f94fe24",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-803/task-background.md": "98e47b51efa03300423dfd14d90a8766b851060d805213b53660f1e1b60584c1",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-803/task.json": "31976c8ae4ec91a556c14844bbccd5d69090a0c7c54d5d2ca09a6b798c3d32fb",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-804/chunks.jsonl": "8e621e908d1194de74f5911108a4fdd7ca7b402127f654bf448d119e8fabbac2",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-804/task-background.md": "98e47b51efa03300423dfd14d90a8766b851060d805213b53660f1e1b60584c1",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-804/task.json": "b71b6f6d5e27ab965c98b31126ee0b7cb4d8f9546f8d66fa1d0da7fb6003a4ae",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-805/chunks.jsonl": "40a176bc3a1ac6fba3ed790700b1f2dc753042680d2d36c4e77f4ceb1597b5dd",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-805/task-background.md": "98e47b51efa03300423dfd14d90a8766b851060d805213b53660f1e1b60584c1",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-805/task.json": "98bd3bd174cb7d20a3bcb7ea61e3ce102019dced89df25a4ae7ac9523ec43cc8",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-806/chunks.jsonl": "5b98403ea433c98d3c84ee0d9aecb93d598f2a68d60a6d3ff7140db29c11b099",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-806/task-background.md": "98e47b51efa03300423dfd14d90a8766b851060d805213b53660f1e1b60584c1",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-806/task.json": "1488bf83494d1928f92cddaf364d26c63899a5e4046ea59aa96aebd3a8984b29",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-807/chunks.jsonl": "f750ebb536283840d574287ad70ea919fea9b8c1a5d5702b301d20c1baaa35ec",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-807/task-background.md": "98e47b51efa03300423dfd14d90a8766b851060d805213b53660f1e1b60584c1",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-807/task.json": "47d6bef8913df0ce9432ee8b5b125a837c4a4d52fb2ce52f50602fe8b862a796",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-808/chunks.jsonl": "a13dd1e4c2b2c3c1b2ad4bc3854a28cffd028fe1e4cee8e537a50d63213835db",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-808/task-background.md": "98e47b51efa03300423dfd14d90a8766b851060d805213b53660f1e1b60584c1",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-808/task.json": "c2dd8d3c2d488b33bfe2d4c9015b809e6938edae78ccd449d7d3b79e2a74287f",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-809/chunks.jsonl": "67611496748b6199f8c9e3bab34cadd8e6f736530c72518cd2695280ad0d2c9f",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-809/task-background.md": "98e47b51efa03300423dfd14d90a8766b851060d805213b53660f1e1b60584c1",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-809/task.json": "17324964bf8f0f1764d7384d379b7626380a1c0c135731820e629c3c11abf679",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-810/chunks.jsonl": "a777a24417985a91fd91a2b6730cbe1d8243da25a8487ed1034942054f7f511b",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-810/task-background.md": "98e47b51efa03300423dfd14d90a8766b851060d805213b53660f1e1b60584c1",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-810/task.json": "a562c35dc5efef512fc0a4da2f8c30d6792bff389e2bc3836126b1acb5fcbd0a",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-811/chunks.jsonl": "3c0bb8a7d3ae6e7dbf27a6929523efbee81e547f4d6bc3f78d98950dfb1ee4e0",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-811/task-background.md": "08279ec64d7e98bab2e2432104269385d1948424c01c2408ecafbcb4567451a7",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-811/task.json": "ece0528353da76f9820eb1c252d16a2c65e757b0b27444d5aa59502fa68676d0",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-812/chunks.jsonl": "498fe604c1e7e4d401f11eab3fe7843150b0a788223bec4d8f61fe3696c39e32",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-812/task-background.md": "98e47b51efa03300423dfd14d90a8766b851060d805213b53660f1e1b60584c1",
+    "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-812/task.json": "91b4e290b1b284d1b0de3ace80903a0092322bd2d5735fdae37a225681b4216d",
+    "data/ai-work-rag-gain-dev-v0.1/author-source/SYND-801.json": "8fad514e069009cbd85090fb4fd8333ba8d7fb6b47ad7e952766bca913054599",
+    "data/ai-work-rag-gain-dev-v0.1/author-source/SYND-802.json": "e55a6b9b4f228b7645d87894749eb8b6768d1794360e7a978fc27a14db3e670e",
+    "data/ai-work-rag-gain-dev-v0.1/author-source/SYND-803.json": "f3c7c9a50f4996e3cde9caa733152586f27d6c96b528ec4c13765e9b03daa6fd",
+    "data/ai-work-rag-gain-dev-v0.1/author-source/SYND-804.json": "a4b2c4bf475041e85a358a68c7d6a0ab7fd15d971ace6598f9584c832f5d274e",
+    "data/ai-work-rag-gain-dev-v0.1/author-source/SYND-805.json": "b95ae47a732745a50d2e3dcde837fb0358af2f691448ad63f6fd59d731440c6c",
+    "data/ai-work-rag-gain-dev-v0.1/author-source/SYND-806.json": "9d33a0d9e000ba74696d2b93e4c805ed8f175cad77cda902021a8ef87c3d0778",
+    "data/ai-work-rag-gain-dev-v0.1/author-source/SYND-807.json": "b200ca99f2f0358786d38c4e5f6d8c7d54e50bfefb0b9f0ea6e9fd81af47f961",
+    "data/ai-work-rag-gain-dev-v0.1/author-source/SYND-808.json": "2b2958f8c7e3bff03a358f90a5bb2affaf4308b40d0609ec0d8b865eae57bce8",
+    "data/ai-work-rag-gain-dev-v0.1/author-source/SYND-809.json": "2abd6595d82c98866756224efc1b46333891932be983a6f180e40acc12a22e58",
+    "data/ai-work-rag-gain-dev-v0.1/author-source/SYND-810.json": "0555d0208f3a9a6573fc3f7b59409291c18585365bccbe10b8726c11aa473bd5",
+    "data/ai-work-rag-gain-dev-v0.1/author-source/SYND-811.json": "2a516957d78ef6fa21a3093a866894398682db635b6a64c24c558402115b7c7e",
+    "data/ai-work-rag-gain-dev-v0.1/author-source/SYND-812.json": "0cc22dc6ea7cd0eda1945c7bcd22dc3feb3e409261e1013daf995d21c29a3431",
+    "data/ai-work-rag-gain-dev-v0.1/cases.json": "1f7aa6b6241451fe07bb30510819a0a4e66c917de4f6cbca4b1f3d2f565e06e1",
+    "data/ai-work-rag-gain-dev-v0.1/offline-fixtures/RG-OPS-DEV-01.json": "678ad160023705ee5b6856451e5c549b88aa3e243db7c62bda771796db3e7557",
+    "data/ai-work-rag-gain-dev-v0.1/offline-fixtures/RG-OPS-DEV-02.json": "06a7673c26803f36f9340f55760e2f5d6f9afc15cd68e67d36109abaf93f7b1b",
+    "data/ai-work-rag-gain-dev-v0.1/offline-fixtures/RG-OPS-DEV-03.json": "0a2df61bc8740eb883204434fa1e0509d2c8a33d80cace73f3c8f9c45fc8e6b9",
+    "data/ai-work-rag-gain-dev-v0.1/offline-fixtures/RG-OPS-DEV-04.json": "2b9a4ed7337ca794fc2d533a7c4c95ae5dd158806af99aa0de7cdf6b25d3841e",
+    "data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-801.json": "5d9a607555a9e511a97bff27c5e50a5133f594d2b76c10f7529cf94a3b44cea3",
+    "data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-802.json": "efd9945de0b806755228b7f5786e2475a08eea31bc45098ba9906715d575f546",
+    "data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-803.json": "ff9f34695af5129967c467240c34485580dcf9733cbb660a54174e127e61e94c",
+    "data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-804.json": "0c4077d29c93d5dd8738ed673b939483bcf9cbfb5baa5ebd996edb2d3187732d",
+    "data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-805.json": "f76fa5969b087851391417d21e5d230e588b5af8ca08bd3f08cdd87565c89103",
+    "data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-806.json": "ee58f5519e08f25643aa4620561c4320c1dfce7bda674655e5a8af30e23eec1a",
+    "data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-807.json": "b83c2b3345c15947686af0fac1a6accf1bc27b23bd2be6cce95a506ebb0e47fa",
+    "data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-808.json": "e57d44461e655ee678fc8227f5217542a4e692c8d1b9fca5195e1f0deaaf7777",
+    "data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-809.json": "00d8f17d4f1744a091ef432e6efd2b908c375c3dec42a61292cfe158c8e04313",
+    "data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-810.json": "dbc0d946f6ecd137c491d81fedf7db5fdf360cee06f4239067555d45c34e14a0",
+    "data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-811.json": "2e2d0ef69b467f6d48170d9aeaa6296c85287709373200fc49f4436ed1a43eae",
+    "data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-812.json": "087833d17933094f58fbff01cb4fb74d180eca4b4fc35ec2cf108a4016dbd02a",
+    "data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-801.json": "65c302d3f399a122e6710b4ed657b552374f6faa8e8d2f5b15833f359ea61de9",
+    "data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-802.json": "1ae485e7f88d7bbdd13a75cc2b8f2759a8183917be0851f2c8b458bad930035d",
+    "data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-803.json": "2f2cf532775ee1b7898524da5712e989fb3f4f195eb765901aaa763badba64ec",
+    "data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-804.json": "05e3acc2799bb2303f3f3e09c7c770329342be72bf5c37645ff3821c258da172",
+    "data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-805.json": "4f3d85b9e37f1d825ae0e1a7306e63b08b89ff0072c87dd0240972fb06df8f28",
+    "data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-806.json": "1a2d79c7db034b0de2fc28302b7a41c6d299cfa71431cfbdcfdc6228a87be6eb",
+    "data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-807.json": "9c133f327f23d75cbd0cec4661aaa5744becec464922ddbb670d41dfcfe900a6",
+    "data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-808.json": "d461a83a8758415a12e09d6ede54b221741852d5e79e3b1ed5c7c294af2c07f2",
+    "data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-809.json": "d7bdeeb210d90cab791c27ffc394c17f8b5bae5336219da60ac240378a517611",
+    "data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-810.json": "978569a32140f902508363eb28c80b283ba19e8bb0b59bce029a70f8a4aec654",
+    "data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-811.json": "4f3d85b9e37f1d825ae0e1a7306e63b08b89ff0072c87dd0240972fb06df8f28",
+    "data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-812.json": "0f22c604a21d32ae3b0580a0cebed588d66503013c98a363f22703970d06fa92",
+    "data/ai-work-rag-gain-dev-v0.1/selected-basis/SYN-QA-SC-1.0.md": "fd57f543d6dd26eff9e8f406a03947c6ff5e4d9c3f3f50e9ffccbb22bb6b150e",
+    "data/ai-work-rag-gain-dev-v0.1/selected-basis/SYN-SPEC-PB01-RevB.md": "d2ed2688e839ba912e9b39f0c40573e4300fc416382bd520c4531c028fcdf5b1",
+    "data/ai-work-rag-gain-dev-v0.1/selected-basis/chunks.json": "16e1e5b33022e5b1626a4cdcc5745e9c5e913c34c577e996834e6f2f929261a2",
+    "output/pdf/rag-gain-dev-v0.1/SYND-801.pdf": "8a03d7f1c310ec8bcd1d930a93e6ea037fc74d3e42bd118c52b9a862efa5f008",
+    "output/pdf/rag-gain-dev-v0.1/SYND-802.pdf": "ab380951724ebf96feb8732121e9e0236f1b1a16346c19a0a2d5b5dccf030311",
+    "output/pdf/rag-gain-dev-v0.1/SYND-803.pdf": "db4da1a87e5c6eccd8557716cfe39ed9746097d7b151f65df89fbd19ad387acf",
+    "output/pdf/rag-gain-dev-v0.1/SYND-804.pdf": "0b26882eedd6f328c50ed33a93ce9df87201051b8293a01a9242ed1907c12b30",
+    "output/pdf/rag-gain-dev-v0.1/SYND-805.pdf": "c42e8c984e6835cf9820d2ff0a6ab044c1ab88ead40356f0adbd2eb706e40492",
+    "output/pdf/rag-gain-dev-v0.1/SYND-806.pdf": "b8558c0339665d41a3efc659115ffa917f8b09051e2e8b4ea6129bdc83802a4f",
+    "output/pdf/rag-gain-dev-v0.1/SYND-807.pdf": "3069e2234ee6399d9d1ab878f89012c273947141ef19899d77f0df9482c76c5a",
+    "output/pdf/rag-gain-dev-v0.1/SYND-808.pdf": "4298859e84766789ec25972e1ffdba2ebc08e5548ed4f4e88ef96f1a93b3651d",
+    "output/pdf/rag-gain-dev-v0.1/SYND-809.pdf": "18345a536ab216f725eda94bbee25f0ddd4583a913c37096fecf53fe65dd27fc",
+    "output/pdf/rag-gain-dev-v0.1/SYND-810.pdf": "d4b1bb0ff505baa127e4f11b86b50bddcd0fe4617afd3fb0c8112c0b08c2008e",
+    "output/pdf/rag-gain-dev-v0.1/SYND-811.pdf": "203ca467e94b700b0fad8446e8df3b9243c94962e338159b0c2be824af579f9e",
+    "output/pdf/rag-gain-dev-v0.1/SYND-812.pdf": "261182aa2436d8a45e2912f9b42d910691f7e14200b1a0b213544fdc61975e36"
+  }
+}

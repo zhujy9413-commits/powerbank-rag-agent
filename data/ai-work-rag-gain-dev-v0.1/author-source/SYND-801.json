@@ -1,0 +1,167 @@
+{
+  "case_id": "RG-TERM-DEV-01",
+  "scenario": "保护动作的叙述与字段名称不同",
+  "family_id": "DEV-FAMILY-801",
+  "report_id": "SYND-801",
+  "task_id": "DEVTASK-801",
+  "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-801.pdf",
+  "input_dir": "data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-801",
+  "report_version": "1",
+  "specification_declaration": "报告填写的规格版本：SYN-SPEC-PB01-RevB",
+  "global_condition": "本报告测试条件：电压=5 V；角色=输出；组合=单口。适用于记录表A及记录表B。",
+  "unit_header": null,
+  "records": [
+    {
+      "record_id": "R80101",
+      "port": "A1",
+      "field": "response",
+      "text": "R80101 A1 短接建立后，输出被切断，耗时224 ms。",
+      "normalized_value": "224 ms",
+      "authored_comparison": "no_issue",
+      "page": 1,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    },
+    {
+      "record_id": "R80102",
+      "port": "A1",
+      "field": "recovery",
+      "text": "R80102 A1 恢复电压 4.86 V",
+      "normalized_value": "4.86 V",
+      "authored_comparison": "no_issue",
+      "page": 1,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    },
+    {
+      "record_id": "R80103",
+      "port": "A1",
+      "field": "temperature",
+      "text": "R80103 A1 壳温起值/末值 22.1摄氏度 / 31.8摄氏度",
+      "normalized_value": "22.1摄氏度 / 31.8摄氏度",
+      "authored_comparison": "no_issue",
+      "page": 2,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    },
+    {
+      "record_id": "R80104",
+      "port": "A1",
+      "field": "appearance",
+      "text": "R80104 A1 外观观察 无起火、无爆炸、无漏液",
+      "normalized_value": "无起火、无爆炸、无漏液",
+      "authored_comparison": "no_issue",
+      "page": 2,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    },
+    {
+      "record_id": "R80105",
+      "port": "A1",
+      "field": "method",
+      "text": "R80105 A1 恢复方式 记录为移除负载后重新接入",
+      "normalized_value": "记录为移除负载后重新接入",
+      "authored_comparison": "no_issue",
+      "page": 2,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    },
+    {
+      "record_id": "R80106",
+      "port": "C1",
+      "field": "response",
+      "text": "R80106 C1 保护响应 339 ms",
+      "normalized_value": "339 ms",
+      "authored_comparison": "no_issue",
+      "page": 1,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    },
+    {
+      "record_id": "R80107",
+      "port": "C1",
+      "field": "recovery",
+      "text": "R80107 C1 恢复电压 5.15 V",
+      "normalized_value": "5.15 V",
+      "authored_comparison": "no_issue",
+      "page": 1,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    },
+    {
+      "record_id": "R80108",
+      "port": "C1",
+      "field": "temperature",
+      "text": "R80108 C1 壳温起值/末值 23.0摄氏度 / 36.1摄氏度",
+      "normalized_value": "23.0摄氏度 / 36.1摄氏度",
+      "authored_comparison": "numeric_outside_demo_limit",
+      "page": 2,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    },
+    {
+      "record_id": "R80109",
+      "port": "C1",
+      "field": "appearance",
+      "text": "R80109 C1 外观观察 无起火、无爆炸、无漏液",
+      "normalized_value": "无起火、无爆炸、无漏液",
+      "authored_comparison": "no_issue",
+      "page": 2,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    },
+    {
+      "record_id": "R80110",
+      "port": "C1",
+      "field": "method",
+      "text": "R80110 C1 恢复方式 记录为移除负载后重新接入",
+      "normalized_value": "记录为移除负载后重新接入",
+      "authored_comparison": "no_issue",
+      "page": 2,
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "unit_header": null
+    }
+  ],
+  "extras": [],
+  "expected_behavior": "从叙述找回等价响应证据；不要求重复引用已充分的字段记录"
+}

@@ -1,0 +1,876 @@
+{
+  "kind": "offline_package_integrity",
+  "archive": "output/packages/ai-work-rag-gain-dev-v0.1.zip",
+  "archive_sha256": "34220560d3fcd9b1f8299308204703e91a0a9c4b96c992639259eee1f6726245",
+  "package_members": 118,
+  "checks": [
+    {
+      "name": "no_duplicates",
+      "passed": true
+    },
+    {
+      "name": "safe_relative_paths",
+      "passed": true
+    },
+    {
+      "name": "exact_member_set",
+      "passed": true
+    },
+    {
+      "name": "no_unlisted_or_private_runtime_state",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/README.md",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-801/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-801/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-801/task.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-802/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-802/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-802/task.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-803/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-803/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-803/task.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-804/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-804/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-804/task.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-805/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-805/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-805/task.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-806/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-806/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-806/task.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-807/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-807/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-807/task.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-808/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-808/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-808/task.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-809/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-809/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-809/task.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-810/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-810/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-810/task.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-811/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-811/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-811/task.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-812/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-812/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-812/task.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-801.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-802.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-803.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-804.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-805.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-806.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-807.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-808.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-809.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-810.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-811.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-812.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/cases.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/material-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/offline-fixtures/RG-OPS-DEV-01.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/offline-fixtures/RG-OPS-DEV-02.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/offline-fixtures/RG-OPS-DEV-03.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/offline-fixtures/RG-OPS-DEV-04.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-801.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-802.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-803.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-804.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-805.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-806.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-807.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-808.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-809.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-810.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-811.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-812.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-801.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-802.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-803.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-804.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-805.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-806.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-807.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-808.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-809.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-810.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-811.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-812.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/selected-basis/SYN-QA-SC-1.0.md",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/selected-basis/SYN-SPEC-PB01-RevB.md",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-dev-v0.1/selected-basis/chunks.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-v0.1/cases.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/ai-work-rag-gain-v0.1/protocol.json",
+      "passed": true
+    },
+    {
+      "name": "hash:data/bootstrap-v0.1/knowledge/synthetic/SYN-QA-SC-1.0.md",
+      "passed": true
+    },
+    {
+      "name": "hash:data/bootstrap-v0.1/knowledge/synthetic/SYN-SPEC-PB01-RevB.md",
+      "passed": true
+    },
+    {
+      "name": "hash:docs/ai-work/rag-gain-dev-material-audit-v0.1.md",
+      "passed": true
+    },
+    {
+      "name": "hash:docs/ai-work/rag-gain-dev-reference-v0.1.md",
+      "passed": true
+    },
+    {
+      "name": "hash:docs/ai-work/rag-gain-dev-sample-pack-v0.1.md",
+      "passed": true
+    },
+    {
+      "name": "hash:eval-results/rag-gain-dev-material-validation-v0.2.json",
+      "passed": true
+    },
+    {
+      "name": "hash:eval-results/rag-gain-dev-metric-readiness-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "hash:eval-results/rag-gain-dev-visual-review-v0.1.json",
+      "passed": true
+    },
+    {
+      "name": "hash:output/pdf/rag-gain-dev-v0.1/SYND-801.pdf",
+      "passed": true
+    },
+    {
+      "name": "hash:output/pdf/rag-gain-dev-v0.1/SYND-802.pdf",
+      "passed": true
+    },
+    {
+      "name": "hash:output/pdf/rag-gain-dev-v0.1/SYND-803.pdf",
+      "passed": true
+    },
+    {
+      "name": "hash:output/pdf/rag-gain-dev-v0.1/SYND-804.pdf",
+      "passed": true
+    },
+    {
+      "name": "hash:output/pdf/rag-gain-dev-v0.1/SYND-805.pdf",
+      "passed": true
+    },
+    {
+      "name": "hash:output/pdf/rag-gain-dev-v0.1/SYND-806.pdf",
+      "passed": true
+    },
+    {
+      "name": "hash:output/pdf/rag-gain-dev-v0.1/SYND-807.pdf",
+      "passed": true
+    },
+    {
+      "name": "hash:output/pdf/rag-gain-dev-v0.1/SYND-808.pdf",
+      "passed": true
+    },
+    {
+      "name": "hash:output/pdf/rag-gain-dev-v0.1/SYND-809.pdf",
+      "passed": true
+    },
+    {
+      "name": "hash:output/pdf/rag-gain-dev-v0.1/SYND-810.pdf",
+      "passed": true
+    },
+    {
+      "name": "hash:output/pdf/rag-gain-dev-v0.1/SYND-811.pdf",
+      "passed": true
+    },
+    {
+      "name": "hash:output/pdf/rag-gain-dev-v0.1/SYND-812.pdf",
+      "passed": true
+    },
+    {
+      "name": "hash:output/qa/rag-gain-dev-v0.1/contact-01.png",
+      "passed": true
+    },
+    {
+      "name": "hash:output/qa/rag-gain-dev-v0.1/contact-02.png",
+      "passed": true
+    },
+    {
+      "name": "hash:output/qa/rag-gain-dev-v0.1/contact-03.png",
+      "passed": true
+    },
+    {
+      "name": "hash:output/qa/rag-gain-dev-v0.1/contact-04.png",
+      "passed": true
+    },
+    {
+      "name": "hash:output/qa/rag-gain-dev-v0.1/contact-05.png",
+      "passed": true
+    },
+    {
+      "name": "hash:output/qa/rag-gain-dev-v0.1/contact-06.png",
+      "passed": true
+    },
+    {
+      "name": "hash:scripts/build_rag_gain_dev.py",
+      "passed": true
+    },
+    {
+      "name": "hash:scripts/check_rag_gain_dev_metric_readiness.py",
+      "passed": true
+    },
+    {
+      "name": "hash:scripts/document_rag_gain_dev.py",
+      "passed": true
+    },
+    {
+      "name": "hash:scripts/package_rag_gain_dev.py",
+      "passed": true
+    },
+    {
+      "name": "hash:scripts/render_rag_gain_dev.py",
+      "passed": true
+    },
+    {
+      "name": "hash:scripts/validate_rag_gain_dev.py",
+      "passed": true
+    },
+    {
+      "name": "hash:scripts/verify_rag_gain_dev_package.py",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/README.md",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-801/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-801/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-801/task.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-802/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-802/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-802/task.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-803/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-803/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-803/task.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-804/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-804/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-804/task.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-805/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-805/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-805/task.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-806/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-806/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-806/task.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-807/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-807/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-807/task.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-808/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-808/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-808/task.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-809/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-809/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-809/task.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-810/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-810/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-810/task.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-811/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-811/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-811/task.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-812/chunks.jsonl",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-812/task-background.md",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/application-inputs/SYND-812/task.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-801.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-802.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-803.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-804.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-805.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-806.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-807.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-808.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-809.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-810.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-811.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/author-source/SYND-812.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/cases.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/offline-fixtures/RG-OPS-DEV-01.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/offline-fixtures/RG-OPS-DEV-02.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/offline-fixtures/RG-OPS-DEV-03.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/offline-fixtures/RG-OPS-DEV-04.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-801.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-802.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-803.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-804.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-805.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-806.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-807.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-808.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-809.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-810.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-811.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/reference-annotations/SYND-812.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-801.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-802.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-803.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-804.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-805.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-806.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-807.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-808.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-809.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-810.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-811.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/render-bounds/SYND-812.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/selected-basis/SYN-QA-SC-1.0.md",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/selected-basis/SYN-SPEC-PB01-RevB.md",
+      "passed": true
+    },
+    {
+      "name": "material_hash:data/ai-work-rag-gain-dev-v0.1/selected-basis/chunks.json",
+      "passed": true
+    },
+    {
+      "name": "material_hash:output/pdf/rag-gain-dev-v0.1/SYND-801.pdf",
+      "passed": true
+    },
+    {
+      "name": "material_hash:output/pdf/rag-gain-dev-v0.1/SYND-802.pdf",
+      "passed": true
+    },
+    {
+      "name": "material_hash:output/pdf/rag-gain-dev-v0.1/SYND-803.pdf",
+      "passed": true
+    },
+    {
+      "name": "material_hash:output/pdf/rag-gain-dev-v0.1/SYND-804.pdf",
+      "passed": true
+    },
+    {
+      "name": "material_hash:output/pdf/rag-gain-dev-v0.1/SYND-805.pdf",
+      "passed": true
+    },
+    {
+      "name": "material_hash:output/pdf/rag-gain-dev-v0.1/SYND-806.pdf",
+      "passed": true
+    },
+    {
+      "name": "material_hash:output/pdf/rag-gain-dev-v0.1/SYND-807.pdf",
+      "passed": true
+    },
+    {
+      "name": "material_hash:output/pdf/rag-gain-dev-v0.1/SYND-808.pdf",
+      "passed": true
+    },
+    {
+      "name": "material_hash:output/pdf/rag-gain-dev-v0.1/SYND-809.pdf",
+      "passed": true
+    },
+    {
+      "name": "material_hash:output/pdf/rag-gain-dev-v0.1/SYND-810.pdf",
+      "passed": true
+    },
+    {
+      "name": "material_hash:output/pdf/rag-gain-dev-v0.1/SYND-811.pdf",
+      "passed": true
+    },
+    {
+      "name": "material_hash:output/pdf/rag-gain-dev-v0.1/SYND-812.pdf",
+      "passed": true
+    },
+    {
+      "name": "audit_receipt_hash",
+      "passed": true
+    },
+    {
+      "name": "visual_receipt_hash",
+      "passed": true
+    }
+  ],
+  "passed": 216,
+  "total": 216,
+  "model_requests": 0,
+  "application_tests_executed": 0
+}

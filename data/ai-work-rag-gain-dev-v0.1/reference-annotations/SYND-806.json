@@ -1,0 +1,872 @@
+{
+  "case_id": "RG-PORT-DEV-02",
+  "report_id": "SYND-806",
+  "reference_type": "author_intent_not_application_output",
+  "reviewer": "same_author_internal_material_review",
+  "expert_review_status": "pending",
+  "application_behavior_status": "not_executed",
+  "queries": [
+    {
+      "query_id": "A1-01",
+      "requirement_groups": [
+        {
+          "group_id": "scope",
+          "alternatives": [
+            [
+              "SYN-NORM-RANGE"
+            ]
+          ],
+          "conditions": null
+        },
+        {
+          "group_id": "requirement-1",
+          "alternatives": [
+            [
+              "SYN-NORM-RESPONSE"
+            ]
+          ],
+          "conditions": null
+        }
+      ],
+      "report_groups": [
+        {
+          "group_id": "condition",
+          "alternatives": [
+            [
+              "D806-CONDITION"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        },
+        {
+          "group_id": "record",
+          "alternatives": [
+            [
+              "D806-R80601"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        }
+      ],
+      "no_available_report_evidence": false,
+      "absence_proof_citation": null,
+      "authored_comparison": "no_issue",
+      "authored_value": "5 ms",
+      "conservative_handling": "conditional_comparison_only_preserve_a0",
+      "prohibited_claims": [
+        "新增链路改写原系统结果"
+      ],
+      "extra_required_groups": []
+    },
+    {
+      "query_id": "A1-02",
+      "requirement_groups": [
+        {
+          "group_id": "scope",
+          "alternatives": [
+            [
+              "SYN-NORM-RANGE"
+            ]
+          ],
+          "conditions": null
+        },
+        {
+          "group_id": "requirement-1",
+          "alternatives": [
+            [
+              "SYN-NORM-RECOVERY"
+            ]
+          ],
+          "conditions": null
+        },
+        {
+          "group_id": "requirement-2",
+          "alternatives": [
+            [
+              "SYN-SPEC-PB01-RevB-REC"
+            ]
+          ],
+          "conditions": null
+        }
+      ],
+      "report_groups": [
+        {
+          "group_id": "condition",
+          "alternatives": [
+            [
+              "D806-CONDITION"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        },
+        {
+          "group_id": "record",
+          "alternatives": [
+            [
+              "D806-R80602"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        }
+      ],
+      "no_available_report_evidence": false,
+      "absence_proof_citation": null,
+      "authored_comparison": "no_issue",
+      "authored_value": "5.00 V",
+      "conservative_handling": "conditional_comparison_only_preserve_a0",
+      "prohibited_claims": [
+        "新增链路改写原系统结果"
+      ],
+      "extra_required_groups": []
+    },
+    {
+      "query_id": "A1-03",
+      "requirement_groups": [
+        {
+          "group_id": "scope",
+          "alternatives": [
+            [
+              "SYN-NORM-RANGE"
+            ]
+          ],
+          "conditions": null
+        },
+        {
+          "group_id": "requirement-1",
+          "alternatives": [
+            [
+              "SYN-NORM-TEMP"
+            ]
+          ],
+          "conditions": null
+        }
+      ],
+      "report_groups": [
+        {
+          "group_id": "condition",
+          "alternatives": [
+            [
+              "D806-CONDITION"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        },
+        {
+          "group_id": "record",
+          "alternatives": [
+            [
+              "D806-R80603"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        }
+      ],
+      "no_available_report_evidence": false,
+      "absence_proof_citation": null,
+      "authored_comparison": "no_issue",
+      "authored_value": "25.0摄氏度 / 30.0摄氏度",
+      "conservative_handling": "conditional_comparison_only_preserve_a0",
+      "prohibited_claims": [
+        "新增链路改写原系统结果"
+      ],
+      "extra_required_groups": []
+    },
+    {
+      "query_id": "A1-04",
+      "requirement_groups": [
+        {
+          "group_id": "scope",
+          "alternatives": [
+            [
+              "SYN-NORM-RANGE"
+            ]
+          ],
+          "conditions": null
+        },
+        {
+          "group_id": "requirement-1",
+          "alternatives": [
+            [
+              "SYN-NORM-APPEARANCE"
+            ]
+          ],
+          "conditions": null
+        }
+      ],
+      "report_groups": [
+        {
+          "group_id": "condition",
+          "alternatives": [
+            [
+              "D806-CONDITION"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        },
+        {
+          "group_id": "record",
+          "alternatives": [
+            [
+              "D806-R80604"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        }
+      ],
+      "no_available_report_evidence": false,
+      "absence_proof_citation": null,
+      "authored_comparison": "no_issue",
+      "authored_value": "无起火、无爆炸、无漏液",
+      "conservative_handling": "conditional_comparison_only_preserve_a0",
+      "prohibited_claims": [
+        "新增链路改写原系统结果"
+      ],
+      "extra_required_groups": []
+    },
+    {
+      "query_id": "A1-05",
+      "requirement_groups": [
+        {
+          "group_id": "scope",
+          "alternatives": [
+            [
+              "SYN-NORM-RANGE"
+            ]
+          ],
+          "conditions": null
+        },
+        {
+          "group_id": "requirement-1",
+          "alternatives": [
+            [
+              "SYN-NORM-METHOD"
+            ]
+          ],
+          "conditions": null
+        }
+      ],
+      "report_groups": [
+        {
+          "group_id": "condition",
+          "alternatives": [
+            [
+              "D806-CONDITION"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        },
+        {
+          "group_id": "record",
+          "alternatives": [
+            [
+              "D806-R80605"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        }
+      ],
+      "no_available_report_evidence": false,
+      "absence_proof_citation": null,
+      "authored_comparison": "no_issue",
+      "authored_value": "记录为移除负载后重新接入",
+      "conservative_handling": "conditional_comparison_only_preserve_a0",
+      "prohibited_claims": [
+        "新增链路改写原系统结果"
+      ],
+      "extra_required_groups": []
+    },
+    {
+      "query_id": "C1-01",
+      "requirement_groups": [
+        {
+          "group_id": "scope",
+          "alternatives": [
+            [
+              "SYN-NORM-RANGE"
+            ]
+          ],
+          "conditions": null
+        },
+        {
+          "group_id": "requirement-1",
+          "alternatives": [
+            [
+              "SYN-NORM-RESPONSE"
+            ]
+          ],
+          "conditions": null
+        }
+      ],
+      "report_groups": [
+        {
+          "group_id": "condition",
+          "alternatives": [
+            [
+              "D806-CONDITION"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        },
+        {
+          "group_id": "record",
+          "alternatives": [
+            [
+              "D806-R80606"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        }
+      ],
+      "no_available_report_evidence": false,
+      "absence_proof_citation": null,
+      "authored_comparison": "no_issue",
+      "authored_value": "5 ms",
+      "conservative_handling": "conditional_comparison_only_preserve_a0",
+      "prohibited_claims": [
+        "新增链路改写原系统结果"
+      ],
+      "extra_required_groups": []
+    },
+    {
+      "query_id": "C1-02",
+      "requirement_groups": [
+        {
+          "group_id": "scope",
+          "alternatives": [
+            [
+              "SYN-NORM-RANGE"
+            ]
+          ],
+          "conditions": null
+        },
+        {
+          "group_id": "requirement-1",
+          "alternatives": [
+            [
+              "SYN-NORM-RECOVERY"
+            ]
+          ],
+          "conditions": null
+        },
+        {
+          "group_id": "requirement-2",
+          "alternatives": [
+            [
+              "SYN-SPEC-PB01-RevB-REC"
+            ]
+          ],
+          "conditions": null
+        }
+      ],
+      "report_groups": [
+        {
+          "group_id": "condition",
+          "alternatives": [
+            [
+              "D806-CONDITION"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        },
+        {
+          "group_id": "record",
+          "alternatives": [
+            [
+              "D806-R80607"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        }
+      ],
+      "no_available_report_evidence": false,
+      "absence_proof_citation": null,
+      "authored_comparison": "no_issue",
+      "authored_value": "5.00 V",
+      "conservative_handling": "conditional_comparison_only_preserve_a0",
+      "prohibited_claims": [
+        "新增链路改写原系统结果"
+      ],
+      "extra_required_groups": []
+    },
+    {
+      "query_id": "C1-03",
+      "requirement_groups": [
+        {
+          "group_id": "scope",
+          "alternatives": [
+            [
+              "SYN-NORM-RANGE"
+            ]
+          ],
+          "conditions": null
+        },
+        {
+          "group_id": "requirement-1",
+          "alternatives": [
+            [
+              "SYN-NORM-TEMP"
+            ]
+          ],
+          "conditions": null
+        }
+      ],
+      "report_groups": [
+        {
+          "group_id": "condition",
+          "alternatives": [
+            [
+              "D806-CONDITION"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        },
+        {
+          "group_id": "record",
+          "alternatives": [
+            [
+              "D806-R80608"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        }
+      ],
+      "no_available_report_evidence": false,
+      "absence_proof_citation": null,
+      "authored_comparison": "no_issue",
+      "authored_value": "25.0摄氏度 / 30.0摄氏度",
+      "conservative_handling": "conditional_comparison_only_preserve_a0",
+      "prohibited_claims": [
+        "新增链路改写原系统结果"
+      ],
+      "extra_required_groups": []
+    },
+    {
+      "query_id": "C1-04",
+      "requirement_groups": [
+        {
+          "group_id": "scope",
+          "alternatives": [
+            [
+              "SYN-NORM-RANGE"
+            ]
+          ],
+          "conditions": null
+        },
+        {
+          "group_id": "requirement-1",
+          "alternatives": [
+            [
+              "SYN-NORM-APPEARANCE"
+            ]
+          ],
+          "conditions": null
+        }
+      ],
+      "report_groups": [
+        {
+          "group_id": "condition",
+          "alternatives": [
+            [
+              "D806-CONDITION"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        },
+        {
+          "group_id": "record",
+          "alternatives": [
+            [
+              "D806-R80609"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        }
+      ],
+      "no_available_report_evidence": false,
+      "absence_proof_citation": null,
+      "authored_comparison": "no_issue",
+      "authored_value": "无起火、无爆炸、无漏液",
+      "conservative_handling": "conditional_comparison_only_preserve_a0",
+      "prohibited_claims": [
+        "新增链路改写原系统结果"
+      ],
+      "extra_required_groups": []
+    },
+    {
+      "query_id": "C1-05",
+      "requirement_groups": [
+        {
+          "group_id": "scope",
+          "alternatives": [
+            [
+              "SYN-NORM-RANGE"
+            ]
+          ],
+          "conditions": null
+        },
+        {
+          "group_id": "requirement-1",
+          "alternatives": [
+            [
+              "SYN-NORM-METHOD"
+            ]
+          ],
+          "conditions": null
+        }
+      ],
+      "report_groups": [
+        {
+          "group_id": "condition",
+          "alternatives": [
+            [
+              "D806-CONDITION"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        },
+        {
+          "group_id": "record",
+          "alternatives": [
+            [
+              "D806-R80610"
+            ]
+          ],
+          "conditions": {
+            "voltage_v": 5,
+            "electrical_role": "输出",
+            "combination": "单口"
+          }
+        }
+      ],
+      "no_available_report_evidence": false,
+      "absence_proof_citation": null,
+      "authored_comparison": "no_issue",
+      "authored_value": "记录为移除负载后重新接入",
+      "conservative_handling": "conditional_comparison_only_preserve_a0",
+      "prohibited_claims": [
+        "新增链路改写原系统结果"
+      ],
+      "extra_required_groups": []
+    }
+  ],
+  "citations": {
+    "SYN-NORM-RANGE": {
+      "namespace": "requirement",
+      "source_role": "selected_requirement",
+      "source_path": "data/bootstrap-v0.1/knowledge/synthetic/SYN-QA-SC-1.0.md",
+      "page": null,
+      "section": "DEMO-00",
+      "version": "1.0",
+      "text": "以任务清单显式选定的规格RevB为准，不按文件名猜最新版。模拟任务日期2024-06-30，收件时间2026-10-26。\n仅A1、C1的5 V输出角色。每个端口独立核对下列5项，共10项。\n本文件只规定如何核对已有记录，不提供短路实验操作步骤。",
+      "conditions": null,
+      "text_sha256": "6aee505ca604fee9bcc9461bc1c0e1e31874d039440ad1f40eb9d8e31f0bdd2e"
+    },
+    "SYN-NORM-RESPONSE": {
+      "namespace": "requirement",
+      "source_role": "selected_requirement",
+      "source_path": "data/bootstrap-v0.1/knowledge/synthetic/SYN-QA-SC-1.0.md",
+      "page": null,
+      "section": "DEMO-01",
+      "version": "1.0",
+      "text": "保护响应时间应有明确数值、单位与记录ID，模拟阈值不大于500 ms。1 s = 1000 ms，不能直接比较0.68和500。",
+      "conditions": null,
+      "text_sha256": "8f2e4006281d4763c10847bd0bba60b12a868b4d70cc164c4ac4aa362668d355"
+    },
+    "D806-CONDITION": {
+      "namespace": "report",
+      "source_role": "report_context",
+      "source_path": "output/pdf/rag-gain-dev-v0.1/SYND-806.pdf",
+      "page": 1,
+      "section": "报告前置说明",
+      "version": "1",
+      "text": "本报告测试条件：电压=5 V；角色=输出；组合=单口。适用于记录表A及记录表B。",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "text_sha256": "ff6aabb3f4645323db37da6a657a0b1352f638bcbade9c528b783d5bacdc0d83"
+    },
+    "D806-R80601": {
+      "namespace": "report",
+      "source_role": "report_observation",
+      "source_path": "output/pdf/rag-gain-dev-v0.1/SYND-806.pdf",
+      "page": 1,
+      "section": "R80601",
+      "version": "1",
+      "text": "R80601 A1 保护响应 5 ms",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "text_sha256": "595b82011be4341faa4745ee4f41ba2ad8baea48c4d12759d2492d5cbdcfb8bb"
+    },
+    "SYN-NORM-RECOVERY": {
+      "namespace": "requirement",
+      "source_role": "selected_requirement",
+      "source_path": "data/bootstrap-v0.1/knowledge/synthetic/SYN-QA-SC-1.0.md",
+      "page": null,
+      "section": "DEMO-02",
+      "version": "1.0",
+      "text": "恢复电压依据已选规格SYN-SPEC-PB01-RevB的SPEC-REC，区间含两端。报告自带判定不能覆盖规格要求。",
+      "conditions": null,
+      "text_sha256": "04f03dbc2b715d1e7b6067a9697d1838bcbc3bc2c66b74f99571db5bc8e58fd6"
+    },
+    "SYN-SPEC-PB01-RevB-REC": {
+      "namespace": "requirement",
+      "source_role": "selected_requirement",
+      "source_path": "data/bootstrap-v0.1/knowledge/synthetic/SYN-SPEC-PB01-RevB.md",
+      "page": null,
+      "section": "SPEC-REC 恢复电压",
+      "version": "B",
+      "text": "模拟条款 SPEC-REC：保护后恢复电压范围 4.75 V 至 5.25 V，含边界。",
+      "conditions": null,
+      "text_sha256": "05f333136a7c3b09453f702f95bee7c7dea3ace51a05fae6cc44e13f859e7b57"
+    },
+    "D806-R80602": {
+      "namespace": "report",
+      "source_role": "report_observation",
+      "source_path": "output/pdf/rag-gain-dev-v0.1/SYND-806.pdf",
+      "page": 1,
+      "section": "R80602",
+      "version": "1",
+      "text": "R80602 A1 恢复电压 5.00 V",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "text_sha256": "8bc0e4b8143448eb538616518ddd1644955e0b75992b36d0b9b40c460b45e5c1"
+    },
+    "SYN-NORM-TEMP": {
+      "namespace": "requirement",
+      "source_role": "selected_requirement",
+      "source_path": "data/bootstrap-v0.1/knowledge/synthetic/SYN-QA-SC-1.0.md",
+      "page": null,
+      "section": "DEMO-03",
+      "version": "1.0",
+      "text": "按同一记录的末值减起值计算，模拟上限12 K；温差1摄氏度对应1 K。\n关键位模糊或缺失时不猜数字，不做超限与否的最终数值判断。",
+      "conditions": null,
+      "text_sha256": "1c027e79eaf9b08b23235090c0a3e233b7169d1050cd4a09be17c72030cfbc44"
+    },
+    "D806-R80603": {
+      "namespace": "report",
+      "source_role": "report_observation",
+      "source_path": "output/pdf/rag-gain-dev-v0.1/SYND-806.pdf",
+      "page": 2,
+      "section": "R80603",
+      "version": "1",
+      "text": "R80603 A1 壳温起值/末值 25.0摄氏度 / 30.0摄氏度",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "text_sha256": "f980f02bce26db2deb1efa0e16a732976c6caf9bf7ba13c3127022b1f34d9610"
+    },
+    "SYN-NORM-APPEARANCE": {
+      "namespace": "requirement",
+      "source_role": "selected_requirement",
+      "source_path": "data/bootstrap-v0.1/knowledge/synthetic/SYN-QA-SC-1.0.md",
+      "page": null,
+      "section": "DEMO-04",
+      "version": "1.0",
+      "text": "每个端口分别有明确的无起火、无爆炸、无漏液记录。无文字或只有横线表示证据不足。",
+      "conditions": null,
+      "text_sha256": "c3e1b213acc2c0f7cd05d708688380074c2292e51f0fe5730b588ed61f0a0412"
+    },
+    "D806-R80604": {
+      "namespace": "report",
+      "source_role": "report_observation",
+      "source_path": "output/pdf/rag-gain-dev-v0.1/SYND-806.pdf",
+      "page": 2,
+      "section": "R80604",
+      "version": "1",
+      "text": "R80604 A1 外观观察 无起火、无爆炸、无漏液",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "text_sha256": "8928a9c0801bb5c566d317089684f9edf044a3c877656c2e76ea8026b04ad0cf"
+    },
+    "SYN-NORM-METHOD": {
+      "namespace": "requirement",
+      "source_role": "selected_requirement",
+      "source_path": "data/bootstrap-v0.1/knowledge/synthetic/SYN-QA-SC-1.0.md",
+      "page": null,
+      "section": "DEMO-05",
+      "version": "1.0",
+      "text": "每个端口需有非空的恢复方式文字记录。记录缺失只能判证据不足，不能推定实验未执行。",
+      "conditions": null,
+      "text_sha256": "2d0565b246c771f4c606c366bb9055c9b4311a9e4c42a3e18600b79560d2a16e"
+    },
+    "D806-R80605": {
+      "namespace": "report",
+      "source_role": "report_observation",
+      "source_path": "output/pdf/rag-gain-dev-v0.1/SYND-806.pdf",
+      "page": 2,
+      "section": "R80605",
+      "version": "1",
+      "text": "R80605 A1 恢复方式 记录为移除负载后重新接入",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "text_sha256": "1247bfd0ec3e368992c1e5dde5301e9a564e62d45f9f0b46782a9bd731b29537"
+    },
+    "D806-R80606": {
+      "namespace": "report",
+      "source_role": "report_observation",
+      "source_path": "output/pdf/rag-gain-dev-v0.1/SYND-806.pdf",
+      "page": 1,
+      "section": "R80606",
+      "version": "1",
+      "text": "R80606 C1 保护响应 5 ms",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "text_sha256": "43ccb5ce0bcc97f100c4636c8710de5343bb51f24333aee989681a64ae857ae3"
+    },
+    "D806-R80607": {
+      "namespace": "report",
+      "source_role": "report_observation",
+      "source_path": "output/pdf/rag-gain-dev-v0.1/SYND-806.pdf",
+      "page": 1,
+      "section": "R80607",
+      "version": "1",
+      "text": "R80607 C1 恢复电压 5.00 V",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "text_sha256": "d352d7b1d5a723911aa20267d5c8c7523cf3f1a133afe75ac068cbf4d6b51949"
+    },
+    "D806-R80608": {
+      "namespace": "report",
+      "source_role": "report_observation",
+      "source_path": "output/pdf/rag-gain-dev-v0.1/SYND-806.pdf",
+      "page": 2,
+      "section": "R80608",
+      "version": "1",
+      "text": "R80608 C1 壳温起值/末值 25.0摄氏度 / 30.0摄氏度",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "text_sha256": "5ba5a59637ad87ca4419f0382e999ada40e952cc3e394714c4ed56c595e9c7b3"
+    },
+    "D806-R80609": {
+      "namespace": "report",
+      "source_role": "report_observation",
+      "source_path": "output/pdf/rag-gain-dev-v0.1/SYND-806.pdf",
+      "page": 2,
+      "section": "R80609",
+      "version": "1",
+      "text": "R80609 C1 外观观察 无起火、无爆炸、无漏液",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "text_sha256": "bb47c61f3d70822f9309a4b0b3148d07f9213efcde8dcf38956a80fa35bb969a"
+    },
+    "D806-R80610": {
+      "namespace": "report",
+      "source_role": "report_observation",
+      "source_path": "output/pdf/rag-gain-dev-v0.1/SYND-806.pdf",
+      "page": 2,
+      "section": "R80610",
+      "version": "1",
+      "text": "R80610 C1 恢复方式 记录为移除负载后重新接入",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      },
+      "text_sha256": "6edd30feb9e4347e0e338096aa1f34d969ad7061499fb0d1e7030a27dcf723e4"
+    }
+  }
+}

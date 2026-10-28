@@ -1,0 +1,141 @@
+{
+  "report_id": "SYND-806",
+  "task_id": "DEVTASK-806",
+  "actor_role": "engineer",
+  "task_authorized": true,
+  "model": "PB-DEMO-01",
+  "ports": [
+    "A1",
+    "C1"
+  ],
+  "selected_requirement_chunks": [
+    "SYN-NORM-RANGE",
+    "SYN-NORM-RESPONSE",
+    "SYN-NORM-RECOVERY",
+    "SYN-SPEC-PB01-RevB-REC",
+    "SYN-NORM-TEMP",
+    "SYN-NORM-APPEARANCE",
+    "SYN-NORM-METHOD",
+    "SYN-NORM-CONFLICT"
+  ],
+  "pdf_path": "output/pdf/rag-gain-dev-v0.1/SYND-806.pdf",
+  "conditions": {
+    "voltage_v": 5,
+    "electrical_role": "输出",
+    "combination": "单口"
+  },
+  "queries": [
+    {
+      "query_id": "A1-01",
+      "text": "PB-DEMO-01 A1 整机短路保护 保护响应 电压5 V 输出 单口",
+      "port": "A1",
+      "field": "response",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      }
+    },
+    {
+      "query_id": "A1-02",
+      "text": "PB-DEMO-01 A1 整机短路保护 恢复电压 电压5 V 输出 单口",
+      "port": "A1",
+      "field": "recovery",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      }
+    },
+    {
+      "query_id": "A1-03",
+      "text": "PB-DEMO-01 A1 整机短路保护 壳温起值/末值 电压5 V 输出 单口",
+      "port": "A1",
+      "field": "temperature",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      }
+    },
+    {
+      "query_id": "A1-04",
+      "text": "PB-DEMO-01 A1 整机短路保护 外观观察 电压5 V 输出 单口",
+      "port": "A1",
+      "field": "appearance",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      }
+    },
+    {
+      "query_id": "A1-05",
+      "text": "PB-DEMO-01 A1 整机短路保护 恢复方式 电压5 V 输出 单口",
+      "port": "A1",
+      "field": "method",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      }
+    },
+    {
+      "query_id": "C1-01",
+      "text": "PB-DEMO-01 C1 整机短路保护 保护响应 电压5 V 输出 单口",
+      "port": "C1",
+      "field": "response",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      }
+    },
+    {
+      "query_id": "C1-02",
+      "text": "PB-DEMO-01 C1 整机短路保护 恢复电压 电压5 V 输出 单口",
+      "port": "C1",
+      "field": "recovery",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      }
+    },
+    {
+      "query_id": "C1-03",
+      "text": "PB-DEMO-01 C1 整机短路保护 壳温起值/末值 电压5 V 输出 单口",
+      "port": "C1",
+      "field": "temperature",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      }
+    },
+    {
+      "query_id": "C1-04",
+      "text": "PB-DEMO-01 C1 整机短路保护 外观观察 电压5 V 输出 单口",
+      "port": "C1",
+      "field": "appearance",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      }
+    },
+    {
+      "query_id": "C1-05",
+      "text": "PB-DEMO-01 C1 整机短路保护 恢复方式 电压5 V 输出 单口",
+      "port": "C1",
+      "field": "method",
+      "conditions": {
+        "voltage_v": 5,
+        "electrical_role": "输出",
+        "combination": "单口"
+      }
+    }
+  ],
+  "chunking_version": "dev-author-blocks-0.1",
+  "context_expansion_max_per_seed": 1
+}

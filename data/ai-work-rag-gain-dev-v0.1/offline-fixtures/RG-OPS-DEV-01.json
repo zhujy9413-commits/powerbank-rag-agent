@@ -1,0 +1,95 @@
+{
+  "fixture_id": "RG-OPS-DEV-01",
+  "scenario": "普通员工请求研发专属来源",
+  "mode": "offline_only",
+  "network_allowed": false,
+  "virtual_clock": true,
+  "external_requests": 0,
+  "application_execution_status": "not_executed",
+  "adapter_contract_status": "candidate_adapter_pending",
+  "immutable_seed": {
+    "original_result": "synthetic_seed_not_actual_a0",
+    "evidence": [
+      {
+        "id": "E1",
+        "quote": "模拟保护响应记录248 ms",
+        "role": "report"
+      }
+    ],
+    "history": [
+      {
+        "event": "synthetic_history",
+        "revision": 1
+      }
+    ]
+  },
+  "immutable_seed_sha256": "15ce9bbf4483a5b155b5c28126e3c07b01dc57390ae5eeaefd8cbd913fc5a3f3",
+  "expected_behavior": "候选 引文 Prompt 日志及导出均不得出现禁用角色内容",
+  "max_corrections": 1,
+  "single_chat_timeout_ms": 20000,
+  "total_deadline_ms": 45000,
+  "principal": {
+    "role": "employee",
+    "authorized_tasks": [
+      "OFFLINE-TASK"
+    ]
+  },
+  "sources": [
+    {
+      "id": "ALLOW",
+      "allowed_roles": [
+        "employee",
+        "engineer"
+      ],
+      "task_id": "OFFLINE-TASK",
+      "text": "可读的模拟任务流程说明"
+    },
+    {
+      "id": "DENY",
+      "allowed_roles": [
+        "engineer"
+      ],
+      "task_id": "OFFLINE-TASK",
+      "text": "DEV_ONLY_FORBIDDEN_79C2"
+    }
+  ],
+  "assertions": [
+    {
+      "surface": "candidates",
+      "forbidden_text": "DEV_ONLY_FORBIDDEN_79C2",
+      "expected_occurrences": 0
+    },
+    {
+      "surface": "citations",
+      "forbidden_text": "DEV_ONLY_FORBIDDEN_79C2",
+      "expected_occurrences": 0
+    },
+    {
+      "surface": "prompt",
+      "forbidden_text": "DEV_ONLY_FORBIDDEN_79C2",
+      "expected_occurrences": 0
+    },
+    {
+      "surface": "provider_payload",
+      "forbidden_text": "DEV_ONLY_FORBIDDEN_79C2",
+      "expected_occurrences": 0
+    },
+    {
+      "surface": "application_log",
+      "forbidden_text": "DEV_ONLY_FORBIDDEN_79C2",
+      "expected_occurrences": 0
+    },
+    {
+      "surface": "export",
+      "forbidden_text": "DEV_ONLY_FORBIDDEN_79C2",
+      "expected_occurrences": 0
+    }
+  ],
+  "applicable_arms": [
+    "A0",
+    "A1",
+    "A2",
+    "A3",
+    "A4"
+  ]
+}
