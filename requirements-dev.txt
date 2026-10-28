@@ -1,4 +1,5 @@
 -r requirements-ai-work.txt
-# Only needed for synthetic PDF builders and development tests.
+# Development builders/tests require Python >=3.10; validated on Python 3.12.
+# Daily app use still needs only requirements-ai-work.txt.
 reportlab==4.4.9
 Pillow==12.3.0

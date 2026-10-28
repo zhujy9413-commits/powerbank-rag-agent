@@ -23,7 +23,7 @@
 - [变体样本包](data/pdf-variants-v0.1/README.md)
 - [最终同输入修复前对照](eval-results/pdf-variants-final-input-baseline-v0.4.json) / [修复后结果](eval-results/pdf-variants-final-v0.5.json)
 
-旧解析快照需重新导入PDF才能使用新引擎，历史结果可继续查看。运行全部开发测试需 `python3 -m pip install -r requirements-dev.txt`；日常AI Work仍仅需PDF解析依赖。
+旧解析快照需重新导入PDF才能使用新引擎，历史结果可继续查看。运行全部开发测试需Python 3.10及以上（本机验证3.12），并安装 `python3 -m pip install -r requirements-dev.txt`；日常AI Work仍仅需PDF解析依赖，支持Python 3.9及以上。
 
 ## 内部智能客服｜知识检索与问答
 
