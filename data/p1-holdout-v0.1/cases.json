@@ -1,0 +1,2617 @@
+{
+  "version": "p1-holdout-v0.1",
+  "label_author": "same_author_implementation_aware",
+  "external_independence": false,
+  "cases": [
+    {
+      "case_id": "HP-01",
+      "title": "单行摘要新数值控制",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394 s"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "SUMMARY-A1",
+          "result": "no_issue"
+        }
+      ],
+      "expected_summaries": [
+        [
+          "S71",
+          "A1",
+          "283 ms"
+        ]
+      ],
+      "expected_unit_owners": [],
+      "required_issue_codes": [],
+      "expected_summary_conditions": {},
+      "expected_orphan_keys": [],
+      "path": "output/pdf/p1-holdout-v0.1/HP-01.pdf",
+      "sha256": "1b63f32c1bc14fd9792d2f0efce559c999cdd5540d17a01f59c7298fa321307e",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-02",
+      "title": "秒摘要数值单位跨行",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394 s"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "SUMMARY-A1",
+          "result": "no_issue"
+        }
+      ],
+      "expected_summaries": [
+        [
+          "S71",
+          "A1",
+          "0.283 s"
+        ]
+      ],
+      "expected_unit_owners": [
+        [
+          2,
+          "s",
+          "summary",
+          "S71"
+        ]
+      ],
+      "required_issue_codes": [],
+      "expected_summary_conditions": {},
+      "expected_orphan_keys": [],
+      "path": "output/pdf/p1-holdout-v0.1/HP-02.pdf",
+      "sha256": "f6ac88e4cb3327f1cfb643744d6f3bcfd8f64dafb90e645bff06fc51a92eb455",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-03",
+      "title": "摘要标题数值单位三行",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394 s"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "SUMMARY-A1",
+          "result": "no_issue"
+        }
+      ],
+      "expected_summaries": [
+        [
+          "S71",
+          "A1",
+          "0.283 s"
+        ]
+      ],
+      "expected_unit_owners": [
+        [
+          2,
+          "s",
+          "summary",
+          "S71"
+        ]
+      ],
+      "required_issue_codes": [],
+      "expected_summary_conditions": {},
+      "expected_orphan_keys": [],
+      "path": "output/pdf/p1-holdout-v0.1/HP-03.pdf",
+      "sha256": "58cf2769050267d64875e131e16c1c4379e68829378f6ded87dd62ed73ce3d77",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-04",
+      "title": "C1标题与数值单位分行",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394 s"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "SUMMARY-C1",
+          "result": "no_issue"
+        }
+      ],
+      "expected_summaries": [
+        [
+          "S72",
+          "C1",
+          "394 ms"
+        ]
+      ],
+      "expected_unit_owners": [],
+      "required_issue_codes": [],
+      "expected_summary_conditions": {},
+      "expected_orphan_keys": [],
+      "path": "output/pdf/p1-holdout-v0.1/HP-04.pdf",
+      "sha256": "2a14b9ccb93aef5abc81546860413d5c917579c75a143c3e86e6aa7431cc59d7",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-05",
+      "title": "C1毫秒单位跨行",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394 s"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "SUMMARY-C1",
+          "result": "no_issue"
+        }
+      ],
+      "expected_summaries": [
+        [
+          "S72",
+          "C1",
+          "394 ms"
+        ]
+      ],
+      "expected_unit_owners": [
+        [
+          2,
+          "ms",
+          "summary",
+          "S72"
+        ]
+      ],
+      "required_issue_codes": [],
+      "expected_summary_conditions": {},
+      "expected_orphan_keys": [],
+      "path": "output/pdf/p1-holdout-v0.1/HP-05.pdf",
+      "sha256": "dd9e59271d22f492d96b63b3f48bd5c3e55dc49931c65f870fd7faf52bbe9d88",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-06",
+      "title": "全角摘要跨行",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394 s"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "SUMMARY-A1",
+          "result": "no_issue"
+        }
+      ],
+      "expected_summaries": [
+        [
+          "S71",
+          "A1",
+          "0.283 s"
+        ]
+      ],
+      "expected_unit_owners": [
+        [
+          2,
+          "s",
+          "summary",
+          "S71"
+        ]
+      ],
+      "required_issue_codes": [],
+      "expected_summary_conditions": {},
+      "expected_orphan_keys": [],
+      "path": "output/pdf/p1-holdout-v0.1/HP-06.pdf",
+      "sha256": "436c98d444c8b706a429d9ebc78f4e1c3b02cbb64f198b59b3eb9d0218fb2401",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-07",
+      "title": "两端口分行摘要各自归属",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394 s"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "SUMMARY-A1",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "SUMMARY-C1",
+          "result": "no_issue"
+        }
+      ],
+      "expected_summaries": [
+        [
+          "S71",
+          "A1",
+          "0.283 s"
+        ],
+        [
+          "S72",
+          "C1",
+          "394 ms"
+        ]
+      ],
+      "expected_unit_owners": [
+        [
+          2,
+          "s",
+          "summary",
+          "S71"
+        ],
+        [
+          2,
+          "ms",
+          "summary",
+          "S72"
+        ]
+      ],
+      "required_issue_codes": [],
+      "expected_summary_conditions": {},
+      "expected_orphan_keys": [],
+      "path": "output/pdf/p1-holdout-v0.1/HP-07.pdf",
+      "sha256": "f4b7a310bd7964f7b5172c803618acdb5c0c10218b810b0fd254596ce4fe1417",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-08",
+      "title": "同条件跨行摘要数值冲突",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394 s"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "result": "no_issue",
+          "conditional": true
+        },
+        {
+          "item_id": "SUMMARY-A1",
+          "result": "conflict"
+        },
+        {
+          "item_id": "A1-05",
+          "result": "no_issue"
+        }
+      ],
+      "expected_summaries": [
+        [
+          "S71",
+          "A1",
+          "0.683 s"
+        ]
+      ],
+      "expected_unit_owners": [
+        [
+          2,
+          "s",
+          "summary",
+          "S71"
+        ]
+      ],
+      "required_issue_codes": [],
+      "expected_summary_conditions": {},
+      "expected_orphan_keys": [],
+      "path": "output/pdf/p1-holdout-v0.1/HP-08.pdf",
+      "sha256": "7334a0fd9736340ee9920f96f1520dc34dfb434f97bb64a279dc9e218c06bb23",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-09",
+      "title": "摘要后局部9V条件",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394 s"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "result": "no_issue",
+          "conditional": false
+        },
+        {
+          "item_id": "SUMMARY-A1",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-05",
+          "result": "no_issue"
+        }
+      ],
+      "expected_summaries": [
+        [
+          "S71",
+          "A1",
+          "0.967 s"
+        ]
+      ],
+      "expected_unit_owners": [
+        [
+          2,
+          "s",
+          "summary",
+          "S71"
+        ]
+      ],
+      "required_issue_codes": [],
+      "expected_summary_conditions": {
+        "S71": {
+          "voltage": "9"
+        }
+      },
+      "expected_orphan_keys": [],
+      "path": "output/pdf/p1-holdout-v0.1/HP-09.pdf",
+      "sha256": "6e36ed445f07dc7bab4baf7681dbe65fbb1da7596da3dfae0d932e4da9eadc0f",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-10",
+      "title": "摘要与明细环境不一致",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394 s"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "result": "no_issue",
+          "conditional": false
+        },
+        {
+          "item_id": "SUMMARY-A1",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-05",
+          "result": "no_issue"
+        }
+      ],
+      "expected_summaries": [
+        [
+          "S71",
+          "A1",
+          "0.967 s"
+        ]
+      ],
+      "expected_unit_owners": [],
+      "required_issue_codes": [],
+      "expected_summary_conditions": {
+        "S71": {
+          "environment": "25"
+        }
+      },
+      "expected_orphan_keys": [],
+      "path": "output/pdf/p1-holdout-v0.1/HP-10.pdf",
+      "sha256": "11d307ed291378f1052fac41b15b2c612a5bd4d7abbf318efcb3e4c6f836daa9",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-11",
+      "title": "摘要单位跨页须核验",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394 s"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": true,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-02",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-03",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-04",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-05",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-02",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-03",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-04",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-05",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "SUMMARY-MISSING",
+          "result": "evidence_insufficient"
+        }
+      ],
+      "expected_summaries": [],
+      "expected_unit_owners": [
+        [
+          2,
+          "s",
+          "unresolved",
+          null
+        ]
+      ],
+      "required_issue_codes": [
+        "unresolved_summary",
+        "orphan_unit"
+      ],
+      "expected_summary_conditions": {},
+      "expected_orphan_keys": [
+        "A1:response",
+        "A1:recovery",
+        "A1:temperature",
+        "A1:appearance",
+        "A1:method",
+        "C1:response",
+        "C1:recovery",
+        "C1:temperature",
+        "C1:appearance",
+        "C1:method"
+      ],
+      "path": "output/pdf/p1-holdout-v0.1/HP-11.pdf",
+      "sha256": "d849616f1c8ad55cdae0474f80c707d6797970e59d248dfb30a640852f8a208a",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-12",
+      "title": "不完整摘要不能借走下一记录单位",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394 s"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": true,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "SUMMARY-MISSING",
+          "result": "evidence_insufficient"
+        },
+        {
+          "item_id": "C1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-05",
+          "result": "no_issue"
+        }
+      ],
+      "expected_summaries": [],
+      "expected_unit_owners": [
+        [
+          2,
+          "s",
+          "record",
+          "R3302"
+        ]
+      ],
+      "required_issue_codes": [
+        "unresolved_summary"
+      ],
+      "expected_summary_conditions": {},
+      "expected_orphan_keys": [],
+      "path": "output/pdf/p1-holdout-v0.1/HP-12.pdf",
+      "sha256": "8e4a9e058f298aa96e06f932d1ef0218ac07a53451abe4566cbddc6d575557ea",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-13",
+      "title": "表头打断摘要连续性",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394 s"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": true,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-02",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-03",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-04",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-05",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-02",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-03",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-04",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-05",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "SUMMARY-MISSING",
+          "result": "evidence_insufficient"
+        }
+      ],
+      "expected_summaries": [],
+      "expected_unit_owners": [
+        [
+          2,
+          "ms",
+          "unresolved",
+          null
+        ]
+      ],
+      "required_issue_codes": [
+        "unresolved_summary",
+        "orphan_unit"
+      ],
+      "expected_summary_conditions": {},
+      "expected_orphan_keys": [
+        "A1:response",
+        "A1:recovery",
+        "A1:temperature",
+        "A1:appearance",
+        "A1:method",
+        "C1:response",
+        "C1:recovery",
+        "C1:temperature",
+        "C1:appearance",
+        "C1:method"
+      ],
+      "path": "output/pdf/p1-holdout-v0.1/HP-13.pdf",
+      "sha256": "bbb906c4b5c6333cd92ffb6aae8b4252dcb051358eea65ba2274c561a0be8f0f",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-14",
+      "title": "微秒摘要未配置",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394 s"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": true,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "SUMMARY-MISSING",
+          "result": "evidence_insufficient"
+        },
+        {
+          "item_id": "C1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-05",
+          "result": "no_issue"
+        }
+      ],
+      "expected_summaries": [],
+      "expected_unit_owners": [],
+      "required_issue_codes": [
+        "unresolved_summary"
+      ],
+      "expected_summary_conditions": {},
+      "expected_orphan_keys": [],
+      "path": "output/pdf/p1-holdout-v0.1/HP-14.pdf",
+      "sha256": "24da80aff0f5016b01c9383c667af36be6fdc1868b56f96f6ae551d1966078fd",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-15",
+      "title": "无归属单位不误挂恢复方式",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394 s"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": true,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-02",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-03",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-04",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-05",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-02",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-03",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-04",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-05",
+          "blocked": true,
+          "execution": "not_checked"
+        }
+      ],
+      "expected_summaries": [
+        [
+          "S71",
+          "A1",
+          "283 ms"
+        ]
+      ],
+      "expected_unit_owners": [
+        [
+          2,
+          "s",
+          "unresolved",
+          null
+        ]
+      ],
+      "required_issue_codes": [
+        "orphan_unit"
+      ],
+      "expected_summary_conditions": {},
+      "expected_orphan_keys": [
+        "A1:response",
+        "A1:recovery",
+        "A1:temperature",
+        "A1:appearance",
+        "A1:method",
+        "C1:response",
+        "C1:recovery",
+        "C1:temperature",
+        "C1:appearance",
+        "C1:method"
+      ],
+      "path": "output/pdf/p1-holdout-v0.1/HP-15.pdf",
+      "sha256": "11cf25d6e8ec656825b70dcaee88e327b251cce94c4309924ff32a7b67797990",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-16",
+      "title": "分隔表格记录跨行单位",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394 s"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "SUMMARY-A1",
+          "result": "no_issue"
+        }
+      ],
+      "expected_summaries": [
+        [
+          "S71",
+          "A1",
+          "283 ms"
+        ]
+      ],
+      "expected_unit_owners": [
+        [
+          1,
+          "ms",
+          "record",
+          "R3301"
+        ]
+      ],
+      "required_issue_codes": [],
+      "expected_summary_conditions": {},
+      "expected_orphan_keys": [],
+      "path": "output/pdf/p1-holdout-v0.1/HP-16.pdf",
+      "sha256": "46d67f6004bee1efbc71526cd4607fac0e3c954e7d71373e772615f873aff59a",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-17",
+      "title": "明确声明的跨页记录单位",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394 s"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "SUMMARY-A1",
+          "result": "no_issue"
+        }
+      ],
+      "expected_summaries": [
+        [
+          "S71",
+          "A1",
+          "283 ms"
+        ]
+      ],
+      "expected_unit_owners": [
+        [
+          2,
+          "s",
+          "record_continuation",
+          "R3302"
+        ]
+      ],
+      "required_issue_codes": [],
+      "expected_summary_conditions": {},
+      "expected_orphan_keys": [],
+      "path": "output/pdf/p1-holdout-v0.1/HP-17.pdf",
+      "sha256": "1fe842d1868a7b40a2cd1e101b4cd99d5e506593e58130212a7b061f6e805979",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-18",
+      "title": "无声明的跨页记录单位",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": true,
+      "checks": [
+        {
+          "item_id": "C1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "SUMMARY-A1",
+          "result": "no_issue"
+        }
+      ],
+      "expected_summaries": [
+        [
+          "S71",
+          "A1",
+          "283 ms"
+        ]
+      ],
+      "expected_unit_owners": [
+        [
+          2,
+          "s",
+          "unresolved",
+          null
+        ]
+      ],
+      "required_issue_codes": [
+        "orphan_unit"
+      ],
+      "expected_summary_conditions": {},
+      "expected_orphan_keys": [
+        "C1:response"
+      ],
+      "path": "output/pdf/p1-holdout-v0.1/HP-18.pdf",
+      "sha256": "d341021ebce55023d613b0f52b2e4a57824a08d0504ba52f83012a388885dd9b",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-19",
+      "title": "两个待补单位记录不能猜测",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": true,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-02",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-03",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-04",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-05",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-02",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-03",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-04",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-05",
+          "blocked": true,
+          "execution": "not_checked"
+        }
+      ],
+      "expected_summaries": [
+        [
+          "S71",
+          "A1",
+          "283 ms"
+        ]
+      ],
+      "expected_unit_owners": [
+        [
+          2,
+          "s",
+          "unresolved",
+          null
+        ]
+      ],
+      "required_issue_codes": [
+        "orphan_unit"
+      ],
+      "expected_summary_conditions": {},
+      "expected_orphan_keys": [
+        "A1:response",
+        "A1:recovery",
+        "A1:temperature",
+        "A1:appearance",
+        "A1:method",
+        "C1:response",
+        "C1:recovery",
+        "C1:temperature",
+        "C1:appearance",
+        "C1:method"
+      ],
+      "path": "output/pdf/p1-holdout-v0.1/HP-19.pdf",
+      "sha256": "6bf9f39583a20511ec73429eb15831845f935ea002e4c0a883d531648e2f5e48",
+      "page_count": 2
+    },
+    {
+      "case_id": "HP-20",
+      "title": "摘要相邻条件自身矛盾",
+      "expected_text_records": [
+        [
+          "R3301",
+          "A1",
+          "response",
+          "283 ms"
+        ],
+        [
+          "R3302",
+          "C1",
+          "response",
+          "0.394 s"
+        ],
+        [
+          "R3303",
+          "A1",
+          "recovery",
+          "4.89 V"
+        ],
+        [
+          "R3304",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R3305",
+          "A1",
+          "temperature",
+          "18.4摄氏度 / 29.6摄氏度"
+        ],
+        [
+          "R3306",
+          "C1",
+          "temperature",
+          "20.4摄氏度 / 30.6摄氏度"
+        ],
+        [
+          "R3307",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3308",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R3309",
+          "A1",
+          "method",
+          "记录为取下测试负载后重新接入"
+        ],
+        [
+          "R3310",
+          "C1",
+          "method",
+          "记录为重新接入负载端"
+        ]
+      ],
+      "expected_visual_records": [],
+      "expected_reject": false,
+      "capture_required": true,
+      "visible_issue_required": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "result": "no_issue",
+          "conditional": false
+        },
+        {
+          "item_id": "SUMMARY-A1",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-05",
+          "result": "no_issue"
+        }
+      ],
+      "expected_summaries": [
+        [
+          "S71",
+          "A1",
+          "0.967 s"
+        ]
+      ],
+      "expected_unit_owners": [
+        [
+          2,
+          "s",
+          "summary",
+          "S71"
+        ]
+      ],
+      "required_issue_codes": [],
+      "expected_summary_conditions": {
+        "S71": {
+          "voltage": null,
+          "_conflicts": [
+            "voltage"
+          ]
+        }
+      },
+      "expected_orphan_keys": [],
+      "path": "output/pdf/p1-holdout-v0.1/HP-20.pdf",
+      "sha256": "8c56c0930d6c7d20e8a96f1a80b9583d0f867babdc117b12e2ade0d81986c49d",
+      "page_count": 2
+    }
+  ]
+}
