@@ -9,6 +9,9 @@ def load_input(directory, root):
     if directory.parent != allowed:
         raise ValueError("只接受已核验的开发应用输入目录。")
     task = json.loads((directory/"task.json").read_text())
+    expected_pdf=root/"output/pdf/rag-gain-dev-v0.1"/(directory.name+".pdf")
+    if task["report_id"]!=directory.name or (root/task["pdf_path"]).resolve()!=expected_pdf:
+        raise ValueError("任务PDF身份或路径不符。")
     chunks = [json.loads(line) for line in (directory/"chunks.jsonl").read_text().splitlines()]
     from pypdf import PdfReader
     originals = {}

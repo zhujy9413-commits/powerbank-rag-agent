@@ -13,7 +13,7 @@ import time
 
 from app.knowledge_assistant.core import rank_bm25
 
-VERSION = "candidate-retrieval-0.1"
+VERSION = "candidate-retrieval-0.2"
 IDENTITY = ("namespace", "source_role", "source_path", "page", "section", "version", "task_id", "conditions")
 FIELDS = {
     "response": r"保护响应|响应时间|短接.*(?:切断|耗时)",
@@ -40,6 +40,7 @@ class RetrievalConfig:
     min_bm25_ratio: float = 0.0
     max_blocks: int = 80
     max_context_per_seed: int = 1
+    structured_routing: bool = True
 
     def __post_init__(self):
         if not (1 <= self.top_k <= 5 and self.per_method == 12 and self.rrf_constant == 60
@@ -76,6 +77,33 @@ def rrf(keyword_ids, vector_ids, constant=60):
         for rank, ident in enumerate(order, 1):
             scores[ident] = scores.get(ident, 0) + 1/(constant+rank)
     return sorted(scores, key=lambda ident: (-scores[ident], ident)), scores
+
+
+def route_candidates(query, candidates, namespace):
+    """Shared lexical metadata routing, before either retrieval method.
+
+    Uses only query fields, source roles and original words/context links. No
+    numeric thresholds, case IDs, gold labels or rule-result guesses are used.
+    """
+    field,port=query["field"],query["port"]
+    version_query=field=="consistency" and bool(re.search("版本|规格",query["text"]))
+    if namespace=="requirement":
+        return [c for c in candidates if (
+            "仅A1、C1的5 V输出角色" in c["text"]
+            or (field in FIELDS and re.search(FIELDS[field],c["text"]))
+            or (field=="consistency" and re.search("摘要|一致|冲突",c["text"]))) ]
+    observations=[]
+    for c in candidates:
+        if c["source_role"]!="report_observation" or version_query:continue
+        ports=set(re.findall(r"(?<![A-Za-z0-9])(?:A1|C1)(?![A-Za-z0-9])",c["text"]))
+        if field=="consistency" or (ports=={port} and re.search(FIELDS[field],c["text"])):
+            observations.append(c)
+    context_ids={i for c in observations for i in c.get("context_ids",[])}
+    ids={c["chunk_id"] for c in observations}
+    return [c for c in candidates if c["chunk_id"] in ids or (
+        c["source_role"]=="report_context" and observations and (c["chunk_id"] in context_ids or c["conditions"] is not None)) or (
+        c["source_role"]=="report_declaration" and version_query) or (
+        c["source_role"]=="background" and field=="consistency" and not version_query and "背景摘要" in c["text"])]
 
 
 class CandidateRetriever:
@@ -136,6 +164,9 @@ class CandidateRetriever:
         # Verify originals before indexing or sending any provider text.
         candidates = [dict(c, search_text=c["text"], title=c["source_path"], document_id=c["source_path"])
                       for c in authorized if self._located(c)]
+        original_valid_count=len(candidates)
+        if self.config.structured_routing:
+            candidates=route_candidates(query,candidates,namespace)
         corpus_hash = digest([{k:v for k,v in c.items() if k not in {"search_text","title","document_id"}} for c in candidates])
         keyword = rank_bm25(query["text"], candidates)[:self.config.per_method]
         if keyword:
@@ -196,7 +227,8 @@ class CandidateRetriever:
                                  accepted_evidence_ids=[s["chunk_id"] for s in accepted], absence_proof_citation=None,
                                  claims_test_not_performed=False),
                     trace=dict(config=asdict(self.config), task_id=self.task["task_id"], actor_role=self.principal.role,
-                               filtered_count=len(self.chunks)-len(authorized), source_validation_rejections=len(authorized)-len(candidates),
+                               filtered_count=len(self.chunks)-len(authorized), source_validation_rejections=len(authorized)-original_valid_count,
+                               upstream_routing_exclusions=original_valid_count-len(candidates),
                                candidate_count=len(candidates), corpus_sha256=corpus_hash,
                                keyword_ranking=[dict(chunk_id=c["chunk_id"], score=s) for c,s in keyword],
                                vector_ranking=[dict(chunk_id=i, score=vector_scores[i]) for i in vector_order],

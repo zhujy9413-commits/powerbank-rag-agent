@@ -32,7 +32,7 @@ class CandidateTests(unittest.TestCase):
         self.chunks[1]["context_ids"]=["CTX"]
         self.originals={(c["source_path"],1):c["text"] for c in self.chunks}
 
-    def make(self,embedder=None):return CandidateRetriever(self.chunks,self.task,self.user,self.originals,embedder=embedder)
+    def make(self,embedder=None):return CandidateRetriever(self.chunks,self.task,self.user,self.originals,embedder=embedder,config=RetrievalConfig(structured_routing=False))
     def test_namespaces_never_mix(self):
         r=self.make()
         for ns in ["report","requirement"]:

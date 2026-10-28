@@ -15,7 +15,7 @@ sys.path.insert(0, str(ROOT))
 DEV = ROOT/"data/ai-work-rag-gain-dev-v0.1"
 
 
-def produce(ratio):
+def produce(ratio,route=False):
     # The application phase cannot read any reference labels, prior scores or
     # author intent. The supervisor loads gold only after this process exits.
     denied = ("reference-annotations", "qrels", "author-source", "/eval-results/", "material-manifest")
@@ -29,7 +29,7 @@ def produce(ratio):
     from app.ai_work.review import ReviewService
     from app.knowledge_assistant.core import Corpus, Principal
     rows = []
-    config = RetrievalConfig(min_bm25_ratio=ratio)
+    config = RetrievalConfig(min_bm25_ratio=ratio,structured_routing=route)
     with patch("socket.socket", side_effect=AssertionError("network_forbidden_in_offline_development")):
         for directory in sorted((DEV/"application-inputs").iterdir()):
             task, chunks, originals = load_input(directory, ROOT)
@@ -133,17 +133,17 @@ def evaluate(raw):
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument("--produce",action="store_true");p.add_argument("--ratio",type=float,default=0);p.add_argument("--output",type=Path)
+    p=argparse.ArgumentParser();p.add_argument("--produce",action="store_true");p.add_argument("--ratio",type=float,default=0);p.add_argument("--output",type=Path);p.add_argument("--route",action="store_true")
     args=p.parse_args()
     if args.produce:
-        print(json.dumps(produce(args.ratio),ensure_ascii=False));return
+        print(json.dumps(produce(args.ratio,args.route),ensure_ascii=False));return
     if not args.output or args.output.exists():p.error("请提供新的输出路径，拒绝覆盖结果。")
-    process=subprocess.run([sys.executable,__file__,"--produce","--ratio",str(args.ratio)],cwd=ROOT,capture_output=True,text=True,check=True)
+    process=subprocess.run([sys.executable,__file__,"--produce","--ratio",str(args.ratio)]+(["--route"] if args.route else []),cwd=ROOT,capture_output=True,text=True,check=True)
     raw=json.loads(process.stdout)
     # Production has finished; only the evaluator now reads qrels/fixtures.
     with patch("socket.socket",side_effect=AssertionError("network_forbidden")):
         result=evaluate(raw)
-    result.update(kind="development_candidate_run_not_holdout",evaluated_at=datetime.now(timezone.utc).isoformat(),protocol_id="AIWORK-RAG-GAIN-0.2",candidate_version="candidate-retrieval-0.1",
+    result.update(kind="development_candidate_run_not_holdout",evaluated_at=datetime.now(timezone.utc).isoformat(),protocol_id="AIWORK-RAG-GAIN-0.2",candidate_version="candidate-retrieval-0.2",
         input_config=raw["config"],application_phase=raw["application_phase"],raw_application_runs=raw["cases"],
         summary=dict(content_cases=len(raw["cases"]),offline_cases=len(result["offline"]),offline_cases_passed=sum(x["passed"] for x in result["offline"]),
                      query_namespace_rows_per_arm=248,original_payloads_preserved=all(x["original_payload_preserved"] for x in raw["cases"]),
