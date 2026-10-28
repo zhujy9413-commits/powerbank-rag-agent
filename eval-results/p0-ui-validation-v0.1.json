@@ -1,0 +1,16 @@
+{
+  "version": "p0-ui-validation-v0.1",
+  "task_id": "AW-86b05223194e",
+  "run_id": "RUN-261337be1564",
+  "sample": "HO-07-mixed-raster.pdf",
+  "dataset": "consumed_regression",
+  "app_version": "v0.3",
+  "checks": {
+    "image_warning_visible": true,
+    "ten_units_not_checked": true,
+    "export_success_status": true,
+    "reload_preserved_task_and_run": true
+  },
+  "first_holdout_result_sha256": "cdcad47f6201d0cef5d0db34df18cc477159568ab6cf112c596c0f8d78fcea65",
+  "model_requests": 0
+}

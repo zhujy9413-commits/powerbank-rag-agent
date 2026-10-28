@@ -4,6 +4,8 @@
 
 ## AI Work｜整机测试报告评审
 
+当前模拟原型v0.3：三个P0补上诊断与停检，102项回归通过；新一批20份PDF首次20/20满足预设行为，文字匹配190/205，未批准编号与图片内容仍需人工核验。见[最新修复与留出报告](docs/ai-work/p0-fix-and-holdout-v0.3.md)。
+
 - [模块入口](docs/ai-work/README.md)
 - [MVP 范围](docs/ai-work/MVP.md)
 - [完整 PRD](docs/ai-work/PRD.md)
