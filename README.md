@@ -25,6 +25,14 @@
 
 旧解析快照需重新导入PDF才能使用新引擎，历史结果可继续查看。运行全部开发测试需Python 3.10及以上（本机验证3.12），并安装 `python3 -m pip install -r requirements-dev.txt`；日常AI Work仍仅需PDF解析依赖，支持Python 3.9及以上。
 
+### 新样本留出评测
+
+2026-10-28：核验并冻结20份新模拟PDF后，以固定v0.2代码首次评测，12/20个场景满足期望，文字记录匹配181/193条；发现静默遗漏与局部条件处理缺口。86项自动回归通过不等于新样本全部通过，本轮未修改应用。
+
+- [新样本留出评测、问题优先级和标注局限](docs/ai-work/holdout-evaluation-v0.1.md)
+- [冻结协议及样本包](data/review-holdout-v0.1/README.md)
+- [首次完整结果](eval-results/review-holdout-first-run-v0.1.json)
+
 ## 内部智能客服｜知识检索与问答
 
 - [模块入口](docs/internal-assistant/README.md)

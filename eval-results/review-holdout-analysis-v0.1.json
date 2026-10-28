@@ -1,0 +1,268 @@
+{
+  "version": "review-holdout-analysis-v0.1",
+  "first_result_sha256": "183e730d8d436d54614b873faf527ff90f2096531e61babe49cba3984fe94e7d",
+  "freeze_commit": "2b08f788fd3600374357440628a4bfeab25e58e2",
+  "first_run_scores_unchanged": true,
+  "engine_unchanged": true,
+  "adjudication": "same_author_review_professional_pending",
+  "issues": [
+    {
+      "id": "HOLD-01",
+      "cases": [
+        "HO-04",
+        "HO-05"
+      ],
+      "priority": "P0",
+      "category": "silent_omission",
+      "finding": "TC编号及五位R编号未进入候选审计；HO-04遗漏913 ms补充记录后A1响应仍显示未发现问题。HO-05全部10条遗漏，覆盖仍为mapped，条目证据不足但execution为completed。",
+      "next": "扩大候选审计的未知编号检测；不能完整映射时保留具体原文并停止受影响检查。"
+    },
+    {
+      "id": "HOLD-02",
+      "cases": [
+        "HO-07"
+      ],
+      "priority": "P0",
+      "category": "mixed_content_coverage",
+      "finding": "同页图片R711、927 ms没有进入文字解析，未提示图片区域待核验，A1响应仅按137 ms显示未发现问题。",
+      "next": "识别可能包含记录的图片区域，尚未核验时标明覆盖不足；不必先实现完整OCR。"
+    },
+    {
+      "id": "HOLD-03",
+      "cases": [
+        "HO-08",
+        "HO-09"
+      ],
+      "priority": "P0",
+      "category": "local_context_omission",
+      "finding": "脚注或局部条件没有绑定到受影响记录，仍继承全局5 V。HO-08的1项、HO-09的5项显示未发现问题。",
+      "next": "审计未绑定条件说明，不能确定局部作用范围时保守停止；不自动套用全局条件。"
+    },
+    {
+      "id": "HOLD-04",
+      "cases": [
+        "HO-14"
+      ],
+      "priority": "P1",
+      "category": "unsupported_condition_dimension",
+      "finding": "未识别负载2.0 A与0.5 A的差异，摘要被标数值冲突。当前未配置负载维度，属于扩展条件的降级缺口。",
+      "next": "对未知测试条件维度显式标未支持，在同条件一致性判断前停止或人工确认。"
+    },
+    {
+      "id": "HOLD-05",
+      "cases": [
+        "HO-15"
+      ],
+      "priority": "P1",
+      "category": "specimen_identity",
+      "finding": "SN-A与SN-B被放入同一核对单元并标冲突；未区分样机身份。未产生数值比较，但不符合预设的对应关系未明确处理。",
+      "next": "保留样机对象信息；对象未对应时证据不足，不直接作同对象数值冲突判断。"
+    },
+    {
+      "id": "HOLD-06",
+      "cases": [
+        "HO-17"
+      ],
+      "priority": "P1",
+      "category": "annotation_and_span_diagnostic",
+      "finding": "预设只允许SUMMARY-MISSING，未容纳正确跨行提取。实际摘要0.137 s被识别为137 ms并输出一致，故原断言过窄。同时独立行扫描把s列为orphan_unit，错误阻塞A1恢复方式，暴露两条解析路径不一致。",
+      "next": "下一版协议预先接受等价正确结果，并统一摘要跨行片段与孤立单位的归属；本轮不改标签或重算首次分数。"
+    }
+  ],
+  "unexpected_no_issue_units": [
+    {
+      "case_id": "HO-04",
+      "item_id": "A1-01",
+      "actual": {
+        "result": "no_issue",
+        "execution": "completed",
+        "conditional": false,
+        "calculation": "137 ms = 137 ms；137 ≤ 500 ms",
+        "record_ids": [
+          "R101"
+        ]
+      }
+    },
+    {
+      "case_id": "HO-07",
+      "item_id": "A1-01",
+      "actual": {
+        "result": "no_issue",
+        "execution": "completed",
+        "conditional": false,
+        "calculation": "137 ms = 137 ms；137 ≤ 500 ms",
+        "record_ids": [
+          "R101"
+        ]
+      }
+    },
+    {
+      "case_id": "HO-08",
+      "item_id": "A1-01",
+      "actual": {
+        "result": "no_issue",
+        "execution": "completed",
+        "conditional": false,
+        "calculation": "137 ms = 137 ms；137 ≤ 500 ms",
+        "record_ids": [
+          "R101"
+        ]
+      }
+    },
+    {
+      "case_id": "HO-09",
+      "item_id": "A1-01",
+      "actual": {
+        "result": "no_issue",
+        "execution": "completed",
+        "conditional": false,
+        "calculation": "137 ms = 137 ms；137 ≤ 500 ms",
+        "record_ids": [
+          "R101"
+        ]
+      }
+    },
+    {
+      "case_id": "HO-09",
+      "item_id": "A1-02",
+      "actual": {
+        "result": "no_issue",
+        "execution": "completed",
+        "conditional": false,
+        "calculation": "4.92 V 位于 [4.75, 5.25] V（含边界）",
+        "record_ids": [
+          "R103"
+        ]
+      }
+    },
+    {
+      "case_id": "HO-09",
+      "item_id": "A1-03",
+      "actual": {
+        "result": "no_issue",
+        "execution": "completed",
+        "conditional": false,
+        "calculation": "32.0 − 23.5 = 8.5 K；8.5 ≤ 12 K",
+        "record_ids": [
+          "R105"
+        ]
+      }
+    },
+    {
+      "case_id": "HO-09",
+      "item_id": "A1-04",
+      "actual": {
+        "result": "no_issue",
+        "execution": "completed",
+        "conditional": false,
+        "calculation": null,
+        "record_ids": [
+          "R107"
+        ]
+      }
+    },
+    {
+      "case_id": "HO-09",
+      "item_id": "A1-05",
+      "actual": {
+        "result": "no_issue",
+        "execution": "completed",
+        "conditional": false,
+        "calculation": null,
+        "record_ids": [
+          "R109"
+        ]
+      }
+    }
+  ],
+  "evidence_limit": "488条引用均为同文件、同页且原文可定位；不证明语义完整、条件正确或没有遗漏。",
+  "text_omissions": [
+    {
+      "case_id": "HO-04",
+      "records": [
+        [
+          "TC-401",
+          "A1",
+          "response",
+          "913ms"
+        ]
+      ]
+    },
+    {
+      "case_id": "HO-05",
+      "records": [
+        [
+          "R50001",
+          "A1",
+          "response",
+          "137ms"
+        ],
+        [
+          "R50002",
+          "C1",
+          "response",
+          "0.243s"
+        ],
+        [
+          "R50003",
+          "A1",
+          "recovery",
+          "4.92V"
+        ],
+        [
+          "R50004",
+          "C1",
+          "recovery",
+          "5.17V"
+        ],
+        [
+          "R50005",
+          "A1",
+          "temperature",
+          "23.5摄氏度/32.0摄氏度"
+        ],
+        [
+          "R50006",
+          "C1",
+          "temperature",
+          "24.5摄氏度/35.0摄氏度"
+        ],
+        [
+          "R50007",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R50008",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R50009",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R50010",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ]
+      ]
+    },
+    {
+      "case_id": "HO-06",
+      "records": [
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.92V"
+        ]
+      ]
+    }
+  ]
+}

@@ -8,7 +8,7 @@
 - [首批模拟报告、规格与逐项参考标注](sample-pack.md)
 - [工作流与验证方法补充](../shared/workflow-verification-notes.md)
 
-状态：需求设计 v1.0，未开发、未实测。
+状态：需求设计v1.0；模拟原型v0.2可运行。新样本评测发现扩展输入仍有遗漏与条件误判，未完成真实业务验收。
 
 ## 飞书在线文档
 
@@ -37,3 +37,16 @@
 - [最终实测结果](../../eval-results/pdf-variants-final-v0.5.json)
 
 [飞书06-PDF模板变体与条件冲突回归](https://my.feishu.cn/wiki/LgWKwZP2fiD27NkBnXicNEDZni8)
+
+## 新样本留出评测 v0.1
+
+2026-10-28：20份新PDF、40页在运行前冻结，固定v0.2代码首次满足12/20个场景期望；文字记录181/193匹配。4个场景中8个应停止的单元仍显示未发现问题。本轮只评测，不修改应用或事后改标签。
+
+- [07-新样本留出评测与问题清单](holdout-evaluation-v0.1.md)
+- [冻结样本、标注与口径](../../data/review-holdout-v0.1/README.md)
+- [首次完整结果](../../eval-results/review-holdout-first-run-v0.1.json)
+- [问题分析及标注复核](../../eval-results/review-holdout-analysis-v0.1.json)
+
+86项回归通过，其中6项是新增评分器自检。这是同作者、实现知情的新样本留出评测，不是外部独立测试或专业验收。
+
+[飞书07-新样本留出评测与问题清单](https://my.feishu.cn/wiki/IApXw3nDkiNhwTkl4QYcauv6n9g)
