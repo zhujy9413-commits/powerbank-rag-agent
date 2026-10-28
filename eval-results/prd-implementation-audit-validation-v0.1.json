@@ -1,0 +1,585 @@
+{
+  "kind": "documentation_consistency_and_provenance_checks",
+  "application_tests": false,
+  "checks": [
+    {
+      "name": "36_unique_requirement_ids",
+      "passed": true
+    },
+    {
+      "name": "summary_status_counts",
+      "passed": true
+    },
+    {
+      "name": "all_15_prd_sections_mapped",
+      "passed": true
+    },
+    {
+      "name": "11_aw_cases_exact",
+      "passed": true
+    },
+    {
+      "name": "10_kb_cases_exact",
+      "passed": true
+    },
+    {
+      "name": "AW-R01_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R01_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R02_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R02_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R03_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R03_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R04_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R04_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R05_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R05_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R06_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R06_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R07_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R07_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R08_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R08_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R09_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R09_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R10_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R10_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R11_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R11_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R12_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R12_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R13_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R13_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R14_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R14_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R15_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R15_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R16_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R16_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R17_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R17_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R18_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R18_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R19_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R19_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R20_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R20_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R21_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R21_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R22_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R22_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R23_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R23_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R24_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R24_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R25_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R25_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R26_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R26_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R27_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R27_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R28_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R28_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R29_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R29_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R30_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R30_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R31_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R31_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R32_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R32_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R33_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R33_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R34_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R34_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R35_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R35_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-R36_evidence_and_gaps",
+      "passed": true
+    },
+    {
+      "name": "AW-R36_in_markdown",
+      "passed": true
+    },
+    {
+      "name": "AW-A01_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "AW-A02_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "AW-A03_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "AW-A04_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "AW-A05_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "AW-A06_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "AW-A07_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "AW-A08_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "AW-A09_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "AW-A10_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "AW-A11_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "KB-A01_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "KB-A02_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "KB-A03_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "KB-A04_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "KB-A05_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "KB-A06_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "KB-A07_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "KB-A08_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "KB-A09_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "KB-A10_mapped_ids",
+      "passed": true
+    },
+    {
+      "name": "E01_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E01_symbol_exists",
+      "passed": true
+    },
+    {
+      "name": "E01_anchor_exists",
+      "passed": true
+    },
+    {
+      "name": "E02_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E02_symbol_exists",
+      "passed": true
+    },
+    {
+      "name": "E02_anchor_exists",
+      "passed": true
+    },
+    {
+      "name": "E03_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E03_symbol_exists",
+      "passed": true
+    },
+    {
+      "name": "E03_anchor_exists",
+      "passed": true
+    },
+    {
+      "name": "E04_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E04_symbol_exists",
+      "passed": true
+    },
+    {
+      "name": "E04_anchor_exists",
+      "passed": true
+    },
+    {
+      "name": "E05_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E05_symbol_exists",
+      "passed": true
+    },
+    {
+      "name": "E05_anchor_exists",
+      "passed": true
+    },
+    {
+      "name": "E06_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E06_symbol_exists",
+      "passed": true
+    },
+    {
+      "name": "E06_anchor_exists",
+      "passed": true
+    },
+    {
+      "name": "E07_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E07_symbol_exists",
+      "passed": true
+    },
+    {
+      "name": "E07_anchor_exists",
+      "passed": true
+    },
+    {
+      "name": "E08_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E09_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E09_symbol_exists",
+      "passed": true
+    },
+    {
+      "name": "E09_anchor_exists",
+      "passed": true
+    },
+    {
+      "name": "E10_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E10_symbol_exists",
+      "passed": true
+    },
+    {
+      "name": "E10_anchor_exists",
+      "passed": true
+    },
+    {
+      "name": "E11_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E12_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E13_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E14_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E15_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E16_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E17_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E18_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E19_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E20_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E21_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E22_file_hash",
+      "passed": true
+    },
+    {
+      "name": "E22_anchor_exists",
+      "passed": true
+    },
+    {
+      "name": "E23_file_hash",
+      "passed": true
+    },
+    {
+      "name": "application_and_frozen_sources_unchanged",
+      "passed": true
+    },
+    {
+      "name": "seven_isolated_observations",
+      "passed": true
+    },
+    {
+      "name": "no_business_or_model_completion_claim",
+      "passed": true
+    },
+    {
+      "name": "model_rag_not_marked_implemented",
+      "passed": true
+    }
+  ],
+  "checks_count": 144,
+  "passed": 144,
+  "errors": []
+}

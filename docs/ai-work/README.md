@@ -85,3 +85,13 @@
 [飞书10-完整流程验收与试用记录](https://my.feishu.cn/wiki/PYsWwxwn2iQIxZkZ6yPcnwjinyc)
 
 2026-10-28 页面v0.4.2：按用户授权完成正常报告r3的12项代理代操作走查，核对原PDF、依据、保存恢复及实际Excel四张表，133项回归通过。修复无未决时仍显示含未决的P2提示问题；人工试用表保留待填写。细节、代理页码文字更正及17条历史见10的补充记录。
+
+## 需求实现与验收对照
+
+2026-10-29，以页面v0.4.2逐项核对PRD设计：36个单元中14项已实现、14项部分实现、8项未实现，状态数量不代表完成率。核对11个AW和10个KB用例，新增7项临时库观察。下一轮优先补历史依据停用后的核验路径；检索/模型、知识发布与试点条件分别跟踪。
+
+- [11-需求实现与验收对照](prd-implementation-audit-v0.1.md)
+- [结构化对照及来源](../../eval-results/prd-implementation-audit-v0.1.json)
+- [本轮隔离观察](../../eval-results/prd-implementation-audit-probes-v0.1.json)
+
+[飞书11-需求实现与验收对照](https://my.feishu.cn/wiki/HHpMw4259ihzjlkH1XrcAZgRn6c)

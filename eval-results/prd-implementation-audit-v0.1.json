@@ -1,0 +1,1156 @@
+{
+  "version": "ai-work-prd-implementation-audit-v0.1",
+  "audited_at": "2026-10-28T15:56:28.050614+00:00",
+  "baseline_commit": "73abf7a55ec33734296fc7e4d626cb4e5eee5d2d",
+  "frontend_version": "0.4.2",
+  "rule_version": "synthetic-short-circuit-v0.4",
+  "scope": "AI Work only; controlled PB-DEMO-01 A1/C1 5 V output single-port short-circuit records",
+  "implementation_status_definition": {
+    "已实现": "Within explicitly supported controlled scope; not enterprise/business acceptance",
+    "部分实现": "Only subset or a design alternative exists; gaps stated",
+    "未实现": "No executable capability or business acceptance for that requirement in AI Work"
+  },
+  "human_business_trial": false,
+  "professional_review": "pending",
+  "model_requests": 0,
+  "application_changes": false,
+  "previous_regression_reused": {
+    "path": "eval-results/delegated-walkthrough-regression-v0.1.txt",
+    "sha256": "2e4969ef1be90b4c3ff1fea6f300ed511a12af14fb6f1944af97a8d05c31aec5",
+    "methods_passed": 133,
+    "new_run": false
+  },
+  "summary": {
+    "requirements": 36,
+    "status_counts": {
+      "已实现": 14,
+      "部分实现": 14,
+      "未实现": 8
+    },
+    "prd_sections_covered": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15"
+    ],
+    "aw_acceptance_cases": 11,
+    "kb_acceptance_cases": 10,
+    "new_isolated_observations": 7,
+    "open_gaps": 10,
+    "completion_percentage": null
+  },
+  "requirements": [
+    {
+      "id": "AW-R01",
+      "prd_sections": [
+        "03",
+        "04",
+        "05"
+      ],
+      "requirement": "受控PDF上传与文件身份",
+      "status": "已实现",
+      "current": "≤2 MB、1至12页、≤80000字符；保存文件名、页数及SHA-256，拒绝不支持模板。",
+      "gap": "仅适用于PB-DEMO-01模拟模板；限制为原型固定值。",
+      "evidence_ids": [
+        "E01",
+        "E07",
+        "E12"
+      ],
+      "gap_ids": []
+    },
+    {
+      "id": "AW-R02",
+      "prd_sections": [
+        "04",
+        "05"
+      ],
+      "requirement": "型号及报告业务身份提取",
+      "status": "部分实现",
+      "current": "检查模拟模板标识并固定model=PB-DEMO-01；提取报告填写的规格版本。",
+      "gap": "未通用提取并核对型号；报告编号、报告自身版本/日期未作为字段保存。规格版本不等于报告版本。",
+      "evidence_ids": [
+        "E01",
+        "E22"
+      ],
+      "gap_ids": [
+        "G05"
+      ]
+    },
+    {
+      "id": "AW-R03",
+      "prd_sections": [
+        "03",
+        "04"
+      ],
+      "requirement": "任务列表与可编辑任务名",
+      "status": "部分实现",
+      "current": "按所有者恢复任务，显示文件名、任务ID及输入修订；最多返回最近50项。",
+      "gap": "无自定义任务名或改名接口；列表分页和完整状态/创建时间展示未实现。",
+      "evidence_ids": [
+        "E05",
+        "E08",
+        "E19"
+      ],
+      "gap_ids": [
+        "G09"
+      ]
+    },
+    {
+      "id": "AW-R04",
+      "prd_sections": [
+        "05",
+        "10"
+      ],
+      "requirement": "关键解析值修正及原始值保留",
+      "status": "部分实现",
+      "current": "唯一定位的已有记录可修正value并填原因，保存原值、操作者与时间。",
+      "gap": "缺失、多条对应记录不能在界面补齐/重映射；条件与适用项不可编辑确认。",
+      "evidence_ids": [
+        "E03",
+        "E08",
+        "E12"
+      ],
+      "gap_ids": [
+        "G05"
+      ]
+    },
+    {
+      "id": "AW-R05",
+      "prd_sections": [
+        "05",
+        "07"
+      ],
+      "requirement": "解析覆盖与遗漏可见",
+      "status": "已实现",
+      "current": "候选/已映射/未映射、缺页声明、未知编号、孤立单位和局部条件诊断进入结果。",
+      "gap": "保守检测只覆盖已验证模板；映射成功不代表全文无遗漏。",
+      "evidence_ids": [
+        "E02",
+        "E14",
+        "E15"
+      ],
+      "gap_ids": []
+    },
+    {
+      "id": "AW-R06",
+      "prd_sections": [
+        "05"
+      ],
+      "requirement": "图片与扫描页处理",
+      "status": "部分实现",
+      "current": "实际绘图图片或无文字页明确提示未验证，并使相关单元停检。",
+      "gap": "未执行OCR或视觉核验；装饰图片也可导致10项整体停检。通用扫描件处理在当前支持范围外。",
+      "evidence_ids": [
+        "E02",
+        "E14"
+      ],
+      "gap_ids": [
+        "G10"
+      ]
+    },
+    {
+      "id": "AW-R07",
+      "prd_sections": [
+        "03",
+        "04",
+        "07"
+      ],
+      "requirement": "依据选择及任务内依据附件",
+      "status": "部分实现",
+      "current": "确认固定RevB模拟依据快照，保存来源、版本及知识发布标识。",
+      "gap": "无依据版本选择器、任务内规格/规范附件上传；confirm拒绝selected_basis。",
+      "evidence_ids": [
+        "E03",
+        "E05",
+        "E08",
+        "E19"
+      ],
+      "gap_ids": [
+        "G05"
+      ]
+    },
+    {
+      "id": "AW-R08",
+      "prd_sections": [
+        "04",
+        "07"
+      ],
+      "requirement": "预期清单及适用性确认",
+      "status": "部分实现",
+      "current": "固定5项×2端口及一致性项；确认框展示范围，未配置内容单列。",
+      "gap": "无逐项适用/不适用/待确认、排除理由和自定义清单；confirm拒绝excluded_items。",
+      "evidence_ids": [
+        "E04",
+        "E08",
+        "E19"
+      ],
+      "gap_ids": [
+        "G05"
+      ]
+    },
+    {
+      "id": "AW-R09",
+      "prd_sections": [
+        "08"
+      ],
+      "requirement": "测试条件匹配",
+      "status": "已实现",
+      "current": "核对5 V、输出、单口；摘要对齐同时考虑已声明环境；局部未绑定条件阻塞。",
+      "gap": "其他电压/角色/组合不受自动判断支持。",
+      "evidence_ids": [
+        "E02",
+        "E04",
+        "E13",
+        "E14",
+        "E15"
+      ],
+      "gap_ids": []
+    },
+    {
+      "id": "AW-R10",
+      "prd_sections": [
+        "08"
+      ],
+      "requirement": "数值和单位比较",
+      "status": "已实现",
+      "current": "依据文字提取模拟阈值，使用Decimal计算响应、恢复电压和温差；显示原值与式子。",
+      "gap": "限已配置单位与表达格式。",
+      "evidence_ids": [
+        "E04",
+        "E12"
+      ],
+      "gap_ids": []
+    },
+    {
+      "id": "AW-R11",
+      "prd_sections": [
+        "08"
+      ],
+      "requirement": "记录完整性与缺证处理",
+      "status": "已实现",
+      "current": "各端口检查所需记录及外观/恢复方式文字；找不到记录标缺证，不推断未测试。",
+      "gap": "完整性只相对固定清单成立。",
+      "evidence_ids": [
+        "E04",
+        "E12"
+      ],
+      "gap_ids": []
+    },
+    {
+      "id": "AW-R12",
+      "prd_sections": [
+        "08"
+      ],
+      "requirement": "摘要和资料一致性",
+      "status": "部分实现",
+      "current": "保护响应摘要与明细保留双方；检查报告填写的规格版本与选用RevB差异。",
+      "gap": "不覆盖任意字段/跨文档一致性；不同条件不直接当数值矛盾。",
+      "evidence_ids": [
+        "E04",
+        "E13",
+        "E15"
+      ],
+      "gap_ids": [
+        "G05"
+      ]
+    },
+    {
+      "id": "AW-R13",
+      "prd_sections": [
+        "08"
+      ],
+      "requirement": "报告自然语言结论与数据核对",
+      "status": "未实现",
+      "current": "当前仅抽取支持格式的响应摘要及记录。",
+      "gap": "尚无通用“通过/合格”等自然语言结论与支撑数据对照。",
+      "evidence_ids": [
+        "E01",
+        "E02",
+        "E04"
+      ],
+      "gap_ids": [
+        "G06"
+      ]
+    },
+    {
+      "id": "AW-R14",
+      "prd_sections": [
+        "06",
+        "08",
+        "10"
+      ],
+      "requirement": "结果 执行状态与未配置区分",
+      "status": "已实现",
+      "current": "未发现问题/不符合/冲突/缺证与未检查/失败分别保存；条件性明细可筛选。",
+      "gap": "固定清单外的适用性状态见AW-R08。",
+      "evidence_ids": [
+        "E04",
+        "E05",
+        "E08",
+        "E16"
+      ],
+      "gap_ids": []
+    },
+    {
+      "id": "AW-R15",
+      "prd_sections": [
+        "03",
+        "06",
+        "12"
+      ],
+      "requirement": "处理阶段及持久失败记录",
+      "status": "部分实现",
+      "current": "界面显示解析/检查提示，确认后可运行，结果待复核/完成/失败可恢复。",
+      "gap": "调用同步完成；没有持久parsing/running任务状态；解析拒绝不生成失败任务事件。",
+      "evidence_ids": [
+        "E05",
+        "E07",
+        "E08",
+        "E19"
+      ],
+      "gap_ids": [
+        "G07"
+      ]
+    },
+    {
+      "id": "AW-R16",
+      "prd_sections": [
+        "09"
+      ],
+      "requirement": "按检查项定位报告及要求证据",
+      "status": "已实现",
+      "current": "每项执行任务内BM25页排序及全页字段扫描；依据通过固定RULE_SOURCES绑定。",
+      "gap": "依据绑定属于固定映射；语料规模及真实检索效果待验证。",
+      "evidence_ids": [
+        "E04",
+        "E09",
+        "E16"
+      ],
+      "gap_ids": []
+    },
+    {
+      "id": "AW-R17",
+      "prd_sections": [
+        "09"
+      ],
+      "requirement": "AI Work语义召回与排序",
+      "status": "未实现",
+      "current": "AI Work使用BM25+字段扫描；共享Assistant具备混合检索实现。",
+      "gap": "AI Work没有调用向量召回或融合排序；客服能力不能算成此链路已接通。共用规范允许经验证的简化配置。",
+      "evidence_ids": [
+        "E04",
+        "E10",
+        "E21"
+      ],
+      "gap_ids": [
+        "G03"
+      ]
+    },
+    {
+      "id": "AW-R18",
+      "prd_sections": [
+        "09"
+      ],
+      "requirement": "AI Work模型辅助对齐与说明",
+      "status": "未实现",
+      "current": "generator=deterministic_rules_no_llm，说明由规则模板生成。",
+      "gap": "未接模型协助字段对齐、解释和支持性校验。应先验证其增益，再决定接入；明确数值继续由规则执行。",
+      "evidence_ids": [
+        "E04",
+        "E17"
+      ],
+      "gap_ids": [
+        "G03"
+      ]
+    },
+    {
+      "id": "AW-R19",
+      "prd_sections": [
+        "03",
+        "09",
+        "10"
+      ],
+      "requirement": "引用身份及原文查看",
+      "status": "已实现",
+      "current": "区分模拟依据与报告，校验报告quote属于本页；来源弹窗分开索引摘要、原文章节及全文。",
+      "gap": "原文章节定位限当前Markdown结构；语义支持的专业正确性未验收。",
+      "evidence_ids": [
+        "E04",
+        "E08",
+        "E09",
+        "E17"
+      ],
+      "gap_ids": []
+    },
+    {
+      "id": "AW-R20",
+      "prd_sections": [
+        "10",
+        "12"
+      ],
+      "requirement": "复核处置与追加历史",
+      "status": "已实现",
+      "current": "确认/排除/暂无法确认必须填理由；乐观版本检查，原系统结果保持。",
+      "gap": "代理处置不等于专业复核通过。",
+      "evidence_ids": [
+        "E05",
+        "E08",
+        "E12",
+        "E17"
+      ],
+      "gap_ids": []
+    },
+    {
+      "id": "AW-R21",
+      "prd_sections": [
+        "06",
+        "12"
+      ],
+      "requirement": "输入与运行版本隔离",
+      "status": "已实现",
+      "current": "新修订保存快照与依据，run锁定输入哈希；旧结果标历史，源码版本不兼容时要求重新导入。",
+      "gap": "规则更换不是自助操作；原型采用重新导入而非通用迁移。",
+      "evidence_ids": [
+        "E03",
+        "E05",
+        "E12",
+        "E13",
+        "E16"
+      ],
+      "gap_ids": []
+    },
+    {
+      "id": "AW-R22",
+      "prd_sections": [
+        "11",
+        "12"
+      ],
+      "requirement": "Excel导出与结果一致",
+      "status": "已实现",
+      "current": "原生四表含范围、逐项结果、依据/原文与复核历史；失败及未复核内容保留，外部文字按文本写入。",
+      "gap": "较宽十列表与条件JSON影响阅读；本机原文不是可跨环境共享的永久链接。",
+      "evidence_ids": [
+        "E06",
+        "E07",
+        "E12",
+        "E17"
+      ],
+      "gap_ids": [
+        "G08"
+      ]
+    },
+    {
+      "id": "AW-R23",
+      "prd_sections": [
+        "02",
+        "12"
+      ],
+      "requirement": "任务所有者及资料访问校验",
+      "status": "部分实现",
+      "current": "服务层按principal/owner隔离任务，PDF/结果/导出同样校验；本机服务固定一个演示身份。",
+      "gap": "企业登录、实际多用户身份来源、授权任务协作和权限变更未接入。",
+      "evidence_ids": [
+        "E05",
+        "E07",
+        "E09",
+        "E12"
+      ],
+      "gap_ids": [
+        "G02"
+      ]
+    },
+    {
+      "id": "AW-R24",
+      "prd_sections": [
+        "12",
+        "13"
+      ],
+      "requirement": "本机会话与输入边界",
+      "status": "已实现",
+      "current": "本机绑定、会话、Origin、请求大小及允许字段检查，拒绝客户端身份覆盖。",
+      "gap": "验证边界为本机原型，不等同企业认证。",
+      "evidence_ids": [
+        "E07",
+        "E12"
+      ],
+      "gap_ids": []
+    },
+    {
+      "id": "AW-R25",
+      "prd_sections": [
+        "01",
+        "09"
+      ],
+      "requirement": "知识元数据与人工入库维护",
+      "status": "部分实现",
+      "current": "静态manifest及知识/任务块带版本、scope、来源身份；校验脚本验证样本包。",
+      "gap": "元数据未构成完整审核责任/权限登记；缺增量导入、去重、审批记录和运行时维护工具。",
+      "evidence_ids": [
+        "E09",
+        "E20",
+        "E21"
+      ],
+      "gap_ids": [
+        "G04"
+      ]
+    },
+    {
+      "id": "AW-R26",
+      "prd_sections": [
+        "01",
+        "09",
+        "13"
+      ],
+      "requirement": "知识发布与原子切换",
+      "status": "未实现",
+      "current": "启动时一次载入静态manifest和两份JSONL；可校验既有包。",
+      "gap": "无待核验→待索引→发布/停用操作链；无索引失败不切换、发布幂等和缓存撤销验收。",
+      "evidence_ids": [
+        "E09",
+        "E20",
+        "E21"
+      ],
+      "gap_ids": [
+        "G04"
+      ]
+    },
+    {
+      "id": "AW-R27",
+      "prd_sections": [
+        "07",
+        "08"
+      ],
+      "requirement": "规则注册与专业发布门禁",
+      "status": "部分实现",
+      "current": "有demo-rules.json结构样例及固定RULE_SOURCES，运行从已选模拟来源提阈值。",
+      "gap": "运行未加载通用注册表；无draft/verified/active/suspended门禁与专业复核记录。",
+      "evidence_ids": [
+        "E04",
+        "E05",
+        "E11"
+      ],
+      "gap_ids": [
+        "G01",
+        "G04"
+      ]
+    },
+    {
+      "id": "AW-R28",
+      "prd_sections": [
+        "06",
+        "13"
+      ],
+      "requirement": "依据停用后的历史核验",
+      "status": "部分实现",
+      "current": "原运行存完整snapshot及引用身份；新运行对当前依据校验。",
+      "gap": "仅停用依据且用户权限未变时，历史任务/结果/PDF也被auth拦截；尚无资料停用变化提示与可核对历史路径。",
+      "evidence_ids": [
+        "E05",
+        "E12",
+        "E19"
+      ],
+      "gap_ids": [
+        "G01"
+      ]
+    },
+    {
+      "id": "AW-R29",
+      "prd_sections": [
+        "12",
+        "13"
+      ],
+      "requirement": "失败记录 重试 幂等与并发",
+      "status": "已实现",
+      "current": "规则运行失败保存10个失败单元，可导出；幂等请求复用，旧确认/复核版本拒绝。",
+      "gap": "上传失败事件见AW-R15；结果项级故障隔离见AW-R30。",
+      "evidence_ids": [
+        "E05",
+        "E12",
+        "E16"
+      ],
+      "gap_ids": []
+    },
+    {
+      "id": "AW-R30",
+      "prd_sections": [
+        "06",
+        "13"
+      ],
+      "requirement": "单项失败保留其他已完成结果",
+      "status": "部分实现",
+      "current": "解析/条件诊断可只停检受影响项，其他项继续展示。",
+      "gap": "未隔离每条规则执行异常；evaluate抛异常时整次run改为10项失败，已完成部分不保存。",
+      "evidence_ids": [
+        "E04",
+        "E05",
+        "E12"
+      ],
+      "gap_ids": [
+        "G07"
+      ]
+    },
+    {
+      "id": "AW-R31",
+      "prd_sections": [
+        "09",
+        "15"
+      ],
+      "requirement": "运行追踪和关键事件",
+      "status": "部分实现",
+      "current": "有输入/报告/引擎哈希、来源、检索trace、部分耗时、修改/复核时间与操作者。",
+      "gap": "没有统一事件表及证据查看/导出事件；解析、等待、失败总耗时和人工成本不全。",
+      "evidence_ids": [
+        "E03",
+        "E04",
+        "E05",
+        "E08"
+      ],
+      "gap_ids": [
+        "G07"
+      ]
+    },
+    {
+      "id": "AW-R32",
+      "prd_sections": [
+        "14",
+        "15"
+      ],
+      "requirement": "真实质量 效率与成本验收",
+      "status": "未实现",
+      "current": "已有模拟开发/时间留出、HTTP和代理走查记录。",
+      "gap": "独立专业参考、实际使用者体验、真实对照总耗时和维护成本尚未就绪。",
+      "evidence_ids": [
+        "E17",
+        "E18",
+        "E21"
+      ],
+      "gap_ids": [
+        "G02"
+      ]
+    },
+    {
+      "id": "AW-R33",
+      "prd_sections": [
+        "01",
+        "08",
+        "15"
+      ],
+      "requirement": "真实标准与规则授权",
+      "status": "未实现",
+      "current": "原型显式使用模拟规则，real_compliance_enabled=false。",
+      "gap": "真实条款使用授权、适用白名单和专业标注未落实，不能开启真实合规判断。",
+      "evidence_ids": [
+        "E11",
+        "E21",
+        "E22"
+      ],
+      "gap_ids": [
+        "G02"
+      ]
+    },
+    {
+      "id": "AW-R34",
+      "prd_sections": [
+        "15"
+      ],
+      "requirement": "企业部署及数据保留",
+      "status": "未实现",
+      "current": "本机SQLite与原文保存，配置目录不入版本库；代码拒绝非本机绑定。",
+      "gap": "部署身份、备份/保留/删除策略、并发及预算门槛待试点核定。",
+      "evidence_ids": [
+        "E05",
+        "E07",
+        "E21"
+      ],
+      "gap_ids": [
+        "G02"
+      ]
+    },
+    {
+      "id": "AW-R35",
+      "prd_sections": [
+        "13"
+      ],
+      "requirement": "AI Work模型失败及校正",
+      "status": "未实现",
+      "current": "AI Work未发模型请求；客服的适配与校验属于另一链路。",
+      "gap": "仅当启用AI Work模型时，才需要验证格式/引文失败、有限重试和超时处理。",
+      "evidence_ids": [
+        "E04",
+        "E07",
+        "E10"
+      ],
+      "gap_ids": [
+        "G03"
+      ]
+    },
+    {
+      "id": "AW-R36",
+      "prd_sections": [
+        "01",
+        "15"
+      ],
+      "requirement": "模拟与支持范围说明",
+      "status": "已实现",
+      "current": "上传及结果页明示模拟、固定范围和未配置内容；未检/失败不转为通过，无认证放行输出。",
+      "gap": "保持声明；本次对照不提高真实验收等级。",
+      "evidence_ids": [
+        "E04",
+        "E06",
+        "E22"
+      ],
+      "gap_ids": []
+    }
+  ],
+  "gaps": [
+    {
+      "id": "G01",
+      "priority": "P1",
+      "when": "下一轮优先补齐，可用现有模拟资料验证",
+      "problem": "停用依据后历史证据不可核对",
+      "action": "将新运行依据有效性与历史读取授权分开；依据停用后保留现有权限下的快照及原文入口并展示变化，权限撤销继续拒绝；更新现有停用测试的断言。",
+      "acceptance": "仅停用时旧任务/结果/PDF可按权限查看、新运行被拦截；撤销访问权时相关入口全部拒绝；原结果和复核历史不变。"
+    },
+    {
+      "id": "G02",
+      "priority": "试点前置条件",
+      "when": "接入任何真实业务前",
+      "problem": "真实资料 专业复核 身份与效果门槛未落实",
+      "action": "明确材料授权及规则白名单、独立专业复核、真实身份和部署/保留策略；锁定人工可用性与质量/总耗时评测方案。",
+      "acceptance": "对应责任与授权、部署方案及指标有可审核记录，再启动真实试点；当前保持模拟演示。"
+    },
+    {
+      "id": "G03",
+      "priority": "P1",
+      "when": "AI Work RAG扩展决策前",
+      "problem": "设计中的混合检索和模型辅助未在AI Work接通",
+      "action": "对同一检查集比较现有BM25/字段扫描与候选语义检索/模型辅助的证据命中、误配、延迟和成本；明确采用简化RAG或补足能力的决策。",
+      "acceptance": "AI Work独立trace、证据与效果对比可复现；若模型接入，引用/适用条件失败须收敛，不把客服结果冒充此链路结果。"
+    },
+    {
+      "id": "G04",
+      "priority": "P1",
+      "when": "需要变更知识或规则的内部试点前",
+      "problem": "静态知识包与固定规则缺发布维护闭环",
+      "action": "先补简易入库核验、发布记录、版本切换/失败回退、停用与规则状态门禁；复杂管理后台继续后移。",
+      "acceptance": "未核验资料不默认可检索；失败不切换当前快照；新旧任务分别绑定正确版本；停用与撤权按G01验证。"
+    },
+    {
+      "id": "G05",
+      "priority": "P1",
+      "when": "扩大型号 依据或检查范围前",
+      "problem": "身份 依据 清单和修正流程固定",
+      "action": "补必要身份字段、依据选择/任务附件、逐项适用性及排除理由；多记录重映射和条件修改需保存明确证据。",
+      "acceptance": "型号或条件无法确认时阻塞相应项目，旧快照不改写；用户选定范围与明细及导出对账一致。"
+    },
+    {
+      "id": "G06",
+      "priority": "P1",
+      "when": "承诺结论一致性自动核对前",
+      "problem": "通用报告结论与数据对照未实现",
+      "action": "先选受控结论表达和字段白名单；未知表述显示未核验，再评测模型辅助是否必要。",
+      "acceptance": "结论与明确矛盾数据展示双方；缺证不自动判不符合或通过；不把摘要数值核对等同通用结论核对。"
+    },
+    {
+      "id": "G07",
+      "priority": "P1",
+      "when": "扩展并发 长任务或测量业务效果前",
+      "problem": "阶段 事件和项级失败记录不足",
+      "action": "补持久阶段与关键事件、失败计时、单项异常隔离及恢复规则；计入人工准备/复核成本。",
+      "acceptance": "可定位失败阶段且失败样本进入指标；一项异常不覆盖已完成项；不把系统毫秒当人工省时。"
+    },
+    {
+      "id": "G08",
+      "priority": "P2",
+      "when": "交付阅读体验优化时",
+      "problem": "Excel宽表和条件JSON可读性",
+      "action": "以中文条件字段呈现，优先冻结识别列/安排阅读列序；保持四表信息、单位、引用及历史。",
+      "acceptance": "实际应用导出可读；全值/结果/历史一致，原生Excel阅读仍需使用者验收。"
+    },
+    {
+      "id": "G09",
+      "priority": "P2",
+      "when": "实际任务积累或名称辨识成为问题时",
+      "problem": "任务名及列表完整性",
+      "action": "补可编辑任务名、基本状态/日期及分页；不把任务名当身份。",
+      "acceptance": "名称变更不改文件哈希与运行；超过50项时可取回旧任务。"
+    },
+    {
+      "id": "G10",
+      "priority": "范围外候选",
+      "when": "出现代表性扫描/图片资料且收益明确后",
+      "problem": "OCR及复杂图片自动判读",
+      "action": "保留当前停检；另行用代表性资料验证OCR与关键值人工核验成本。",
+      "acceptance": "未核实图内字段不产生确定结论；是否纳入MVP需证据支持。"
+    }
+  ],
+  "aw_acceptance": [
+    {
+      "id": "AW-A01",
+      "status": "部分覆盖",
+      "requirement_ids": [
+        "AW-R02",
+        "AW-R07",
+        "AW-R08",
+        "AW-R21"
+      ],
+      "finding": "固定型号/依据/清单可确认并锁快照；选择依据和适用性未完成。"
+    },
+    {
+      "id": "AW-A02",
+      "status": "受控范围已覆盖",
+      "requirement_ids": [
+        "AW-R09"
+      ],
+      "finding": "当前电压/角色/组合及摘要环境差异不直接判等价。"
+    },
+    {
+      "id": "AW-A03",
+      "status": "受控范围已覆盖",
+      "requirement_ids": [
+        "AW-R10"
+      ],
+      "finding": "支持格式内单位换算、闭区间与温差可复现。"
+    },
+    {
+      "id": "AW-A04",
+      "status": "受控范围已覆盖",
+      "requirement_ids": [
+        "AW-R11"
+      ],
+      "finding": "缺记录标缺证，不等同实际未测。"
+    },
+    {
+      "id": "AW-A05",
+      "status": "部分覆盖",
+      "requirement_ids": [
+        "AW-R12",
+        "AW-R13"
+      ],
+      "finding": "响应摘要矛盾保留双方；通用自然语言结论未覆盖。"
+    },
+    {
+      "id": "AW-A06",
+      "status": "部分覆盖",
+      "requirement_ids": [
+        "AW-R04",
+        "AW-R05",
+        "AW-R06"
+      ],
+      "finding": "模糊/未解析阻塞；修正只支持唯一现有字段，尚无OCR。"
+    },
+    {
+      "id": "AW-A07",
+      "status": "部分覆盖",
+      "requirement_ids": [
+        "AW-R08",
+        "AW-R14",
+        "AW-R30"
+      ],
+      "finding": "范围与失败单列；适用性未知、逐项排除及项级运行故障隔离不足。"
+    },
+    {
+      "id": "AW-A08",
+      "status": "受控范围已覆盖",
+      "requirement_ids": [
+        "AW-R20"
+      ],
+      "finding": "排除与理由追加保存，原系统结果保持。"
+    },
+    {
+      "id": "AW-A09",
+      "status": "部分覆盖",
+      "requirement_ids": [
+        "AW-R21",
+        "AW-R26",
+        "AW-R28"
+      ],
+      "finding": "输入修订隔离已验证；通用规则/知识换版和停用后历史路径不全。"
+    },
+    {
+      "id": "AW-A10",
+      "status": "部分覆盖",
+      "requirement_ids": [
+        "AW-R22",
+        "AW-R23"
+      ],
+      "finding": "未复核/失败标记及服务层越权拒绝有测试；真实企业身份未接。"
+    },
+    {
+      "id": "AW-A11",
+      "status": "受控范围已覆盖",
+      "requirement_ids": [
+        "AW-R29"
+      ],
+      "finding": "同请求幂等、失败保存和新运行恢复有现有测试。"
+    }
+  ],
+  "kb_acceptance": [
+    {
+      "id": "KB-A01",
+      "status": "部分覆盖",
+      "requirement_ids": [
+        "AW-R19",
+        "AW-R25"
+      ],
+      "finding": "受控块身份、版本、原文和scope可追溯；完整授权/审核责任元数据不足。"
+    },
+    {
+      "id": "KB-A02",
+      "status": "受控范围已覆盖",
+      "requirement_ids": [
+        "AW-R05",
+        "AW-R09"
+      ],
+      "finding": "支持模板的单位/脚注及局部条件可绑定；未知内容停检。"
+    },
+    {
+      "id": "KB-A03",
+      "status": "未覆盖",
+      "requirement_ids": [
+        "AW-R26"
+      ],
+      "finding": "无运行时发布、原子切换及失败不切换验证。"
+    },
+    {
+      "id": "KB-A04",
+      "status": "受控范围已覆盖",
+      "requirement_ids": [
+        "AW-R16",
+        "AW-R23"
+      ],
+      "finding": "上传报告在任务存储并以当前快照扫描，不自动进入客服静态索引；owner校验。"
+    },
+    {
+      "id": "KB-A05",
+      "status": "部分覆盖",
+      "requirement_ids": [
+        "AW-R23",
+        "AW-R28"
+      ],
+      "finding": "现时role/owner/source校验存在；停用/撤权生命周期和历史核验未完整实现。"
+    },
+    {
+      "id": "KB-A06",
+      "status": "部分覆盖",
+      "requirement_ids": [
+        "AW-R19"
+      ],
+      "finding": "引用ID和报告逐字定位检查已做；全面语义支持仍需专业验收。"
+    },
+    {
+      "id": "KB-A07",
+      "status": "受控范围已覆盖",
+      "requirement_ids": [
+        "AW-R24",
+        "AW-R36"
+      ],
+      "finding": "输入不生成工具执行；受控注入文本不改规则；无任意代码执行路径。"
+    },
+    {
+      "id": "KB-A08",
+      "status": "部分覆盖",
+      "requirement_ids": [
+        "AW-R27",
+        "AW-R33",
+        "AW-R36"
+      ],
+      "finding": "界面/数据明确模拟；模拟块在演示包publication_status=active，不是正式规则active状态，尚无生产目录。"
+    },
+    {
+      "id": "KB-A09",
+      "status": "部分覆盖",
+      "requirement_ids": [
+        "AW-R17",
+        "AW-R18",
+        "AW-R21",
+        "AW-R31"
+      ],
+      "finding": "本机现有run快照/检索可回放；动态知识版本仓及AI Work模型配置链尚未建。"
+    },
+    {
+      "id": "KB-A10",
+      "status": "部分覆盖",
+      "requirement_ids": [
+        "AW-R20",
+        "AW-R29",
+        "AW-R26"
+      ],
+      "finding": "运行幂等与复核并发已验证；发布流程未实现，不能宣称发布幂等。"
+    }
+  ],
+  "evidence": {
+    "E01": {
+      "path": "app/ai_work/review.py",
+      "symbol": "parse_pdf",
+      "description": "受控PDF校验、文件身份与规格版本提取",
+      "sha256": "38c2a55aed083defa64b9b3e712513338767f36ee358cad6df7336aad7634b26",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/app/ai_work/review.py#L52"
+    },
+    "E02": {
+      "path": "app/ai_work/parsing.py",
+      "symbol": "extract_report",
+      "description": "候选审计、跨行归属、局部条件与图片停检",
+      "sha256": "60e90a4d5bee35160d80ebfd96f6705f6f869ccebbe493eeda05d009ced8c79d",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/app/ai_work/parsing.py#L78"
+    },
+    "E03": {
+      "path": "app/ai_work/review.py",
+      "symbol": "ReviewService.confirm",
+      "description": "确认快照、单一记录修正与修订约束",
+      "sha256": "38c2a55aed083defa64b9b3e712513338767f36ee358cad6df7336aad7634b26",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/app/ai_work/review.py#L348"
+    },
+    "E04": {
+      "path": "app/ai_work/review.py",
+      "symbol": "evaluate",
+      "description": "固定清单、检索记录、确定性计算与检查结果",
+      "sha256": "38c2a55aed083defa64b9b3e712513338767f36ee358cad6df7336aad7634b26",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/app/ai_work/review.py#L134"
+    },
+    "E05": {
+      "path": "app/ai_work/review.py",
+      "symbol": "ReviewService",
+      "description": "任务所有者、输入/运行/复核存储及幂等",
+      "sha256": "38c2a55aed083defa64b9b3e712513338767f36ee358cad6df7336aad7634b26",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/app/ai_work/review.py#L283"
+    },
+    "E06": {
+      "path": "app/ai_work/export.py",
+      "symbol": "workbook_rows",
+      "description": "四表导出、范围与历史记录",
+      "sha256": "aa830cf6b9d8d9d898da481136af567995036f54ad400bdd9cbc1428ebf8aac9",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/app/ai_work/export.py#L14"
+    },
+    "E07": {
+      "path": "app/knowledge_assistant/server.py",
+      "symbol": "Handler",
+      "description": "本机会话、路由及服务端访问检查",
+      "sha256": "2f7a585502ce6079018f5b144b3d0855dd19823e7ce3f2de9654ffc0df5ad449",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/app/knowledge_assistant/server.py#L127"
+    },
+    "E08": {
+      "path": "app/knowledge_assistant/static/work.js",
+      "symbol": null,
+      "description": "页面输入、证据、筛选、复核及状态展示",
+      "sha256": "1118b50d4db57266df5505e071573f7d8b11477b510efe0585c981e561e32388",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/app/knowledge_assistant/static/work.js"
+    },
+    "E09": {
+      "path": "app/knowledge_assistant/core.py",
+      "symbol": "Corpus",
+      "description": "静态语料载入、权限与原文章节",
+      "sha256": "f44f0c5eaa9f13f442da405bb12ef5223fbd80e14b3934136cc08a7fd8521f9b",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/app/knowledge_assistant/core.py#L69"
+    },
+    "E10": {
+      "path": "app/knowledge_assistant/core.py",
+      "symbol": "Assistant.search",
+      "description": "智能客服混合检索，AI Work未调用",
+      "sha256": "f44f0c5eaa9f13f442da405bb12ef5223fbd80e14b3934136cc08a7fd8521f9b",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/app/knowledge_assistant/core.py#L182"
+    },
+    "E11": {
+      "path": "data/bootstrap-v0.1/rules/demo-rules.json",
+      "symbol": null,
+      "description": "模拟规则结构示例，非运行时通用注册表",
+      "sha256": "744e18a1cd0873b92dc0c928cd7a273e3a36f123eaf6a7c264607b5f17c877d2",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/data/bootstrap-v0.1/rules/demo-rules.json"
+    },
+    "E12": {
+      "path": "tests/test_ai_work.py",
+      "symbol": null,
+      "description": "现有功能、越权、幂等、并发与失败回归",
+      "sha256": "2020798964220400d0a8217779275492d78189eee682616c62b9232d4d0dbe08",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/tests/test_ai_work.py"
+    },
+    "E13": {
+      "path": "tests/test_pdf_variants.py",
+      "symbol": null,
+      "description": "既有模板、条件、快照及导出回归",
+      "sha256": "67924040c7c6e81403c7951882e17de1afdccfc4025b49cc37f2b10ceedfb2fa",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/tests/test_pdf_variants.py"
+    },
+    "E14": {
+      "path": "tests/test_ai_work_p0.py",
+      "symbol": null,
+      "description": "未知编号、混排图片和局部条件回归",
+      "sha256": "2e62222f3eecc0c6ccd9d9add5da46de479b916fe35084291e976e6a22676c86",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/tests/test_ai_work_p0.py"
+    },
+    "E15": {
+      "path": "tests/test_ai_work_p1.py",
+      "symbol": null,
+      "description": "跨行摘要和单位归属回归",
+      "sha256": "f6aa1b437667d341cfb1151525335bf1b640f5fb90c44b39c30b26077ee60476",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/tests/test_ai_work_p1.py"
+    },
+    "E16": {
+      "path": "eval-results/workflow-http-v0.4.json",
+      "symbol": null,
+      "description": "既有三场景51项HTTP结果",
+      "sha256": "f9e051af4f845580ddd3a45ec45a7cc4bcc3bb34d20c0a9987c2da38097389fe",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/eval-results/workflow-http-v0.4.json"
+    },
+    "E17": {
+      "path": "eval-results/delegated-walkthrough-v0.1.json",
+      "symbol": null,
+      "description": "既有正常r3代理走查及源码摘要",
+      "sha256": "14f5acc8798edf8da9d9b889716cb3bdc2263df90b63c484395da4924e9f7018",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/eval-results/delegated-walkthrough-v0.1.json"
+    },
+    "E18": {
+      "path": "eval-results/delegated-walkthrough-regression-v0.1.txt",
+      "symbol": null,
+      "description": "最近一次133项完整回归日志",
+      "sha256": "2e4969ef1be90b4c3ff1fea6f300ed511a12af14fb6f1944af97a8d05c31aec5",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/eval-results/delegated-walkthrough-regression-v0.1.txt"
+    },
+    "E19": {
+      "path": "eval-results/prd-implementation-audit-probes-v0.1.json",
+      "symbol": null,
+      "description": "本轮7项临时库观察，含预期拒绝及历史停用缺口",
+      "sha256": "0c66b97f56c55ddea16bcd333a3eafc74b67b4921ff0c24495b3a4f47227a786",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/prd-implementation-audit-probes-v0.1.json"
+    },
+    "E20": {
+      "path": "scripts/validate_bootstrap_pack.py",
+      "symbol": null,
+      "description": "静态样本包与索引元数据校验",
+      "sha256": "a651bb050a167a5dfdbe5f45ba5567ecdaf68fdf59e25eeaba09ffe02e2aa164",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/scripts/validate_bootstrap_pack.py"
+    },
+    "E21": {
+      "path": "docs/shared/knowledge-base-rag.md",
+      "symbol": null,
+      "description": "共用设计及KB验收口径",
+      "sha256": "1e86bc5e8f7c8e2fd94ed39ea86f1ece937bf5335d34469270fa2553f6752979",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/docs/shared/knowledge-base-rag.md"
+    },
+    "E22": {
+      "path": "app/knowledge_assistant/static/index.html",
+      "symbol": null,
+      "description": "当前页面支持范围与固定清单说明",
+      "sha256": "a1986d9400934a9c3cb3b7cbfd42b73e5531c4268439289eb167951f1459f60a",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/73abf7a55ec33734296fc7e4d626cb4e5eee5d2d/app/knowledge_assistant/static/index.html#L42"
+    },
+    "E23": {
+      "path": "scripts/probe_ai_work_prd_gaps.py",
+      "symbol": null,
+      "description": "本轮隔离观察的可复现脚本，拒绝覆盖已有结果",
+      "sha256": "0f10156b34d51500f856a81a9bb23876749449359cc4f11458a3d8cd4f943bc4",
+      "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/scripts/probe_ai_work_prd_gaps.py"
+    }
+  }
+}
