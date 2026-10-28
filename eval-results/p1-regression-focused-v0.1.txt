@@ -1,0 +1,41 @@
+test_blank_or_heading_breaks_summary_join (test_ai_work_p1.P1OwnershipTests.test_blank_or_heading_breaks_summary_join) ... ok
+test_cross_page_summary_is_not_auto_merged (test_ai_work_p1.P1OwnershipTests.test_cross_page_summary_is_not_auto_merged) ... ok
+test_current_page_activity_prevents_old_tail_claim (test_ai_work_p1.P1OwnershipTests.test_current_page_activity_prevents_old_tail_claim) ... ok
+test_explicit_cross_page_record_unit_uses_unique_pending_tail (test_ai_work_p1.P1OwnershipTests.test_explicit_cross_page_record_unit_uses_unique_pending_tail) ... ok
+test_fully_typed_tail_is_never_reused (test_ai_work_p1.P1OwnershipTests.test_fully_typed_tail_is_never_reused) ... ok
+test_ho17_actual_fix_preserves_old_label_file (test_ai_work_p1.P1OwnershipTests.test_ho17_actual_fix_preserves_old_label_file) ... ok
+test_incomplete_summary_never_steals_next_record_or_its_unit (test_ai_work_p1.P1OwnershipTests.test_incomplete_summary_never_steals_next_record_or_its_unit) ... ok
+test_inline_vertical_delimited_record_unit_has_correct_owner (test_ai_work_p1.P1OwnershipTests.test_inline_vertical_delimited_record_unit_has_correct_owner) ... ok
+test_method_numeric_does_not_claim_response_unit (test_ai_work_p1.P1OwnershipTests.test_method_numeric_does_not_claim_response_unit) ... ok
+test_multiple_pending_records_never_guess_unit_owner (test_ai_work_p1.P1OwnershipTests.test_multiple_pending_records_never_guess_unit_owner) ... ok
+test_same_page_summary_two_and_three_lines_share_unit_owner (test_ai_work_p1.P1OwnershipTests.test_same_page_summary_two_and_three_lines_share_unit_owner) ... ok
+test_summary_cannot_supply_unit_to_previous_detail (test_ai_work_p1.P1OwnershipTests.test_summary_cannot_supply_unit_to_previous_detail) ... ok
+test_summary_condition_conflict_is_not_same_condition_numeric_conflict (test_ai_work_p1.P1OwnershipTests.test_summary_condition_conflict_is_not_same_condition_numeric_conflict) ... ERROR
+test_summary_label_then_numeric_and_unit_line (test_ai_work_p1.P1OwnershipTests.test_summary_label_then_numeric_and_unit_line) ... ok
+test_summary_next_line_conditions_bind_to_summary_not_method (test_ai_work_p1.P1OwnershipTests.test_summary_next_line_conditions_bind_to_summary_not_method) ... ok
+test_two_summary_anchors_keep_distinct_unit_ownership (test_ai_work_p1.P1OwnershipTests.test_two_summary_anchors_keep_distinct_unit_ownership) ... ok
+test_unbound_conditions_after_incomplete_summary_do_not_mutate_previous_record (test_ai_work_p1.P1OwnershipTests.test_unbound_conditions_after_incomplete_summary_do_not_mutate_previous_record) ... ok
+test_unknown_summary_port_does_not_disappear (test_ai_work_p1.P1OwnershipTests.test_unknown_summary_port_does_not_disappear) ... ok
+test_unmarked_pending_tail_is_diagnosed_without_join (test_ai_work_p1.P1OwnershipTests.test_unmarked_pending_tail_is_diagnosed_without_join) ... ok
+test_unrelated_orphan_unit_does_not_attach_to_previous_method (test_ai_work_p1.P1OwnershipTests.test_unrelated_orphan_unit_does_not_attach_to_previous_method) ... ok
+test_unsupported_summary_unit_is_audited_without_false_numeric_conflict (test_ai_work_p1.P1OwnershipTests.test_unsupported_summary_unit_is_audited_without_false_numeric_conflict) ... ok
+
+======================================================================
+ERROR: test_summary_condition_conflict_is_not_same_condition_numeric_conflict (test_ai_work_p1.P1OwnershipTests.test_summary_condition_conflict_is_not_same_condition_numeric_conflict)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/zhujiayi/Documents/ChatGPT/「充电宝硬件研发知识 + 合规检查 Agent」/tests/test_ai_work_p1.py", line 42, in test_summary_condition_conflict_is_not_same_condition_numeric_conflict
+    out=evaluate(dict(report=r,corrections={}),self.basis);by={i['item_id']:i for i in out['items']}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhujiayi/Documents/ChatGPT/「充电宝硬件研发知识 + 合规检查 Agent」/app/ai_work/review.py", line 157, in evaluate
+    candidates = [dict(p, chunk_id=p["source_id"], version="uploaded", section="PDF提取文字", search_text=search_text(dict(p, section="PDF提取文字"))) for p in pages.values()]
+                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhujiayi/Documents/ChatGPT/「充电宝硬件研发知识 + 合规检查 Agent」/app/knowledge_assistant/core.py", line 52, in search_text
+    return " ".join([c["title"], c["section"], c["text"].replace(WARNING, "")])
+                     ~^^^^^^^^^
+KeyError: 'title'
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.090s
+
+FAILED (errors=1)

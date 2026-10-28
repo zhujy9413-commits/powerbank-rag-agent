@@ -17,7 +17,7 @@ import uuid
 from app.knowledge_assistant.core import ROOT, card, rank_bm25, search_text
 from .parsing import extract_report, inspect_visuals, gate, same_conditions, PARSER_VERSION, PARSER_SHA256
 
-VERSION = "synthetic-short-circuit-v0.3"
+VERSION = "synthetic-short-circuit-v0.4"
 KINDS = {"response": "保护响应", "recovery": "恢复电压", "temperature": "壳温变化",
          "appearance": "外观观察", "method": "恢复方式"}
 LABELS = {"保护响应": "response", "恢复电压": "recovery", "壳温起值/末值": "temperature",

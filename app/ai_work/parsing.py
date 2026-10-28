@@ -6,7 +6,7 @@ from pathlib import Path
 import re
 import unicodedata
 
-PARSER_VERSION='controlled-pdf-v0.3'
+PARSER_VERSION='controlled-pdf-v0.4'
 ALIASES={'保护响应':'response','短路保护响应时间':'response','恢复电压':'recovery','保护后恢复电压':'recovery',
          '壳温起值/末值':'temperature','外观观察':'appearance','恢复方式':'method'}
 KINDS=['response','recovery','temperature','appearance','method']
@@ -15,6 +15,8 @@ RID=re.compile(r'R\d{2,4}')
 IDENTIFIER=re.compile(r'[A-Za-z0-9][A-Za-z0-9_./-]{0,39}')
 PORT=re.compile(r'[A-Z]\d{1,3}')
 UNIT=re.compile(r'ms|s|V|mV')
+NUMBER=re.compile(r'[+-]?\d+(?:\.\d+)?')
+SUMMARY_START=re.compile(r'^(S\d{2,4})[：:]\s*([A-Z]\d{1,3})保护响应\s*(.*)$')
 PARSER_SHA256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
 
 def norm(text):return unicodedata.normalize('NFKC',text).strip()
@@ -75,7 +77,7 @@ def inspect_visuals(page):
 
 def extract_report(pages):
     fields={p+':'+k:[] for p in ['A1','C1'] for k in KINDS}
-    candidates=[];issues=[];global_proofs=[];declarations=[];summary=[]
+    candidates=[];issues=[];global_proofs=[];declarations=[];summary=[];summary_candidates=[];unit_ownership=[]
     def issue(code,message,page,quote,keys=None):
         issues.append(dict(code=code,message=message,affected_keys=keys or [],evidence=[fragment(page,quote)]))
     for page in pages:
@@ -121,24 +123,61 @@ def extract_report(pages):
                  fragments=[fragment(page,raw)],conditions=context,condition_evidence=list(global_proofs),global_condition_conflicts=conflicts)
         if local:row['condition_evidence'].append(fragment(page,raw))
         fields[port+':'+kind].append(row);candidate['status']='captured';return row
-    previous_page_last=None
+    def compatible(row,unit):
+        return unit in ({'ms','s'} if row['kind']=='response' else {'V','mV'} if row['kind']=='recovery' else set())
+    previous_pending=None
     for page in pages:
         text=page['text'];lines=[];offset=0
         for raw in text.splitlines(keepends=True):
             lines.append(dict(text=norm(raw),start=offset,end=offset+len(raw.rstrip('\r\n'))));offset+=len(raw)
-        columns=['记录','端口','字段','原始填写'];i=0;last=None;last_end=-2
+        def claim_units(start,end,owner,owner_type):
+            for at in range(start,end+1):
+                if UNIT.fullmatch(lines[at]['text']):
+                    unit_ownership.append(dict(owner_type=owner_type,owner_id=owner['record_id'],
+                        evidence=fragment(page,text[lines[at]['start']:lines[at]['end']])))
+        columns=['记录','端口','字段','原始填写'];i=0;last=None;last_end=-2;activity=False
         while i<len(lines):
             entry=lines[i];s=entry['text']
             if not s:i+=1;continue
-            if s.startswith('续表A(接上页单位)') and previous_page_last:
+            sm=SUMMARY_START.fullmatch(s)
+            if sm:
+                rid,port,tail=sm.groups();end=i;joined=tail
+                # Only contiguous same-page numeric/unit lines belong to this anchor.
+                while end-i<2 and (not joined or re.fullmatch(r'\d+(?:\.\d+)?',joined)) and end+1<len(lines):
+                    following=lines[end+1]['text']
+                    if not re.fullmatch(r'(?:\d+(?:\.\d+)?(?:\s*[A-Za-zµμ]+)?|[A-Za-zµμ]+)(?:\s*[；;].*)?',following):break
+                    joined=(joined+' '+following).strip();end+=1
+                raw=text[entry['start']:lines[end]['end']]
+                value=re.fullmatch(r'(\d+(?:\.\d+)?)\s*([A-Za-zµμ]+)(?![\d.a-zA-Z])([^\n]*)',joined)
+                candidate=dict(record_id=rid,port=port,page=page['page'],status='unmapped',quote=raw)
+                summary_candidates.append(candidate)
+                if value and value[2] in {'ms','s'} and port in {'A1','C1'}:
+                    local=conditions(raw) if re.search(r'条件[：:]',raw) else {}
+                    if re.search(r'条件[：:]',raw) and not local:local={'voltage':None}
+                    last=dict(record_id=rid,port=port,value=value[1]+' '+value[2],source_id=page['source_id'],page=page['page'],quote=raw,
+                        fragments=[fragment(page,raw)],conditions=dict(global_context,**local),condition_evidence=list(global_proofs)+([fragment(page,raw)] if local else []),global_condition_conflicts=conflicts)
+                    summary.append(last);candidate['status']='captured'
+                else:
+                    last=None
+                    issue('unresolved_summary','摘要数值、单位或端口不能安全映射；未跨页或跨记录猜测。',page,raw,[port+':response'] if port in {'A1','C1'} else list(fields))
+                claim_units(i,end,candidate,'summary' if last else 'unresolved_summary')
+                last_end=end;activity=True;i=end+1;continue
+            if s.startswith('续表A(接上页单位)') and previous_pending and not activity:
                 j=i+1
-                if j<len(lines) and UNIT.fullmatch(lines[j]['text']) and re.fullmatch(r'[+-]?\d+(?:\.\d+)?',previous_page_last['value']):
-                    previous_page_last['value']+=' '+lines[j]['text']
-                    previous_page_last['fragments'].append(fragment(page,text[entry['start']:lines[j]['end']]))
+                if j<len(lines) and compatible(previous_pending,lines[j]['text']):
+                    previous_pending['value']+=' '+lines[j]['text']
+                    previous_pending['fragments'].append(fragment(page,text[entry['start']:lines[j]['end']]))
+                    claim_units(j,j,previous_pending,'record_continuation');previous_pending=None
                     i=j+1;continue
             if UNIT.fullmatch(s):
-                keys=[previous_page_last['port']+':'+previous_page_last['kind']] if previous_page_last else list(fields)
-                issue('orphan_unit','单位未与记录安全关联；仅明确声明的跨页续行可连接。',page,text[entry['start']:entry['end']],keys)
+                if last and 'kind' in last and last_end==i-1 and NUMBER.fullmatch(last['value']) and compatible(last,s):
+                    last['value']+=' '+s;last['quote']=text[lines[last_end]['start']:entry['end']]
+                    last['fragments']=[fragment(page,last['quote'])];claim_units(i,i,last,'record');last_end=i;i+=1;continue
+                pending=previous_pending if not activity else None
+                keys=[pending['port']+':'+pending['kind']] if pending else list(fields)
+                issue('orphan_unit','单位归属未核实；无明确续行不拼接，归属不唯一时停止相关范围比较。',page,text[entry['start']:entry['end']],keys)
+                unit_ownership.append(dict(owner_type='unresolved',owner_id=None,evidence=fragment(page,text[entry['start']:entry['end']])))
+                activity=True;last=None
                 i+=1;continue
             if re.match(r'条件[：:]',s):
                 if last and last_end==i-1:
@@ -146,7 +185,7 @@ def extract_report(pages):
                     last['conditions'].update(local);last['condition_evidence'].append(fragment(page,raw))
                     if not local:last['conditions']['voltage']=None
                 else:issue('unbound_condition','条件文字没有唯一相邻记录，未猜测对应关系。',page,text[entry['start']:entry['end']],list(fields))
-                i+=1;continue
+                activity=True;i+=1;continue
             pipe=[x.strip() for x in s.strip('|').split('|')]
             if len(pipe)>=4 and {'记录','端口','字段','原始填写'}<=set(pipe):
                 columns=pipe;i+=1;continue
@@ -157,13 +196,14 @@ def extract_report(pages):
                 if {'记录','端口','字段','原始填写'}<=set(names):columns=names;i=j;continue
             if len(pipe)>=4 and ((columns[0]=='记录' and (candidate_id(pipe[0]) or PORT.fullmatch(pipe[1]))) or (columns[0]=='端口' and PORT.fullmatch(pipe[0]))):
                 raw=text[entry['start']:entry['end']]
-                last=add(page,raw,dict(zip(columns,pipe)), 'delimited');last_end=i;i+=1;continue
+                last=add(page,raw,dict(zip(columns,pipe)), 'delimited');last_end=i;activity=True;i+=1;continue
             inline=re.fullmatch(r'([^\s|]+)\s+([A-Z]\d{1,3})\s+('+ '|'.join(sorted(map(re.escape,ALIASES),key=len,reverse=True))+r')(?:\s+(.*))?',s)
             if inline:
                 rid,port,label,value=inline.groups();end=i;value=value or ''
-                if i+1<len(lines) and re.fullmatch(r'[+-]?\d+(?:\.\d+)?',value) and UNIT.fullmatch(lines[i+1]['text']):
+                if i+1<len(lines) and NUMBER.fullmatch(value) and compatible({'kind':ALIASES[label]},lines[i+1]['text']):
                     end=i+1;value+=' '+lines[end]['text']
-                last=add(page,text[entry['start']:lines[end]['end']],dict(zip(['记录','端口','字段','原始填写'],[rid,port,label,value])),'inline');last_end=end;i=end+1;continue
+                last=add(page,text[entry['start']:lines[end]['end']],dict(zip(['记录','端口','字段','原始填写'],[rid,port,label,value])),'inline')
+                claim_units(i,end,last or {'record_id':rid},'record' if last else 'unresolved_record');last_end=end;activity=True;i=end+1;continue
             next_port=i+1<len(lines) and PORT.fullmatch(lines[i+1]['text']) and not re.fullmatch(r'R\d+',lines[i+1]['text'])
             identity_cell=bool(RID.fullmatch(s) or len(s)<=128 and not re.search(r'\s|[|；;]',s) and next_port)
             start=(columns[0]=='记录' and (identity_cell or s=='无记录ID')) or (columns[0]=='端口' and PORT.fullmatch(s))
@@ -175,26 +215,27 @@ def extract_report(pages):
                     next_is_port=j+1<len(lines) and PORT.fullmatch(lines[j+1]['text']) and not re.fullmatch(r'R\d+',lines[j+1]['text'])
                     if j>i and (column!='记录' and (RID.fullmatch(v) or candidate_id(v) and next_is_port) or v in HEADERS):break
                     cells.append(v);j+=1
-                    if column=='原始填写' and re.fullmatch(r'[+-]?\d+(?:\.\d+)?',v) and j<len(lines) and UNIT.fullmatch(lines[j]['text']):
+                    kind=ALIASES.get(dict(zip(columns,cells)).get('字段'))
+                    if column=='原始填写' and NUMBER.fullmatch(v) and j<len(lines) and compatible({'kind':kind},lines[j]['text']):
                         cells[-1]+=' '+lines[j]['text'];j+=1
                 raw=text[entry['start']:lines[max(i,j-1)]['end']]
-                last=add(page,raw,dict(zip(columns,cells)),'header_mapped');last_end=j-1;i=max(j,i+1);continue
+                last=add(page,raw,dict(zip(columns,cells)),'header_mapped')
+                claim_units(i,j-1,last or {'record_id':s},'record' if last else 'unresolved_record');last_end=j-1;activity=True;i=max(j,i+1);continue
             parts=s.split()
             missing_id=re.fullmatch(r'([A-Z]\d{1,3})\s+('+ '|'.join(sorted(map(re.escape,ALIASES),key=len,reverse=True))+r')\s+(.*)',s)
             if missing_id:
                 port,label,value=missing_id.groups()
-                last=add(page,text[entry['start']:entry['end']],dict(记录='(缺少编号)',端口=port,字段=label,原始填写=value),'missing_identity');last_end=i
+                last=add(page,text[entry['start']:entry['end']],dict(记录='(缺少编号)',端口=port,字段=label,原始填写=value),'missing_identity');last_end=i;activity=True
             elif re.match(r'^R\d+(?:\s|$)',s) or len(parts)>=3 and PORT.fullmatch(parts[1]):
                 parts=s.split();data=dict(记录=parts[0],端口=parts[1] if len(parts)>1 else '',字段=parts[2] if len(parts)>2 else '',原始填写=' '.join(parts[3:]))
-                last=add(page,text[entry['start']:entry['end']],data,'unmapped_inline');last_end=i
+                last=add(page,text[entry['start']:entry['end']],data,'unmapped_inline');last_end=i;activity=True
             i+=1
         page_rows=[r for rows in fields.values() for r in rows if r['page']==page['page']]
         # The last parsed record in source order, independent of dictionary port order.
-        previous_page_last=max(page_rows,key=lambda r:text.find(r['quote'])) if page_rows else None
-        for m in re.finditer(r'(S\d{2})[：:]\s*(A1|C1)保护响应\s*(\d+(?:\.\d+)?)\s*(ms|s)(?![\d.a-zA-Z])([^\n]*)',text):
-            local=conditions(m[0]) if re.search(r'条件[：:]',m[0]) else {}
-            summary.append(dict(record_id=m[1],port=m[2],value=m[3]+' '+m[4],source_id=page['source_id'],page=page['page'],quote=m[0],
-                conditions=dict(global_context,**local),condition_evidence=list(global_proofs)+([fragment(page,m[0])] if local else []),global_condition_conflicts=conflicts))
+        tail=max(page_rows,key=lambda r:text.find(r['quote'])) if page_rows else None
+        pending=[r for r in page_rows if r['kind'] in {'response','recovery'} and NUMBER.fullmatch(r['value'])]
+        later_summary=tail and any(s['page']==page['page'] and text.find(s['quote'])>text.find(tail['quote']) for s in summary_candidates)
+        previous_pending=tail if len(pending)==1 and tail is pending[0] and not later_summary else None
     # A local declaration must not silently inherit global conditions when its binding is unknown.
     # Use only explicitly bound fragments as consumed evidence; never infer scope from table names.
     rows=[r for group in fields.values() for r in group]
@@ -218,7 +259,8 @@ def extract_report(pages):
     ids=[r['record_id'] for rows in fields.values() for r in rows]
     audit=dict(candidate_count=len(candidates),captured_count=sum(c['status']=='captured' for c in candidates),
                unresolved_count=sum(c['status']!='captured' for c in candidates),candidates=candidates,issues=issues,
-               coverage_status='needs_review' if issues else 'mapped',scanned_pages=[p['page'] for p in pages])
+               coverage_status='needs_review' if issues else 'mapped',scanned_pages=[p['page'] for p in pages],
+               summary_candidates=summary_candidates,summary_captured_count=len(summary),unit_ownership=unit_ownership)
     return dict(fields=fields,summary=summary,duplicate_record_ids=sorted(k for k,n in Counter(ids).items() if n>1),
                 global_conditions=global_context,condition_evidence=global_proofs,global_condition_conflicts=conflicts,parse_audit=audit)
 
