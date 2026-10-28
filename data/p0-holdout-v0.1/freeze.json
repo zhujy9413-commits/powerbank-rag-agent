@@ -1,0 +1,58 @@
+{
+  "version": "p0-new-holdout-freeze-v0.1",
+  "frozen_at": "2026-10-28T07:10:30.129557+00:00",
+  "engine_git_ref": "3b610efd128689e4a7fdca52ced14c3809091545",
+  "corpus_sha256": "cb67946e0a0f0a6732214b6488b3b5c1a6ef0a2213516ef5e5bc32b19a28b1ef",
+  "asset_sha256": {
+    "data/p0-holdout-v0.1/README.md": "935880719657074089967bcb61e63456787eaf3a6cc8f1e47d3d637992a7c26c",
+    "data/p0-holdout-v0.1/visual-review.md": "c08980befe02aa5cebc19ded10fb4512765d61dc2d69c0d8b86322e0b2a5fa59",
+    "data/p0-holdout-v0.1/cases.json": "1ffe4b74541e2be2d0b37797ddf1a3ef98e0a7c973cae6be6eac8e1128293c47",
+    "data/p0-holdout-v0.1/preflight.json": "da0307a1e9734d159d710eb87d80ff388c10990ad7d050de360a1f3c6b6f5b72",
+    "output/pdf/p0-holdout-v0.1/HN-18.pdf": "685acb45e03833b57d07a2127965150e2472221b75e3e434322c9f33f38921ca",
+    "output/pdf/p0-holdout-v0.1/HN-19.pdf": "996a4458f66a7b88629b749ab84f98e7414ee9ea936c614d574fd9a86b76401f",
+    "output/pdf/p0-holdout-v0.1/HN-09.pdf": "bbf86695e888b18d0eac051c321efb27129c9a098f0b8abe80b7fb677fa65796",
+    "output/pdf/p0-holdout-v0.1/HN-08.pdf": "37033cf4bc3060a31dabd801a990ea8b3a2101c2edc94d8c97edd8e6c9af3fee",
+    "output/pdf/p0-holdout-v0.1/HN-20.pdf": "273d939a61ba583ecbf119f618e650e7606afae3c8fa2e40a819ceed4628408a",
+    "output/pdf/p0-holdout-v0.1/HN-05.pdf": "cc9a2135446ba685b8709f907d58eb42ccd22b8435975ae5f662b02102de6ec6",
+    "output/pdf/p0-holdout-v0.1/HN-11.pdf": "72b8f3594cb0cd2537f3eff2c9ce3b6ceca1660dae147d2e74f71a175db24624",
+    "output/pdf/p0-holdout-v0.1/HN-10.pdf": "ab090e64475d34e07f2b182e9784ee7a28c6c10956f9b6840281df71f2997545",
+    "output/pdf/p0-holdout-v0.1/HN-04.pdf": "cbfcc0d838d40e3da6d6fcc2055b171eae0e7b7098426ef5016906f59ceff36c",
+    "output/pdf/p0-holdout-v0.1/HN-12.pdf": "07df3eb95cf6633d559a5216b84b9de1cf591fad42f55ac36872e5cca8cc1078",
+    "output/pdf/p0-holdout-v0.1/HN-06.pdf": "62dc800b2b4e2ac45a4a58502ff24ceccb75ab939248a252c5b0a837b66f02d7",
+    "output/pdf/p0-holdout-v0.1/HN-07.pdf": "d77fe1eaa971b7e9ec073d4401eb34a3b7a135f1e83785106ed053219746af4d",
+    "output/pdf/p0-holdout-v0.1/HN-13.pdf": "2cefa7924444266fb2c76b6c19919683f843a92cbf69a417601a6a60db63c51a",
+    "output/pdf/p0-holdout-v0.1/HN-17.pdf": "b6de8bab94194cf67162cb937df5631339181bde687805df834f0f9291bf4577",
+    "output/pdf/p0-holdout-v0.1/HN-03.pdf": "58958780977ae131856a79b950d997686622e490cc56f4783f78183580cf6e34",
+    "output/pdf/p0-holdout-v0.1/HN-02.pdf": "b3818184e7a76c52bfa8dbb4c28cccd842d9d4c1a5ca7287739fa88739915711",
+    "output/pdf/p0-holdout-v0.1/HN-16.pdf": "6ae04a04f1b4b3c6d409883403673330c746aa9de16a412073acaeb2078244ed",
+    "output/pdf/p0-holdout-v0.1/HN-14.pdf": "cad5a1672ad5fa2bc3db8b041b7e35badda18597c452c95c1f3fbefc64461d16",
+    "output/pdf/p0-holdout-v0.1/HN-15.pdf": "5e220e66edc884db37de580836a15567422002b6cf6d8b952ffc04aa7cd3c592",
+    "output/pdf/p0-holdout-v0.1/HN-01.pdf": "b6aef1fdb49b861d4004e438155612ccdbc326d2cbfde581757d436daab338da",
+    "scripts/build_p0_holdout.py": "77e34176159461eeb5cd26f74dbdc9d097904c030f295447b5c1fd3907380e81",
+    "scripts/validate_p0_holdout.py": "1d154c743bce7c33659de76e57c0339fb0bd14d0198f57fe5db400fe46db3866",
+    "scripts/evaluate_p0_holdout.py": "3b04d0cdd8f0107c45b1300b86dcfbf3f5af8c4962955495046a4599a273cfa2",
+    "scripts/evaluate_review_holdout.py": "6c0945c24e1fdbf70091934e5e8bd6106f9ecd9f9d2452e590366c1d6ed56e11"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "packages": {
+      "pypdf": "6.10.0",
+      "reportlab": "4.4.9",
+      "Pillow": "12.3.0"
+    }
+  },
+  "protocol": {
+    "production_engine_calls_before_freeze": 0,
+    "files": 20,
+    "pages": 40,
+    "expected_text_records": 205,
+    "visual_records": 3,
+    "behavioral_checks": 124,
+    "required_block_checks": 88,
+    "diagnostic_cases": 16,
+    "external_independence": false,
+    "blind_test": false,
+    "professional_review": "pending",
+    "allow_post_result_tuning": false
+  }
+}
