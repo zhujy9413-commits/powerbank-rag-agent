@@ -26,6 +26,12 @@ def workbook_rows(run):
              ["一致性项", run["consistency_items"]], ["未配置", "、".join(run["unconfigured"])],
              ["结果解释", "未发现问题不等于人工通过；冲突、缺证、失败、未配置不得计为通过。"],
              ["复核解释", "复核完成表示每项已记录处置，可包含暂无法确认；不表示整改关闭或产品放行。"]]
+    state = run.get("basis_state")
+    if state:
+        scope += [["依据当前状态核验时间UTC", state["checked_at"]],
+                  ["当前依据可用于新检查", "是" if state["current_usable"] else "否："+state["reason"]],
+                  ["当前依据与本次快照", "已变化；历史结果及下表证据保留原快照，新检查需有效依据并重新确认。" if state["requires_reconfirmation"] else "一致"],
+                  ["依据变化明细", json.dumps(state["changes"], ensure_ascii=False)]]
     if run.get("error"):
         scope.append(["失败原因", run["error"]])
     audit=report.get("parse_audit",{})

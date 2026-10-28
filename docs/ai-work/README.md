@@ -8,7 +8,7 @@
 - [首批模拟报告、规格与逐项参考标注](sample-pack.md)
 - [工作流与验证方法补充](../shared/workflow-verification-notes.md)
 
-状态：需求设计v1.0；模拟原型页面v0.4.2可运行。三个P0及跨行摘要与单位归属P1已修复并验证，真实业务验收仍待完成。
+状态：需求设计v1.0；模拟原型页面v0.4.3可运行。三个P0及跨行摘要与单位归属P1已修复并验证，真实业务验收仍待完成。
 
 ## 飞书在线文档
 
@@ -95,3 +95,12 @@
 - [本轮隔离观察](../../eval-results/prd-implementation-audit-probes-v0.1.json)
 
 [飞书11-需求实现与验收对照](https://my.feishu.cn/wiki/HHpMw4259ihzjlkH1XrcAZgRn6c)
+
+## 停用依据历史访问修复
+
+2026-10-29 页面v0.4.3：已修复依据停用后历史访问被一并阻断的问题。当前权限保留时可查历史任务、PDF与导出，停用依据不能用于新检查，撤权仍拒绝访问。141个自动测试、35项专项HTTP及51项既有流程检查通过。见[停用依据历史访问修复与回归](basis-history-access-v0.4.3.md)。
+
+- [专项HTTP原始结果](../../eval-results/basis-history-access-v0.4.3.json)
+- [页面状态与恢复记录](../../eval-results/basis-history-access-ui-v0.4.3.json)
+
+[飞书12-停用依据历史访问修复与回归](https://my.feishu.cn/wiki/POLxwDj3ci8DHJkVjGYcmCOLndg)

@@ -1,0 +1,34 @@
+{
+  "version": "basis-history-access-v0.4.3",
+  "unit_tests": {
+    "total": 141,
+    "passed": 141,
+    "log": "eval-results/basis-history-access-regression-v0.4.3.txt",
+    "log_sha256": "eb45ffc763420513185deee4ba399318823ce874ad57e99393f0a2aabe883f28"
+  },
+  "javascript_syntax": "passed",
+  "http": {
+    "passed": 35,
+    "total": 35
+  },
+  "workflow": {
+    "cases": 3,
+    "passed": 51,
+    "total": 51
+  },
+  "ui_scenarios": 4,
+  "frozen_asset_hashes_verified": 88,
+  "model_requests": 0,
+  "engine_sha256": "4cdd0300727575d3f2a7c1186077df805609bdf9a240d6cc12d45c3bba0ba68d",
+  "source_sha256": {
+    "app/ai_work/review.py": "81f99b6843a470e7d147bd6dcfc268b2cf49dc1a501a47e94fbdb57b249bb461",
+    "app/ai_work/export.py": "9aaea6d57dcc139d89e6d02313d741e482d501d41840b4c91df4951eaa51a33a",
+    "app/knowledge_assistant/static/app.js": "ec46159e4f42633a2c85f537c2a3bf93f459f6b6c877a1289c46ece382f94f9a",
+    "app/knowledge_assistant/static/work.js": "ffca3242cbd9b39bf2f0b51672103938c0237062fa945cadf3aeb48d75096c0f",
+    "app/knowledge_assistant/static/index.html": "7122e0c8383e33bf20948f49d9281e403657662372bf2db71108a3d06b137c8b",
+    "scripts/evaluate_basis_history_access.py": "a81c70f22b2463e7ce0437188177cb32fef8840dbf34ae217230c979775d9849",
+    "tests/test_basis_history_access.py": "4f09c298e9a903ae25ed4e3a6de52471990323f187f4c7cee14fe380d93e31ff",
+    "tests/test_ai_work.py": "fc58bc01c07d54366b2d3d09cb24f820080c39e5e1d6454e3044251d05d7761b"
+  },
+  "additional_boundary": "malformed recovery decimal blocks new checks while preserving authorized history"
+}

@@ -1,0 +1,45 @@
+{
+  "version": "basis-history-access-v0.4.3",
+  "verified_at": "2026-10-28T16:51:26.980117+00:00",
+  "url": "https://my.feishu.cn/wiki/POLxwDj3ci8DHJkVjGYcmCOLndg",
+  "title": "12-停用依据历史访问修复与回归",
+  "parent_url": "https://my.feishu.cn/wiki/UlodwHIzJidrjDkQXVvcApD1nbe",
+  "tree_position": "6,4,0,12",
+  "report_sha256": "60e93e87f64f4babe17c545056167116a6bb10dcdfd4dbe1f569df4338f2ab63",
+  "import_source_sha256": "b61c037bf96805a081ac42e60df6558c7d59ca7ba2e91e6861a31c64790ceca0",
+  "native_tables": 2,
+  "table_ids": [
+    "doxcnHwikCX0y8zDxBRTNoNaCom",
+    "doxcnZUMQPVPOtPi7TtZjhusM4e"
+  ],
+  "whole_body_read_to_tail": true,
+  "reloaded": true,
+  "layout_inspected": "four column table visible, wrapped text readable",
+  "navigation_pages": [
+    {
+      "name": "AI Work",
+      "url": "https://my.feishu.cn/wiki/UlodwHIzJidrjDkQXVvcApD1nbe",
+      "saved_and_reloaded": true
+    },
+    {
+      "name": "MVP",
+      "url": "https://my.feishu.cn/wiki/Q2GnwQhJDiXzjWkmqLRccBfbneW",
+      "saved_and_reloaded": true
+    },
+    {
+      "name": "PRD",
+      "url": "https://my.feishu.cn/wiki/K71fwnJo8iDBy9kgkRBchCvcn0g",
+      "saved_and_reloaded": true
+    },
+    {
+      "name": "RAG",
+      "url": "https://my.feishu.cn/wiki/Gs9Xw9YpHiVB6wknPDVcsMw7nUf",
+      "saved_and_reloaded": true
+    },
+    {
+      "name": "需求实现与验收对照",
+      "url": "https://my.feishu.cn/wiki/HHpMw4259ihzjlkH1XrcAZgRn6c",
+      "saved_and_reloaded": true
+    }
+  ]
+}

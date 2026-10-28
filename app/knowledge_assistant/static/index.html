@@ -40,13 +40,14 @@
   </section>
   <section class="page" id="libraryPage" hidden><div class="eyebrow">当前可访问的知识</div><h1>资料库</h1><p class="intro">这里只列当前版本的授权资料。任务报告按任务隔离，归档资料可通过历史查询检索。</p><div id="libraryCards" class="source-cards"></div></section>
   <section class="page" id="workPage" hidden>
-    <div class="eyebrow">AI Work <span class="version">报告评审 v0.4.2</span></div>
+    <div class="eyebrow">AI Work <span class="version">报告评审 v0.4.3</span></div>
     <h1>从报告记录，逐项核对到评审清单。</h1>
     <p class="intro">确认本次报告与检查范围，查看每项要求、原文和计算，再记录人工复核意见。</p>
     <div class="limitation">当前使用模拟资料。只支持 PB-DEMO-01 模板中 A1、C1 的 5 V 输出短路保护已有记录；真实产品规则与任意 PDF 布局尚未启用。</div>
     <div class="work-toolbar"><button class="primary" id="workSample">使用四页模拟报告</button><label class="upload-label" for="workUpload">上传同模板模拟 PDF</label><input type="file" id="workUpload" accept="application/pdf,.pdf"><span class="field-help">可提取文字 · ≤2 MB · ≤12页</span></div>
     <label class="work-picker" for="workTasks">已有任务<select id="workTasks"><option value="">选择任务继续</option></select></label>
     <p id="workStatus" class="form-status" role="status" aria-live="polite"></p>
+    <p id="workBasisNotice" class="limitation" role="status" hidden></p>
     <section id="workInput" class="work-panel" hidden>
       <div class="result-top"><h2>01 确认输入与依据</h2><a id="workPdf" target="_blank" rel="noopener">查看报告 PDF ↗</a></div>
       <p id="workIdentity" class="work-meta"></p>

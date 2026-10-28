@@ -141,11 +141,12 @@ class ReviewTests(unittest.TestCase):
         snap=self.confirm(); snap["report"]["fields"]["A1:response"][0]["quote"]="不存在的来源"
         with self.assertRaises(ValueError): evaluate(snap,snap["basis"])
 
-    def test_basis_change_and_deactivation_require_reconfirm(self):
+    def test_basis_change_and_deactivation_block_new_checks_but_allow_history(self):
         self.confirm(); self.service.corpus.by_id["SYN-NORM-RESPONSE"]["text"] += "修订"
         with self.assertRaises(ConflictError): self.execute()
         self.service.corpus.by_id["SYN-NORM-RESPONSE"]["publication_status"]="disabled"
-        with self.assertRaises(ValueError): self.service.task(ENGINEER,self.tid)
+        self.assertFalse(self.service.task(ENGINEER,self.tid)["basis_state"]["current_usable"])
+        with self.assertRaises(ValueError): self.execute()
 
     def test_owner_role_and_source_permissions(self):
         self.confirm(); r=self.execute()

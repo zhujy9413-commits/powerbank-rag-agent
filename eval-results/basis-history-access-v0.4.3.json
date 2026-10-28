@@ -1,0 +1,179 @@
+{
+  "version": "basis-history-access-v0.4.3",
+  "started_at": "2026-10-28T16:48:59.671675+00:00",
+  "engine_sha256": "4cdd0300727575d3f2a7c1186077df805609bdf9a240d6cc12d45c3bba0ba68d",
+  "sample_status": "consumed_access_regression",
+  "model_requests": 0,
+  "human_business_trial": false,
+  "checks": [
+    {
+      "name": "disabled_read:/api/ai-work/catalog",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "disabled_read:/api/ai-work/tasks",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "disabled_read:/api/ai-work/tasks/AW-d84058419ffc",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "disabled_read:/api/ai-work/runs/RUN-904fa3acfd9c",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "disabled_read:/api/ai-work/tasks/AW-d84058419ffc/pdf",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "disabled_read:/api/ai-work/runs/RUN-904fa3acfd9c/export",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "disabled_read:/api/source/SYN-NORM-RESPONSE",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "immutable_run_evidence",
+      "passed": true
+    },
+    {
+      "name": "original_pdf_identical",
+      "passed": true
+    },
+    {
+      "name": "current_status_separate_from_snapshot",
+      "passed": true
+    },
+    {
+      "name": "disabled_new_work:/api/ai-work/tasks",
+      "passed": true,
+      "status": 400
+    },
+    {
+      "name": "disabled_new_work:/api/ai-work/tasks/AW-d84058419ffc/confirm",
+      "passed": true,
+      "status": 400
+    },
+    {
+      "name": "disabled_new_work:/api/ai-work/tasks/AW-d84058419ffc/run",
+      "passed": true,
+      "status": 400
+    },
+    {
+      "name": "disabled_idempotency_read",
+      "passed": true
+    },
+    {
+      "name": "reads_and_blocked_work_do_not_mutate_storage",
+      "passed": true
+    },
+    {
+      "name": "export_original_three_detail_sheets",
+      "passed": true
+    },
+    {
+      "name": "export_current_status_visible",
+      "passed": true
+    },
+    {
+      "name": "disabled_review_append",
+      "passed": true
+    },
+    {
+      "name": "revoked_read:/api/ai-work/catalog",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "name": "revoked_read:/api/ai-work/tasks",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "name": "revoked_read:/api/ai-work/tasks/AW-d84058419ffc",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "name": "revoked_read:/api/ai-work/runs/RUN-904fa3acfd9c",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "name": "revoked_read:/api/ai-work/tasks/AW-d84058419ffc/pdf",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "name": "revoked_read:/api/ai-work/runs/RUN-904fa3acfd9c/export",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "name": "revoked_read:/api/source/SYN-NORM-RESPONSE",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "name": "revoked_write:/api/ai-work/tasks",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "name": "revoked_write:/api/ai-work/tasks/AW-d84058419ffc/confirm",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "name": "revoked_write:/api/ai-work/tasks/AW-d84058419ffc/run",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "name": "revoked_write:/api/ai-work/tasks/AW-d84058419ffc/run",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "name": "revoked_write:/api/ai-work/runs/RUN-904fa3acfd9c/review",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "name": "revocation_no_storage_changes",
+      "passed": true
+    },
+    {
+      "name": "access_restored_existing_history",
+      "passed": true
+    },
+    {
+      "name": "active_changed_basis_blocks_unconfirmed_run",
+      "passed": true
+    },
+    {
+      "name": "active_changed_basis_reconfirmation",
+      "passed": true
+    },
+    {
+      "name": "old_run_preserved_after_reconfirmation",
+      "passed": true
+    }
+  ],
+  "export": {
+    "path": "output/xlsx/basis-history-access-v0.4.3/disabled-basis-history.xlsx",
+    "sha256": "1b5557526e48f1210a86001b29ca29b506c88a6035d8d6e44ca2d52b465810c9"
+  },
+  "finished_at": "2026-10-28T16:49:00.261608+00:00",
+  "passed": 35,
+  "total": 35
+}

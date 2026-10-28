@@ -1,0 +1,77 @@
+{
+  "version": "basis-history-access-v0.4.3",
+  "checked_at": "2026-10-28T16:39:09.881281+00:00",
+  "fixture": "isolated temporary LocalServer, in-memory status and permission mutation via process input",
+  "model_requests": 0,
+  "human_business_trial": false,
+  "scenarios": [
+    {
+      "name": "active_restore",
+      "passed": true,
+      "items": 12,
+      "run_enabled": true
+    },
+    {
+      "name": "disabled_history",
+      "passed": true,
+      "items": 12,
+      "new_work_disabled": [
+        "sample",
+        "upload",
+        "confirm",
+        "run"
+      ],
+      "export_enabled": true,
+      "source_status": "已停用",
+      "snapshot_status": "active"
+    },
+    {
+      "name": "revoked_source_read",
+      "passed": true,
+      "error": "资料不存在或当前身份无权访问。",
+      "cleared": [
+        "input",
+        "result",
+        "items",
+        "originalText",
+        "pdf_href",
+        "sourceDialog"
+      ]
+    },
+    {
+      "name": "access_restored",
+      "passed": true,
+      "existing_run_restored": true,
+      "page_errors": []
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "output/screenshots/basis-history-access-v0.4.3/revoked-cleared.png",
+      "sha256": "31680431445bd05170dc139ba05dab5e972cf298ba24b14e2f16b0a929b4a36b"
+    },
+    {
+      "path": "output/screenshots/basis-history-access-v0.4.3/disabled-source.png",
+      "sha256": "27207953a3dcf6f391dc74d10ee39e340892cae5ec771fab01b12e4c2f458824"
+    }
+  ],
+  "production_restore": {
+    "url": "http://127.0.0.1:53754/",
+    "version": "v0.4.3",
+    "task_id": "AW-43bc630caa78",
+    "run_id": "RUN-9954b50ba3cd",
+    "revision": 3,
+    "items": 12,
+    "pending_reviews": 0,
+    "review_history_entries": 17
+  },
+  "final_source_sha256": "ffca3242cbd9b39bf2f0b51672103938c0237062fa945cadf3aeb48d75096c0f",
+  "final_followup_checks": {
+    "active_restored": true,
+    "status_updated_after_history_read_without_reload": true,
+    "export_403_clears_cached_result": true,
+    "access_restored": true,
+    "scratch_tab_closed": true,
+    "original_main_task_preserved": true
+  }
+}

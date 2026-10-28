@@ -3,7 +3,7 @@ import base64
 from collections import Counter
 from copy import deepcopy
 from datetime import datetime, timezone
-from decimal import Decimal
+from decimal import Decimal, InvalidOperation
 import hashlib
 from io import BytesIO
 import json
@@ -96,16 +96,39 @@ def number(value, units):
     return Decimal(m[1]) * units[m[2]]
 
 
-def basis_catalog(corpus, principal):
+def basis_catalog(corpus, principal, *, require_active=True):
     result = {}
     for cid in ALL_SOURCES:
         c = corpus.by_id.get(cid)
         if not c or not corpus.accessible(c, principal):
             raise PermissionError("当前身份无权使用评审依据。")
-        if c["publication_status"] != "active" or c["material_type"] != "synthetic":
+        if require_active and (c["publication_status"] != "active" or c["material_type"] != "synthetic"):
             raise ValueError("模拟规则依据已停用或身份改变，请重新确认规则。")
         result[cid] = card(c)
     return result
+
+
+def basis_state(current, saved=None):
+    """Live availability is separate from the immutable historical evidence."""
+    blocked = [cid for cid, c in current.items()
+               if c["publication_status"] != "active" or c["material_type"] != "synthetic"]
+    reason = "模拟规则依据已停用或身份改变。" if blocked else ""
+    try:
+        get_limits(current)
+    except ValueError as exc:
+        reason = str(exc)
+    changes = []
+    for cid, c in current.items():
+        old = saved.get(cid) if saved else None
+        changed = old is not None and digest(old) != digest(c)
+        if cid in blocked or changed:
+            changes.append(dict(chunk_id=cid, current_version=c["version"],
+                                current_status=c["publication_status"], current_material_type=c["material_type"],
+                                snapshot_version=old["version"] if old else None,
+                                snapshot_status=old["publication_status"] if old else None,
+                                changed=changed))
+    return dict(current_usable=not reason, requires_reconfirmation=bool(saved and digest(saved) != digest(current)),
+                reason=reason, changes=changes, checked_at=stamp())
 
 
 def get_limits(basis):
@@ -121,7 +144,11 @@ def get_limits(basis):
     scope = basis["SYN-NORM-RANGE"]["text"]
     if "仅A1、C1的5 V输出角色" not in scope:
         raise ValueError("模拟规则适用范围变化，需重新发布。")
-    return dict(response=response, temperature=temp, recovery=(Decimal(recovery[1]), Decimal(recovery[2])))
+    try:
+        recovery_limits = (Decimal(recovery[1]), Decimal(recovery[2]))
+    except InvalidOperation:
+        raise ValueError("规则依据数值格式变化，需维护者重新核实并发布。") from None
+    return dict(response=response, temperature=temp, recovery=recovery_limits)
 
 
 def report_ref(page, quote=None):
@@ -289,18 +316,19 @@ class ReviewService:
         CREATE TABLE IF NOT EXISTS aw_runs(id TEXT PRIMARY KEY, task_id TEXT, request_key TEXT, payload TEXT, UNIQUE(task_id,request_key));
         CREATE TABLE IF NOT EXISTS aw_reviews(run_id TEXT, item_id TEXT, version INTEGER, payload TEXT, PRIMARY KEY(run_id,item_id,version));""")
 
-    def auth(self, principal):
-        return basis_catalog(self.corpus, principal)
+    def auth(self, principal, *, require_active=True):
+        return basis_catalog(self.corpus, principal, require_active=require_active)
 
     def catalog(self, principal):
-        basis = self.auth(principal)
-        limits = get_limits(basis)
+        basis = self.auth(principal, require_active=False)
+        state = basis_state(basis)
+        limits = get_limits(basis) if state["current_usable"] else {}
         return dict(rule_version=VERSION, selected_basis="RevB", model="PB-DEMO-01", ports=["A1", "C1"],
                     voltage="5 V", role="输出", kinds=KINDS, basis=list(basis.values()),
-                    unconfigured=UNCONFIGURED, limits={k:str(v) for k,v in limits.items()})
+                    unconfigured=UNCONFIGURED, limits={k:str(v) for k,v in limits.items()}, basis_state=state)
 
     def create(self, principal, data):
-        self.auth(principal)
+        get_limits(self.auth(principal))
         if set(data)-{"sample", "filename", "pdf_base64"}:
             raise ValueError("任务输入字段无效。")
         if data == {"sample": True}:
@@ -327,7 +355,7 @@ class ReviewService:
         return self.task(principal, task_id)
 
     def _task(self, principal, task_id):
-        self.auth(principal)
+        self.auth(principal, require_active=False)
         row = self.db.execute("SELECT payload FROM aw_tasks WHERE id=? AND owner=?", (task_id, principal.user_id)).fetchone()
         if not row:
             raise PermissionError("任务不存在或当前身份无权访问。")
@@ -337,10 +365,11 @@ class ReviewService:
         with self.lock:
             payload = self._task(principal, task_id)
             runs = [json.loads(r[0]) for r in self.db.execute("SELECT payload FROM aw_runs WHERE task_id=? ORDER BY rowid DESC", (task_id,))]
-            return dict(**payload, runs=[dict(run_id=r["run_id"], revision=r["revision"], created_at=r["created_at"]) for r in runs])
+            return dict(**payload, basis_state=basis_state(self.auth(principal, require_active=False), payload["snapshots"][-1]["basis"]),
+                        runs=[dict(run_id=r["run_id"], revision=r["revision"], created_at=r["created_at"]) for r in runs])
 
     def list_tasks(self, principal):
-        self.auth(principal)
+        self.auth(principal, require_active=False)
         with self.lock:
             rows = [json.loads(r[0]) for r in self.db.execute("SELECT payload FROM aw_tasks WHERE owner=? ORDER BY rowid DESC LIMIT 50", (principal.user_id,))]
         return [dict(task_id=r["task_id"], created_at=r["created_at"], revision=r["snapshots"][-1]["revision"], filename=r["snapshots"][-1]["report"]["filename"]) for r in rows]
@@ -385,6 +414,7 @@ class ReviewService:
             if snapshot.get("rule_version")!=VERSION or snapshot["report"].get("parser")!=PARSER_VERSION:
                 raise ConflictError("解析器或规则已更新，请重新导入PDF建立新任务；历史运行仍可查看。")
             current = self.auth(principal)
+            get_limits(current)
             if digest(current) != digest(snapshot["basis"]):
                 raise ConflictError("依据内容已变化，请重新确认后运行。")
             run_id = "RUN-"+uuid.uuid4().hex[:12]
@@ -422,6 +452,7 @@ class ReviewService:
             if result["state"] != "failed":
                 result["state"] = "review_complete" if result["pending_reviews"] == 0 else "awaiting_review"
             result["historical"] = result["revision"] != task["snapshots"][-1]["revision"]
+            result["basis_state"] = basis_state(self.auth(principal, require_active=False), result["snapshot"]["basis"])
             return result
 
     def review(self, principal, run_id, data):
