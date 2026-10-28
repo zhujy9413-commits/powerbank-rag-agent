@@ -40,7 +40,7 @@
   </section>
   <section class="page" id="libraryPage" hidden><div class="eyebrow">当前可访问的知识</div><h1>资料库</h1><p class="intro">这里只列当前版本的授权资料。任务报告按任务隔离，归档资料可通过历史查询检索。</p><div id="libraryCards" class="source-cards"></div></section>
   <section class="page" id="workPage" hidden>
-    <div class="eyebrow">AI Work <span class="version">报告评审 v0.1</span></div>
+    <div class="eyebrow">AI Work <span class="version">报告评审 v0.2</span></div>
     <h1>从报告记录，逐项核对到评审清单。</h1>
     <p class="intro">确认本次报告与检查范围，查看每项要求、原文和计算，再记录人工复核意见。</p>
     <div class="limitation">当前使用模拟资料。只支持 PB-DEMO-01 模板中 A1、C1 的 5 V 输出短路保护已有记录；真实产品规则与任意 PDF 布局尚未启用。</div>
@@ -50,6 +50,7 @@
     <section id="workInput" class="work-panel" hidden>
       <div class="result-top"><h2>01 确认输入与依据</h2><a id="workPdf" target="_blank" rel="noopener">查看报告 PDF ↗</a></div>
       <p id="workIdentity" class="work-meta"></p>
+      <div id="workAudit" class="work-range"></div>
       <div class="work-range"><strong>本次预期清单</strong><p>5 项 × 2 端口 = 10 个核对单元，另查摘要与依据版本一致性。</p><p>模拟依据：SYN-QA-SC-1.0、SYN-SPEC-PB01-RevB。报告填写的 RevA 不能覆盖本次已选依据。</p><p>未配置：充电输入、其他电压档、多口组合、其他保护功能。</p></div>
       <details><summary>查看本次模拟依据</summary><div id="workBasis" class="source-cards"></div></details>
       <details open id="workParse"><summary>解析预览与关键字段修正</summary><p class="field-help">原始提取来自本次 PDF。仅在核对原文后修正；每个修改都需说明原因。缺失记录需补充报告。</p><div id="workFields"></div></details>

@@ -2,6 +2,7 @@
 from io import BytesIO
 import math
 import re
+import json
 from xml.sax.saxutils import escape
 from zipfile import ZipFile, ZIP_DEFLATED
 
@@ -27,12 +28,18 @@ def workbook_rows(run):
              ["复核解释", "复核完成表示每项已记录处置，可包含暂无法确认；不表示整改关闭或产品放行。"]]
     if run.get("error"):
         scope.append(["失败原因", run["error"]])
+    audit=report.get("parse_audit",{})
+    scope.append(["解析覆盖", f"候选记录{audit.get('candidate_count','未记录')}；已映射{audit.get('captured_count','未记录')}；未映射{audit.get('unresolved_count','未记录')}；诊断项{len(audit.get('issues',[]))}。映射成功不表示数值及条件已核实。"])
+    scope.append(["报告测试条件",json.dumps(report.get("global_conditions",{}),ensure_ascii=False)])
     items = [["检查项", "端口", "项目", "执行状态", "系统结果", "要求（模拟）", "比较与发现", "条件性", "人工复核", "复核理由"]]
     evidence = [["检查项", "来源类型", "来源身份", "版本 / 页码", "原文证据或解析修正", "报告SHA-256 / 来源块ID"]]
     for item in run["items"]:
         rev = item["review"]
-        items.append([item["item_id"], item["port"], item["title"], item["execution"], RESULTS[item["result"]],
-                      item["requirement"], item["explanation"], "是" if item["conditional"] else "否",
+        explanation=item["explanation"]
+        if item.get("record_conditions"):
+            explanation+="\n记录条件："+json.dumps(item["record_conditions"],ensure_ascii=False)
+        items.append([item["item_id"], item["port"], item["title"], {"completed":"已检查","not_checked":"未检查","failed":"失败"}.get(item["execution"],item["execution"]), RESULTS[item["result"]],
+                      item["requirement"], explanation, "是" if item["conditional"] else "否",
                       DISPOSITIONS[rev["disposition"]], rev["reason"]])
         for c in item["basis"]:
             evidence.append([item["item_id"], "模拟依据", c["document_id"], "版本"+c["version"]+" / "+c["section"], c["text"], c["chunk_id"]])

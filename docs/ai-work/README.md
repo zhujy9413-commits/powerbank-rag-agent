@@ -27,3 +27,13 @@
 - [模拟评审Excel](../../outputs/ai-work-v0.1/report-review.xlsx)
 
 [飞书05-逐项评审原型与测试报告](https://my.feishu.cn/wiki/PKLtwf0CFiPC2GkafY5cvWFIn7e)
+
+## PDF模板与异常回归 v0.2
+
+2026-10-28：新增24份构造PDF，覆盖换列、换行、跨页、未映射字段、缺页和条件冲突。新增解析覆盖提示及逐条条件核对；80项自动回归通过。
+
+- [06-PDF模板变体与条件冲突回归](pdf-variants-and-conditions-v0.2.md)
+- [样本清单](../../data/pdf-variants-v0.1/cases.json)
+- [最终实测结果](../../eval-results/pdf-variants-final-v0.5.json)
+
+[飞书06-PDF模板变体与条件冲突回归](https://my.feishu.cn/wiki/LgWKwZP2fiD27NkBnXicNEDZni8)

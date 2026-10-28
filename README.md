@@ -17,6 +17,14 @@
 
 在原有本机应用左侧点击“报告逐项评审”。AI Work需先安装PDF依赖 `python3 -m pip install -r requirements-ai-work.txt`。当前62项回归通过；1份报告的12项草拟参考对照在3次运行中一致，专业验收待完成。
 
+2026-10-28 追加 v0.2：已补24份受控PDF变体与异常样本，新增候选记录覆盖审计和逐条测试条件核对。80项回归通过；最终构造开发集24个场景满足预期，仍不代表任意PDF或真实业务效果。
+
+- [PDF模板变体与条件冲突回归](docs/ai-work/pdf-variants-and-conditions-v0.2.md)
+- [变体样本包](data/pdf-variants-v0.1/README.md)
+- [最终同输入修复前对照](eval-results/pdf-variants-final-input-baseline-v0.4.json) / [修复后结果](eval-results/pdf-variants-final-v0.5.json)
+
+旧解析快照需重新导入PDF才能使用新引擎，历史结果可继续查看。运行全部开发测试需 `python3 -m pip install -r requirements-dev.txt`；日常AI Work仍仅需PDF解析依赖。
+
 ## 内部智能客服｜知识检索与问答
 
 - [模块入口](docs/internal-assistant/README.md)

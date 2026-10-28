@@ -1,0 +1,213 @@
+{
+  "pdf_files": 24,
+  "pages": 51,
+  "no_poppler_font_errors": true,
+  "page_nonwhite_checks": [
+    {
+      "page": "PV-01-compact-1.png",
+      "nonwhite_pixels": 13160
+    },
+    {
+      "page": "PV-01-compact-2.png",
+      "nonwhite_pixels": 10440
+    },
+    {
+      "page": "PV-02-pipes-1.png",
+      "nonwhite_pixels": 14166
+    },
+    {
+      "page": "PV-02-pipes-2.png",
+      "nonwhite_pixels": 11424
+    },
+    {
+      "page": "PV-03-reordered-1.png",
+      "nonwhite_pixels": 14259
+    },
+    {
+      "page": "PV-03-reordered-2.png",
+      "nonwhite_pixels": 11649
+    },
+    {
+      "page": "PV-04-wrapped-1.png",
+      "nonwhite_pixels": 14538
+    },
+    {
+      "page": "PV-04-wrapped-2.png",
+      "nonwhite_pixels": 11851
+    },
+    {
+      "page": "PV-05-aliases-1.png",
+      "nonwhite_pixels": 15068
+    },
+    {
+      "page": "PV-05-aliases-2.png",
+      "nonwhite_pixels": 11838
+    },
+    {
+      "page": "PV-06-repeat-header-1.png",
+      "nonwhite_pixels": 15519
+    },
+    {
+      "page": "PV-06-repeat-header-2.png",
+      "nonwhite_pixels": 12905
+    },
+    {
+      "page": "PV-07-continued-1.png",
+      "nonwhite_pixels": 13388
+    },
+    {
+      "page": "PV-07-continued-2.png",
+      "nonwhite_pixels": 8416
+    },
+    {
+      "page": "PV-07-continued-3.png",
+      "nonwhite_pixels": 12015
+    },
+    {
+      "page": "PV-08-unmarked-continuation-1.png",
+      "nonwhite_pixels": 13267
+    },
+    {
+      "page": "PV-08-unmarked-continuation-2.png",
+      "nonwhite_pixels": 7642
+    },
+    {
+      "page": "PV-08-unmarked-continuation-3.png",
+      "nonwhite_pixels": 11894
+    },
+    {
+      "page": "PV-09-row-9v-1.png",
+      "nonwhite_pixels": 15148
+    },
+    {
+      "page": "PV-09-row-9v-2.png",
+      "nonwhite_pixels": 11619
+    },
+    {
+      "page": "PV-10-row-input-1.png",
+      "nonwhite_pixels": 15349
+    },
+    {
+      "page": "PV-10-row-input-2.png",
+      "nonwhite_pixels": 11853
+    },
+    {
+      "page": "PV-11-row-multiport-1.png",
+      "nonwhite_pixels": 15349
+    },
+    {
+      "page": "PV-11-row-multiport-2.png",
+      "nonwhite_pixels": 11827
+    },
+    {
+      "page": "PV-12-global-9v-1.png",
+      "nonwhite_pixels": 14363
+    },
+    {
+      "page": "PV-12-global-9v-2.png",
+      "nonwhite_pixels": 11767
+    },
+    {
+      "page": "PV-13-summary-9v-1.png",
+      "nonwhite_pixels": 15614
+    },
+    {
+      "page": "PV-13-summary-9v-2.png",
+      "nonwhite_pixels": 12074
+    },
+    {
+      "page": "PV-14-summary-environment-1.png",
+      "nonwhite_pixels": 16663
+    },
+    {
+      "page": "PV-14-summary-environment-2.png",
+      "nonwhite_pixels": 12104
+    },
+    {
+      "page": "PV-15-unknown-field-1.png",
+      "nonwhite_pixels": 15374
+    },
+    {
+      "page": "PV-15-unknown-field-2.png",
+      "nonwhite_pixels": 11967
+    },
+    {
+      "page": "PV-16-truncated-1.png",
+      "nonwhite_pixels": 14983
+    },
+    {
+      "page": "PV-16-truncated-2.png",
+      "nonwhite_pixels": 11864
+    },
+    {
+      "page": "PV-17-duplicate-id-1.png",
+      "nonwhite_pixels": 14319
+    },
+    {
+      "page": "PV-17-duplicate-id-2.png",
+      "nonwhite_pixels": 11732
+    },
+    {
+      "page": "PV-18-missing-page-1.png",
+      "nonwhite_pixels": 14276
+    },
+    {
+      "page": "PV-18-missing-page-2.png",
+      "nonwhite_pixels": 6561
+    },
+    {
+      "page": "PV-19-image-page-1.png",
+      "nonwhite_pixels": 14358
+    },
+    {
+      "page": "PV-19-image-page-2.png",
+      "nonwhite_pixels": 11766
+    },
+    {
+      "page": "PV-19-image-page-3.png",
+      "nonwhite_pixels": 2824
+    },
+    {
+      "page": "PV-20-unknown-port-1.png",
+      "nonwhite_pixels": 14989
+    },
+    {
+      "page": "PV-20-unknown-port-2.png",
+      "nonwhite_pixels": 11745
+    },
+    {
+      "page": "PV-21-missing-unit-1.png",
+      "nonwhite_pixels": 14365
+    },
+    {
+      "page": "PV-21-missing-unit-2.png",
+      "nonwhite_pixels": 11827
+    },
+    {
+      "page": "PV-22-missing-condition-1.png",
+      "nonwhite_pixels": 13877
+    },
+    {
+      "page": "PV-22-missing-condition-2.png",
+      "nonwhite_pixels": 12021
+    },
+    {
+      "page": "PV-23-global-conflict-1.png",
+      "nonwhite_pixels": 16082
+    },
+    {
+      "page": "PV-23-global-conflict-2.png",
+      "nonwhite_pixels": 11924
+    },
+    {
+      "page": "PV-24-unsupported-1.png",
+      "nonwhite_pixels": 13354
+    },
+    {
+      "page": "PV-24-unsupported-2.png",
+      "nonwhite_pixels": 10762
+    }
+  ],
+  "visual_review": "reviewed_all_51_pages_via_7_contact_sheets",
+  "notes": "中文字体已嵌入。图片页与缺页为刻意构造的异常；已检查其余页面文字、列序、换行及页码。"
+}

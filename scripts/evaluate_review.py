@@ -53,7 +53,7 @@ def main():
         args.xlsx.parent.mkdir(parents=True,exist_ok=True)
         args.xlsx.write_bytes(export_xlsx(cases[0]["raw_run"]))
         service.db.close()
-    paths=["app/ai_work/review.py","app/ai_work/export.py","app/knowledge_assistant/server.py",
+    paths=["app/ai_work/review.py","app/ai_work/parsing.py","app/ai_work/export.py","app/knowledge_assistant/server.py",
            "app/knowledge_assistant/static/work.js","tests/test_ai_work.py","scripts/evaluate_review.py"]
     all_scores=[s for c in cases for s in c["scores"]]
     result=dict(version="ai-work-review-v0.1",evaluated_at=stamp(),dataset="author_drafted_development_fixture",

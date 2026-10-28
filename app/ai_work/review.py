@@ -15,8 +15,9 @@ import time
 import uuid
 
 from app.knowledge_assistant.core import ROOT, card, rank_bm25, search_text
+from .parsing import extract_report, gate, same_conditions, PARSER_VERSION, PARSER_SHA256
 
-VERSION = "synthetic-short-circuit-v0.1"
+VERSION = "synthetic-short-circuit-v0.2"
 KINDS = {"response": "保护响应", "recovery": "恢复电压", "temperature": "壳温变化",
          "appearance": "外观观察", "method": "恢复方式"}
 LABELS = {"保护响应": "response", "恢复电压": "recovery", "壳温起值/末值": "temperature",
@@ -27,7 +28,7 @@ DISPOSITIONS = {"pending": "待复核", "confirmed": "确认系统结果", "excl
 UNCONFIGURED = ["充电输入角色", "其他电压档", "多口组合", "其他保护功能"]
 RULE_SOURCES = {"response": ["SYN-NORM-RESPONSE"], "recovery": ["SYN-NORM-RECOVERY", "SYN-SPEC-PB01-RevB-REC"],
                 "temperature": ["SYN-NORM-TEMP"], "appearance": ["SYN-NORM-APPEARANCE"],
-                "method": ["SYN-NORM-METHOD"], "consistency": ["SYN-NORM-CONFLICT"]}
+                "method": ["SYN-NORM-METHOD"], "consistency": ["SYN-NORM-CONFLICT"], "parsing": ["SYN-NORM-RANGE"]}
 ALL_SOURCES = list(dict.fromkeys(["SYN-NORM-RANGE"] + [c for ids in RULE_SOURCES.values() for c in ids]))
 
 
@@ -45,7 +46,7 @@ def digest(value):
     return hashlib.sha256(value).hexdigest()
 
 
-ENGINE_SHA256 = digest(Path(__file__).read_bytes())
+ENGINE_SHA256 = digest(dict(review=digest(Path(__file__).read_bytes()),parser=PARSER_SHA256))
 
 
 def parse_pdf(blob, filename):
@@ -72,33 +73,19 @@ def parse_pdf(blob, filename):
     # The published rules below belong only to this explicitly synthetic product.
     if not all(x in joined for x in ["模拟整机保护功能测试报告", "PB-DEMO-01", "模拟材料"]):
         raise ValueError("本版仅支持PB-DEMO-01模拟报告模板；此文件不适用，未套用模拟规则。")
-    if not all(x in joined for x in ["5 V输出角色", "记录表A", "记录表B"]):
-        raise ValueError("未识别支持的模拟报告布局与5 V输出范围，请提供样本模板。")
+    if not any(x in joined for x in ["记录表A", "记录表B"]):
+        raise ValueError("未识别支持的模拟报告表格，请提供受控样本模板。")
     file_hash = digest(blob)
     pages = [dict(source_id=f"PDF-{file_hash[:12]}-P{i+1}", page=i+1, text=t,
                   document_id="uploaded-"+file_hash[:12], title=filename, sha256=file_hash,
                   scope="task_only", material_type="synthetic") for i, t in enumerate(texts)]
-    fields = {p+":"+k: [] for p in ["A1", "C1"] for k in KINDS}
-    pattern = re.compile(r"(?m)^(R\d{2})\s+(A1|C1)\s+(保护响应|恢复电压|壳温起值/末值|外观观察|恢复方式)\s+([^\n]+)")
-    for page in pages:
-        for m in pattern.finditer(page["text"]):
-            record_id, port, label, value = m.groups()
-            fields[port+":"+LABELS[label]].append(dict(record_id=record_id, port=port, kind=LABELS[label],
-                value=value.strip(), source_id=page["source_id"], page=page["page"], quote=m.group(0)))
-    summary = []
-    for page in pages:
-        for m in re.finditer(r"(S\d{2})[：:]\s*(A1|C1)保护响应\s*([\d.]+)\s*(ms|s)(?![a-zA-Z])", page["text"]):
-            summary.append(dict(record_id=m[1], port=m[2], value=m[3]+" "+m[4], source_id=page["source_id"],
-                                page=page["page"], quote=m.group(0)))
+    extracted = extract_report(pages)
     basis_matches = re.findall(r"报告填写的规格版本[：:]\s*SYN-SPEC-PB01-(Rev[A-Z])", joined)
-    # Never choose the first of several incompatible identities silently.
     bases = sorted(set(basis_matches))
     basis = bases[0] if len(bases) == 1 else None
-    ids = [r["record_id"] for rows in fields.values() for r in rows]
-    duplicated = sorted(k for k, n in Counter(ids).items() if n > 1)
-    return dict(filename=filename, sha256=file_hash, page_count=len(pages), pages=pages, fields=fields,
-                summary=summary, report_basis=basis, duplicate_record_ids=duplicated,
-                model="PB-DEMO-01", parser="pypdf-controlled-table-v0.1", parsed_at=stamp())
+    return dict(filename=filename, sha256=file_hash, page_count=len(pages), pages=pages,
+                report_basis=basis, report_basis_versions=bases, model="PB-DEMO-01",
+                parser=PARSER_VERSION, parsed_at=stamp(), **extracted)
 
 
 def number(value, units):
@@ -172,11 +159,30 @@ def evaluate(snapshot, basis):
                               ranked_page_ids=[p["source_id"] for p, _ in ranked],
                               scanned_page_ids=list(pages), matched_records=[r["record_id"] for r in rows]))
             refs = [report_ref(pages[r["source_id"]], r["quote"]) for r in rows]
+            for row in rows:
+                refs += [report_ref(pages[f["source_id"]], f["quote"]) for f in row.get("fragments",[])[1:]]
+                refs += [report_ref(pages[f["source_id"]], f["quote"]) for f in row.get("condition_evidence",[])]
+            parse_blocks=[i for i in report.get("parse_audit",{}).get("issues",[]) if key in i["affected_keys"]]
+            condition_status,condition_reason=gate(rows[0]) if len(rows)==1 else ("unknown","记录尚未唯一对应。")
+            duplicate_id=any(r["record_id"] in report["duplicate_record_ids"] for r in rows) or len({r["record_id"] for r in rows})<len(rows)
+            multiple_conditions=len(rows)>1 and any(not same_conditions(rows[0],r) for r in rows[1:])
+            execution="completed"
             requirement = {"response": f"响应时间 ≤ {limits['response']} ms", "recovery": f"{limits['recovery'][0]} V ≤ 恢复电压 ≤ {limits['recovery'][1]} V",
                            "temperature": f"末值－起值 ≤ {limits['temperature']} K", "appearance": "每个端口明确记录无起火、无爆炸、无漏液", "method": "每个端口有非空恢复方式记录"}[kind]
             result, explanation, calc = "evidence_insufficient", "未定位到此端口、字段的可识别记录；需补证，不能据此推定未测试。", None
-            if len(rows) > 1 or any(r["record_id"] in report["duplicate_record_ids"] for r in rows):
+            if parse_blocks:
+                result,explanation="evidence_insufficient","存在可能影响此单元的未解析记录或不完整页面；先核对解析覆盖，再进行比较。"
+                execution="not_checked"
+                for diagnostic in parse_blocks:
+                    refs += [report_ref(pages[f["source_id"]], f["quote"]) for f in diagnostic["evidence"] if f["quote"]]
+            elif multiple_conditions and not duplicate_id:
+                result,explanation="evidence_insufficient","同一端口字段存在多个测试条件；未合并记录或将数值差异直接认定为冲突，需先明确对应条件。"
+                execution="not_checked";condition_status="conflict_or_unknown"
+            elif len(rows) > 1 or duplicate_id:
                 result, explanation = "conflict", "同一核对单元有多条记录或记录ID重复，需确认对应关系。"
+            elif len(rows)==1 and condition_status!="matched":
+                result,explanation="evidence_insufficient",condition_reason
+                execution="not_checked"
             elif len(rows) == 1:
                 row = rows[0]
                 correction = snapshot["corrections"].get(key)
@@ -220,11 +226,14 @@ def evaluate(snapshot, basis):
                 negative = re.search(r"无记录ID\s+"+port+r"\s+"+re.escape(KINDS[kind])+r"\s+-", context["text"])
                 refs = [report_ref(context, negative.group(0) if negative else context["text"][:400])]
             item = make(f"{port}-{n:02d}", port, kind, result, explanation, requirement, refs,
-                        dict(calculation=calc, record_ids=[r["record_id"] for r in rows], correction=snapshot["corrections"].get(key)))
-            if kind == "response" and len(rows) == 1:
+                        dict(calculation=calc, record_ids=[r["record_id"] for r in rows], correction=snapshot["corrections"].get(key),
+                             execution=execution,condition_status=condition_status,report_conditions=rows[0].get("conditions") if len(rows)==1 else None,
+                             record_conditions=[dict(record_id=r["record_id"],conditions=r.get("conditions")) for r in rows],
+                             parsing_blocked=bool(parse_blocks)))
+            if kind == "response" and len(rows) == 1 and execution=="completed":
                 summaries = [s for s in report["summary"] if s["port"] == port]
                 raw = number(snapshot["corrections"].get(key, {}).get("value", rows[0]["value"]), {"ms": Decimal(1), "s": Decimal(1000)})
-                if summaries and raw is not None:
+                if summaries and raw is not None and all(same_conditions(rows[0],s) for s in summaries):
                     vals = [number(s["value"], {"ms": Decimal(1), "s": Decimal(1000)}) for s in summaries]
                     if any(v != raw for v in vals):
                         item["conditional"] = True
@@ -239,10 +248,14 @@ def evaluate(snapshot, basis):
             make("SUMMARY-"+port, port, "consistency", "conflict", "同一端口保护响应的摘要与明细数值不一致；双方均保留，待人工确认。",
                  "同对象、同字段的摘要与明细需一致", refs)
         elif summaries:
-            comparable = len(report["fields"][port+":response"]) == 1 and len(summaries) == 1 and detail.get("calculation") is not None
+            records=report["fields"][port+":response"]
+            comparable = len(records) == 1 and len(summaries) == 1 and detail.get("calculation") is not None and same_conditions(records[0],summaries[0])
+            context_mismatch=len(records)==1 and any(not same_conditions(records[0],s) for s in summaries)
+            extra_refs=[report_ref(pages[f["source_id"]],f["quote"]) for s in summaries for f in s.get("condition_evidence",[])]
             make("SUMMARY-"+port, port, "consistency", "no_issue" if comparable else "evidence_insufficient",
-                 "摘要与明细的同端口响应数值一致。" if comparable else "明细或摘要不能唯一对应或数值不可识别，尚无法核对一致性。",
-                 "同对象、同字段的摘要与明细需一致", detail["report_evidence"]+[report_ref(pages[s["source_id"]],s["quote"]) for s in summaries])
+                 "摘要与明细的同端口响应数值一致。" if comparable else "摘要与明细的测试条件不一致或不明，未将数值差异认定为同条件冲突。" if context_mismatch else "明细或摘要不能唯一对应或数值不可识别，尚无法核对一致性。",
+                 "同对象、同字段、同条件的摘要与明细需一致", detail["report_evidence"]+[report_ref(pages[s["source_id"]],s["quote"]) for s in summaries]+extra_refs,
+                 dict(execution="completed" if comparable else "not_checked",condition_status="conflict_or_unknown" if context_mismatch else detail.get("condition_status")))
     if not report["summary"]:
         make("SUMMARY-MISSING", "报告", "consistency", "evidence_insufficient", "全文未定位支持格式的响应摘要，无法核对摘要与明细一致性。",
              "摘要与明细对应关系可核实", [report_ref(report["pages"][0],report["pages"][0]["text"][:300])])
@@ -254,8 +267,13 @@ def evaluate(snapshot, basis):
          f"报告填写{report_basis or '版本不明'}，任务明确采用RevB。" + ("版本差异保留；按RevB进行条件性核对，不用报告自填的通过覆盖依据。" if report_basis != "RevB" else "版本相符。"),
          "本任务采用SYN-SPEC-PB01-RevB", [report_ref(basis_page, basis_line)],
          dict(basis=[basis[c] for c in ["SYN-NORM-RECOVERY", "SYN-SPEC-PB01-RevB-REC", "SYN-NORM-CONFLICT"]]))
+    for index,diagnostic in enumerate(report.get("parse_audit",{}).get("issues",[]),1):
+        refs=[report_ref(pages[f["source_id"]],f["quote"]) for f in diagnostic["evidence"]]
+        make(f"PARSE-{index:02d}","报告","parsing","evidence_insufficient",diagnostic["message"],"候选记录与页面应完整映射，未识别内容需显式复核",refs,
+             dict(title="解析覆盖核对",execution="not_checked",diagnostic=diagnostic))
     return dict(items=items, counts=dict(Counter(i["result"] for i in items)), configured_units=10,
-                consistency_items=len(items)-10, unconfigured=UNCONFIGURED, retrieval_trace=trace,
+                consistency_items=sum(i["kind"]=="consistency" for i in items),parsing_items=sum(i["kind"]=="parsing" for i in items),
+                parse_audit=report.get("parse_audit"),unconfigured=UNCONFIGURED, retrieval_trace=trace,
                 elapsed_ms=round((time.perf_counter()-started)*1000, 2), generator="deterministic_rules_no_llm",
                 professional_review="pending", rule_version=VERSION)
 
@@ -362,6 +380,8 @@ class ReviewService:
             snapshot = payload["snapshots"][-1]
             if type(data["revision"]) is not int or data["revision"] != snapshot["revision"] or not snapshot["confirmed"]:
                 raise ConflictError("请先确认当前输入版本、依据与范围，再开始检查。")
+            if snapshot.get("rule_version")!=VERSION or snapshot["report"].get("parser")!=PARSER_VERSION:
+                raise ConflictError("解析器或规则已更新，请重新导入PDF建立新任务；历史运行仍可查看。")
             current = self.auth(principal)
             if digest(current) != digest(snapshot["basis"]):
                 raise ConflictError("依据内容已变化，请重新确认后运行。")

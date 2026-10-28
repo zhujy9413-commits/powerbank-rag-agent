@@ -1,0 +1,4 @@
+-r requirements-ai-work.txt
+# Only needed for synthetic PDF builders and development tests.
+reportlab==4.4.9
+Pillow==12.3.0
