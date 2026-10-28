@@ -1,0 +1,268 @@
+{
+  "protocol_id": "AIWORK-RAG-GAIN-0.2",
+  "date": "2026-10-29",
+  "status": "scope_and_acceptance_locked",
+  "execution_status": "not_run",
+  "sample_status": "dev_material_verified_holdout_unmaterialized",
+  "sample_freeze_status": "dev_material_locked_candidate_pending",
+  "model_requests_this_delivery": 0,
+  "baseline": {
+    "git_commit": "2a582e251f67aee7a9189723a095c22aba8f079e",
+    "engine_sha256": "4cdd0300727575d3f2a7c1186077df805609bdf9a240d6cc12d45c3bba0ba68d",
+    "frontend": "v0.4.3",
+    "parser_rule_version": "v0.4",
+    "source_sha256": {
+      "app/ai_work/review.py": "81f99b6843a470e7d147bd6dcfc268b2cf49dc1a501a47e94fbdb57b249bb461",
+      "app/ai_work/parsing.py": "60e90a4d5bee35160d80ebfd96f6705f6f869ccebbe493eeda05d009ced8c79d",
+      "app/knowledge_assistant/core.py": "f44f0c5eaa9f13f442da405bb12ef5223fbd80e14b3934136cc08a7fd8521f9b",
+      "app/knowledge_assistant/providers.py": "fa283e7d6e9aee3d986425dce58896ac7c459fb9b5eb42cc448ceb1619001be8",
+      "data/bootstrap-v0.1/manifest.json": "bad4e7243c76203c7a9c007e22e49da4da37c6c687ed3327aaa37baf5204e7e2",
+      "data/bootstrap-v0.1/index/knowledge-chunks.jsonl": "6f7e620abc09e2e37f024b4fe433a19fe081b14f412839c1c8968014a6a00fc3",
+      "data/bootstrap-v0.1/index/task-chunks.jsonl": "98ed5b394d8ea7903b9e26278da22ec1c6838299ddc3de46417032ec3b44eb99"
+    }
+  },
+  "scope": {
+    "model": "PB-DEMO-01",
+    "ports": [
+      "A1",
+      "C1"
+    ],
+    "voltage_v": 5,
+    "role": "输出",
+    "combination": "单口",
+    "function": "短路保护已有记录",
+    "materials": "explicitly synthetic only",
+    "core_comparison_units": 10
+  },
+  "arms": [
+    {
+      "id": "A0",
+      "name": "现有完整基线",
+      "supplement": "none",
+      "generation": false,
+      "retains_a0": true
+    },
+    {
+      "id": "A1",
+      "name": "关键词补证据",
+      "supplement": "bm25",
+      "generation": false,
+      "retains_a0": true
+    },
+    {
+      "id": "A2",
+      "name": "混合检索补证据",
+      "supplement": "bm25_embedding_rrf",
+      "generation": false,
+      "retains_a0": true
+    },
+    {
+      "id": "A3",
+      "name": "关键词补证据与模型说明",
+      "supplement": "bm25",
+      "generation": true,
+      "retains_a0": true
+    },
+    {
+      "id": "A4",
+      "name": "混合检索补证据与模型说明",
+      "supplement": "bm25_embedding_rrf",
+      "generation": true,
+      "retains_a0": true
+    }
+  ],
+  "metrics": [
+    {
+      "id": "S01",
+      "name": "授权 角色 任务 版本隔离",
+      "gate": "redline",
+      "criterion": "all applicable assertions pass; zero forbidden snippets or provider payloads",
+      "threshold": 0,
+      "unit": "violations"
+    },
+    {
+      "id": "S02",
+      "name": "原系统结果及历史保持",
+      "gate": "redline",
+      "criterion": "all five arms preserve A0 immutable result payload and existing evidence",
+      "threshold": 1.0,
+      "unit": "exact_match_rate"
+    },
+    {
+      "id": "S03",
+      "name": "引用身份及逐字定位",
+      "gate": "redline",
+      "criterion": "all accepted citations authorized, role-correct, locator-valid and exact quotes; zero fabricated acceptance",
+      "threshold": 1.0,
+      "unit": "accepted_citation_pass_rate"
+    },
+    {
+      "id": "R01",
+      "name": "必要证据组召回率",
+      "gate": "retrieval",
+      "criterion": "macro Recall@5 separately for requirements and report; each >= 0.95; A2 not below A1",
+      "threshold": 0.95,
+      "unit": "macro_recall_at_5"
+    },
+    {
+      "id": "R02",
+      "name": "补充种子实际返回精度",
+      "gate": "retrieval",
+      "criterion": "A1-A4 each namespace, each holdout repetition: macro relevant first-five raw seed slots / returned first-five raw seed slots >=0.80. Empty positive return=0. Negative queries separate. R01/R03 and redlines still mandatory.",
+      "threshold": 0.8,
+      "unit": "macro_precision_returned_at_5",
+      "applies_to_arms": [
+        "A1",
+        "A2",
+        "A3",
+        "A4"
+      ],
+      "a0_status": "not_applicable_no_supplemental_ranking",
+      "denominator": "min(5,len(raw_returned_seeds_before_validation_or_deduplication))",
+      "positive_empty_return_score": 0,
+      "negative_query_score": null,
+      "duplicate_policy": "duplicate chunk ID or source fingerprint occupies slot, relevance=0; do not pre-deduplicate",
+      "invalid_slot_policy": "unknown, unauthorized, mismatched namespace/task/role/version/locator/condition/quote, or expansion mislabeled as seed occupy slot and score 0; flag independent control violations",
+      "expansion_policy": "excluded from seed precision; naturally retrieved header seeds may be relevant if qrel says so",
+      "overflow_policy": "score first five, retain full raw list; >5 is configuration violation and blocks valid experiment acceptance",
+      "aggregation": "fixed positive query denominator per namespace and repetition; missing run/log or disputed label=incomplete, explicit executed empty/failure=0; do not pool namespaces/repetitions",
+      "negative_policy": "not in precision macro; require recorded evidence_insufficient, no accepted evidence/absence-proof quote or claim that physical test was not performed; raw noise may exist but must be rejected",
+      "contrast_policy": "only pre-labelled contrast_only sources support contrast; never substitute a different condition for current-condition measurement",
+      "generation_arms": "A3/A4 reuse raw A1/A2 seed rankings; generation repair cannot delete or reorder retrieval errors"
+    },
+    {
+      "id": "R03",
+      "name": "报告级完整证据及净增益",
+      "gate": "retrieval",
+      "criterion": ">=22 of 24 content holdout reports complete; net improvement >=3 vs A1 and >=3 vs A0; no previously complete A0 report regresses; holds in each of 3 repetitions",
+      "complete_reports_min": 22,
+      "denominator": 24,
+      "net_improvement_min": 3,
+      "repetitions": 3
+    },
+    {
+      "id": "M01",
+      "name": "模型说明技术与人工验收",
+      "gate": "generation",
+      "criterion": ">=23/24 report first attempts valid per repetition; >=23/24 final reports have supported non-template explanation per repetition; rejected or fallback never counted as explanation gain; independent anonymous reader: complete score >=22/24 and preference >=16/24; no harmful accepted claims",
+      "first_pass_reports_min": 23,
+      "final_supported_reports_min": 23,
+      "denominator": 24,
+      "human_complete_min": 22,
+      "human_preference_min": 16,
+      "human_status": "pending_unassigned"
+    },
+    {
+      "id": "P01",
+      "name": "时延与失败终止",
+      "gate": "performance",
+      "criterion": "normal content cold-report p95<=30s, existing-task p95<=15s; single chat attempt <=20s, total deadline<=45s; max 1 correction; all attempts retained",
+      "cold_p95_seconds": 30,
+      "warm_p95_seconds": 15,
+      "single_chat_timeout_seconds": 20,
+      "total_deadline_seconds": 45,
+      "max_corrections": 1
+    },
+    {
+      "id": "C01",
+      "name": "成本与预算",
+      "gate": "cost",
+      "criterion": "mean incremental variable cost <= CNY0.20/report; complete campaign <= CNY100 and 2500 external requests; price snapshot required; no hidden failed-attempt cost",
+      "mean_incremental_cny_per_report_max": 0.2,
+      "campaign_cny_max": 100,
+      "external_requests_max": 2500,
+      "spend_authorized": false
+    }
+  ],
+  "sampling": {
+    "content": {
+      "total": 36,
+      "dev": 12,
+      "holdout": 24
+    },
+    "offline_fault": {
+      "total": 12,
+      "dev": 4,
+      "holdout": 8
+    },
+    "total": 48,
+    "dev_total": 16,
+    "holdout_total": 32,
+    "group_split_required": true,
+    "holdout_novelty": "same-author implementation-aware time holdout; not external independent test",
+    "content_repetitions": {
+      "dev": 1,
+      "holdout": 3
+    },
+    "fault_repetitions": 1,
+    "old_anchors": 3
+  },
+  "retrieval": {
+    "top_k_per_namespace": 5,
+    "namespace_roles": [
+      "requirement",
+      "report"
+    ],
+    "candidate_top_per_method": 12,
+    "rrf_constant": 60,
+    "rrf_weights": [
+      1,
+      1
+    ],
+    "document_blocks_max": 80,
+    "distractor_blocks_per_content_report": 20,
+    "max_queries_per_report": 12,
+    "prompt_chars_max": 12000,
+    "gold_visible_to_application": false
+  },
+  "provider": {
+    "preferred_adapter": "existing bailian adapter",
+    "historically_validated_chat_id": "qwen-flash",
+    "historically_validated_embedding_id": "text-embedding-v4",
+    "runtime_model_and_price_preflight_status": "pending_before_execution",
+    "model_alias_drift_must_be_logged": true
+  },
+  "run_plan": {
+    "normal_arm_executions": 435,
+    "offline_fault_arm_executions": 60,
+    "total_arm_executions": 495,
+    "max_generation_requests": 348,
+    "fault_fixtures_external_requests": 0,
+    "order_seed": 20261029,
+    "max_preflight_generation_requests": 4,
+    "holdout_index_schedule": [
+      "cold_task_index",
+      "same_task_warm_index",
+      "same_task_warm_index"
+    ],
+    "reuse_query_or_generation_cache": false
+  },
+  "adoption": {
+    "retrieval": "S01-S03 and R01-R03 and P01,C01 all pass; compare A2 with both A1 and A0",
+    "generation": "S01-S03 and M01 and P01,C01 pass; compare A3:A1 and A4:A2; independent reader needed for usability gain",
+    "ceiling": "if A0 already complete >=22/24, >=3 net gain impossible; record ceiling and retain A0 without retuning holdout",
+    "uncertainty": "no population accuracy or significance claim from 24 constructed reports"
+  },
+  "supersedes": "AIWORK-RAG-GAIN-0.1",
+  "revision_scope": "R02 denominator, raw ranking integrity, explicit seed qrels, applicability and aggregation; other metric thresholds unchanged",
+  "dev_material_manifest": {
+    "path": "data/ai-work-rag-gain-dev-v0.1/material-manifest.json",
+    "sha256": "e524558ee053d970eaaae0297ad4b4445a2099e5f0cf202af20f860bc5700418"
+  },
+  "qrels": {
+    "path": "data/ai-work-rag-gain-v0.2/qrels-dev-v0.1.json",
+    "sha256": "cb6ed065ee619d9ff0bb3f7b51efbaa3fdddbfdf0bd25f8b943b8750ed466280"
+  },
+  "candidate_chain_status": "not_implemented_not_frozen",
+  "reference_scorer": {
+    "path": "scripts/rag_gain_scoring_v0_2.py",
+    "sha256": "c4a5a11f32882e0ec231dfe93abd8b7bed3aa86880b1352cc41a823caea69cf9",
+    "source_fingerprint_fields": [
+      "source_path",
+      "version",
+      "source_role",
+      "text"
+    ],
+    "integration_status": "reference_contract_only_not_application_integrated"
+  }
+}

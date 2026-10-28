@@ -1,0 +1,318 @@
+{
+  "kind": "native_feishu_r02_sync_readback_not_rag_evaluation",
+  "date": "2026-10-29",
+  "verified_at_utc": "2026-10-28T19:41:00.886715+00:00",
+  "scope": "AI Work only; internal assistant unchanged",
+  "method": "native Markdown import once for new report; existing plan/checklist and parent edited in place; refreshed then scrolled and read back",
+  "source_sha256": {
+    "docs/ai-work/rag-gain-validation-plan-v0.1.md": "51ffce51ab6ea3560175b4a471fb3ae0456f6f9310f5c6062598d21cf41e8b23",
+    "docs/ai-work/rag-gain-evaluation-checklist-v0.1.md": "807ae48c5877f345b3289cdd4b1966e2223724db93213bb86673257c2e6f3479",
+    "docs/ai-work/rag-gain-r02-revision-v0.2.md": "aa87071b5d047d02136e0218d9a860036317d559ab86de5ee0abcd40900b03b4"
+  },
+  "plan": {
+    "checks": [
+      {
+        "originalZone": "2",
+        "matches": true,
+        "expectedChars": 45
+      },
+      {
+        "originalZone": "4",
+        "matches": true,
+        "expectedChars": 275
+      },
+      {
+        "originalZone": "53",
+        "matches": true,
+        "expectedChars": 192
+      },
+      {
+        "originalZone": "178",
+        "matches": true,
+        "expectedChars": 9
+      },
+      {
+        "originalZone": "180",
+        "matches": true,
+        "expectedChars": 52
+      },
+      {
+        "originalZone": "110",
+        "matches": true,
+        "expectedChars": 1184
+      },
+      {
+        "originalZone": "122",
+        "matches": true,
+        "expectedChars": 555
+      }
+    ],
+    "tableCount": 4,
+    "metricRows": [
+      [
+        "S01​",
+        "授权 任务 版本及来源角色​",
+        "所有适用断言通过；越权片段进入候选、Prompt、服务方载荷或导出次数为0。停用历史与新检查分开处理​"
+      ],
+      [
+        "S02​",
+        "原系统结果与历史保护​",
+        "五组原检查载荷及原证据100%一致；数值、条件、缺证、失败、未配置和历史处置不得被新增链路覆盖​"
+      ],
+      [
+        "S03​",
+        "接受的引用身份及定位​",
+        "授权、版本、来源角色、页/章节和逐字引文100%通过。对外接受的伪造或不支持引用为0；原始错误仍记录​"
+      ],
+      [
+        "R01​",
+        "必要证据组召回@5​",
+        "要求与报告分开计算，宏平均各≥95%，A2各不低于A1；扩展前原始召回另列​"
+      ],
+      [
+        "R02​",
+        "前5条实际返回精度​",
+        "A1至A4每轮按要求/报告分别宏平均≥80%；正例空返回记0，重复和错误占槽记0；A0无补充排序记不适用​"
+      ],
+      [
+        "R03​",
+        "报告级完整证据与净增益​",
+        "A2每轮≥22/24份完整；对A1和A0分别净增至少3份；A0原已完整的报告退化为0；三轮均满足​"
+      ],
+      [
+        "M01​",
+        "说明技术及人工可用性​",
+        "A3/A4分别每轮首次结构/引文有效≥23/24，最终有支持的非模板说明≥23/24；人工盲评三项全满足≥22/24、偏好候选≥16/24。危害性错误接受为0​"
+      ],
+      [
+        "P01​",
+        "全链路时延与失败终止​",
+        "正常内容报告首用P95≤30秒、既有任务P95≤15秒；单次生成≤20秒、总任务≤45秒、校正≤1次。失败计入时延和失败率​"
+      ],
+      [
+        "C01​",
+        "成本与止损​",
+        "各候选平均增量可变费用≤0.20元/报告；本轮总额≤100元，外部请求≤2500次，任一上限先触发即停止并记未完成​"
+      ]
+    ],
+    "cases": [],
+    "persistent": true,
+    "allEditsPersisted": true,
+    "endMarkerPresent": null,
+    "editorCount": 118,
+    "lastParagraph": "下一阶段实现候选链路，仅用已核验的16个开发场景调试；本轮参考评分函数已提供，尚未接入应用。正式留出前补齐候选、评分器、qrels及32个场景资产冻结记录。当前机器协议 https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/data/ai-work-rag-gain-v0.2/protocol.json及48项台账 https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/data/ai-work-rag-gain-v0.2/cases.json为v0.2；原v0.1协议、首次预检和开发ZIP保持不变。开发材料哈希以开发材料清单 https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/data/ai-work-rag-gain-dev-v0.1/material-manifest.json为准。旧新R02口径不可混算，本轮没有实际RAG分数。​\n​\n修订核验报告 https://my.feishu.cn/wiki/J0GdwHG0tijIdEkSJ0Dcvqabnth​",
+    "url": "https://my.feishu.cn/wiki/NSMiwHelFiIY7ykVys4cJbL0nze"
+  },
+  "checklist": {
+    "checks": [
+      {
+        "originalZone": "2",
+        "matches": true,
+        "expectedChars": 77
+      },
+      {
+        "originalZone": "3",
+        "matches": true,
+        "expectedChars": 366
+      },
+      {
+        "originalZone": "7",
+        "matches": true,
+        "expectedChars": 1269
+      },
+      {
+        "originalZone": "151",
+        "matches": true,
+        "expectedChars": 181
+      },
+      {
+        "originalZone": "383",
+        "matches": true,
+        "expectedChars": 102
+      },
+      {
+        "originalZone": "155",
+        "matches": true,
+        "expectedChars": 74
+      },
+      {
+        "originalZone": "157",
+        "matches": true,
+        "expectedChars": 73
+      },
+      {
+        "originalZone": "158",
+        "matches": true,
+        "expectedChars": 74
+      },
+      {
+        "originalZone": "163",
+        "matches": true,
+        "expectedChars": 268
+      }
+    ],
+    "tableCount": 8,
+    "metricRows": [],
+    "cases": [
+      "RG-CONDITION-DEV-01",
+      "RG-CONDITION-DEV-02",
+      "RG-CONDITION-HOLDOUT-01",
+      "RG-CONDITION-HOLDOUT-02",
+      "RG-CONDITION-HOLDOUT-03",
+      "RG-CONDITION-HOLDOUT-04",
+      "RG-CONTEXT-DEV-01",
+      "RG-CONTEXT-DEV-02",
+      "RG-CONTEXT-HOLDOUT-01",
+      "RG-CONTEXT-HOLDOUT-02",
+      "RG-CONTEXT-HOLDOUT-03",
+      "RG-CONTEXT-HOLDOUT-04",
+      "RG-GAP-DEV-01",
+      "RG-GAP-DEV-02",
+      "RG-GAP-HOLDOUT-01",
+      "RG-GAP-HOLDOUT-02",
+      "RG-GAP-HOLDOUT-03",
+      "RG-GAP-HOLDOUT-04",
+      "RG-NOISE-DEV-01",
+      "RG-NOISE-DEV-02",
+      "RG-NOISE-HOLDOUT-01",
+      "RG-NOISE-HOLDOUT-02",
+      "RG-NOISE-HOLDOUT-03",
+      "RG-NOISE-HOLDOUT-04",
+      "RG-OPS-DEV-01",
+      "RG-OPS-DEV-02",
+      "RG-OPS-DEV-03",
+      "RG-OPS-DEV-04",
+      "RG-OPS-HOLDOUT-01",
+      "RG-OPS-HOLDOUT-02",
+      "RG-OPS-HOLDOUT-03",
+      "RG-OPS-HOLDOUT-04",
+      "RG-OPS-HOLDOUT-05",
+      "RG-OPS-HOLDOUT-06",
+      "RG-OPS-HOLDOUT-07",
+      "RG-OPS-HOLDOUT-08",
+      "RG-PORT-DEV-01",
+      "RG-PORT-DEV-02",
+      "RG-PORT-HOLDOUT-01",
+      "RG-PORT-HOLDOUT-02",
+      "RG-PORT-HOLDOUT-03",
+      "RG-PORT-HOLDOUT-04",
+      "RG-TERM-DEV-01",
+      "RG-TERM-DEV-02",
+      "RG-TERM-HOLDOUT-01",
+      "RG-TERM-HOLDOUT-02",
+      "RG-TERM-HOLDOUT-03",
+      "RG-TERM-HOLDOUT-04"
+    ],
+    "persistent": true,
+    "allEditsPersisted": true,
+    "endMarkerPresent": null,
+    "editorCount": 215,
+    "url": "https://my.feishu.cn/wiki/Q5ZpwTcSTi485jkpDwkc2STsnLb"
+  },
+  "report": {
+    "checks": [],
+    "tableCount": 3,
+    "metricRows": [],
+    "cases": [],
+    "persistent": true,
+    "allEditsPersisted": true,
+    "endMarkerPresent": true,
+    "markers": [
+      {
+        "present": true,
+        "text": "2397/2397"
+      },
+      {
+        "present": true,
+        "text": "4971"
+      },
+      {
+        "present": true,
+        "text": "245个正例"
+      },
+      {
+        "present": true,
+        "text": "3个负例"
+      },
+      {
+        "present": true,
+        "text": "26个参考评分契约测试"
+      },
+      {
+        "present": true,
+        "text": "m=min(5,len(L))"
+      },
+      {
+        "present": true,
+        "text": "本轮没有制作32个留出场景"
+      }
+    ],
+    "editorCount": 81,
+    "lastParagraph": "R02修订核验报告正文结束。​",
+    "url": "https://my.feishu.cn/wiki/J0GdwHG0tijIdEkSJ0Dcvqabnth"
+  },
+  "parent_and_report_links": {
+    "report": {
+      "links": [
+        {
+          "text": "种子qrels",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/data/ai-work-rag-gain-v0.2/qrels-dev-v0.1.json"
+        },
+        {
+          "text": "26个参考评分契约测试",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/rag-gain-r02-scoring-tests-v0.2.txt"
+        },
+        {
+          "text": "机器核验记录",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/rag-gain-r02-validation-v0.2.json"
+        },
+        {
+          "text": "协议v0.2",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/data/ai-work-rag-gain-v0.2/protocol.json"
+        },
+        {
+          "text": "48项状态台账",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/data/ai-work-rag-gain-v0.2/cases.json"
+        },
+        {
+          "text": "参考评分函数",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/scripts/rag_gain_scoring_v0_2.py"
+        }
+      ],
+      "url": "https://my.feishu.cn/wiki/J0GdwHG0tijIdEkSJ0Dcvqabnth",
+      "nodes": [
+        {
+          "pos": "6,4,0,19",
+          "text": "18 AI Work R02 评分口径修订与核验",
+          "uid": "firstLevelWikiToken=IX3OwNECai1t7nkBuMOcD3mfnzf&isMainTree=true&level=4&rootNodeId=PERSONAL&wikiToken=J0GdwHG0tijIdEkSJ0Dcvqabnth"
+        }
+      ],
+      "endMarkerRead": true
+    },
+    "parent": {
+      "persistent": true,
+      "matches": true,
+      "url": "https://my.feishu.cn/wiki/UlodwHIzJidrjDkQXVvcApD1nbe",
+      "text": "2026-10-29 RAG开发材料已核验：12份PDF、4份离线夹具、124个查询的完整性标注；既有1693项材料校验及24页页面查看记录保留。R02口径现已在v0.2修订为前5条实际返回精度，重复/错误占槽记0、缺证另列，仍须满足R01/R03完整性。新增独立种子相关性标注248个查询/来源组合、4971个标签；26个评分契约测试及2397项口径/材料绑定核验通过，均非实际RAG效果分数。16个开发场景材料已核验，32个留出场景尚未制作，候选检索链路及模型实验未执行。13/14已更新为v0.2。18 R02修订核验报告 https://my.feishu.cn/wiki/J0GdwHG0tijIdEkSJ0Dcvqabnth ；15 开发样本包 https://my.feishu.cn/wiki/Qv6twselVij87akhUquc3ODhnCd ；16 参考标注 https://my.feishu.cn/wiki/P2WpwS5eTiuo1LkAJc3c3w0BnZe ；17 原材料核验报告 https://my.feishu.cn/wiki/SGC1wDubRi8CCDktyFYcL4MVn0c ；原完整ZIP https://my.feishu.cn/wiki/QTrAwLDt9iAmUokXwJEcTYVbnib 。原17及ZIP保留问题发现时快照，当前R02状态以18及v0.2协议为准。​"
+    }
+  },
+  "visual_inspection": {
+    "viewed": true,
+    "description": "Report scoring table readable with intact native cells and no clipping at inspected viewport",
+    "sha256": "0ec7ef719125df7026a55b2149bc08d4db73642be88a8df7c72034e33c8ae245",
+    "screenshot_not_published": true
+  },
+  "structural_note": "Cloud plan retains 4 tables. Cloud checklist retains 8 original tables and presents the new nine scoring checks as line-separated policy text; local Markdown has an additional policy table. Report has 3 native tables. Online structure need not be byte-identical to Markdown.",
+  "recovery_note": "A read-only multi-document refresh check was interrupted and its task had ended. The original Feishu tab was reacquired in a new task; prior writes were verified from persisted content before proceeding. No document was imported twice and no editing replay was used to infer success.",
+  "calls": {
+    "candidate_retrieval_runs": 0,
+    "application_evaluations": 0,
+    "model_requests": 0,
+    "embedding_requests": 0
+  },
+  "preserved": {
+    "original_dev_pack_and_zip": true,
+    "previous_results": true,
+    "application_and_user_data": true
+  }
+}

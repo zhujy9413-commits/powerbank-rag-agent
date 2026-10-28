@@ -1,0 +1,31 @@
+test_a0_not_empty_failure (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_a0_not_empty_failure) ... ok
+test_all_identity_dimensions_are_checked (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_all_identity_dimensions_are_checked) ... ok
+test_changed_corpus_is_incomplete (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_changed_corpus_is_incomplete) ... ok
+test_disputed_label_is_incomplete (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_disputed_label_is_incomplete) ... ok
+test_duplicate_occupies_slot (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_duplicate_occupies_slot) ... ok
+test_empty_positive_is_zero (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_empty_positive_is_zero) ... ok
+test_expansion_cannot_be_seed_precision (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_expansion_cannot_be_seed_precision) ... ok
+test_explicit_failed_empty_remains_in_macro (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_explicit_failed_empty_remains_in_macro) ... ok
+test_macro_fixed_query_weight_not_micro_slot_weight (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_macro_fixed_query_weight_not_micro_slot_weight) ... ok
+test_macro_missing_does_not_shrink_denominator (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_macro_missing_does_not_shrink_denominator) ... ok
+test_missing_execution_is_incomplete (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_missing_execution_is_incomplete) ... ok
+test_model_arms_use_same_scoring (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_model_arms_use_same_scoring) ... ok
+test_namespace_means_are_not_pooled (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_namespace_means_are_not_pooled) ... ok
+test_negative_cannot_accept_noise_or_claim_physical_test_missing (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_negative_cannot_accept_noise_or_claim_physical_test_missing) ... ok
+test_negative_is_not_precision_one_or_zero (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_negative_is_not_precision_one_or_zero) ... ok
+test_negative_raw_noise_may_be_rejected_correctly (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_negative_raw_noise_may_be_rejected_correctly) ... ok
+test_one_relevant_returned_does_not_prove_completeness (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_one_relevant_returned_does_not_prove_completeness) ... ok
+test_overflow_retained_and_configuration_flagged (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_overflow_retained_and_configuration_flagged) ... ok
+test_reprinted_same_source_text_is_still_duplicate (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_reprinted_same_source_text_is_still_duplicate) ... ok
+test_same_source_alias_cannot_inflate_hits (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_same_source_alias_cannot_inflate_hits) ... ok
+test_two_relevant_one_noise (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_two_relevant_one_noise) ... ok
+test_two_relevant_returned_is_one_not_two_fifths (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_two_relevant_returned_is_one_not_two_fifths) ... ok
+test_unauthorized_actor_is_zero_and_flagged (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_unauthorized_actor_is_zero_and_flagged) ... ok
+test_unjudged_candidate_is_incomplete (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_unjudged_candidate_is_incomplete) ... ok
+test_unknown_id_occupies_slot (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_unknown_id_occupies_slot) ... ok
+test_wrong_quote_occupies_slot (tests.test_rag_gain_scoring_v0_2.R02ContractTests.test_wrong_quote_occupies_slot) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.002s
+
+OK

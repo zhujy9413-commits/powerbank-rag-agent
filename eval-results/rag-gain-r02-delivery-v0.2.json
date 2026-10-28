@@ -1,0 +1,70 @@
+{
+  "kind": "r02_scoring_revision_delivery_not_rag_evaluation",
+  "date": "2026-10-29",
+  "protocol_id": "AIWORK-RAG-GAIN-0.2",
+  "baseline_material_commit": "a1c58946d604a672e6745f6c136a01c5339fd527",
+  "github": {
+    "repository": "https://github.com/zhujy9413-commits/powerbank-rag-agent",
+    "visibility_verified": "private",
+    "target_ref": "main",
+    "commit_identity": "the Git commit containing this manifest"
+  },
+  "tests": {
+    "reference_contract_tests": 26,
+    "contract_and_binding_checks_passed": 2397,
+    "contract_and_binding_checks_total": 2397,
+    "application_tests_this_round": 0,
+    "candidate_retrieval_runs": 0,
+    "provider_requests": 0
+  },
+  "annotations": {
+    "query_namespace_rows": 248,
+    "positive_rows": 245,
+    "negative_rows": 3,
+    "judgment_cells": 4971,
+    "review_status": "same_author_internal_expert_and_external_review_pending"
+  },
+  "material_status": {
+    "dev_cases_material_verified": 16,
+    "holdout_cases_materialized": 0,
+    "holdout_cases_planned": 32,
+    "all_application_observed_results": null,
+    "candidate_chain": "pending_implementation"
+  },
+  "preservation": {
+    "dev_content_assets": 93,
+    "prior_frozen_assets": 88,
+    "original_dev_zip_sha256": "34220560d3fcd9b1f8299308204703e91a0a9c4b96c992639259eee1f6726245",
+    "old_protocol_and_results": "unchanged",
+    "application_and_user_data": "unchanged"
+  },
+  "feishu": {
+    "plan": "https://my.feishu.cn/wiki/NSMiwHelFiIY7ykVys4cJbL0nze",
+    "checklist": "https://my.feishu.cn/wiki/Q5ZpwTcSTi485jkpDwkc2STsnLb",
+    "report": "https://my.feishu.cn/wiki/J0GdwHG0tijIdEkSJ0Dcvqabnth",
+    "parent": "https://my.feishu.cn/wiki/UlodwHIzJidrjDkQXVvcApD1nbe",
+    "readback": "eval-results/rag-gain-r02-feishu-v0.2.json",
+    "all_persisted": true,
+    "checklist_case_ids_read": 48,
+    "report_native_tables": 3
+  },
+  "scope_note": "R02 definition, evaluator-only seed labels and reference scorer were revised before candidate runs. Oracle-constructed rankings verify arithmetic only. No actual RAG gain or business benefit is claimed.",
+  "asset_sha256": {
+    "README.md": "fbb229adc6c475c129be36e6e020f631c177454bc8e6295a5271eacd5d1d0d4e",
+    "docs/SYNC.md": "f264dc99cf1224e3ec7eadccaabf84299a30fb5afbce594bb658165dac9c1a71",
+    "docs/ai-work/README.md": "4fc109f83d1e1620bfa271f970c727aa3ac82b772c853e60a439bce47b896213",
+    "docs/ai-work/rag-gain-validation-plan-v0.1.md": "51ffce51ab6ea3560175b4a471fb3ae0456f6f9310f5c6062598d21cf41e8b23",
+    "docs/ai-work/rag-gain-evaluation-checklist-v0.1.md": "807ae48c5877f345b3289cdd4b1966e2223724db93213bb86673257c2e6f3479",
+    "docs/ai-work/rag-gain-r02-revision-v0.2.md": "aa87071b5d047d02136e0218d9a860036317d559ab86de5ee0abcd40900b03b4",
+    "data/ai-work-rag-gain-v0.2/protocol.json": "97e63170e8f50375204c79ae2c730669f145ef86c03106c07c7650766834fae4",
+    "data/ai-work-rag-gain-v0.2/cases.json": "e595e19b58389f011e10201138e0a53383a36a475d3cd4c2208e79dfcc74f295",
+    "data/ai-work-rag-gain-v0.2/qrels-dev-v0.1.json": "cb6ed065ee619d9ff0bb3f7b51efbaa3fdddbfdf0bd25f8b943b8750ed466280",
+    "scripts/rag_gain_scoring_v0_2.py": "c4a5a11f32882e0ec231dfe93abd8b7bed3aa86880b1352cc41a823caea69cf9",
+    "scripts/build_rag_gain_revision_v0_2.py": "f89ca8d1f3df5262a1f55911b88cb29bcf8ef570c36256515b775a9c5e82db43",
+    "scripts/validate_rag_gain_revision_v0_2.py": "cd54fdad7f7788b44cd5f7cedeb6b458badc432fd0086e989784208e8f3e6df3",
+    "tests/test_rag_gain_scoring_v0_2.py": "fb1d6d21148be6c5c7c98963222b8c6ba2300b814eff05066bb9c22c3b40a264",
+    "eval-results/rag-gain-r02-scoring-tests-v0.2.txt": "581e7b553bdd1a38495ba7c5b3dd6421390b0e7f6ec9ad7f9e9a3a77b81bcf90",
+    "eval-results/rag-gain-r02-validation-v0.2.json": "76abc3b1ad7b2ab8774159c650e973001fbc54c4c2707b000a0bd66bb2bdad55",
+    "eval-results/rag-gain-r02-feishu-v0.2.json": "fe3c1c8c834ced0160118053289d8eb8a6af14af9036677085f15f0143794873"
+  }
+}

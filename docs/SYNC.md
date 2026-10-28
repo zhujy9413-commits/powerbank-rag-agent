@@ -325,4 +325,26 @@ G01已在受控模拟范围内修复。当前权限保留时可读取历史任�
 
 88份既有冻结资产、72份已有结果文件及7个锁定来源文件哈希一致。应用、用户任务、数据库、模型配置与密钥未改动。GitHub再次核实PRIVATE。完整状态见[交付摘要](../eval-results/rag-gain-dev-delivery-v0.1.json)、[飞书同步读回](../eval-results/rag-gain-dev-feishu-v0.1.json)与[开发内容清单](../data/ai-work-rag-gain-dev-v0.1/material-manifest.json)。
 
+## 2026-10-29 AI Work R02口径修订 v0.2
+
+按用户授权修订R02，并在任何候选检索实测之前明确公式。R02现称“前5条实际返回精度”：正例取评分校验前原始补充种子顺序，m=min(5,实际返回条数)，相关且身份/原文有效的槽位数除以m；m=0记0。重复和错误继续占槽记0，缺日志或争议记未完成。无证据负例不进入精度宏平均，另验100%正确收敛。80%数值门槛保留，完整性仍须通过R01/R03；其余八项指标及实验范围未变。新旧R02定义不得混算。
+
+| 交付 | 本地维护源 | 飞书 |
+| --- | --- | --- |
+| 验证方案内容v0.2 | [验证方案](ai-work/rag-gain-validation-plan-v0.1.md)，保留原文件路径 | [13原位更新](https://my.feishu.cn/wiki/NSMiwHelFiIY7ykVys4cJbL0nze) |
+| 评测清单内容v0.2 | [48项清单](ai-work/rag-gain-evaluation-checklist-v0.1.md)，保留所有场景定义 | [14原位更新](https://my.feishu.cn/wiki/Q5ZpwTcSTi485jkpDwkc2STsnLb) |
+| 修订与核验报告 | [公式、边界例子及结果](ai-work/rag-gain-r02-revision-v0.2.md) | [18 AI Work R02 评分口径修订与核验](https://my.feishu.cn/wiki/J0GdwHG0tijIdEkSJ0Dcvqabnth) |
+| 机器协议及标注 | [协议](../data/ai-work-rag-gain-v0.2/protocol.json)、[台账](../data/ai-work-rag-gain-v0.2/cases.json)、[开发qrels](../data/ai-work-rag-gain-v0.2/qrels-dev-v0.1.json)、[参考评分函数](../scripts/rag_gain_scoring_v0_2.py) | 13/14/18链接私有GitHub维护源 |
+| 核验结果 | [26个评分契约测试](../eval-results/rag-gain-r02-scoring-tests-v0.2.txt)、[2397项核验记录](../eval-results/rag-gain-r02-validation-v0.2.json)、[飞书读回](../eval-results/rag-gain-r02-feishu-v0.2.json) | 18展示结果及原始文件链接 |
+
+开发种子相关性标注单独保存，共248个查询/来源组合、245个正例、3个报告缺证负例及4971个候选标签。标签绑定当前语料快照、来源文件及原完整性必要组，不向应用提供；同作者保守标注，专业及外部独立复核仍待完成。26个边界测试和2397/2397项口径/材料绑定核验通过。245个正例按金标构造的理想排序只验证新算术可达，不是检索实测100%。
+
+13/14分别7处和9处修订均经刷新后逐项正文匹配，13保留4张原生表、全部九指标，14保留8张原生表、完整48个场景。14新增九项R02执行核对以分行政策文字呈现，本地Markdown使用额外表格，两种结构不声称逐字节一致。18仅导入一次，原生移动到AI Work，刷新位置6,4,0,19；3张表、核验计数、公式及正文结束标记均读回，并查看评分表实际排版。AI Work原入口更新状态并保留15/16/17/原ZIP链接，刷新确认保存。内部智能客服分组未修改。
+
+一次只读多文档刷新任务被中断，诊断确认原任务已结束，按恢复流程接管原飞书标签并读取持久内容，确认先前写入已保存；没有据中断状态重做导入。最终浏览器任务正常结束、保留原标签。云端入口和正文位置可与Markdown不同，不是自动双向同步。
+
+开发包93项内容资产、88份既有冻结材料、原开发ZIP、旧协议及历史结果、7个锁定来源保持原字节。原17及ZIP内的R02待明确说明保留为问题发现时快照，当前以18和v0.2为准。应用仍为v0.4.3；本轮候选检索、应用评测、Embedding及模型请求均为0，32个留出场景尚未制作。下一阶段仅用16个开发场景实现和调试候选链路。GitHub已再次核实PRIVATE。
+
+本轮复现命令为`python3 -m unittest discover -s tests -p 'test_rag_gain_scoring_v0_2.py' -v`及`python3 scripts/validate_rag_gain_revision_v0_2.py --output tmp/r02-validation-recheck.json`。核验脚本拒绝覆盖已有结果；复查时选用新的输出路径，保留首次记录。当前交付文件摘要见[本轮交付清单](../eval-results/rag-gain-r02-delivery-v0.2.json)。
+
 飞书悬停菜单多次未展开时均先读取状态，没有重复上传；参考标注上传成功但侧栏未更新，刷新核对了原文档，未重建。ZIP通过稳定的文档库入口上传一次，再移动一次。最后的只读导航被浏览器任务中断，核对原任务已结束及页面实际落点后，在新任务中读取并保存入口；未重放未知写入。最终浏览器任务正常结束，保留原标签，closedTabIds为空。
