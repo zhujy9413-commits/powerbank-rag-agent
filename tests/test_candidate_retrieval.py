@@ -126,6 +126,37 @@ class CandidateTests(unittest.TestCase):
     def test_input_directory_allowlist(self):
         with self.assertRaises(ValueError):load_input(Path("/tmp/unknown"),Path.cwd())
 
+    def routed(self,embedder=None):
+        return CandidateRetriever(self.chunks,self.task,self.user,self.originals,embedder=embedder)
+    def test_routing_uses_object_and_field_before_both_methods(self):
+        e=Embedder();r=self.routed(e).retrieve(self.query,"report",method="hybrid")
+        self.assertNotIn("R2",[s["chunk_id"] for s in r["raw_seeds"]])
+        self.assertNotIn(self.chunks[2]["text"],e.calls[0])
+    def test_routing_keeps_conditions_and_registered_header(self):
+        self.chunks[1]["context_ids"]=["CTX"]
+        r=self.routed().retrieve(self.query,"report")
+        self.assertIn("CTX",[s["chunk_id"] for s in r["raw_seeds"]+r["context_expansions"]])
+    def test_routing_appearance_requirement_uses_observation_vocabulary(self):
+        self.chunks[0]["text"]="每个端口分别有明确的无起火、无爆炸、无漏液记录。"
+        self.originals[("REQ.txt",1)]=self.chunks[0]["text"]
+        self.query.update(field="appearance",text="A1 外观观察")
+        r=self.routed().retrieve(self.query,"requirement")
+        self.assertEqual(r["raw_seeds"][0]["chunk_id"],"REQ")
+    def test_routing_temperature_requirement_uses_temperature_difference(self):
+        self.chunks[0]["text"]="末值减起值；温差上限。";self.originals[("REQ.txt",1)]=self.chunks[0]["text"]
+        self.query.update(field="temperature",text="A1 壳温")
+        self.assertEqual(self.routed().retrieve(self.query,"requirement")["raw_seeds"][0]["chunk_id"],"REQ")
+    def test_routing_can_disable_for_exact_development_ablation(self):
+        self.assertTrue(any(s["chunk_id"]=="R2" for s in self.make().retrieve(self.query,"report")["raw_seeds"]))
+        self.assertFalse(any(s["chunk_id"]=="R2" for s in self.routed().retrieve(self.query,"report")["raw_seeds"]))
+    def test_empty_route_has_no_embedding_call(self):
+        e=Embedder();self.query.update(field="appearance",text="A1 外观观察")
+        r=self.routed(e).retrieve(self.query,"report",method="hybrid")
+        self.assertEqual(e.calls,[]);self.assertEqual(r["degradation"],"no_eligible_candidates")
+    def test_malformed_conditions_rejected(self):
+        self.query["conditions"]="guess"
+        with self.assertRaises(ValueError):self.routed().retrieve(self.query,"report")
+
 
 class ExplanationContractTests(unittest.TestCase):
     def test_two_fabricated_attempts_fall_back_and_remain_auditable(self):

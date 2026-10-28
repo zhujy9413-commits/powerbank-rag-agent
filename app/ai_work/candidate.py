@@ -13,13 +13,13 @@ import time
 
 from app.knowledge_assistant.core import rank_bm25
 
-VERSION = "candidate-retrieval-0.2"
+VERSION = "candidate-retrieval-0.3"
 IDENTITY = ("namespace", "source_role", "source_path", "page", "section", "version", "task_id", "conditions")
 FIELDS = {
     "response": r"保护响应|响应时间|短接.*(?:切断|耗时)",
     "recovery": r"恢复电压|输出回到",
-    "temperature": r"壳温|壳体温度",
-    "appearance": r"外观观察",
+    "temperature": r"壳温|壳体温度|末值|起值|温差",
+    "appearance": r"外观观察|无起火|无爆炸|无漏液",
     "method": r"恢复方式",
 }
 
@@ -160,6 +160,8 @@ class CandidateRetriever:
             raise ValueError("查询对象或字段不受支持。")
         if not isinstance(query.get("text"), str) or not 0 < len(query["text"]) <= 1000:
             raise ValueError("查询文本无效。")
+        if not isinstance(query.get("conditions"),dict):
+            raise ValueError("查询条件须显式给出，未知值保留为null。")
         authorized = [c for c in self.chunks if self._authorized(c, namespace)]
         # Verify originals before indexing or sending any provider text.
         candidates = [dict(c, search_text=c["text"], title=c["source_path"], document_id=c["source_path"])
@@ -168,7 +170,13 @@ class CandidateRetriever:
         if self.config.structured_routing:
             candidates=route_candidates(query,candidates,namespace)
         corpus_hash = digest([{k:v for k,v in c.items() if k not in {"search_text","title","document_id"}} for c in candidates])
-        keyword = rank_bm25(query["text"], candidates)[:self.config.per_method]
+        retrieval_text=query["text"]
+        if self.config.structured_routing:
+            # Domain vocabulary expansion, identical for keyword and vector arms.
+            retrieval_text += " "+dict(response="响应时间 短接 切断 耗时",recovery="恢复电压 输出回到",
+                temperature="壳温 起值 末值 温差",appearance="外观观察 起火 爆炸 漏液",
+                method="恢复方式",consistency="摘要 原始记录 矛盾")[query["field"]]
+        keyword = rank_bm25(retrieval_text, candidates)[:self.config.per_method]
         if keyword:
             keyword = [(c,s) for c,s in keyword if s >= keyword[0][1]*self.config.min_bm25_ratio]
         order = [c["chunk_id"] for c,_ in keyword]
@@ -195,7 +203,7 @@ class CandidateRetriever:
                         self._vector_cache[key] = cached
                     vectors, provider_identity = cached
                     provider_calls += 1
-                    response = self.embedder.embed([query["text"]])
+                    response = self.embedder.embed([retrieval_text])
                     qv = normalized_vectors(response["vectors"], 1)[0]
                     if len(qv) != len(vectors[0]) or response["model_id"] != provider_identity:
                         raise ValueError("embedding_model_or_dimension_drift")
@@ -209,6 +217,8 @@ class CandidateRetriever:
                     # Do not leak transport messages, keys, payloads or config.
                     degradation = "embedding_failure_or_identity_drift"
                     self._vector_cache.clear()
+            else:
+                degradation="no_eligible_candidates"
         by_id = {c["chunk_id"]:c for c in candidates}
         raw = [seed(by_id[ident]) for ident in order[:self.config.top_k]]
         extensions = []
@@ -226,7 +236,7 @@ class CandidateRetriever:
                     outcome=dict(state="candidate_evidence_pending_review" if accepted else "evidence_insufficient",
                                  accepted_evidence_ids=[s["chunk_id"] for s in accepted], absence_proof_citation=None,
                                  claims_test_not_performed=False),
-                    trace=dict(config=asdict(self.config), task_id=self.task["task_id"], actor_role=self.principal.role,
+                    trace=dict(config=asdict(self.config), retrieval_text=retrieval_text, task_id=self.task["task_id"], actor_role=self.principal.role,
                                filtered_count=len(self.chunks)-len(authorized), source_validation_rejections=len(authorized)-original_valid_count,
                                upstream_routing_exclusions=original_valid_count-len(candidates),
                                candidate_count=len(candidates), corpus_sha256=corpus_hash,
