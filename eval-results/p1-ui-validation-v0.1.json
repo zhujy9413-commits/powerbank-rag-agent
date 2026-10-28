@@ -1,0 +1,29 @@
+{
+  "version": "p1-ui-validation-v0.1",
+  "validated_at": "2026-10-28T07:58:03.639658+00:00",
+  "url": "http://127.0.0.1:53754/",
+  "engine_version": "synthetic-short-circuit-v0.4",
+  "parser_version": "controlled-pdf-v0.4",
+  "fixture": "consumed HO-17",
+  "task_id": "AW-a0ef3c9df573",
+  "run_id": "RUN-6325dda2f6e3",
+  "revision": 2,
+  "checks": {
+    "upload": true,
+    "candidates": 10,
+    "captured": 10,
+    "unresolved": 0,
+    "no_orphan_diagnostic": true,
+    "method_no_issue": true,
+    "summary_no_issue": true,
+    "summary_quote": "S41：A1保护响应 0.137\ns",
+    "detail_quote": "R101 A1 保护响应 137 ms",
+    "excel_export_success_message": true,
+    "reload_run_persisted": true
+  },
+  "professional_review": "pending",
+  "notes": [
+    "上传调用最初因等待器缺少AbortController而报错；只读核对未上传后仅成功上传一次。",
+    "浏览器扩展产生PAGE_SCRIPT_ERROR警告；已列功能及持久性核验成功，不据此声称页面零脚本错误。"
+  ]
+}
