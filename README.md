@@ -4,7 +4,7 @@
 
 ## AI Work｜整机测试报告评审
 
-当前模拟原型页面v0.4.1：三类报告完整流程技术验收通过，133项回归及51项HTTP检查通过；人工可用性、专业复核与真实业务收益待验证。见[完整流程验收与试用记录](docs/ai-work/workflow-acceptance-v0.4.1.md)。
+当前模拟原型页面v0.4.2：三类报告完整流程技术验收通过，正常r3完成12项代理走查并核对实际Excel；修复无未决时仍提示含未决的显示问题，133项回归通过。人工可用性、专业复核与真实业务收益待验证。见[完整流程验收与试用记录](docs/ai-work/workflow-acceptance-v0.4.1.md)。
 
 - [模块入口](docs/ai-work/README.md)
 - [MVP 范围](docs/ai-work/MVP.md)
