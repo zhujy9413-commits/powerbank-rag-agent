@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>充电宝研发知识助手</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>充电宝研发评审与知识助手</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script><script src="/work.js" defer></script></head>
 <body>
 <aside class="sidebar">
   <a class="brand" href="/" aria-label="知识助手首页"><span class="brand-mark">P<span>+</span></span><span>研发知识助手<small>POWERBANK KNOWLEDGE</small></span></a>
   <div class="workspace-label">内部工作空间</div>
   <button class="nav-item active" id="navAsk"><span>◌</span> 知识检索与问答</button>
+  <button class="nav-item" id="navWork"><span>☷</span> 报告逐项评审</button>
   <button class="nav-item" id="navLibrary"><span>▤</span> 资料库 <b id="docCount">—</b></button>
   <div class="side-note"><span class="dot"></span> 当前范围<p>中国大陆 · 充电宝整机<br>保护功能研发知识</p></div>
   <div class="sidebar-bottom"><span class="avatar">研</span><div id="identity">本机演示身份<small>正在读取配置</small></div></div>
@@ -38,6 +39,35 @@
     <footer>公开资料摘要与模拟样本 · 未启用真实产品合规判定 · 本机演示，尚未接入企业登录</footer>
   </section>
   <section class="page" id="libraryPage" hidden><div class="eyebrow">当前可访问的知识</div><h1>资料库</h1><p class="intro">这里只列当前版本的授权资料。任务报告按任务隔离，归档资料可通过历史查询检索。</p><div id="libraryCards" class="source-cards"></div></section>
+  <section class="page" id="workPage" hidden>
+    <div class="eyebrow">AI Work <span class="version">报告评审 v0.1</span></div>
+    <h1>从报告记录，逐项核对到评审清单。</h1>
+    <p class="intro">确认本次报告与检查范围，查看每项要求、原文和计算，再记录人工复核意见。</p>
+    <div class="limitation">当前使用模拟资料。只支持 PB-DEMO-01 模板中 A1、C1 的 5 V 输出短路保护已有记录；真实产品规则与任意 PDF 布局尚未启用。</div>
+    <div class="work-toolbar"><button class="primary" id="workSample">使用四页模拟报告</button><label class="upload-label" for="workUpload">上传同模板模拟 PDF</label><input type="file" id="workUpload" accept="application/pdf,.pdf"><span class="field-help">可提取文字 · ≤2 MB · ≤12页</span></div>
+    <label class="work-picker" for="workTasks">已有任务<select id="workTasks"><option value="">选择任务继续</option></select></label>
+    <p id="workStatus" class="form-status" role="status" aria-live="polite"></p>
+    <section id="workInput" class="work-panel" hidden>
+      <div class="result-top"><h2>01 确认输入与依据</h2><a id="workPdf" target="_blank" rel="noopener">查看报告 PDF ↗</a></div>
+      <p id="workIdentity" class="work-meta"></p>
+      <div class="work-range"><strong>本次预期清单</strong><p>5 项 × 2 端口 = 10 个核对单元，另查摘要与依据版本一致性。</p><p>模拟依据：SYN-QA-SC-1.0、SYN-SPEC-PB01-RevB。报告填写的 RevA 不能覆盖本次已选依据。</p><p>未配置：充电输入、其他电压档、多口组合、其他保护功能。</p></div>
+      <details><summary>查看本次模拟依据</summary><div id="workBasis" class="source-cards"></div></details>
+      <details open id="workParse"><summary>解析预览与关键字段修正</summary><p class="field-help">原始提取来自本次 PDF。仅在核对原文后修正；每个修改都需说明原因。缺失记录需补充报告。</p><div id="workFields"></div></details>
+      <label class="work-ack"><input type="checkbox" id="workAck"> 我已核对报告身份、提取字段、模拟依据与本次范围</label>
+      <div class="work-actions"><button id="workConfirm">确认输入与依据</button><button id="workRun" class="primary" disabled>开始逐项检查</button></div>
+    </section>
+    <section id="workResult" hidden>
+      <div class="result-top"><h2>02 检查结果与人工复核</h2><div><button id="workRetry" hidden>修复后新建运行重试</button> <button id="workExport">导出 Excel</button></div></div>
+      <p id="workRunMeta" class="work-meta"></p>
+      <label class="work-picker" for="workRuns">运行记录<select id="workRuns"></select></label>
+      <div id="workSummary" class="work-summary"></div>
+      <div class="limitation" id="workBoundary"></div>
+      <label class="work-picker" for="workFilter">筛选结果<select id="workFilter"><option value="all">全部项目</option><option value="attention">需要关注</option><option value="pending">待人工复核</option></select></label>
+      <div id="workItems"></div>
+      <details class="trace"><summary>本次运行与证据检索记录</summary><pre id="workTrace"></pre></details>
+    </section>
+    <footer>任务资料仅用于本次评审 · 系统结果与人工处置分别保存 · 未接入企业登录</footer>
+  </section>
 </main>
 <dialog id="sourceDialog"><div class="dialog-head"><h2 id="sourceTitle">查看原文</h2><button class="close" data-close="sourceDialog" aria-label="关闭原文">×</button></div><p id="sourceMetadata" class="dialog-meta"></p><div id="sourceLinks"></div><h3 class="excerpt-title">本次证据片段</h3><p id="sourceExcerpt" class="source-excerpt"></p><h3 class="excerpt-title">资料正文</h3><pre id="originalText" class="original-text"></pre></dialog>
 <dialog id="settingsDialog"><form id="settingsForm"><div class="dialog-head"><h2>连接模型服务</h2><button class="close" type="button" data-close="settingsDialog" aria-label="关闭模型设置">×</button></div><p class="dialog-meta">密钥仅存本机，不会回显到页面或写入运行记录。保存配置后，提交问答会调用所选服务并产生相应费用。</p><label for="provider">模型服务</label><select id="provider"><option value="bailian">阿里云百炼</option><option value="deepseek">DeepSeek</option></select><label for="baseUrl">兼容接口 Base URL</label><input id="baseUrl" type="url" placeholder="从百炼控制台复制当前业务空间的接入地址" required><p class="field-help">地域、业务空间和密钥需匹配；不要把 /chat/completions 附在地址后面。</p><label for="chatModel">回答模型 ID</label><input id="chatModel" value="qwen-flash" required><p class="field-help">本适配器采用 JSON 非思考模式；可先使用账号中可用的 qwen-flash 验证。</p><div id="embeddingGroup"><label for="embeddingModel">文本向量模型 ID</label><input id="embeddingModel" value="text-embedding-v4"><p class="field-help">保存后可单独建立向量索引。尚未建立时使用关键词检索。</p></div><label for="apiKey">API 密钥</label><input id="apiKey" type="password" autocomplete="new-password" placeholder="已配置时可留空保留原密钥"><p id="settingsStatus" class="form-status" role="status"></p><div class="dialog-actions"><button class="subtle" id="buildIndex" type="button">建立向量索引</button><button class="primary" type="submit">保存本机配置</button></div><p class="field-help">建立索引将把本包的公开摘要和模拟资料发给所选百炼向量模型。当前没有真实公司资料。</p></form></dialog>

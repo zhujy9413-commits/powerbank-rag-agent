@@ -17,3 +17,13 @@
 - [知识库与 RAG 方案](https://my.feishu.cn/wiki/Gs9Xw9YpHiVB6wknPDVcsMw7nUf)
 - [模拟报告与逐项标注](https://my.feishu.cn/wiki/KqKQwhIzsi2KQukyfh2czZAvnZd)
 - [模拟PDF原件](https://my.feishu.cn/wiki/CdWGwp7NviGQQgkiJCgc5YOhnab)
+
+## 可运行原型与验证
+
+2026-10-28：同模板模拟PDF已可完成解析确认、逐项核对、复核与Excel导出。支持固定模拟规则，不代表完整MVP或真实业务验收已完成。
+
+- [05-逐项评审原型与测试报告](prototype-and-validation-v0.1.md)
+- [原始运行与参考对照](../../eval-results/ai-work-review-final-v0.2.json)
+- [模拟评审Excel](../../outputs/ai-work-v0.1/report-review.xlsx)
+
+[飞书05-逐项评审原型与测试报告](https://my.feishu.cn/wiki/PKLtwf0CFiPC2GkafY5cvWFIn7e)

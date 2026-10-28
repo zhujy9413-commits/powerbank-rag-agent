@@ -1,0 +1,2 @@
+# PDF extraction for the controlled synthetic report prototype.
+pypdf==6.10.0

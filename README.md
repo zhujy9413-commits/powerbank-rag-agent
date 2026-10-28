@@ -9,6 +9,14 @@
 - [完整 PRD](docs/ai-work/PRD.md)
 - [知识库与 RAG 方案](docs/ai-work/RAG-and-knowledge-base.md)
 
+2026-10-28 已接通同模板模拟PDF的解析、输入确认、逐项核对、人工复核与Excel导出。固定范围为A1/C1的5 V输出短路保护已有记录，共10个单元及2项一致性检查。当前仍是模拟原型，真实规则与任意PDF布局尚未启用。
+
+- [逐项评审原型与测试报告](docs/ai-work/prototype-and-validation-v0.1.md)
+- [三次模拟报告运行原始结果](eval-results/ai-work-review-final-v0.2.json)
+- [模拟评审Excel](outputs/ai-work-v0.1/report-review.xlsx)
+
+在原有本机应用左侧点击“报告逐项评审”。AI Work需先安装PDF依赖 `python3 -m pip install -r requirements-ai-work.txt`。当前62项回归通过；1份报告的12项草拟参考对照在3次运行中一致，专业验收待完成。
+
 ## 内部智能客服｜知识检索与问答
 
 - [模块入口](docs/internal-assistant/README.md)

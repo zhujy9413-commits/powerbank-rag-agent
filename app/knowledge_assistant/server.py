@@ -12,6 +12,8 @@ from urllib.parse import urlparse, unquote
 
 from .core import Assistant, Corpus, Principal, ROOT, card
 from .providers import Settings, ProviderError
+from app.ai_work.review import ReviewService, ConflictError
+from app.ai_work.export import export_xlsx
 
 STATIC = Path(__file__).parent / "static"
 
@@ -64,6 +66,7 @@ class LocalServer(ThreadingHTTPServer):
         self.corpus=Corpus()
         self.assistant=Assistant(self.corpus,self.settings,Path(local_dir)/"vectors.json")
         self.store=Store(Path(local_dir)/"requests.sqlite3")
+        self.review_service=ReviewService(Path(local_dir)/"reviews.sqlite3",self.corpus)
         super().__init__(address,Handler)
 
 
@@ -110,7 +113,8 @@ class Handler(BaseHTTPRequestHandler):
             length=int(self.headers.get("Content-Length","0"))
         except ValueError:
             raise ValueError("请求长度无效。") from None
-        if not 0<length<=16384:
+        limit=3*1024*1024 if self.path=="/api/ai-work/tasks" else 16384
+        if not 0<length<=limit:
             raise ValueError("请求为空或超过大小限制。")
         try:
             data=json.loads(self.rfile.read(length))
@@ -124,7 +128,7 @@ class Handler(BaseHTTPRequestHandler):
         if not self.host_ok():
             return self.send_data(403,{"error":"仅允许本机访问。"})
         route=unquote(urlparse(self.path).path)
-        assets={"/":("index.html","text/html; charset=utf-8"),"/app.js":("app.js","text/javascript; charset=utf-8"),"/style.css":("style.css","text/css; charset=utf-8")}
+        assets={"/":("index.html","text/html; charset=utf-8"),"/app.js":("app.js","text/javascript; charset=utf-8"),"/work.js":("work.js","text/javascript; charset=utf-8"),"/style.css":("style.css","text/css; charset=utf-8")}
         if route in assets:
             name,mime=assets[route]
             return self.send_data(200,(STATIC/name).read_bytes(),mime)
@@ -137,6 +141,23 @@ class Handler(BaseHTTPRequestHandler):
         if not self.session_ok():
             return self.send_data(401,{"error":"请刷新页面以建立本机演示会话。"})
         try:
+            if route=="/api/ai-work/catalog":
+                return self.send_data(200,self.server.review_service.catalog(principal))
+            if route=="/api/ai-work/tasks":
+                return self.send_data(200,self.server.review_service.list_tasks(principal))
+            if route.startswith("/api/ai-work/tasks/"):
+                parts=route.split("/")
+                if len(parts)==6 and parts[5]=="pdf":
+                    return self.send_data(200,self.server.review_service.pdf(principal,parts[4]),"application/pdf")
+                if len(parts)==5:
+                    return self.send_data(200,self.server.review_service.task(principal,parts[4]))
+            if route.startswith("/api/ai-work/runs/"):
+                parts=route.split("/")
+                result=self.server.review_service.result(principal,parts[4])
+                if len(parts)==6 and parts[5]=="export":
+                    return self.send_data(200,export_xlsx(result),"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+                if len(parts)==5:
+                    return self.send_data(200,result)
             if route=="/api/catalog":
                 return self.send_data(200,{"sources":[card(c) for c in self.server.corpus.candidates(principal)]})
             if route.startswith("/api/source/"):
@@ -149,6 +170,8 @@ class Handler(BaseHTTPRequestHandler):
             return self.send_data(404,{"error":"页面或接口不存在。"})
         except PermissionError as exc:
             return self.send_data(403,{"error":str(exc)})
+        except ValueError as exc:
+            return self.send_data(400,{"error":str(exc)})
         except Exception:
             return self.send_data(500,{"error":"读取资料失败，请重试。"})
 
@@ -162,6 +185,17 @@ class Handler(BaseHTTPRequestHandler):
         principal=self.server.principal
         try:
             data=self.get_json()
+            if route=="/api/ai-work/tasks":
+                return self.send_data(200,self.server.review_service.create(principal,data))
+            if route.startswith("/api/ai-work/tasks/"):
+                parts=route.split("/")
+                if len(parts)==6 and parts[5] in {"confirm","run"}:
+                    operation=self.server.review_service.confirm if parts[5]=="confirm" else self.server.review_service.run
+                    return self.send_data(200,operation(principal,parts[4],data))
+            if route.startswith("/api/ai-work/runs/"):
+                parts=route.split("/")
+                if len(parts)==6 and parts[5]=="review":
+                    return self.send_data(200,self.server.review_service.review(principal,parts[4],data))
             if route=="/api/query":
                 if set(data)-{"query","mode","include_archived","task_id"}:
                     raise ValueError("请求包含不支持的字段。身份与权限由服务端提供。")
@@ -186,6 +220,8 @@ class Handler(BaseHTTPRequestHandler):
             return self.send_data(404,{"error":"接口不存在。"})
         except PermissionError as exc:
             return self.send_data(403,{"error":str(exc)})
+        except ConflictError as exc:
+            return self.send_data(409,{"error":str(exc)})
         except ValueError as exc:
             return self.send_data(400,{"error":str(exc)})
         except ProviderError as exc:
