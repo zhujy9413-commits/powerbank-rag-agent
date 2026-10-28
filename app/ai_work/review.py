@@ -15,9 +15,9 @@ import time
 import uuid
 
 from app.knowledge_assistant.core import ROOT, card, rank_bm25, search_text
-from .parsing import extract_report, gate, same_conditions, PARSER_VERSION, PARSER_SHA256
+from .parsing import extract_report, inspect_visuals, gate, same_conditions, PARSER_VERSION, PARSER_SHA256
 
-VERSION = "synthetic-short-circuit-v0.2"
+VERSION = "synthetic-short-circuit-v0.3"
 KINDS = {"response": "保护响应", "recovery": "恢复电压", "temperature": "壳温变化",
          "appearance": "外观观察", "method": "恢复方式"}
 LABELS = {"保护响应": "response", "恢复电压": "recovery", "壳温起值/末值": "temperature",
@@ -63,6 +63,7 @@ def parse_pdf(blob, filename):
         if not 1 <= len(reader.pages) <= 12:
             raise ValueError("本版支持1至12页的模拟报告。")
         texts = [p.extract_text() or "" for p in reader.pages]
+        visuals = [inspect_visuals(p) for p in reader.pages]
     except ValueError:
         raise
     except Exception:
@@ -78,7 +79,7 @@ def parse_pdf(blob, filename):
     file_hash = digest(blob)
     pages = [dict(source_id=f"PDF-{file_hash[:12]}-P{i+1}", page=i+1, text=t,
                   document_id="uploaded-"+file_hash[:12], title=filename, sha256=file_hash,
-                  scope="task_only", material_type="synthetic") for i, t in enumerate(texts)]
+                  scope="task_only", material_type="synthetic",visual_audit=visuals[i]) for i, t in enumerate(texts)]
     extracted = extract_report(pages)
     basis_matches = re.findall(r"报告填写的规格版本[：:]\s*SYN-SPEC-PB01-(Rev[A-Z])", joined)
     bases = sorted(set(basis_matches))
@@ -124,7 +125,7 @@ def get_limits(basis):
 
 
 def report_ref(page, quote=None):
-    quote = quote or page["text"]
+    quote = page["text"] if quote is None else quote
     if quote not in page["text"]:
         raise ValueError("报告引用未通过原文校验。")
     return {k:page[k] for k in ["source_id", "page", "document_id", "title", "sha256"]} | {"quote": quote}
@@ -173,6 +174,7 @@ def evaluate(snapshot, basis):
             if parse_blocks:
                 result,explanation="evidence_insufficient","存在可能影响此单元的未解析记录或不完整页面；先核对解析覆盖，再进行比较。"
                 execution="not_checked"
+                if any(d['code']=='unbound_local_condition' for d in parse_blocks):condition_status='unverified_local_context'
                 for diagnostic in parse_blocks:
                     refs += [report_ref(pages[f["source_id"]], f["quote"]) for f in diagnostic["evidence"] if f["quote"]]
             elif multiple_conditions and not duplicate_id:

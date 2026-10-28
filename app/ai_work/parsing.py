@@ -6,12 +6,13 @@ from pathlib import Path
 import re
 import unicodedata
 
-PARSER_VERSION='controlled-pdf-v0.2'
+PARSER_VERSION='controlled-pdf-v0.3'
 ALIASES={'保护响应':'response','短路保护响应时间':'response','恢复电压':'recovery','保护后恢复电压':'recovery',
          '壳温起值/末值':'temperature','外观观察':'appearance','恢复方式':'method'}
 KINDS=['response','recovery','temperature','appearance','method']
 HEADERS={'记录','端口','字段','原始填写','报告填写判定'}
 RID=re.compile(r'R\d{2,4}')
+IDENTIFIER=re.compile(r'[A-Za-z0-9][A-Za-z0-9_./-]{0,39}')
 PORT=re.compile(r'[A-Z]\d{1,3}')
 UNIT=re.compile(r'ms|s|V|mV')
 PARSER_SHA256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
@@ -42,6 +43,36 @@ def conditions(text):
 
 def fragment(page,quote):return dict(source_id=page['source_id'],page=page['page'],quote=quote)
 
+def candidate_id(value):
+    """Recognize identity-shaped cells without approving new identity formats."""
+    return bool(IDENTIFIER.fullmatch(value) and re.search(r'\d',value))
+
+def inspect_visuals(page):
+    """Inspect drawing operations, including inline images and nested forms; no decoding/OCR."""
+    from pypdf.generic import ContentStream
+    def scan(stream,resources,stack,depth):
+        if depth>16:raise ValueError('图片资源嵌套过深')
+        if stream is None:return 0
+        resources=resources.get_object() if hasattr(resources,'get_object') else resources
+        objects=resources.get('/XObject',{})
+        objects=objects.get_object() if hasattr(objects,'get_object') else objects
+        count=0
+        for operands,operator in ContentStream(stream,page.pdf).operations:
+            if operator==b'INLINE IMAGE':count+=1
+            elif operator==b'Do':
+                obj=objects[operands[0]].get_object()
+                if obj.get('/Subtype')=='/Image':count+=1
+                elif obj.get('/Subtype')=='/Form':
+                    identity=id(obj)
+                    if identity in stack:raise ValueError('图片资源存在循环引用')
+                    count+=scan(obj,obj.get('/Resources',resources),stack|{identity},depth+1)
+        return count
+    try:
+        count=scan(page.get_contents(),page.get('/Resources',{}),set(),0)
+        return dict(image_draws=count,status='unverified_images' if count else 'no_image_draws',method='drawing_operators_no_ocr')
+    except Exception:
+        return dict(image_draws=None,status='inspection_failed',method='drawing_operators_no_ocr')
+
 def extract_report(pages):
     fields={p+':'+k:[] for p in ['A1','C1'] for k in KINDS}
     candidates=[];issues=[];global_proofs=[];declarations=[];summary=[]
@@ -51,6 +82,11 @@ def extract_report(pages):
         text=page['text']
         if not text.strip():
             issue('unreadable_page','此页无可提取文字，可能为图片页；尚未OCR或核验。',page,'',list(fields))
+        visual=page.get('visual_audit',{})
+        if visual.get('status')=='unverified_images':
+            issue('unverified_image_content','此页含实际绘制的图片，图内内容尚未OCR或人工确认；文字提取不能证明图片记录已覆盖，10个核对单元先保持未检查。',page,'',list(fields))
+        elif visual.get('status')=='inspection_failed':
+            issue('visual_inspection_failed','此页图片资源检查失败，无法确认内容覆盖；10个核对单元先保持未检查。',page,'',list(fields))
         for m in re.finditer(r'本报告测试条件[：:][^\n]+',text):
             declarations.append(conditions(m[0]));global_proofs.append(fragment(page,m[0]))
         m=re.search(r'本报告只列\s*5\s*V\s*输出角色的\s*记录。未包含充电输入、其他档位与组合。',text)
@@ -119,28 +155,36 @@ def extract_report(pages):
                 while j<len(lines) and lines[j]['text'] in HEADERS:j+=1
                 names=[x['text'] for x in lines[i:j]]
                 if {'记录','端口','字段','原始填写'}<=set(names):columns=names;i=j;continue
-            if len(pipe)>=4 and (RID.fullmatch(pipe[0]) or (columns[0]=='端口' and PORT.fullmatch(pipe[0]))):
+            if len(pipe)>=4 and ((columns[0]=='记录' and (candidate_id(pipe[0]) or PORT.fullmatch(pipe[1]))) or (columns[0]=='端口' and PORT.fullmatch(pipe[0]))):
                 raw=text[entry['start']:entry['end']]
                 last=add(page,raw,dict(zip(columns,pipe)), 'delimited');last_end=i;i+=1;continue
-            inline=re.fullmatch(r'(R\d{2,4})\s+([A-Z]\d{1,3})\s+('+ '|'.join(sorted(map(re.escape,ALIASES),key=len,reverse=True))+r')(?:\s+(.*))?',s)
+            inline=re.fullmatch(r'([^\s|]+)\s+([A-Z]\d{1,3})\s+('+ '|'.join(sorted(map(re.escape,ALIASES),key=len,reverse=True))+r')(?:\s+(.*))?',s)
             if inline:
                 rid,port,label,value=inline.groups();end=i;value=value or ''
                 if i+1<len(lines) and re.fullmatch(r'[+-]?\d+(?:\.\d+)?',value) and UNIT.fullmatch(lines[i+1]['text']):
                     end=i+1;value+=' '+lines[end]['text']
                 last=add(page,text[entry['start']:lines[end]['end']],dict(zip(['记录','端口','字段','原始填写'],[rid,port,label,value])),'inline');last_end=end;i=end+1;continue
-            start=(columns[0]=='记录' and (RID.fullmatch(s) or s=='无记录ID')) or (columns[0]=='端口' and PORT.fullmatch(s))
+            next_port=i+1<len(lines) and PORT.fullmatch(lines[i+1]['text']) and not re.fullmatch(r'R\d+',lines[i+1]['text'])
+            identity_cell=bool(RID.fullmatch(s) or len(s)<=128 and not re.search(r'\s|[|；;]',s) and next_port)
+            start=(columns[0]=='记录' and (identity_cell or s=='无记录ID')) or (columns[0]=='端口' and PORT.fullmatch(s))
             if start:
                 cells=[];j=i
                 for column in columns:
                     if j>=len(lines):break
                     v=lines[j]['text']
-                    if j>i and (RID.fullmatch(v) and column!='记录' or v in HEADERS):break
+                    next_is_port=j+1<len(lines) and PORT.fullmatch(lines[j+1]['text']) and not re.fullmatch(r'R\d+',lines[j+1]['text'])
+                    if j>i and (column!='记录' and (RID.fullmatch(v) or candidate_id(v) and next_is_port) or v in HEADERS):break
                     cells.append(v);j+=1
                     if column=='原始填写' and re.fullmatch(r'[+-]?\d+(?:\.\d+)?',v) and j<len(lines) and UNIT.fullmatch(lines[j]['text']):
                         cells[-1]+=' '+lines[j]['text'];j+=1
                 raw=text[entry['start']:lines[max(i,j-1)]['end']]
                 last=add(page,raw,dict(zip(columns,cells)),'header_mapped');last_end=j-1;i=max(j,i+1);continue
-            if re.match(r'^R\d{2,4}(?:\s|$)',s):
+            parts=s.split()
+            missing_id=re.fullmatch(r'([A-Z]\d{1,3})\s+('+ '|'.join(sorted(map(re.escape,ALIASES),key=len,reverse=True))+r')\s+(.*)',s)
+            if missing_id:
+                port,label,value=missing_id.groups()
+                last=add(page,text[entry['start']:entry['end']],dict(记录='(缺少编号)',端口=port,字段=label,原始填写=value),'missing_identity');last_end=i
+            elif re.match(r'^R\d+(?:\s|$)',s) or len(parts)>=3 and PORT.fullmatch(parts[1]):
                 parts=s.split();data=dict(记录=parts[0],端口=parts[1] if len(parts)>1 else '',字段=parts[2] if len(parts)>2 else '',原始填写=' '.join(parts[3:]))
                 last=add(page,text[entry['start']:entry['end']],data,'unmapped_inline');last_end=i
             i+=1
@@ -151,6 +195,26 @@ def extract_report(pages):
             local=conditions(m[0]) if re.search(r'条件[：:]',m[0]) else {}
             summary.append(dict(record_id=m[1],port=m[2],value=m[3]+' '+m[4],source_id=page['source_id'],page=page['page'],quote=m[0],
                 conditions=dict(global_context,**local),condition_evidence=list(global_proofs)+([fragment(page,m[0])] if local else []),global_condition_conflicts=conflicts))
+    # A local declaration must not silently inherit global conditions when its binding is unknown.
+    # Use only explicitly bound fragments as consumed evidence; never infer scope from table names.
+    rows=[r for group in fields.values() for r in group]
+    proofs=global_proofs+[f for r in rows+summary for f in r.get('condition_evidence',[])]+[f for d in issues for f in d['evidence']]
+    for page in pages:
+        for raw in page['text'].splitlines():
+            s=norm(raw)
+            looks_condition=bool(re.search(r'(?:条件|工况|档位).*(?:[=：:]|为)|(?:电压|角色|组合|环境)\s*[=：:为]',s)
+                or re.search(r'(?:注[：:]|脚注|备注|实测|实际|本表|本页|本段).*(?:\d\s*V|(?:输入|输出)角色|(?:单口|多口)(?:组合|工况))',s))
+            if not looks_condition or any(f['page']==page['page'] and raw.strip() in f['quote'] for f in proofs):continue
+            mentioned_ids=set(re.findall(r'(?<![A-Za-z0-9_])R\d+(?![A-Za-z0-9_])',s))
+            matched=[r for r in rows if r['record_id'] in mentioned_ids]
+            ports=set(re.findall(r'(?<![A-Za-z0-9_])(A1|C1)(?![A-Za-z0-9_])',s))
+            if mentioned_ids and mentioned_ids<={r['record_id'] for r in matched}:
+                keys=sorted({r['port']+':'+r['kind'] for r in matched})
+            elif ports and not mentioned_ids:keys=[p+':'+k for p in sorted(ports) for k in KINDS]
+            else:keys=list(fields)
+            issue('unbound_local_condition','存在尚未绑定的脚注、局部或其他条件说明；作用范围未核实，相关单元停止比较，不能沿用全局条件。',page,raw,keys)
+    if not candidates:
+        issue('no_record_candidates','报告表格没有可识别的记录候选，不能将空候选视作完整覆盖。',pages[0],'',list(fields))
     ids=[r['record_id'] for rows in fields.values() for r in rows]
     audit=dict(candidate_count=len(candidates),captured_count=sum(c['status']=='captured' for c in candidates),
                unresolved_count=sum(c['status']!='captured' for c in candidates),candidates=candidates,issues=issues,
