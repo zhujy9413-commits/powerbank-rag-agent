@@ -143,7 +143,7 @@ def main():
     # Production has finished; only the evaluator now reads qrels/fixtures.
     with patch("socket.socket",side_effect=AssertionError("network_forbidden")):
         result=evaluate(raw)
-    result.update(kind="development_candidate_run_not_holdout",evaluated_at=datetime.now(timezone.utc).isoformat(),protocol_id="AIWORK-RAG-GAIN-0.2",candidate_version="candidate-retrieval-0.3",
+    result.update(kind="development_candidate_run_not_holdout",evaluated_at=datetime.now(timezone.utc).isoformat(),protocol_id="AIWORK-RAG-GAIN-0.2",candidate_version="candidate-retrieval-0.4",
         input_config=raw["config"],application_phase=raw["application_phase"],raw_application_runs=raw["cases"],
         summary=dict(content_cases=len(raw["cases"]),offline_cases=len(result["offline"]),offline_cases_passed=sum(x["passed"] for x in result["offline"]),
                      query_namespace_rows_per_arm=248,original_payloads_preserved=all(x["original_payload_preserved"] for x in raw["cases"]),

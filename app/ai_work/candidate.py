@@ -13,7 +13,7 @@ import time
 
 from app.knowledge_assistant.core import rank_bm25
 
-VERSION = "candidate-retrieval-0.3"
+VERSION = "candidate-retrieval-0.4"
 IDENTITY = ("namespace", "source_role", "source_path", "page", "section", "version", "task_id", "conditions")
 FIELDS = {
     "response": r"保护响应|响应时间|短接.*(?:切断|耗时)",
@@ -138,7 +138,7 @@ class CandidateRetriever:
             raise PermissionError("当前身份无权访问任务。")
         # Selected but inactive/inaccessible sources block a new experiment.
         selected = set(self.task["selected_requirement_chunks"])
-        available = {c["chunk_id"] for c in self.chunks if self._authorized(c, "requirement")}
+        available = {c["chunk_id"] for c in self.chunks if self._authorized(c, "requirement") and self._located(c)}
         if not selected <= available:
             raise PermissionError("当前选定依据不可用于新检查。")
 

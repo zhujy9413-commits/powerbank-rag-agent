@@ -1,0 +1,134 @@
+{
+  "kind": "candidate_development_feishu_native_sync_readback",
+  "verified_at_utc": "2026-10-28T20:10:02.300076+00:00",
+  "source_sha256": {
+    "docs/ai-work/candidate-retrieval-dev-v0.4.md": "76d891351094e681c642e64e8c5498efb275a300a0da7a663c10f9eadd1dfedc"
+  },
+  "report": {
+    "checks": [],
+    "tableCount": 4,
+    "metricRows": [],
+    "cases": [
+      "RG-GAP-DEV-02",
+      "RG-NOISE-DEV-02",
+      "RG-OPS-DEV-01",
+      "RG-OPS-DEV-02",
+      "RG-OPS-DEV-03",
+      "RG-OPS-DEV-04"
+    ],
+    "persistent": true,
+    "allEditsPersisted": true,
+    "endMarkerPresent": true,
+    "markers": [
+      {
+        "present": true,
+        "text": "2069/2069"
+      },
+      {
+        "present": true,
+        "text": "202项"
+      },
+      {
+        "present": true,
+        "text": "35项"
+      },
+      {
+        "present": true,
+        "text": "98.79%"
+      },
+      {
+        "present": true,
+        "text": "97.98%"
+      },
+      {
+        "present": true,
+        "text": "98.35%"
+      },
+      {
+        "present": true,
+        "text": "候选尚未冻结"
+      },
+      {
+        "present": true,
+        "text": "真实Embedding与模型生成调用为0"
+      },
+      {
+        "present": true,
+        "text": "RG-GAP-DEV-02"
+      },
+      {
+        "present": true,
+        "text": "RG-NOISE-DEV-02"
+      }
+    ],
+    "editorCount": 81,
+    "lastParagraph": "候选检索开发验证正文结束。​",
+    "url": "https://my.feishu.cn/wiki/WKQAwmuA7iyqQZk1wv5cuQIpndx"
+  },
+  "parent_and_links": {
+    "report": {
+      "links": [
+        {
+          "text": "首轮",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/candidate-dev-first-v0.1.json"
+        },
+        {
+          "text": "路由调试轮",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/candidate-dev-routed-v0.2.json"
+        },
+        {
+          "text": "词汇调试轮",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/candidate-dev-final-v0.3.json"
+        },
+        {
+          "text": "最终开发执行",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/candidate-dev-final-v0.4.json"
+        },
+        {
+          "text": "运行清单",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/data/ai-work-candidate-dev-v0.4/run-manifest.json"
+        },
+        {
+          "text": "202项回归日志",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/candidate-regression-v0.4.txt"
+        },
+        {
+          "text": "35项候选测试",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/candidate-unit-tests-v0.4.txt"
+        },
+        {
+          "text": "核验记录",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/candidate-dev-validation-v0.4.json"
+        }
+      ],
+      "url": "https://my.feishu.cn/wiki/WKQAwmuA7iyqQZk1wv5cuQIpndx",
+      "nodes": [],
+      "endMarkerRead": true
+    },
+    "parent": {
+      "persistent": true,
+      "matches": true,
+      "url": "https://my.feishu.cn/wiki/UlodwHIzJidrjDkQXVvcApD1nbe",
+      "text": "2026-10-29 RAG开发材料已核验，候选链路已完成本轮开发验证。候选模块v0.4通过CLI运行：12份PDF原规则载荷全部保持，4个离线异常夹具通过；202项回归（含35项候选测试）及2069项执行/材料核验通过。A1开发R01要求98.79%、报告100%；R02要求97.98%、报告98.35%，3个缺证负例正确收敛。要求侧版本核对和背景一致性两个查询仍有缺口，候选尚未冻结。A2内容运行均为显式关键词降级，真实Embedding与模型调用0；正式留出、净增益、页面接入及业务收益待验。19 当前开发报告 https://my.feishu.cn/wiki/WKQAwmuA7iyqQZk1wv5cuQIpndx ；18 R02口径基线 https://my.feishu.cn/wiki/J0GdwHG0tijIdEkSJ0Dcvqabnth ；15 开发样本包 https://my.feishu.cn/wiki/Qv6twselVij87akhUquc3ODhnCd ；16 参考标注 https://my.feishu.cn/wiki/P2WpwS5eTiuo1LkAJc3c3w0BnZe ；17 原材料核验 https://my.feishu.cn/wiki/SGC1wDubRi8CCDktyFYcL4MVn0c ；原ZIP https://my.feishu.cn/wiki/QTrAwLDt9iAmUokXwJEcTYVbnib 。原13至18及ZIP保留各轮交付时状态；当前开发执行以19和新的运行清单为准，32个留出场景尚未制作。​"
+    }
+  },
+  "directory_after_move": [
+    {
+      "pos": "6,4,0,20",
+      "text": "19 AI Work 候选检索链路与开发验证",
+      "uid": "firstLevelWikiToken=IX3OwNECai1t7nkBuMOcD3mfnzf&isMainTree=true&level=4&rootNodeId=PERSONAL&wikiToken=WKQAwmuA7iyqQZk1wv5cuQIpndx"
+    }
+  ],
+  "visual_inspection": {
+    "viewed": true,
+    "description": "All development metric rows and columns readable with intact native table layout",
+    "screenshot_sha256": "6aaf2a2c74a26a24073011441b8dc273ffb36058d97c4c5e519ecfee9eb733c4",
+    "screenshot_not_published": true
+  },
+  "sync_scope": "New report 19 and current AI Work parent status. Documents 13-18 remain dated historical scope/material/scoring snapshots; current execution ledger is separate.",
+  "recovery_note": "Move confirmation completed; subsequent selector for the offscreen parent tree timed out because of sidebar virtualization. Read-only state showed the report under AI Work at 6,4,0,20 and its breadcrumb also confirmed the parent. No repeated import or move.",
+  "publication_note": "Raw run logs and tests are linked to the user private GitHub repository. Cloud Markdown layout is not asserted to be byte-identical to local source.",
+  "browser_task_finalization": "All writes and readbacks settled. Task expired while final local documentation was prepared; a finish request returned unknown task. Read-only diagnose then confirmed tasks=[] and controller running. No tabs were closed.",
+  "original_user_tabs_preserved": true,
+  "external_model_requests": 0
+}

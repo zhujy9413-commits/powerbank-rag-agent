@@ -1,0 +1,97 @@
+{
+  "kind": "candidate_development_delivery_not_production_or_holdout_acceptance",
+  "date": "2026-10-29",
+  "candidate_version": "candidate-retrieval-0.4",
+  "protocol_reference": "AIWORK-RAG-GAIN-0.2",
+  "repository": {
+    "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent",
+    "visibility_verified": "private",
+    "target": "main",
+    "commit": "Git commit containing this manifest"
+  },
+  "development_cases": 16,
+  "content_pdf_cases_executed": 12,
+  "offline_contract_cases_passed": 4,
+  "full_regression_tests": 202,
+  "candidate_tests_included": 35,
+  "r02_tests_included": 26,
+  "integrity_checks_passed": 2069,
+  "integrity_checks_total": 2069,
+  "a1_development": {
+    "r01_requirement": 0.9879032258064516,
+    "r01_report": 1.0,
+    "r02_requirement": 0.9798387096774194,
+    "r02_report": 0.9834710743801653,
+    "negative_report_queries_correct": 3,
+    "remaining_query_gaps": [
+      {
+        "row_id": "RG-GAP-DEV-02:SPEC-VERSION:requirement",
+        "covered": 1,
+        "total": 2,
+        "recall": 0.5
+      },
+      {
+        "row_id": "RG-NOISE-DEV-02:BACKGROUND-CONSISTENCY:requirement",
+        "covered": 0,
+        "total": 2,
+        "recall": 0.0
+      }
+    ]
+  },
+  "scope": {
+    "application_ui": "unchanged_v0.4.3",
+    "candidate_entry": "isolated_CLI",
+    "candidate_freeze": "pending",
+    "real_embedding_requests": 0,
+    "real_generation_requests": 0,
+    "external_requests": 0,
+    "formal_holdout_materialized": 0,
+    "hybrid_quality": "not_evaluated_explicit_bm25_degradation",
+    "r03_net_gain": "not_adjudicated"
+  },
+  "preserved": {
+    "original_payloads": 12,
+    "dev_assets": 93,
+    "earlier_frozen_assets": 88,
+    "earlier_result_files": 86,
+    "original_dev_zip": true,
+    "original_scoring_protocol_qrels_and_scorer": true
+  },
+  "feishu": {
+    "report": "https://my.feishu.cn/wiki/WKQAwmuA7iyqQZk1wv5cuQIpndx",
+    "parent": "https://my.feishu.cn/wiki/UlodwHIzJidrjDkQXVvcApD1nbe",
+    "persistent_readback": true,
+    "native_report_tables": 4,
+    "raw_result_links": 8,
+    "directory": "6,4,0,20"
+  },
+  "source_lineage": {
+    "first": "a7ac214",
+    "routing": "2d862c6",
+    "vocabulary": "8671707",
+    "final": "Git commit containing this manifest"
+  },
+  "asset_sha256": {
+    "app/ai_work/candidate.py": "b83f7c64df134578a26350e00a2ad0095c1d5b5f70381bd6323c065f4bf19985",
+    "app/ai_work/candidate_inputs.py": "1d55b31af5d4bba44c0dc7b87444f4baabcb554d00ea668faffd03c43c371f03",
+    "scripts/evaluate_candidate_dev.py": "7c34ed550fb84cab7a34628c5600f50740eeebe1ed2b7c44a987311245fb0b74",
+    "scripts/validate_candidate_dev.py": "7f6df0bf1a9158e1103e3627e27d3e5830fe19fc4e2889285c8ed90322fd049a",
+    "tests/test_candidate_retrieval.py": "1559355a85786df4158c30d5966f187966b0f98ccc0357cac50f453fa0ead572",
+    "README.md": "262df305b45cb2575fb8b58a462f11a07943553aa4bd80a6be527bdd743876b4",
+    "docs/ai-work/README.md": "a976432c6549c0c37e940cdcc6a9900e6f6b2dcda1825258d6148c6b80b1c3ca",
+    "docs/SYNC.md": "2535f142a2836509ef492ebadb8eb5f411352c19febf017b33352bfe768bf558",
+    "docs/ai-work/candidate-retrieval-dev-v0.4.md": "76d891351094e681c642e64e8c5498efb275a300a0da7a663c10f9eadd1dfedc",
+    "data/ai-work-candidate-dev-v0.4/run-manifest.json": "d6ae361681b6568361a70d2a5c79e636f1fc639eaba8e70ae335bc668530b8d7",
+    "eval-results/candidate-dev-first-v0.1.json": "1309f0d1b75f2172092880c162c3bfbadc40a2585b81f00cafa17ab55c35a846",
+    "eval-results/candidate-dev-routed-v0.2.json": "94318934fbeaf89ef9e120db8155ba1993d4bbd26460a06da8fa0efc501f7635",
+    "eval-results/candidate-dev-final-v0.3.json": "97e15922ac4e13db18d076123695a7479709c5708095650d79102608181aaffb",
+    "eval-results/candidate-dev-validation-v0.3.json": "aa4d4cb95c4c471b458cda0536fe73b57d20e8831a06e4fe859d3a018add4f7d",
+    "eval-results/candidate-unit-tests-v0.3.txt": "4d36c01f105755d0e14d1630b8d163ea7c0ff362157a07b00a76de1cbaa6f3ec",
+    "eval-results/candidate-regression-v0.3.txt": "d90de537bb475f873aef8d2b426616e986c8839844a882f21241f10f2461625a",
+    "eval-results/candidate-dev-final-v0.4.json": "9ae86800c06d2374ced3d114f51088a8b3025d8c33c253a1449ee03a59a17894",
+    "eval-results/candidate-dev-validation-v0.4.json": "8ab2c7a9089ab39df3d8e784275996f091eb15c2269cc202ac1f249f72bb05d6",
+    "eval-results/candidate-unit-tests-v0.4.txt": "74cd4b4ae9aa217dbde30206940d2fc119a31a80d490639f606455b4a529fe06",
+    "eval-results/candidate-regression-v0.4.txt": "9fcbc83d950d212a92f6758863e0ad9c1b23edafbf951f339180901ed1a076b7",
+    "eval-results/candidate-feishu-v0.4.json": "185ebe8033375aa25d03840eaf942ef478800e5ff8f27e94191bb31a56ea3cb4"
+  }
+}

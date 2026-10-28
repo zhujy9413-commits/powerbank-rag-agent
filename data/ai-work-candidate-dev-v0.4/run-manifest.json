@@ -1,0 +1,172 @@
+{
+  "protocol_reference": "AIWORK-RAG-GAIN-0.2",
+  "candidate_version": "candidate-retrieval-0.4",
+  "phase": "development_only_not_frozen_not_adopted",
+  "cases": [
+    {
+      "case_id": "RG-TERM-DEV-01",
+      "report_id": "SYND-801",
+      "status": "development_executed_candidate_not_frozen",
+      "a1_coverage": "all_positive_groups_covered",
+      "remaining_query_gaps": [],
+      "original_a0_preserved": true,
+      "a2": "keyword_degradation_only_real_embedding_not_run"
+    },
+    {
+      "case_id": "RG-TERM-DEV-02",
+      "report_id": "SYND-802",
+      "status": "development_executed_candidate_not_frozen",
+      "a1_coverage": "all_positive_groups_covered",
+      "remaining_query_gaps": [],
+      "original_a0_preserved": true,
+      "a2": "keyword_degradation_only_real_embedding_not_run"
+    },
+    {
+      "case_id": "RG-CONTEXT-DEV-01",
+      "report_id": "SYND-803",
+      "status": "development_executed_candidate_not_frozen",
+      "a1_coverage": "all_positive_groups_covered",
+      "remaining_query_gaps": [],
+      "original_a0_preserved": true,
+      "a2": "keyword_degradation_only_real_embedding_not_run"
+    },
+    {
+      "case_id": "RG-CONTEXT-DEV-02",
+      "report_id": "SYND-804",
+      "status": "development_executed_candidate_not_frozen",
+      "a1_coverage": "all_positive_groups_covered",
+      "remaining_query_gaps": [],
+      "original_a0_preserved": true,
+      "a2": "keyword_degradation_only_real_embedding_not_run"
+    },
+    {
+      "case_id": "RG-PORT-DEV-01",
+      "report_id": "SYND-805",
+      "status": "development_executed_candidate_not_frozen",
+      "a1_coverage": "all_positive_groups_covered",
+      "remaining_query_gaps": [],
+      "original_a0_preserved": true,
+      "a2": "keyword_degradation_only_real_embedding_not_run"
+    },
+    {
+      "case_id": "RG-PORT-DEV-02",
+      "report_id": "SYND-806",
+      "status": "development_executed_candidate_not_frozen",
+      "a1_coverage": "all_positive_groups_covered",
+      "remaining_query_gaps": [],
+      "original_a0_preserved": true,
+      "a2": "keyword_degradation_only_real_embedding_not_run"
+    },
+    {
+      "case_id": "RG-CONDITION-DEV-01",
+      "report_id": "SYND-807",
+      "status": "development_executed_candidate_not_frozen",
+      "a1_coverage": "all_positive_groups_covered",
+      "remaining_query_gaps": [],
+      "original_a0_preserved": true,
+      "a2": "keyword_degradation_only_real_embedding_not_run"
+    },
+    {
+      "case_id": "RG-CONDITION-DEV-02",
+      "report_id": "SYND-808",
+      "status": "development_executed_candidate_not_frozen",
+      "a1_coverage": "all_positive_groups_covered",
+      "remaining_query_gaps": [],
+      "original_a0_preserved": true,
+      "a2": "keyword_degradation_only_real_embedding_not_run"
+    },
+    {
+      "case_id": "RG-GAP-DEV-01",
+      "report_id": "SYND-809",
+      "status": "development_executed_candidate_not_frozen",
+      "a1_coverage": "all_positive_groups_covered",
+      "remaining_query_gaps": [],
+      "original_a0_preserved": true,
+      "a2": "keyword_degradation_only_real_embedding_not_run"
+    },
+    {
+      "case_id": "RG-GAP-DEV-02",
+      "report_id": "SYND-810",
+      "status": "development_executed_candidate_not_frozen",
+      "a1_coverage": "partial",
+      "remaining_query_gaps": [
+        "RG-GAP-DEV-02:SPEC-VERSION:requirement"
+      ],
+      "original_a0_preserved": true,
+      "a2": "keyword_degradation_only_real_embedding_not_run"
+    },
+    {
+      "case_id": "RG-NOISE-DEV-01",
+      "report_id": "SYND-811",
+      "status": "development_executed_candidate_not_frozen",
+      "a1_coverage": "all_positive_groups_covered",
+      "remaining_query_gaps": [],
+      "original_a0_preserved": true,
+      "a2": "keyword_degradation_only_real_embedding_not_run"
+    },
+    {
+      "case_id": "RG-NOISE-DEV-02",
+      "report_id": "SYND-812",
+      "status": "development_executed_candidate_not_frozen",
+      "a1_coverage": "partial",
+      "remaining_query_gaps": [
+        "RG-NOISE-DEV-02:BACKGROUND-CONSISTENCY:requirement"
+      ],
+      "original_a0_preserved": true,
+      "a2": "keyword_degradation_only_real_embedding_not_run"
+    },
+    {
+      "case_id": "RG-OPS-DEV-01",
+      "status": "offline_adapter_contract_executed",
+      "passed": true,
+      "assertions": 7,
+      "real_provider_calls": 0
+    },
+    {
+      "case_id": "RG-OPS-DEV-02",
+      "status": "offline_adapter_contract_executed",
+      "passed": true,
+      "assertions": 3,
+      "real_provider_calls": 0
+    },
+    {
+      "case_id": "RG-OPS-DEV-03",
+      "status": "offline_adapter_contract_executed",
+      "passed": true,
+      "assertions": 6,
+      "real_provider_calls": 0
+    },
+    {
+      "case_id": "RG-OPS-DEV-04",
+      "status": "offline_adapter_contract_executed",
+      "passed": true,
+      "assertions": 7,
+      "real_provider_calls": 0
+    }
+  ],
+  "original_protocol_and_cases": "kept_as_scoring_revision_snapshot",
+  "holdout_materialized": 0,
+  "model_generation_calls": 0,
+  "embedding_calls": 0,
+  "runtime": "CLI isolated experiment; normal application UI and databases unchanged",
+  "lineage": {
+    "first_source_commit": "a7ac214",
+    "routing_source_commit": "2d862c6",
+    "vocabulary_source_commit": "8671707",
+    "final_source": "Git commit containing this manifest"
+  },
+  "asset_sha256": {
+    "app/ai_work/candidate.py": "b83f7c64df134578a26350e00a2ad0095c1d5b5f70381bd6323c065f4bf19985",
+    "app/ai_work/candidate_inputs.py": "1d55b31af5d4bba44c0dc7b87444f4baabcb554d00ea668faffd03c43c371f03",
+    "scripts/evaluate_candidate_dev.py": "7c34ed550fb84cab7a34628c5600f50740eeebe1ed2b7c44a987311245fb0b74",
+    "scripts/validate_candidate_dev.py": "7f6df0bf1a9158e1103e3627e27d3e5830fe19fc4e2889285c8ed90322fd049a",
+    "tests/test_candidate_retrieval.py": "1559355a85786df4158c30d5966f187966b0f98ccc0357cac50f453fa0ead572",
+    "data/ai-work-rag-gain-dev-v0.1/material-manifest.json": "e524558ee053d970eaaae0297ad4b4445a2099e5f0cf202af20f860bc5700418",
+    "data/ai-work-rag-gain-v0.2/protocol.json": "97e63170e8f50375204c79ae2c730669f145ef86c03106c07c7650766834fae4",
+    "data/ai-work-rag-gain-v0.2/qrels-dev-v0.1.json": "cb6ed065ee619d9ff0bb3f7b51efbaa3fdddbfdf0bd25f8b943b8750ed466280",
+    "eval-results/candidate-dev-final-v0.4.json": "9ae86800c06d2374ced3d114f51088a8b3025d8c33c253a1449ee03a59a17894",
+    "eval-results/candidate-dev-validation-v0.4.json": "8ab2c7a9089ab39df3d8e784275996f091eb15c2269cc202ac1f249f72bb05d6",
+    "eval-results/candidate-regression-v0.4.txt": "9fcbc83d950d212a92f6758863e0ad9c1b23edafbf951f339180901ed1a076b7",
+    "eval-results/candidate-unit-tests-v0.4.txt": "74cd4b4ae9aa217dbde30206940d2fc119a31a80d490639f606455b4a529fe06"
+  }
+}

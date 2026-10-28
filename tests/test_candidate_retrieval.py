@@ -80,6 +80,10 @@ class CandidateTests(unittest.TestCase):
     def test_selected_wrong_version_blocks(self):
         self.chunks[0]["version"]="A"
         with self.assertRaises(PermissionError):self.make().retrieve(self.query,"report")
+    def test_unlocatable_selected_basis_blocks_before_report_embedding(self):
+        self.originals[("REQ.txt",1)]="changed original";e=Embedder()
+        with self.assertRaises(PermissionError):self.make(e).retrieve(self.query,"report",method="hybrid")
+        self.assertEqual(e.calls,[])
     def test_revoked_task_blocks_cached_retrieval(self):
         r=self.make(Embedder());r.retrieve(self.query,"report",method="hybrid");r.task["task_authorized"]=False
         with self.assertRaises(PermissionError):r.retrieve(self.query,"report",method="hybrid")

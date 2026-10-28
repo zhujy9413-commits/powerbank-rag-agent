@@ -107,7 +107,7 @@
 
 ## RAG增益验证方案
 
-2026-10-29 RAG实验方案内容更新为v0.2，实验未执行：保留现有完整基线、五组对照、48个计划场景与分层验收。R02已修订为“前5条实际返回精度”，80%门槛保留，仍须联合满足R01/R03完整性及安全等门禁。16个开发场景材料已核验，32个留出场景待制作。新增检索和说明分别决策。见[AI Work RAG 增益验证方案](rag-gain-validation-plan-v0.1.md)、[评测清单](rag-gain-evaluation-checklist-v0.1.md)及[R02修订与核验报告](rag-gain-r02-revision-v0.2.md)。
+2026-10-29 RAG实验方案口径基线为v0.2：保留现有完整基线、五组对照、48个计划场景与分层验收。R02采用“前5条实际返回精度”，80%门槛保留，仍须联合满足R01/R03完整性及安全等门禁。16个开发场景已执行候选开发验证，32个留出场景待制作，正式五组留出未执行。当前状态见[候选检索开发报告](candidate-retrieval-dev-v0.4.md)；[验证方案](rag-gain-validation-plan-v0.1.md)、[评测清单](rag-gain-evaluation-checklist-v0.1.md)及[R02报告](rag-gain-r02-revision-v0.2.md)保留各自交付时快照。
 
 - [当前机器协议v0.2](../../data/ai-work-rag-gain-v0.2/protocol.json)与[48项状态台账](../../data/ai-work-rag-gain-v0.2/cases.json)
 - [开发种子相关性qrels](../../data/ai-work-rag-gain-v0.2/qrels-dev-v0.1.json)：248个查询/来源组合，245正例、3负例，4971个标签。
@@ -121,7 +121,7 @@
 
 ## RAG开发材料
 
-2026-10-29完成12份模拟报告、4份离线夹具及完整参考标注。1693项材料断言和24页页面核验通过；最终ZIP含118个文件，216项封包校验通过。原材料报告及ZIP保留问题发现时快照，其中R02原分母不可达问题已在本轮v0.2解决，旧材料未被回写。没有RAG实验分数，4个夹具尚未对应用执行；下一步仅使用开发材料实现和调试候选链路。
+2026-10-29完成12份模拟报告、4份离线夹具及完整参考标注。1693项材料断言和24页页面核验通过；原ZIP含118个文件，216项封包校验通过。原材料报告及ZIP保留问题发现时快照，其中R02原分母问题已在v0.2解决，旧材料未被回写。当前12份PDF已执行候选开发实验、4个夹具已执行离线适配器契约；最新结果见下方候选开发章节。
 
 - [开发样本包](rag-gain-dev-sample-pack-v0.1.md)与[完整ZIP](../../output/packages/ai-work-rag-gain-dev-v0.1.zip)
 - [参考标注](rag-gain-dev-reference-v0.1.md)
@@ -131,3 +131,13 @@
 - [飞书16 开发参考标注](https://my.feishu.cn/wiki/P2WpwS5eTiuo1LkAJc3c3w0BnZe)
 - [飞书17 材料核验报告](https://my.feishu.cn/wiki/SGC1wDubRi8CCDktyFYcL4MVn0c)
 - [飞书完整ZIP](https://my.feishu.cn/wiki/QTrAwLDt9iAmUokXwJEcTYVbnib)
+
+## 候选检索开发验证
+
+2026-10-29候选模块v0.4已实现独立A1检索、可注入向量的混合接口、上下文扩展及引用门禁；通过CLI运行，普通页面与原规则保持v0.4.3。12份PDF原规则载荷均未改变，4个离线异常夹具通过。完整202项回归包含35项候选及26项评分测试，另有2069项执行/材料不变性核验通过。
+
+A1开发R01要求98.79%、报告100%；R02要求97.98%、报告98.35%，3个缺证负例正确收敛。要求侧版本核对和背景一致性两个查询仍未覆盖齐全，候选未冻结。A2内容运行均为显式关键词降级，真实向量、生成、正式留出和业务收益待验。
+
+- [实现与开发结果](candidate-retrieval-dev-v0.4.md)、[16项运行清单](../../data/ai-work-candidate-dev-v0.4/run-manifest.json)
+- [最终原始结果](../../eval-results/candidate-dev-final-v0.4.json)、[202项回归](../../eval-results/candidate-regression-v0.4.txt)、[2069项核验](../../eval-results/candidate-dev-validation-v0.4.json)
+- [飞书19 候选检索链路与开发验证](https://my.feishu.cn/wiki/WKQAwmuA7iyqQZk1wv5cuQIpndx)

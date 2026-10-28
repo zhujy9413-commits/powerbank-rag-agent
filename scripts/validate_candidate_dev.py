@@ -20,7 +20,7 @@ def main():
     def h(path):return sha256((ROOT/path).read_bytes()).hexdigest()
     checks=[]
     def check(name,ok):checks.append(dict(name=name,passed=bool(ok)))
-    final=load("eval-results/candidate-dev-final-v0.3.json")
+    final=load("eval-results/candidate-dev-final-v0.4.json")
     protocol=load("data/ai-work-rag-gain-v0.2/protocol.json")
     for path,value in protocol["baseline"]["source_sha256"].items():check("baseline:"+path,h(path)==value)
     manifest=load("data/ai-work-rag-gain-dev-v0.1/material-manifest.json")
@@ -34,7 +34,7 @@ def main():
     for path in previous:
         old=subprocess.check_output(["git","show","8f3be60761edde8e497095ab6aba95222b2b792d:"+path],cwd=ROOT)
         check("historical_result:"+path,sha256(old).hexdigest()==h(path))
-    for filename,ref in [("candidate-dev-first-v0.1.json","a7ac214"),("candidate-dev-routed-v0.2.json","2d862c6")]:
+    for filename,ref in [("candidate-dev-first-v0.1.json","a7ac214"),("candidate-dev-routed-v0.2.json","2d862c6"),("candidate-dev-final-v0.3.json","8671707")]:
         r=load("eval-results/"+filename)
         for path,value in r["source_sha256"].items():
             check("traceable_source:"+filename+":"+path,sha256(subprocess.check_output(["git","show",ref+":"+path],cwd=ROOT)).hexdigest()==value)
@@ -42,8 +42,8 @@ def main():
     check("final_12_pdf_and_4_offline",len(final["raw_application_runs"])==12 and len(final["offline"])==4)
     check("external_requests_zero",final["summary"]["external_requests"]==final["summary"]["model_generation_runs"]==final["summary"]["real_embedding_runs"]==0)
     check("producer_gold_denied",final["application_phase"]=="gold_denied_subprocess")
-    check("201_full_tests",bool(re.search(r"Ran 201 tests.*\n\nOK",(ROOT/"eval-results/candidate-regression-v0.3.txt").read_text(),re.S)))
-    check("34_candidate_tests",bool(re.search(r"Ran 34 tests.*\n\nOK",(ROOT/"eval-results/candidate-unit-tests-v0.3.txt").read_text(),re.S)))
+    check("202_full_tests",bool(re.search(r"Ran 202 tests.*\n\nOK",(ROOT/"eval-results/candidate-regression-v0.4.txt").read_text(),re.S)))
+    check("35_candidate_tests",bool(re.search(r"Ran 35 tests.*\n\nOK",(ROOT/"eval-results/candidate-unit-tests-v0.4.txt").read_text(),re.S)))
     qrels=load("data/ai-work-rag-gain-v0.2/qrels-dev-v0.1.json")["rows"]
     gold={(q["report_id"],q["query_id"],q["namespace"]):q for q in qrels}
     scores={(x["row_id"],x["arm"]):x for x in final["scored_queries"]}
@@ -66,7 +66,7 @@ def main():
     check("remaining_two_gaps_disclosed",len(gaps)==2 and all(x["row_id"].endswith(":requirement") for x in gaps))
     result=dict(kind="candidate_development_integrity_audit_not_holdout_acceptance",checks=checks,total=len(checks),passed=sum(x["passed"] for x in checks),failed=[x["name"] for x in checks if not x["passed"]],
         remaining_gaps=gaps,previous_result_files_preserved=len(previous),development_assets_preserved=len(manifest["asset_sha256"]),
-        source_sha256=final["source_sha256"],result_sha256=h("eval-results/candidate-dev-final-v0.3.json"),
+        source_sha256=final["source_sha256"],result_sha256=h("eval-results/candidate-dev-final-v0.4.json"),
         external_requests=0,holdout_materialized=0,real_hybrid_quality="not_evaluated",candidate_freeze="pending_two_query_gaps_and_provider_preflight")
     args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n")
     print(json.dumps({k:result[k] for k in ["total","passed","failed","remaining_gaps","previous_result_files_preserved"]},ensure_ascii=False))
