@@ -12,6 +12,7 @@
 - [MVP 范围](docs/ai-work/MVP.md)
 - [完整 PRD](docs/ai-work/PRD.md)
 - [需求实现与验收对照](docs/ai-work/prd-implementation-audit-v0.1.md)
+- [RAG 增益验证方案](docs/ai-work/rag-gain-validation-plan-v0.1.md)与[评测清单](docs/ai-work/rag-gain-evaluation-checklist-v0.1.md)：实验范围已定，样本待制作，尚未执行。
 - [知识库与 RAG 方案](docs/ai-work/RAG-and-knowledge-base.md)
 
 2026-10-28 已接通同模板模拟PDF的解析、输入确认、逐项核对、人工复核与Excel导出。固定范围为A1/C1的5 V输出短路保护已有记录，共10个单元及2项一致性检查。当前仍是模拟原型，真实规则与任意PDF布局尚未启用。

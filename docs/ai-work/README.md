@@ -104,3 +104,13 @@
 - [页面状态与恢复记录](../../eval-results/basis-history-access-ui-v0.4.3.json)
 
 [飞书12-停用依据历史访问修复与回归](https://my.feishu.cn/wiki/POLxwDj3ci8DHJkVjGYcmCOLndg)
+
+## RAG增益验证方案
+
+2026-10-29 RAG实验方案v0.1已定，实验未执行：保留现有完整基线，采用五组对照、48个待制作场景与分层验收。新增检索和说明分别决策，不改原规则或设计基线。见[AI Work RAG 增益验证方案](rag-gain-validation-plan-v0.1.md)及[评测清单](rag-gain-evaluation-checklist-v0.1.md)。
+
+- [48项计划与机器协议](../../data/ai-work-rag-gain-v0.1/protocol.json)
+- [方案一致性校验](../../eval-results/rag-gain-plan-validation-v0.1.json)，193项通过，仅核对方案及清单，不是应用测试或实验成绩。
+
+- [飞书13 AI Work RAG 增益验证方案](https://my.feishu.cn/wiki/NSMiwHelFiIY7ykVys4cJbL0nze)
+- [飞书14 AI Work RAG 增益评测清单](https://my.feishu.cn/wiki/Q5ZpwTcSTi485jkpDwkc2STsnLb)
