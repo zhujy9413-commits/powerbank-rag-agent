@@ -1,0 +1,402 @@
+{
+  "validated_at": "2026-10-28T06:36:53.672790+00:00",
+  "production_engine_called": false,
+  "manifest_sha256": "3f707ae88b67243177ce879629aac2c1fc1ae3325d0e8f91be577d2bf3617b6e",
+  "files": 20,
+  "pages": 40,
+  "text_records": 193,
+  "encrypted_records_excluded": 10,
+  "visual_records": 1,
+  "rendered_pages": 40,
+  "rendered": [
+    {
+      "case_id": "HO-01",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-02",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-03",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-04",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-05",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-06",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-07",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-08",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-09",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-10",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-11",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-12",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-13",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-14",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-15",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-16",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-17",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-18",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-19",
+      "stderr": ""
+    },
+    {
+      "case_id": "HO-20",
+      "stderr": ""
+    }
+  ],
+  "contact_sheets": [
+    "tmp/pdfs/review-holdout-v0.1/contact-1.png",
+    "tmp/pdfs/review-holdout-v0.1/contact-2.png",
+    "tmp/pdfs/review-holdout-v0.1/contact-3.png",
+    "tmp/pdfs/review-holdout-v0.1/contact-4.png",
+    "tmp/pdfs/review-holdout-v0.1/contact-5.png"
+  ],
+  "cases": [
+    {
+      "case_id": "HO-01",
+      "path": "output/pdf/review-holdout-v0.1/HO-01-boundaries.pdf",
+      "sha256": "deda1618cf585d4ec5948b2fe4d7714ab3ce5b5d262fad45240d9221f3689ace",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-01 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=5 V；角色=输出；组合=单口\n记录表A\nR101 A1 保护响应 500 ms\nR103 A1 恢复电压 4.75 V\nR105 A1 壳温起值/末值 21.0摄氏度 / 33.0摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-01 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\nR102 C1 保护响应 0.500 s\nR104 C1 恢复电压 5.25 V\nR106 C1 壳温起值/末值 22.0摄氏度 / 34.0摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 0.500 s\n"
+      ],
+      "image_count": 0,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-02",
+      "path": "output/pdf/review-holdout-v0.1/HO-02-outside.pdf",
+      "sha256": "8c64021f683b7fce37ae4c76b92fb218d90dd246b9523d34cd2ade90ee1ce459",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-02 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=5 V；角色=输出；组合=单口\n记录表A\nR101 A1 保护响应 501 ms\nR103 A1 恢复电压 4.74 V\nR105 A1 壳温起值/末值 21.0摄氏度 / 33.1摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-02 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\nR102 C1 保护响应 0.501 s\nR104 C1 恢复电压 5.26 V\nR106 C1 壳温起值/末值 22.0摄氏度 / 34.1摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 501 ms\n"
+      ],
+      "image_count": 0,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-03",
+      "path": "output/pdf/review-holdout-v0.1/HO-03-canonical.pdf",
+      "sha256": "3c6a992ebf32f808cea53a124756053b5b557bbec5eee1fab6d976e4b162cc09",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-03 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=５．０ V；角色=输出；组合=单口；环境=２３．５摄氏度\n记录表A\nR101 A1 短路保护响应时间 137 ms\nR103 A1 保护后恢复电压 4.92 V\nR105 A1 壳温起值/末值 23.5摄氏度 / 32.0摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-03 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\nR102 C1 短路保护响应时间 0.243 s\nR104 C1 保护后恢复电压 5.17 V\nR106 C1 壳温起值/末值 24.5摄氏度 / 35.0摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 0.137 s；条件：电压=5 V；角色=输出；组合=单口；环境=23.50摄氏度\n"
+      ],
+      "image_count": 0,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-04",
+      "path": "output/pdf/review-holdout-v0.1/HO-04-foreign-id.pdf",
+      "sha256": "d1e938ac32848b512d5e606232269bdad51aba83fc473733a638094f5d28781f",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-04 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=5 V；角色=输出；组合=单口\n记录表A\nR101 A1 保护响应 137 ms\nR103 A1 恢复电压 4.92 V\nR105 A1 壳温起值/末值 23.5摄氏度 / 32.0摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\nTC-401 A1 保护响应 913 ms\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-04 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\nR102 C1 保护响应 0.243 s\nR104 C1 恢复电压 5.17 V\nR106 C1 壳温起值/末值 24.5摄氏度 / 35.0摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 137 ms\n"
+      ],
+      "image_count": 0,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-05",
+      "path": "output/pdf/review-holdout-v0.1/HO-05-long-id.pdf",
+      "sha256": "e897ba8a1d2e71da3f7c3d58578c0388403a1cf5b1a9aaff7df25a3839f6992d",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-05 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=5 V；角色=输出；组合=单口\n记录表A\nR50001 A1 保护响应 137 ms\nR50003 A1 恢复电压 4.92 V\nR50005 A1 壳温起值/末值 23.5摄氏度 / 32.0摄氏度\nR50007 A1 外观观察 无起火、无爆炸、无漏液\nR50009 A1 恢复方式 记录为移除负载后重新接入\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-05 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\nR50002 C1 保护响应 0.243 s\nR50004 C1 恢复电压 5.17 V\nR50006 C1 壳温起值/末值 24.5摄氏度 / 35.0摄氏度\nR50008 C1 外观观察 无起火、无爆炸、无漏液\nR50010 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 137 ms\n"
+      ],
+      "image_count": 0,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-06",
+      "path": "output/pdf/review-holdout-v0.1/HO-06-broken-label.pdf",
+      "sha256": "62eb0bb2af8abe2418b648ff328a692940ffa3046886a84534088b6469b195ef",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-06 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=5 V；角色=输出；组合=单口\n记录表A\nR101 A1 保护响应 137 ms\nR103\nA1\n保护后\n恢复电压\n4.92 V\nR105 A1 壳温起值/末值 23.5摄氏度 / 32.0摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-06 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\nR102 C1 保护响应 0.243 s\nR104 C1 恢复电压 5.17 V\nR106 C1 壳温起值/末值 24.5摄氏度 / 35.0摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 137 ms\n"
+      ],
+      "image_count": 0,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-07",
+      "path": "output/pdf/review-holdout-v0.1/HO-07-mixed-raster.pdf",
+      "sha256": "51d5616591f2b87256ed0ff91663aa44697e9c60be5e31d50a40a0c18c8d287a",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-07 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=5 V；角色=输出；组合=单口\n记录表A\nR101 A1 保护响应 137 ms\nR103 A1 恢复电压 4.92 V\nR105 A1 壳温起值/末值 23.5摄氏度 / 32.0摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-07 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\nR102 C1 保护响应 0.243 s\nR104 C1 恢复电压 5.17 V\nR106 C1 壳温起值/末值 24.5摄氏度 / 35.0摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 137 ms\n"
+      ],
+      "image_count": 1,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-08",
+      "path": "output/pdf/review-holdout-v0.1/HO-08-footnote.pdf",
+      "sha256": "0752acedd6c156cea140a124b646fd28b0c77766584d43cc4bac92a9a5c029fd",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-08 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=5 V；角色=输出；组合=单口\n记录表A\nR101 A1 保护响应 137 ms\nR103 A1 恢复电压 4.92 V\nR105 A1 壳温起值/末值 23.5摄氏度 / 32.0摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\n注：R101实际测试条件为电压=12 V；角色=输入；组合=多口。\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-08 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\nR102 C1 保护响应 0.243 s\nR104 C1 恢复电压 5.17 V\nR106 C1 壳温起值/末值 24.5摄氏度 / 35.0摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 137 ms\n"
+      ],
+      "image_count": 0,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-09",
+      "path": "output/pdf/review-holdout-v0.1/HO-09-section-scope.pdf",
+      "sha256": "360797ec70b974ffc8cec5b4df2f25ea5ad8e04cfe1711986580c5b0bff5ced8",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-09 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=5 V；角色=输出；组合=单口\n记录表A\n本表局部条件：电压=12 V；角色=输出；组合=单口\nR101 A1 保护响应 137 ms\nR103 A1 恢复电压 4.92 V\nR105 A1 壳温起值/末值 23.5摄氏度 / 32.0摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-09 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\nR102 C1 保护响应 0.243 s\nR104 C1 恢复电压 5.17 V\nR106 C1 壳温起值/末值 24.5摄氏度 / 35.0摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 137 ms\n"
+      ],
+      "image_count": 0,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-10",
+      "path": "output/pdf/review-holdout-v0.1/HO-10-repeated-dimension.pdf",
+      "sha256": "e7b7efb157a0c5b6af4c02f2ed5f021fa18a0ca405b1113ab889e829291a57b1",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-10 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=5 V；角色=输出；组合=单口\n记录表A\nR101 A1 保护响应 137 ms；条件：电压=5 V；电压=12 V；角色=输出；组合=单口\nR103 A1 恢复电压 4.92 V\nR105 A1 壳温起值/末值 23.5摄氏度 / 32.0摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-10 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\nR102 C1 保护响应 0.243 s\nR104 C1 恢复电压 5.17 V\nR106 C1 壳温起值/末值 24.5摄氏度 / 35.0摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 137 ms\n"
+      ],
+      "image_count": 0,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-11",
+      "path": "output/pdf/review-holdout-v0.1/HO-11-unknown-role.pdf",
+      "sha256": "a14889fbb87696f7cd96324c6c9cd820e84207bfc5b5e7c77923d17db58a5661",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-11 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=5 V；角色=输出；组合=单口\n记录表A\nR101 A1 保护响应 137 ms\nR103 A1 恢复电压 4.92 V\nR105 A1 壳温起值/末值 23.5摄氏度 / 32.0摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-11 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\nR102 C1 保护响应 0.243 s\n条件：电压=5 V；角色=未记录；组合=单口\nR104 C1 恢复电压 5.17 V\nR106 C1 壳温起值/末值 24.5摄氏度 / 35.0摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 137 ms\n"
+      ],
+      "image_count": 0,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-12",
+      "path": "output/pdf/review-holdout-v0.1/HO-12-two-contexts.pdf",
+      "sha256": "58e06dfa537290259ccd493297903204b0efcc30f14307870dd7545081bd99c2",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-12 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=5 V；角色=输出；组合=单口\n记录表A\nR101 A1 保护响应 137 ms\nR103 A1 恢复电压 4.92 V\nR105 A1 壳温起值/末值 23.5摄氏度 / 32.0摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\nR611 A1 保护响应 0.779 s；条件：电压=12 V；角色=输出；组合=单口\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-12 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\nR102 C1 保护响应 0.243 s\nR104 C1 恢复电压 5.17 V\nR106 C1 壳温起值/末值 24.5摄氏度 / 35.0摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 137 ms\n"
+      ],
+      "image_count": 0,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-13",
+      "path": "output/pdf/review-holdout-v0.1/HO-13-unknown-environment.pdf",
+      "sha256": "fea5ed45c375a86a3c8b3d09431c823e1f60cae660f15ad3baa7325149a80dcf",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-13 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=5 V；角色=输出；组合=单口；环境=23.5摄氏度\n记录表A\nR101 A1 保护响应 137 ms\nR103 A1 恢复电压 4.92 V\nR105 A1 壳温起值/末值 23.5摄氏度 / 32.0摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-13 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\nR102 C1 保护响应 0.243 s\nR104 C1 恢复电压 5.17 V\nR106 C1 壳温起值/末值 24.5摄氏度 / 35.0摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 0.837 s；条件：环境=未记录\n"
+      ],
+      "image_count": 0,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-14",
+      "path": "output/pdf/review-holdout-v0.1/HO-14-load-context.pdf",
+      "sha256": "3500e050a5f0f32898f5e35580fdde275a61b2ca7927c4cab11b37695d9e085a",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-14 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=5 V；角色=输出；组合=单口\n记录表A\nR101 A1 保护响应 137 ms；条件：负载=2.0 A\nR103 A1 恢复电压 4.92 V\nR105 A1 壳温起值/末值 23.5摄氏度 / 32.0摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-14 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\nR102 C1 保护响应 0.243 s\nR104 C1 恢复电压 5.17 V\nR106 C1 壳温起值/末值 24.5摄氏度 / 35.0摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 0.837 s；条件：负载=0.5 A\n"
+      ],
+      "image_count": 0,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-15",
+      "path": "output/pdf/review-holdout-v0.1/HO-15-specimen-context.pdf",
+      "sha256": "c11393c9845576f401bf27ea25338cf6287f17d04870166cecf8d22d65be14de",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-15 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=5 V；角色=输出；组合=单口\n记录表A\nR101 A1 保护响应 137 ms；条件：样机=SN-A\nR103 A1 恢复电压 4.92 V\nR105 A1 壳温起值/末值 23.5摄氏度 / 32.0摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\nR612 A1 保护响应 0.819 s；条件：样机=SN-B\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-15 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\nR102 C1 保护响应 0.243 s\nR104 C1 恢复电压 5.17 V\nR106 C1 壳温起值/末值 24.5摄氏度 / 35.0摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 137 ms\n"
+      ],
+      "image_count": 0,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-16",
+      "path": "output/pdf/review-holdout-v0.1/HO-16-condition-before.pdf",
+      "sha256": "abcb2e79453a6f5f497f4ddef2092dacd1028d6cda55a637145034c0d7d5d741",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-16 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=5 V；角色=输出；组合=单口\n记录表A\nR101 A1 保护响应 137 ms\nR103 A1 恢复电压 4.92 V\nR105 A1 壳温起值/末值 23.5摄氏度 / 32.0摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-16 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\n条件：电压=12 V；角色=输出；组合=单口\nR102 C1 保护响应 0.243 s\nR104 C1 恢复电压 5.17 V\nR106 C1 壳温起值/末值 24.5摄氏度 / 35.0摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 137 ms\n"
+      ],
+      "image_count": 0,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-17",
+      "path": "output/pdf/review-holdout-v0.1/HO-17-summary-wrap.pdf",
+      "sha256": "eb88eb519dfd1f78b470426ce5f2003adf645700d15c3ebaf53007f9baddde09",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-17 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=5 V；角色=输出；组合=单口\n记录表A\nR101 A1 保护响应 137 ms\nR103 A1 恢复电压 4.92 V\nR105 A1 壳温起值/末值 23.5摄氏度 / 32.0摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-17 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\nR102 C1 保护响应 0.243 s\nR104 C1 恢复电压 5.17 V\nR106 C1 壳温起值/末值 24.5摄氏度 / 35.0摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 0.137\ns\n"
+      ],
+      "image_count": 0,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-18",
+      "path": "output/pdf/review-holdout-v0.1/HO-18-header-unit.pdf",
+      "sha256": "6c289727ebed475ed00d974e7aa1c66aee155e27b3a0a64cbf51bc1afe286908",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-18 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=5 V；角色=输出；组合=单口\n记录表A\n记录 | 端口 | 字段 | 原始填写 | 报告填写判定\n本段保护响应数值单位：ms\nR101 | A1 | 保护响应 | 137 | 待复核\nR103 A1 恢复电压 4.92 V\nR105 A1 壳温起值/末值 23.5摄氏度 / 32.0摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-18 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\n记录 | 端口 | 字段 | 原始填写 | 报告填写判定\n本段保护响应数值单位：ms\nR102 | C1 | 保护响应 | 243 | 待复核\nR104 C1 恢复电压 5.17 V\nR106 C1 壳温起值/末值 24.5摄氏度 / 35.0摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 137 ms\n"
+      ],
+      "image_count": 0,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-19",
+      "path": "output/pdf/review-holdout-v0.1/HO-19-local-only.pdf",
+      "sha256": "88b4b463b5b4c1f2d7df7ede2f0fa1615c51e1a17eb8730481a3366cab1439a5",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-19 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n测试条件在相应记录旁列出，其他记录未填写。\n记录表A\nR101 A1 保护响应 137 ms\n条件：电压=5 V；角色=输出；组合=单口\nR103 A1 恢复电压 4.92 V\nR105 A1 壳温起值/末值 23.5摄氏度 / 32.0摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-19 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\nR102 C1 保护响应 0.243 s\nR104 C1 恢复电压 5.17 V\nR106 C1 壳温起值/末值 24.5摄氏度 / 35.0摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 137 ms\n"
+      ],
+      "image_count": 0,
+      "encrypted": false,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    },
+    {
+      "case_id": "HO-20",
+      "path": "output/pdf/review-holdout-v0.1/HO-20-encrypted.pdf",
+      "sha256": "807436fe16adfcc16a50fbee8efa249d78454ca21b8d2dfb69bd2e27909ccf4a",
+      "pages": 2,
+      "page_text": [
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-20 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第1页 / 共2页\n本报告测试条件：电压=5 V；角色=输出；组合=单口\n记录表A\nR101 A1 保护响应 137 ms\nR103 A1 恢复电压 4.92 V\nR105 A1 壳温起值/末值 23.5摄氏度 / 32.0摄氏度\nR107 A1 外观观察 无起火、无爆炸、无漏液\nR109 A1 恢复方式 记录为移除负载后重新接入\n评测材料，不用于真实产品合规或实验操作。\n",
+        "模拟整机保护功能测试报告\n模拟材料 / PB-DEMO-01 / HO-20 / 新样本留出评测\n报告填写的规格版本：SYN-SPEC-PB01-RevB\n第2页 / 共2页\n记录表B\nR102 C1 保护响应 0.243 s\nR104 C1 恢复电压 5.17 V\nR106 C1 壳温起值/末值 24.5摄氏度 / 35.0摄氏度\nR108 C1 外观观察 无起火、无爆炸、无漏液\nR110 C1 恢复方式 记录为重新连接输出负载\nS41：A1保护响应 137 ms\n"
+      ],
+      "image_count": 0,
+      "encrypted": true,
+      "record_ids_present": true,
+      "prior_pdf_hash_disjoint": true,
+      "prior_record_ids_disjoint": true
+    }
+  ]
+}

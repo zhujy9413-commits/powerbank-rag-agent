@@ -1,0 +1,1822 @@
+{
+  "version": "review-holdout-v0.1",
+  "label_author": "same project author; implementation-aware",
+  "external_independence": false,
+  "professional_review": "pending",
+  "cases": [
+    {
+      "case_id": "HO-01",
+      "slug": "boundaries",
+      "title": "新数值与边界组合",
+      "capture_required": true,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-05",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-02",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-03",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-04",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "C1-05",
+          "result": "no_issue"
+        }
+      ],
+      "visible_issue_required": false,
+      "path": "output/pdf/review-holdout-v0.1/HO-01-boundaries.pdf",
+      "sha256": "deda1618cf585d4ec5948b2fe4d7714ab3ce5b5d262fad45240d9221f3689ace",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "500 ms"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "0.500 s"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.75 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.25 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "21.0摄氏度 / 33.0摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "22.0摄氏度 / 34.0摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ]
+      ],
+      "expected_visual_records": []
+    },
+    {
+      "case_id": "HO-02",
+      "slug": "outside",
+      "title": "边界外数值组合",
+      "capture_required": true,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "result": "nonconformity"
+        },
+        {
+          "item_id": "A1-02",
+          "result": "nonconformity"
+        },
+        {
+          "item_id": "A1-03",
+          "result": "nonconformity"
+        },
+        {
+          "item_id": "C1-01",
+          "result": "nonconformity"
+        },
+        {
+          "item_id": "C1-02",
+          "result": "nonconformity"
+        },
+        {
+          "item_id": "C1-03",
+          "result": "nonconformity"
+        }
+      ],
+      "visible_issue_required": false,
+      "path": "output/pdf/review-holdout-v0.1/HO-02-outside.pdf",
+      "sha256": "8c64021f683b7fce37ae4c76b92fb218d90dd246b9523d34cd2ade90ee1ce459",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "501 ms"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "0.501 s"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.74 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.26 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "21.0摄氏度 / 33.1摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "22.0摄氏度 / 34.1摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ]
+      ],
+      "expected_visual_records": []
+    },
+    {
+      "case_id": "HO-03",
+      "slug": "canonical",
+      "title": "全角条件与别名混排",
+      "capture_required": true,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "SUMMARY-A1",
+          "result": "no_issue"
+        }
+      ],
+      "visible_issue_required": false,
+      "path": "output/pdf/review-holdout-v0.1/HO-03-canonical.pdf",
+      "sha256": "3c6a992ebf32f808cea53a124756053b5b557bbec5eee1fab6d976e4b162cc09",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "137 ms"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "0.243 s"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.92 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "23.5摄氏度 / 32.0摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "24.5摄氏度 / 35.0摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ]
+      ],
+      "expected_visual_records": []
+    },
+    {
+      "case_id": "HO-04",
+      "slug": "foreign-id",
+      "title": "补充记录使用TC编号",
+      "capture_required": false,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        }
+      ],
+      "visible_issue_required": true,
+      "path": "output/pdf/review-holdout-v0.1/HO-04-foreign-id.pdf",
+      "sha256": "d1e938ac32848b512d5e606232269bdad51aba83fc473733a638094f5d28781f",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "137 ms"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "0.243 s"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.92 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "23.5摄氏度 / 32.0摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "24.5摄氏度 / 35.0摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ],
+        [
+          "TC-401",
+          "A1",
+          "response",
+          "913 ms"
+        ]
+      ],
+      "expected_visual_records": []
+    },
+    {
+      "case_id": "HO-05",
+      "slug": "long-id",
+      "title": "记录ID为五位数字",
+      "capture_required": false,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-02",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-03",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-04",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-05",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-02",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-03",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-04",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-05",
+          "blocked": true,
+          "execution": "not_checked"
+        }
+      ],
+      "visible_issue_required": true,
+      "path": "output/pdf/review-holdout-v0.1/HO-05-long-id.pdf",
+      "sha256": "e897ba8a1d2e71da3f7c3d58578c0388403a1cf5b1a9aaff7df25a3839f6992d",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R50001",
+          "A1",
+          "response",
+          "137 ms"
+        ],
+        [
+          "R50002",
+          "C1",
+          "response",
+          "0.243 s"
+        ],
+        [
+          "R50003",
+          "A1",
+          "recovery",
+          "4.92 V"
+        ],
+        [
+          "R50004",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R50005",
+          "A1",
+          "temperature",
+          "23.5摄氏度 / 32.0摄氏度"
+        ],
+        [
+          "R50006",
+          "C1",
+          "temperature",
+          "24.5摄氏度 / 35.0摄氏度"
+        ],
+        [
+          "R50007",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R50008",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R50009",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R50010",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ]
+      ],
+      "expected_visual_records": []
+    },
+    {
+      "case_id": "HO-06",
+      "slug": "broken-label",
+      "title": "字段名在单元格内换行",
+      "capture_required": false,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "A1-02",
+          "blocked": true,
+          "execution": "not_checked"
+        }
+      ],
+      "visible_issue_required": true,
+      "path": "output/pdf/review-holdout-v0.1/HO-06-broken-label.pdf",
+      "sha256": "62eb0bb2af8abe2418b648ff328a692940ffa3046886a84534088b6469b195ef",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "137 ms"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "0.243 s"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.92 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "23.5摄氏度 / 32.0摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "24.5摄氏度 / 35.0摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ]
+      ],
+      "expected_visual_records": []
+    },
+    {
+      "case_id": "HO-07",
+      "slug": "mixed-raster",
+      "title": "同页文字与图片补充记录混排",
+      "capture_required": true,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        }
+      ],
+      "visible_issue_required": true,
+      "path": "output/pdf/review-holdout-v0.1/HO-07-mixed-raster.pdf",
+      "sha256": "51d5616591f2b87256ed0ff91663aa44697e9c60be5e31d50a40a0c18c8d287a",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "137 ms"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "0.243 s"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.92 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "23.5摄氏度 / 32.0摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "24.5摄氏度 / 35.0摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ]
+      ],
+      "expected_visual_records": [
+        [
+          "R711",
+          "A1",
+          "response",
+          "927 ms"
+        ]
+      ]
+    },
+    {
+      "case_id": "HO-08",
+      "slug": "footnote",
+      "title": "实际条件写在脚注",
+      "capture_required": true,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        }
+      ],
+      "visible_issue_required": false,
+      "footnote": "注：R101实际测试条件为电压=12 V；角色=输入；组合=多口。",
+      "path": "output/pdf/review-holdout-v0.1/HO-08-footnote.pdf",
+      "sha256": "0752acedd6c156cea140a124b646fd28b0c77766584d43cc4bac92a9a5c029fd",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "137 ms"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "0.243 s"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.92 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "23.5摄氏度 / 32.0摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "24.5摄氏度 / 35.0摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ]
+      ],
+      "expected_visual_records": []
+    },
+    {
+      "case_id": "HO-09",
+      "slug": "section-scope",
+      "title": "表标题指定局部条件",
+      "capture_required": true,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-02",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-03",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-04",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-05",
+          "blocked": true,
+          "execution": "not_checked"
+        }
+      ],
+      "visible_issue_required": false,
+      "path": "output/pdf/review-holdout-v0.1/HO-09-section-scope.pdf",
+      "sha256": "360797ec70b974ffc8cec5b4df2f25ea5ad8e04cfe1711986580c5b0bff5ced8",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "137 ms"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "0.243 s"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.92 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "23.5摄氏度 / 32.0摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "24.5摄氏度 / 35.0摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ]
+      ],
+      "expected_visual_records": []
+    },
+    {
+      "case_id": "HO-10",
+      "slug": "repeated-dimension",
+      "title": "单行重复且矛盾的电压声明",
+      "capture_required": true,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        }
+      ],
+      "visible_issue_required": false,
+      "path": "output/pdf/review-holdout-v0.1/HO-10-repeated-dimension.pdf",
+      "sha256": "e7b7efb157a0c5b6af4c02f2ed5f021fa18a0ca405b1113ab889e829291a57b1",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "137 ms"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "0.243 s"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.92 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "23.5摄氏度 / 32.0摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "24.5摄氏度 / 35.0摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ]
+      ],
+      "expected_visual_records": []
+    },
+    {
+      "case_id": "HO-11",
+      "slug": "unknown-role",
+      "title": "行内角色明确为未记录",
+      "capture_required": true,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "C1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        }
+      ],
+      "visible_issue_required": false,
+      "path": "output/pdf/review-holdout-v0.1/HO-11-unknown-role.pdf",
+      "sha256": "a14889fbb87696f7cd96324c6c9cd820e84207bfc5b5e7c77923d17db58a5661",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "137 ms"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "0.243 s"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.92 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "23.5摄氏度 / 32.0摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "24.5摄氏度 / 35.0摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ]
+      ],
+      "expected_visual_records": []
+    },
+    {
+      "case_id": "HO-12",
+      "slug": "two-contexts",
+      "title": "同字段存在5V与12V两条记录",
+      "capture_required": true,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        }
+      ],
+      "visible_issue_required": false,
+      "path": "output/pdf/review-holdout-v0.1/HO-12-two-contexts.pdf",
+      "sha256": "58e06dfa537290259ccd493297903204b0efcc30f14307870dd7545081bd99c2",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "137 ms"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "0.243 s"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.92 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "23.5摄氏度 / 32.0摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "24.5摄氏度 / 35.0摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ],
+        [
+          "R611",
+          "A1",
+          "response",
+          "0.779 s"
+        ]
+      ],
+      "expected_visual_records": []
+    },
+    {
+      "case_id": "HO-13",
+      "slug": "unknown-environment",
+      "title": "摘要环境明确为未记录",
+      "capture_required": true,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "SUMMARY-A1",
+          "result": "evidence_insufficient",
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-01",
+          "conditional": false
+        }
+      ],
+      "visible_issue_required": false,
+      "path": "output/pdf/review-holdout-v0.1/HO-13-unknown-environment.pdf",
+      "sha256": "fea5ed45c375a86a3c8b3d09431c823e1f60cae660f15ad3baa7325149a80dcf",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "137 ms"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "0.243 s"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.92 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "23.5摄氏度 / 32.0摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "24.5摄氏度 / 35.0摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ]
+      ],
+      "expected_visual_records": []
+    },
+    {
+      "case_id": "HO-14",
+      "slug": "load-context",
+      "title": "明细与摘要负载条件不同",
+      "capture_required": true,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "SUMMARY-A1",
+          "result": "evidence_insufficient",
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-01",
+          "conditional": false
+        }
+      ],
+      "visible_issue_required": false,
+      "path": "output/pdf/review-holdout-v0.1/HO-14-load-context.pdf",
+      "sha256": "3500e050a5f0f32898f5e35580fdde275a61b2ca7927c4cab11b37695d9e085a",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "137 ms"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "0.243 s"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.92 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "23.5摄氏度 / 32.0摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "24.5摄氏度 / 35.0摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ]
+      ],
+      "expected_visual_records": []
+    },
+    {
+      "case_id": "HO-15",
+      "slug": "specimen-context",
+      "title": "同字段来自不同样机",
+      "capture_required": true,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "result": "evidence_insufficient",
+          "execution": "not_checked",
+          "blocked": true
+        }
+      ],
+      "visible_issue_required": false,
+      "path": "output/pdf/review-holdout-v0.1/HO-15-specimen-context.pdf",
+      "sha256": "c11393c9845576f401bf27ea25338cf6287f17d04870166cecf8d22d65be14de",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "137 ms"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "0.243 s"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.92 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "23.5摄氏度 / 32.0摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "24.5摄氏度 / 35.0摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ],
+        [
+          "R612",
+          "A1",
+          "response",
+          "0.819 s"
+        ]
+      ],
+      "expected_visual_records": []
+    },
+    {
+      "case_id": "HO-16",
+      "slug": "condition-before",
+      "title": "跨页且条件位于记录之前",
+      "capture_required": true,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "C1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        }
+      ],
+      "visible_issue_required": true,
+      "path": "output/pdf/review-holdout-v0.1/HO-16-condition-before.pdf",
+      "sha256": "abcb2e79453a6f5f497f4ddef2092dacd1028d6cda55a637145034c0d7d5d741",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "137 ms"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "0.243 s"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.92 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "23.5摄氏度 / 32.0摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "24.5摄氏度 / 35.0摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ]
+      ],
+      "expected_visual_records": []
+    },
+    {
+      "case_id": "HO-17",
+      "slug": "summary-wrap",
+      "title": "摘要数值与单位跨行",
+      "capture_required": true,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "SUMMARY-MISSING",
+          "result": "evidence_insufficient"
+        }
+      ],
+      "visible_issue_required": false,
+      "path": "output/pdf/review-holdout-v0.1/HO-17-summary-wrap.pdf",
+      "sha256": "eb88eb519dfd1f78b470426ce5f2003adf645700d15c3ebaf53007f9baddde09",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "137 ms"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "0.243 s"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.92 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "23.5摄氏度 / 32.0摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "24.5摄氏度 / 35.0摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ]
+      ],
+      "expected_visual_records": []
+    },
+    {
+      "case_id": "HO-18",
+      "slug": "header-unit",
+      "title": "单位仅写在列标题",
+      "capture_required": true,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "blocked": true
+        },
+        {
+          "item_id": "C1-01",
+          "blocked": true
+        }
+      ],
+      "visible_issue_required": false,
+      "path": "output/pdf/review-holdout-v0.1/HO-18-header-unit.pdf",
+      "sha256": "6c289727ebed475ed00d974e7aa1c66aee155e27b3a0a64cbf51bc1afe286908",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "137"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "243"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.92 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "23.5摄氏度 / 32.0摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "24.5摄氏度 / 35.0摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ]
+      ],
+      "expected_visual_records": []
+    },
+    {
+      "case_id": "HO-19",
+      "slug": "local-only",
+      "title": "仅一条记录有完整条件",
+      "capture_required": true,
+      "expected_reject": false,
+      "checks": [
+        {
+          "item_id": "A1-01",
+          "result": "no_issue"
+        },
+        {
+          "item_id": "A1-02",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-03",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-04",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "A1-05",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-01",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-02",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-03",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-04",
+          "blocked": true,
+          "execution": "not_checked"
+        },
+        {
+          "item_id": "C1-05",
+          "blocked": true,
+          "execution": "not_checked"
+        }
+      ],
+      "visible_issue_required": false,
+      "path": "output/pdf/review-holdout-v0.1/HO-19-local-only.pdf",
+      "sha256": "88b4b463b5b4c1f2d7df7ede2f0fa1615c51e1a17eb8730481a3366cab1439a5",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "137 ms"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "0.243 s"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.92 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "23.5摄氏度 / 32.0摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "24.5摄氏度 / 35.0摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ]
+      ],
+      "expected_visual_records": []
+    },
+    {
+      "case_id": "HO-20",
+      "slug": "encrypted",
+      "title": "加密报告应拒绝",
+      "capture_required": false,
+      "expected_reject": true,
+      "checks": [],
+      "visible_issue_required": false,
+      "records_for_metric": false,
+      "path": "output/pdf/review-holdout-v0.1/HO-20-encrypted.pdf",
+      "sha256": "807436fe16adfcc16a50fbee8efa249d78454ca21b8d2dfb69bd2e27909ccf4a",
+      "page_count": 2,
+      "expected_text_records": [
+        [
+          "R101",
+          "A1",
+          "response",
+          "137 ms"
+        ],
+        [
+          "R102",
+          "C1",
+          "response",
+          "0.243 s"
+        ],
+        [
+          "R103",
+          "A1",
+          "recovery",
+          "4.92 V"
+        ],
+        [
+          "R104",
+          "C1",
+          "recovery",
+          "5.17 V"
+        ],
+        [
+          "R105",
+          "A1",
+          "temperature",
+          "23.5摄氏度 / 32.0摄氏度"
+        ],
+        [
+          "R106",
+          "C1",
+          "temperature",
+          "24.5摄氏度 / 35.0摄氏度"
+        ],
+        [
+          "R107",
+          "A1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R108",
+          "C1",
+          "appearance",
+          "无起火、无爆炸、无漏液"
+        ],
+        [
+          "R109",
+          "A1",
+          "method",
+          "记录为移除负载后重新接入"
+        ],
+        [
+          "R110",
+          "C1",
+          "method",
+          "记录为重新连接输出负载"
+        ]
+      ],
+      "expected_visual_records": []
+    }
+  ]
+}

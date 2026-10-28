@@ -1,0 +1,67 @@
+{
+  "version": "review-holdout-freeze-v0.1",
+  "frozen_at": "2026-10-28T06:39:54.993032+00:00",
+  "engine_git_ref": "cde690ee6fbf6b60a3ef3c7444eeacba3c28cafb",
+  "corpus_sha256": "cb67946e0a0f0a6732214b6488b3b5c1a6ef0a2213516ef5e5bc32b19a28b1ef",
+  "engine_source_sha256": {
+    "app/ai_work/review.py": "6a1bf436adff3d69a79e1257aff8d94c1241a98487caa38d7300b8ee47de39ef",
+    "app/ai_work/parsing.py": "e06c4ea69ed5ef3248c94b74a874671f8033cdcfcb446c9b5aba45b5d97099a4",
+    "app/knowledge_assistant/core.py": "d55ed0785ec1d50021778611a6833f3d2c033d9b741e4367bd567f13de5a34fd"
+  },
+  "asset_sha256": {
+    "data/review-holdout-v0.1/README.md": "1bb1dd0a06c47c111248db7cdd571eb6d87354b09c572078084586738416c9a5",
+    "data/review-holdout-v0.1/visual-review.md": "f897c4bece4d9934852466d30b5284b613d37e65b66a28be13996403dac7e478",
+    "data/review-holdout-v0.1/cases.json": "3f707ae88b67243177ce879629aac2c1fc1ae3325d0e8f91be577d2bf3617b6e",
+    "data/review-holdout-v0.1/preflight.json": "629c91d2c2bd63f6810dfd4fc1a58ffde8d4c433946df2b24f4cb297b207a504",
+    "output/pdf/review-holdout-v0.1/HO-05-long-id.pdf": "e897ba8a1d2e71da3f7c3d58578c0388403a1cf5b1a9aaff7df25a3839f6992d",
+    "output/pdf/review-holdout-v0.1/HO-01-boundaries.pdf": "deda1618cf585d4ec5948b2fe4d7714ab3ce5b5d262fad45240d9221f3689ace",
+    "output/pdf/review-holdout-v0.1/HO-12-two-contexts.pdf": "58e06dfa537290259ccd493297903204b0efcc30f14307870dd7545081bd99c2",
+    "output/pdf/review-holdout-v0.1/HO-07-mixed-raster.pdf": "51d5616591f2b87256ed0ff91663aa44697e9c60be5e31d50a40a0c18c8d287a",
+    "output/pdf/review-holdout-v0.1/HO-20-encrypted.pdf": "807436fe16adfcc16a50fbee8efa249d78454ca21b8d2dfb69bd2e27909ccf4a",
+    "output/pdf/review-holdout-v0.1/HO-18-header-unit.pdf": "6c289727ebed475ed00d974e7aa1c66aee155e27b3a0a64cbf51bc1afe286908",
+    "output/pdf/review-holdout-v0.1/HO-17-summary-wrap.pdf": "eb88eb519dfd1f78b470426ce5f2003adf645700d15c3ebaf53007f9baddde09",
+    "output/pdf/review-holdout-v0.1/HO-19-local-only.pdf": "88b4b463b5b4c1f2d7df7ede2f0fa1615c51e1a17eb8730481a3366cab1439a5",
+    "output/pdf/review-holdout-v0.1/HO-06-broken-label.pdf": "62eb0bb2af8abe2418b648ff328a692940ffa3046886a84534088b6469b195ef",
+    "output/pdf/review-holdout-v0.1/HO-04-foreign-id.pdf": "d1e938ac32848b512d5e606232269bdad51aba83fc473733a638094f5d28781f",
+    "output/pdf/review-holdout-v0.1/HO-02-outside.pdf": "8c64021f683b7fce37ae4c76b92fb218d90dd246b9523d34cd2ade90ee1ce459",
+    "output/pdf/review-holdout-v0.1/HO-08-footnote.pdf": "0752acedd6c156cea140a124b646fd28b0c77766584d43cc4bac92a9a5c029fd",
+    "output/pdf/review-holdout-v0.1/HO-13-unknown-environment.pdf": "fea5ed45c375a86a3c8b3d09431c823e1f60cae660f15ad3baa7325149a80dcf",
+    "output/pdf/review-holdout-v0.1/HO-10-repeated-dimension.pdf": "e7b7efb157a0c5b6af4c02f2ed5f021fa18a0ca405b1113ab889e829291a57b1",
+    "output/pdf/review-holdout-v0.1/HO-15-specimen-context.pdf": "c11393c9845576f401bf27ea25338cf6287f17d04870166cecf8d22d65be14de",
+    "output/pdf/review-holdout-v0.1/HO-03-canonical.pdf": "3c6a992ebf32f808cea53a124756053b5b557bbec5eee1fab6d976e4b162cc09",
+    "output/pdf/review-holdout-v0.1/HO-14-load-context.pdf": "3500e050a5f0f32898f5e35580fdde275a61b2ca7927c4cab11b37695d9e085a",
+    "output/pdf/review-holdout-v0.1/HO-09-section-scope.pdf": "360797ec70b974ffc8cec5b4df2f25ea5ad8e04cfe1711986580c5b0bff5ced8",
+    "output/pdf/review-holdout-v0.1/HO-11-unknown-role.pdf": "a14889fbb87696f7cd96324c6c9cd820e84207bfc5b5e7c77923d17db58a5661",
+    "output/pdf/review-holdout-v0.1/HO-16-condition-before.pdf": "abcb2e79453a6f5f497f4ddef2092dacd1028d6cda55a637145034c0d7d5d741",
+    "scripts/build_review_holdout.py": "8f30aa900fe0bb38c0dfb16a680e41e548853d8ebe5e1580b1a26a80a13c29ea",
+    "scripts/evaluate_review_holdout.py": "6c0945c24e1fdbf70091934e5e8bd6106f9ecd9f9d2452e590366c1d6ed56e11",
+    "scripts/validate_review_holdout.py": "a541f9ae36ca3a8d55b9ff8a7bb37bee51a19d49f53f70193dab77ddf44cc342",
+    "tests/test_review_holdout_harness.py": "c46a194a665cd3ba9da97928c8b50385b2c4de6f96cdfa5b2f71fd8d807f3e2a",
+    "eval-results/review-holdout-regression-v0.1.txt": "26605f25cf48e0b994871c461dc53581d67ffb0cfd4596794b713287d2fa9b2f",
+    "eval-results/review-holdout-regression-unrestricted-v0.1.txt": "c92285a136c5995d49fc23eea772fd8e614241025c89a3c8f1c511333caa1e91"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "packages": {
+      "pypdf": "6.10.0",
+      "reportlab": "4.4.9",
+      "Pillow": "12.3.0"
+    }
+  },
+  "protocol": {
+    "production_engine_calls_before_freeze": 0,
+    "files": 20,
+    "pages": 40,
+    "text_records": 193,
+    "visual_records": 1,
+    "encrypted_files": 1,
+    "behavioral_checks": 58,
+    "required_block_checks": 35,
+    "required_visible_issues": 5,
+    "scoring_labels_enter_runtime": false,
+    "external_independence": false,
+    "blind_test": false,
+    "professional_review": "pending",
+    "allow_engine_or_label_changes_after_first_run": false
+  }
+}
