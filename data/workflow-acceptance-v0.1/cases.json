@@ -1,0 +1,36 @@
+[
+  {
+    "case_id": "FLOW-01",
+    "path": "output/pdf/review-holdout-v0.1/HO-17-summary-wrap.pdf",
+    "counts": {
+      "no_issue": 12
+    },
+    "report_basis": "RevB",
+    "sha256": "eb88eb519dfd1f78b470426ce5f2003adf645700d15c3ebaf53007f9baddde09",
+    "status": "consumed_workflow_regression"
+  },
+  {
+    "case_id": "FLOW-02",
+    "path": "output/pdf/p1-holdout-v0.1/HP-08.pdf",
+    "counts": {
+      "no_issue": 11,
+      "conflict": 1
+    },
+    "report_basis": "RevB",
+    "sha256": "7334a0fd9736340ee9920f96f1520dc34dfb434f97bb64a279dc9e218c06bb23",
+    "status": "consumed_workflow_regression"
+  },
+  {
+    "case_id": "FLOW-03",
+    "path": "output/pdf/SYN-TR-001-R1.pdf",
+    "counts": {
+      "no_issue": 5,
+      "nonconformity": 2,
+      "evidence_insufficient": 3,
+      "conflict": 2
+    },
+    "report_basis": "RevA",
+    "sha256": "a34040a9a092f6d0dad158a012a8a9e1150c06721075011992f50c3a303792dd",
+    "status": "consumed_workflow_regression"
+  }
+]

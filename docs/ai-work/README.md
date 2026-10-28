@@ -8,7 +8,7 @@
 - [首批模拟报告、规格与逐项参考标注](sample-pack.md)
 - [工作流与验证方法补充](../shared/workflow-verification-notes.md)
 
-状态：需求设计v1.0；模拟原型v0.4可运行。三个P0及跨行摘要与单位归属P1已修复并验证，真实业务验收仍待完成。
+状态：需求设计v1.0；模拟原型页面v0.4.1可运行。三个P0及跨行摘要与单位归属P1已修复并验证，真实业务验收仍待完成。
 
 ## 飞书在线文档
 
@@ -72,3 +72,14 @@
 - [首次完整结果](../../eval-results/p1-holdout-first-run-v0.1.json)
 
 [飞书09-P1跨行摘要与单位归属修复评测](https://my.feishu.cn/wiki/RcHjw5fjai8eiEkJdHmci8Qmnje)
+
+## 完整流程技术验收 v0.4.1
+
+2026-10-28 完整流程验收v0.4.1：修复条件性结果筛选、报告版本展示、索引摘要/原文区分及保存期间操作问题。133项回归、3场景51项HTTP检查通过；三类页面任务保存36项模拟处置，导出及恢复核对通过。受控模拟流程技术验收通过，人工可用性、专业复核和业务收益待验证。见[完整流程技术验收与试用记录](workflow-acceptance-v0.4.1.md)。
+
+- [10-完整流程验收与试用记录](workflow-acceptance-v0.4.1.md)
+- [场景清单和复现](../../data/workflow-acceptance-v0.1/README.md)
+- [HTTP完整结果](../../eval-results/workflow-http-v0.4.json)
+- [页面及持久性记录](../../eval-results/workflow-ui-v0.1.json)
+
+[飞书10-完整流程验收与试用记录](https://my.feishu.cn/wiki/PYsWwxwn2iQIxZkZ6yPcnwjinyc)

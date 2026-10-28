@@ -52,6 +52,20 @@ def search_text(c):
     return " ".join([c["title"], c["section"], c["text"].replace(WARNING, "")])
 
 
+def original_section(text, section):
+    """Locate one original H2 section by its metadata tag; ambiguity is not guessed."""
+    if not section:return None
+    headings=list(re.finditer(r'(?m)^##\s+([^\n]+)',text))
+    parts=[(m[1],text[m.start():headings[i+1].start() if i+1<len(headings) else len(text)]) for i,m in enumerate(headings)]
+    # Metadata may include a human label after an explicit clause ID.
+    identity=section.split()[0]
+    if not re.fullmatch(r'[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)+',identity):identity=section
+    tag=re.compile(r'(?<![A-Za-z0-9_-])'+re.escape(identity)+r'(?![A-Za-z0-9_-])')
+    matches=[raw for title,raw in parts if tag.search(title)]
+    if not matches:matches=[raw for _,raw in parts if tag.search(raw)]
+    return matches[0] if len(matches)==1 else None
+
+
 class Corpus:
     def __init__(self, base=BASE):
         self.base = Path(base)
@@ -78,7 +92,10 @@ class Corpus:
         p = (self.base / c["path"]).resolve()
         if not p.is_relative_to(self.base.resolve()):
             raise PermissionError("原文位置无效。")
-        return {**card(c), "original_text": p.read_text(), "excerpt": c["text"]}
+        original=p.read_text()
+        return {**card(c), "original_text": original, "excerpt": c["text"],
+                "excerpt_kind": "verbatim" if c["text"] in original else "index_summary",
+                "original_excerpt": original_section(original,c["section"])}
 
     def candidates(self, principal, include_archived=False, task_id=None):
         if task_id and task_id not in principal.task_ids:

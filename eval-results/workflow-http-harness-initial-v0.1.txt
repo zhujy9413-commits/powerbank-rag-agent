@@ -1,0 +1,1 @@
+首次HTTP验收脚本在FLOW-01复核后比对原结果时因KeyError: calculation停止。一致性项不含calculation键；脚本使用.get读取可选字段后重跑到新输出路径。此为验收脚本错误，未修改应用判定或PDF。
