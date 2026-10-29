@@ -1,0 +1,225 @@
+{
+  "kind": "first_live_embedding_development_not_holdout",
+  "starting_commit": "5dffbb54b4c622ec347215415b7fcb418703b55d",
+  "candidate_version": "candidate-retrieval-0.5",
+  "cases": [
+    {
+      "case_id": "RG-TERM-DEV-01",
+      "report_id": "SYND-801",
+      "A1": true,
+      "A2": true,
+      "status": "live_paired_development_executed"
+    },
+    {
+      "case_id": "RG-TERM-DEV-02",
+      "report_id": "SYND-802",
+      "A1": true,
+      "A2": true,
+      "status": "live_paired_development_executed"
+    },
+    {
+      "case_id": "RG-CONTEXT-DEV-01",
+      "report_id": "SYND-803",
+      "A1": true,
+      "A2": true,
+      "status": "live_paired_development_executed"
+    },
+    {
+      "case_id": "RG-CONTEXT-DEV-02",
+      "report_id": "SYND-804",
+      "A1": true,
+      "A2": true,
+      "status": "live_paired_development_executed"
+    },
+    {
+      "case_id": "RG-PORT-DEV-01",
+      "report_id": "SYND-805",
+      "A1": true,
+      "A2": true,
+      "status": "live_paired_development_executed"
+    },
+    {
+      "case_id": "RG-PORT-DEV-02",
+      "report_id": "SYND-806",
+      "A1": true,
+      "A2": true,
+      "status": "live_paired_development_executed"
+    },
+    {
+      "case_id": "RG-CONDITION-DEV-01",
+      "report_id": "SYND-807",
+      "A1": true,
+      "A2": true,
+      "status": "live_paired_development_executed"
+    },
+    {
+      "case_id": "RG-CONDITION-DEV-02",
+      "report_id": "SYND-808",
+      "A1": true,
+      "A2": true,
+      "status": "live_paired_development_executed"
+    },
+    {
+      "case_id": "RG-GAP-DEV-01",
+      "report_id": "SYND-809",
+      "A1": true,
+      "A2": true,
+      "status": "live_paired_development_executed"
+    },
+    {
+      "case_id": "RG-GAP-DEV-02",
+      "report_id": "SYND-810",
+      "A1": true,
+      "A2": true,
+      "status": "live_paired_development_executed"
+    },
+    {
+      "case_id": "RG-NOISE-DEV-01",
+      "report_id": "SYND-811",
+      "A1": true,
+      "A2": true,
+      "status": "live_paired_development_executed"
+    },
+    {
+      "case_id": "RG-NOISE-DEV-02",
+      "report_id": "SYND-812",
+      "A1": true,
+      "A2": true,
+      "status": "live_paired_development_executed"
+    },
+    {
+      "case_id": "RG-OPS-DEV-01",
+      "status": "offline_contract_passed",
+      "external_requests": 0
+    },
+    {
+      "case_id": "RG-OPS-DEV-02",
+      "status": "offline_contract_passed",
+      "external_requests": 0
+    },
+    {
+      "case_id": "RG-OPS-DEV-03",
+      "status": "offline_contract_passed",
+      "external_requests": 0
+    },
+    {
+      "case_id": "RG-OPS-DEV-04",
+      "status": "offline_contract_passed",
+      "external_requests": 0
+    }
+  ],
+  "result_summary": {
+    "completed": true,
+    "failure": null,
+    "content_cases": 12,
+    "offline_cases": 4,
+    "offline_cases_passed": 4,
+    "a2_namespace_runs": 248,
+    "real_hybrid_namespace_runs": 245,
+    "empty_namespace_runs": 3,
+    "unexpected_degradations": 0,
+    "external_requests": 433,
+    "model_generation_runs": 0,
+    "formal_holdout_gate": "not_evaluated",
+    "r03_net_gain": "not_adjudicated_no_adoption_claim"
+  },
+  "r01": {
+    "A1": {
+      "requirement": 1.0,
+      "report": 1.0
+    },
+    "A2": {
+      "requirement": 1.0,
+      "report": 1.0
+    }
+  },
+  "r02": {
+    "A1": {
+      "requirement": {
+        "positive_query_denominator": 124,
+        "observed_positive_results": 124,
+        "macro_precision_returned_at_5": 0.9919354838709677,
+        "precision_threshold": 0.8,
+        "precision_gate_passed": true,
+        "ranking_contract_passed": true,
+        "negative_query_denominator": 0,
+        "negative_correct": 0,
+        "negative_convergence_rate": null,
+        "status": "complete",
+        "invalid_ranking_or_identity_observed": false,
+        "acceptance_note": "R02 arithmetic alone never grants adoption; R01/R03 and safety/performance/cost gates remain mandatory."
+      },
+      "report": {
+        "positive_query_denominator": 121,
+        "observed_positive_results": 121,
+        "macro_precision_returned_at_5": 0.9834710743801653,
+        "precision_threshold": 0.8,
+        "precision_gate_passed": true,
+        "ranking_contract_passed": true,
+        "negative_query_denominator": 3,
+        "negative_correct": 3,
+        "negative_convergence_rate": 1.0,
+        "status": "complete",
+        "invalid_ranking_or_identity_observed": false,
+        "acceptance_note": "R02 arithmetic alone never grants adoption; R01/R03 and safety/performance/cost gates remain mandatory."
+      }
+    },
+    "A2": {
+      "requirement": {
+        "positive_query_denominator": 124,
+        "observed_positive_results": 124,
+        "macro_precision_returned_at_5": 0.9919354838709677,
+        "precision_threshold": 0.8,
+        "precision_gate_passed": true,
+        "ranking_contract_passed": true,
+        "negative_query_denominator": 0,
+        "negative_correct": 0,
+        "negative_convergence_rate": null,
+        "status": "complete",
+        "invalid_ranking_or_identity_observed": false,
+        "acceptance_note": "R02 arithmetic alone never grants adoption; R01/R03 and safety/performance/cost gates remain mandatory."
+      },
+      "report": {
+        "positive_query_denominator": 121,
+        "observed_positive_results": 121,
+        "macro_precision_returned_at_5": 0.9834710743801653,
+        "precision_threshold": 0.8,
+        "precision_gate_passed": true,
+        "ranking_contract_passed": true,
+        "negative_query_denominator": 3,
+        "negative_correct": 3,
+        "negative_convergence_rate": 1.0,
+        "status": "complete",
+        "invalid_ranking_or_identity_observed": false,
+        "acceptance_note": "R02 arithmetic alone never grants adoption; R01/R03 and safety/performance/cost gates remain mandatory."
+      }
+    }
+  },
+  "cost": {
+    "total_tokens": 25887,
+    "total_list_price_cny": "0.0129435",
+    "preflight_list_price_cny": "0.000011",
+    "development_mean_list_price_cny_per_report": "0.001077708333333333333333333333",
+    "query_http_requests": 245,
+    "document_http_requests": 187,
+    "preflight_http_requests": 1,
+    "actual_account_bill": "not_queried"
+  },
+  "decision": "本轮真实A2没有带来必要证据覆盖或种子精度增益，且增加了网络等待；当前保留A1，A2暂不接入页面。",
+  "holdout_materialized": 0,
+  "ordinary_ui": "unchanged_v0.4.3",
+  "asset_sha256": {
+    "app/ai_work/candidate.py": "e3a4b60f946ee6fc2f6756b1d3cf649daed4aaf8b9a843bcb785376048e14cef",
+    "app/ai_work/candidate_inputs.py": "1d55b31af5d4bba44c0dc7b87444f4baabcb554d00ea668faffd03c43c371f03",
+    "app/ai_work/live_embedding.py": "7c8cfa872c1fcc53e1bff01c49c12d622fe0ca751f0caf8f9077e8ba3e691499",
+    "scripts/evaluate_candidate_dev.py": "73fceefb40b7b218f2a0e95e230e16ae36313f91741df8ab8141a7af6dfe682f",
+    "scripts/evaluate_candidate_live.py": "fd4b4c54b8b15d8a87427d9b1f4ad4d12d144183ee1d3ddcb6198271877dc70d",
+    "eval-results/candidate-live-validation-v0.1.json": "9c3afa446b972c5adb268cf3bdb9515f915670a7fd98fc53b8f409239e45ca6a",
+    "scripts/validate_candidate_live.py": "adcee7fcce5fa97980138f32e1dc6edeb4ea3b82d269bf45ce00dae3013ea3f2",
+    "tests/test_live_embedding.py": "b9ce31a4e1f94546af26fd76748d3ce67fbb39d5770d6ee37d1ab6c067084cc5",
+    "data/ai-work-candidate-live-v0.1/execution-snapshot.json": "0a1810e1c266529720c27170efe340bc6949f84b4af47815736a5043012f47a2",
+    "eval-results/candidate-live-dev-v0.1.json": "a28bf57d7e865184f6c356f895df5356491f05cd289119b3ace5a282b5025f3d",
+    "eval-results/candidate-live-validation-v0.2.json": "3b302fa9101eaa27f9ea87a4a4dec5551dba4f65edcecd5bfe5b442a4a7d280d",
+    "eval-results/candidate-live-regression-v0.1.txt": "ec5e8ae75121eae5e36a26405d4dae7529f31a68ec04c20494c8afd513a9d02b"
+  }
+}

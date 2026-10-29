@@ -1,0 +1,130 @@
+{
+  "kind": "first_live_embedding_feishu_persistent_native_readback",
+  "verified_at_utc": "2026-10-29T06:43:18.786617+00:00",
+  "report": {
+    "checks": [],
+    "tableCount": 3,
+    "metricRows": [],
+    "cases": [
+      "RG-CONDITION-DEV-01",
+      "RG-CONDITION-DEV-02",
+      "RG-CONTEXT-DEV-01",
+      "RG-CONTEXT-DEV-02",
+      "RG-GAP-DEV-01",
+      "RG-GAP-DEV-02",
+      "RG-NOISE-DEV-01",
+      "RG-NOISE-DEV-02",
+      "RG-OPS-DEV-01",
+      "RG-PORT-DEV-01",
+      "RG-PORT-DEV-02",
+      "RG-TERM-DEV-01",
+      "RG-TERM-DEV-02"
+    ],
+    "persistent": true,
+    "allEditsPersisted": true,
+    "endMarkerPresent": true,
+    "markers": [
+      {
+        "present": true,
+        "text": "3456/3456"
+      },
+      {
+        "present": true,
+        "text": "225项完整回归"
+      },
+      {
+        "present": true,
+        "text": "0.0129435元"
+      },
+      {
+        "present": true,
+        "text": "245个非空"
+      },
+      {
+        "present": true,
+        "text": "意外降级0次"
+      },
+      {
+        "present": true,
+        "text": "91.773秒"
+      },
+      {
+        "present": true,
+        "text": "99.19%"
+      },
+      {
+        "present": true,
+        "text": "98.35%"
+      },
+      {
+        "present": true,
+        "text": "104份此前结果"
+      },
+      {
+        "present": true,
+        "text": "首次核验有1项比较失败"
+      }
+    ],
+    "editorCount": 100,
+    "lastParagraph": "百炼真实向量开发验证正文结束。​",
+    "url": "https://my.feishu.cn/wiki/CxOIws1oDiPyBJkFeE2ckWDonpa"
+  },
+  "parent_and_links": {
+    "report": {
+      "links": [
+        {
+          "text": "执行前配置、价格来源、请求计划与源码哈希",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/data/ai-work-candidate-live-v0.1/execution-snapshot.json"
+        },
+        {
+          "text": "首次核验记录",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/candidate-live-validation-v0.1.json"
+        },
+        {
+          "text": "完整A1/A2原始输出及逐次费用账本",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/candidate-live-dev-v0.1.json"
+        },
+        {
+          "text": "独立复算、逐条变化与历史核验",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/candidate-live-validation-v0.2.json"
+        },
+        {
+          "text": "225项完整回归日志",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/candidate-live-regression-v0.1.txt"
+        },
+        {
+          "text": "16项执行台账与产物哈希",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/data/ai-work-candidate-live-v0.1/run-manifest.json"
+        }
+      ],
+      "url": "https://my.feishu.cn/wiki/CxOIws1oDiPyBJkFeE2ckWDonpa",
+      "nodes": [
+        {
+          "pos": "6,4,0,22",
+          "text": "21 AI Work 百炼真实向量检索验证与对比",
+          "uid": "firstLevelWikiToken=IX3OwNECai1t7nkBuMOcD3mfnzf&isMainTree=true&level=4&rootNodeId=PERSONAL&wikiToken=CxOIws1oDiPyBJkFeE2ckWDonpa"
+        }
+      ],
+      "endMarkerRead": true
+    },
+    "parent": {
+      "persistent": true,
+      "matches": true,
+      "url": "https://my.feishu.cn/wiki/UlodwHIzJidrjDkQXVvcApD1nbe",
+      "text": "2026-10-29 RAG开发材料已核验，候选v0.5首次真实百炼Embedding开发对照已完成：原16场景含12份PDF及4个零联网异常夹具，225项完整回归和3456项执行/计量/评分/历史核验通过。A1要求/报告必要组覆盖100.00%/100.00%，A2为100.00%/100.00%；前5条实际返回精度A1要求/报告99.19%/98.35%，A2为99.19%/98.35%。百炼北京text-embedding-v4、1024维，433次真实请求、25887 Token，按标价核算0.0129435元，未核对账户实际扣款；意外降级0、生成请求0。A2累计检索报告P95 91.77秒，当前保留A1，A2暂不接入页面。原规则载荷、开发样本及评分口径未变，候选未冻结，正式32个留出场景尚未制作。21 当前真实向量验证 https://my.feishu.cn/wiki/CxOIws1oDiPyBJkFeE2ckWDonpa ；20 查询修复 https://my.feishu.cn/wiki/K07BwHd4jiCXS9kQwY1cyMUfnbg ；19 原开发 https://my.feishu.cn/wiki/WKQAwmuA7iyqQZk1wv5cuQIpndx ；18 R02口径 https://my.feishu.cn/wiki/J0GdwHG0tijIdEkSJ0Dcvqabnth ；15 开发样本包 https://my.feishu.cn/wiki/Qv6twselVij87akhUquc3ODhnCd ；16 参考标注 https://my.feishu.cn/wiki/P2WpwS5eTiuo1LkAJc3c3w0BnZe ；17 原材料核验 https://my.feishu.cn/wiki/SGC1wDubRi8CCDktyFYcL4MVn0c ；原ZIP https://my.feishu.cn/wiki/QTrAwLDt9iAmUokXwJEcTYVbnib 。原13至20及ZIP保留历史快照，当前执行以21和真实向量运行清单为准。​"
+    }
+  },
+  "source_sha256": {
+    "docs/ai-work/live-vector-comparison-v0.1.md": "3801bee8e3152012e030b183fc09663cee8151a207b88303ecd7719b00836c11"
+  },
+  "imported_markdown_sha256": "9096edf95a6eda7b8ca25b8990d7b28f94483273e3d0d24240ef89c4e44a217d",
+  "visual_inspection": {
+    "viewed": true,
+    "description": "A1/A2 metric table: all three columns, six metric rows and paired-change explanation are readable",
+    "screenshot_sha256": "19f68487b3ac8e779bd2610c56355c7c8fee67bb95f9c43811bd997a83298af7",
+    "screenshot_not_published": true
+  },
+  "recovery_note": "Report imported once and moved once. Post-move tree locator timed out while navigation was collapsed; read-only breadcrumb and pinned directory confirmed AI Work parent and position 6,4,0,22. No repeated import or move.",
+  "scope": "New report21 and existing AI Work parent status; prior reports/sample ZIP/internal assistant were not edited.",
+  "original_user_tabs_preserved": true
+}

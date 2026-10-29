@@ -107,7 +107,7 @@
 
 ## RAG增益验证方案
 
-2026-10-29 RAG实验方案口径基线为v0.2：保留现有完整基线、五组对照、48个计划场景与分层验收。R02采用“前5条实际返回精度”，80%门槛保留，仍须联合满足R01/R03完整性及安全等门禁。16个开发场景已完成查询修复回归，32个留出场景待制作，正式五组留出未执行。当前状态见[一致性查询修复报告](candidate-consistency-fix-v0.5.md)；[验证方案](rag-gain-validation-plan-v0.1.md)、[评测清单](rag-gain-evaluation-checklist-v0.1.md)及[R02报告](rag-gain-r02-revision-v0.2.md)保留各自交付时快照。
+2026-10-29 RAG实验方案口径基线为v0.2：保留现有完整基线、五组对照、48个计划场景与分层验收。R02采用“前5条实际返回精度”，80%门槛保留，仍须联合满足R01/R03完整性及安全等门禁。16个开发场景已完成查询修复回归，32个留出场景待制作，正式五组留出未执行。当前状态见[真实向量对照报告](live-vector-comparison-v0.1.md)；[验证方案](rag-gain-validation-plan-v0.1.md)、[评测清单](rag-gain-evaluation-checklist-v0.1.md)及[R02报告](rag-gain-r02-revision-v0.2.md)保留各自交付时快照。
 
 - [当前机器协议v0.2](../../data/ai-work-rag-gain-v0.2/protocol.json)与[48项状态台账](../../data/ai-work-rag-gain-v0.2/cases.json)
 - [开发种子相关性qrels](../../data/ai-work-rag-gain-v0.2/qrels-dev-v0.1.json)：248个查询/来源组合，245正例、3负例，4971个标签。
@@ -143,3 +143,14 @@ A1开发R01要求、报告均100%；R02要求99.19%、报告98.35%，3个缺证�
 - [原v0.4实现与开发结果](candidate-retrieval-dev-v0.4.md)，保留修复前两个查询缺口与各轮分数。
 - [飞书19 候选检索链路与开发验证](https://my.feishu.cn/wiki/WKQAwmuA7iyqQZk1wv5cuQIpndx)
 - [飞书20 一致性查询修复与回归](https://my.feishu.cn/wiki/K07BwHd4jiCXS9kQwY1cyMUfnbg)
+
+## 首轮百炼真实向量开发验证
+
+2026-10-29 原16个开发场景完成A1/A2真实向量对照。固定百炼北京text-embedding-v4、1024维及原v0.5路由，433次请求，按接口用量与标价核算0.0129435元，非账户实扣。225项完整回归、3456/3456项执行/计量/历史核验通过。当前保留A1，A2暂不接入页面；具体覆盖、精度、逐条变化与耗时见[验证报告](live-vector-comparison-v0.1.md)。
+
+- [原始执行及逐次费用账本](../../eval-results/candidate-live-dev-v0.1.json)
+- [配对变化、耗时和完整性核验](../../eval-results/candidate-live-validation-v0.2.json)
+- [16项执行台账](../../data/ai-work-candidate-live-v0.1/run-manifest.json)
+- [飞书21 百炼真实向量检索验证与对比](https://my.feishu.cn/wiki/CxOIws1oDiPyBJkFeE2ckWDonpa)
+
+原v0.5及更早A2降级记录保留。本轮无意外降级，四个异常夹具仍零联网，生成请求0；普通页面与原规则流程保持v0.4.3，正式留出、专业复核及R03业务净增益未验收。

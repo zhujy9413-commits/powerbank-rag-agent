@@ -1,0 +1,164 @@
+{
+  "kind": "first_real_embedding_development_delivery",
+  "verified_at_utc": "2026-10-29T06:44:06.235381+00:00",
+  "repository": {
+    "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent",
+    "visibility_verified": "private",
+    "target": "main",
+    "commit": "Git commit containing this manifest"
+  },
+  "starting_commit": "5dffbb54b4c622ec347215415b7fcb418703b55d",
+  "content_cases": 12,
+  "offline_cases": 4,
+  "content_namespace_rows_per_arm": 248,
+  "live_hybrid_namespace_runs": 245,
+  "no_eligible_namespace_runs": 3,
+  "full_regression_tests": 225,
+  "new_metering_tests_included": 13,
+  "integrity_checks": 3456,
+  "r01": {
+    "A1": {
+      "requirement": 1.0,
+      "report": 1.0
+    },
+    "A2": {
+      "requirement": 1.0,
+      "report": 1.0
+    }
+  },
+  "r02": {
+    "A1": {
+      "requirement": {
+        "positive_query_denominator": 124,
+        "observed_positive_results": 124,
+        "macro_precision_returned_at_5": 0.9919354838709677,
+        "precision_threshold": 0.8,
+        "precision_gate_passed": true,
+        "ranking_contract_passed": true,
+        "negative_query_denominator": 0,
+        "negative_correct": 0,
+        "negative_convergence_rate": null,
+        "status": "complete",
+        "invalid_ranking_or_identity_observed": false,
+        "acceptance_note": "R02 arithmetic alone never grants adoption; R01/R03 and safety/performance/cost gates remain mandatory."
+      },
+      "report": {
+        "positive_query_denominator": 121,
+        "observed_positive_results": 121,
+        "macro_precision_returned_at_5": 0.9834710743801653,
+        "precision_threshold": 0.8,
+        "precision_gate_passed": true,
+        "ranking_contract_passed": true,
+        "negative_query_denominator": 3,
+        "negative_correct": 3,
+        "negative_convergence_rate": 1.0,
+        "status": "complete",
+        "invalid_ranking_or_identity_observed": false,
+        "acceptance_note": "R02 arithmetic alone never grants adoption; R01/R03 and safety/performance/cost gates remain mandatory."
+      }
+    },
+    "A2": {
+      "requirement": {
+        "positive_query_denominator": 124,
+        "observed_positive_results": 124,
+        "macro_precision_returned_at_5": 0.9919354838709677,
+        "precision_threshold": 0.8,
+        "precision_gate_passed": true,
+        "ranking_contract_passed": true,
+        "negative_query_denominator": 0,
+        "negative_correct": 0,
+        "negative_convergence_rate": null,
+        "status": "complete",
+        "invalid_ranking_or_identity_observed": false,
+        "acceptance_note": "R02 arithmetic alone never grants adoption; R01/R03 and safety/performance/cost gates remain mandatory."
+      },
+      "report": {
+        "positive_query_denominator": 121,
+        "observed_positive_results": 121,
+        "macro_precision_returned_at_5": 0.9834710743801653,
+        "precision_threshold": 0.8,
+        "precision_gate_passed": true,
+        "ranking_contract_passed": true,
+        "negative_query_denominator": 3,
+        "negative_correct": 3,
+        "negative_convergence_rate": 1.0,
+        "status": "complete",
+        "invalid_ranking_or_identity_observed": false,
+        "acceptance_note": "R02 arithmetic alone never grants adoption; R01/R03 and safety/performance/cost gates remain mandatory."
+      }
+    }
+  },
+  "cost": {
+    "total_tokens": 25887,
+    "total_list_price_cny": "0.0129435",
+    "preflight_list_price_cny": "0.000011",
+    "development_mean_list_price_cny_per_report": "0.001077708333333333333333333333",
+    "query_http_requests": 245,
+    "document_http_requests": 187,
+    "preflight_http_requests": 1,
+    "actual_account_bill": "not_queried"
+  },
+  "performance": {
+    "measurement": "single_development_run_sequential_queries_cold_task_within_report_index_reuse_no_warm_trial",
+    "a1_report_retrieval_p95_ms": 78.938,
+    "a2_report_retrieval_p95_ms": 91773.171,
+    "http_request_p95_ms": 2229.359,
+    "formal_p01": "not_adjudicated_no_repeated_cold_warm_tasks"
+  },
+  "decision": "No measured coverage or seed-precision gain over A1; keep A1 candidate, do not integrate A2 into ordinary UI.",
+  "retained_first_audit": {
+    "path": "eval-results/candidate-live-validation-v0.1.json",
+    "passed": 3455,
+    "total": 3456,
+    "remaining_failure": "Replayed role-fixture measured elapsed_ms differs. Final audit excludes exactly those two timing fields; all behavior and virtual-clock values remain exact."
+  },
+  "unchanged": {
+    "a1_outputs": 248,
+    "original_business_payloads": 12,
+    "development_assets": 93,
+    "prior_frozen_assets": 88,
+    "prior_results": 104,
+    "original_zip": true,
+    "protocol_qrels_scorer": true,
+    "locked_app_knowledge_sources": 7
+  },
+  "phase": {
+    "candidate_formal_freeze": "pending",
+    "formal_holdout_materialized": 0,
+    "formal_r03": "not_adjudicated",
+    "formal_p01": "not_adjudicated_development_latency_gap_recorded",
+    "generation_calls": 0,
+    "ordinary_application_ui": "unchanged_v0.4.3"
+  },
+  "feishu": {
+    "report": "https://my.feishu.cn/wiki/CxOIws1oDiPyBJkFeE2ckWDonpa",
+    "parent": "https://my.feishu.cn/wiki/UlodwHIzJidrjDkQXVvcApD1nbe",
+    "persistent": true,
+    "native_tables": 3,
+    "result_links": 6,
+    "directory_at_readback": "6,4,0,22"
+  },
+  "browser_finish": {
+    "finished": true,
+    "forcedCleanup": false,
+    "keep": true
+  },
+  "sensitive_config_values_absent": true,
+  "asset_sha256": {
+    "app/ai_work/live_embedding.py": "7c8cfa872c1fcc53e1bff01c49c12d622fe0ca751f0caf8f9077e8ba3e691499",
+    "scripts/evaluate_candidate_live.py": "fd4b4c54b8b15d8a87427d9b1f4ad4d12d144183ee1d3ddcb6198271877dc70d",
+    "scripts/validate_candidate_live.py": "adcee7fcce5fa97980138f32e1dc6edeb4ea3b82d269bf45ce00dae3013ea3f2",
+    "tests/test_live_embedding.py": "b9ce31a4e1f94546af26fd76748d3ce67fbb39d5770d6ee37d1ab6c067084cc5",
+    "README.md": "6f6676e00794371596fe74de3a73ccb76532846c7fedbe6f3cd729927994110c",
+    "docs/ai-work/README.md": "5ad9c3204ac0b26b9e9406fc10d7a18edef68104d8204cebcbc49b8dcc8d4de3",
+    "docs/SYNC.md": "f45aa1579a9adc3239644bf2949e4fdec33441ebfd65c2404730d61726d75edc",
+    "docs/ai-work/live-vector-comparison-v0.1.md": "3801bee8e3152012e030b183fc09663cee8151a207b88303ecd7719b00836c11",
+    "data/ai-work-candidate-live-v0.1/execution-snapshot.json": "0a1810e1c266529720c27170efe340bc6949f84b4af47815736a5043012f47a2",
+    "data/ai-work-candidate-live-v0.1/run-manifest.json": "5de3786d81ec9c21aac169d252a12eb6a6a5c5338a191187265267a943a54b48",
+    "eval-results/candidate-live-dev-v0.1.json": "a28bf57d7e865184f6c356f895df5356491f05cd289119b3ace5a282b5025f3d",
+    "eval-results/candidate-live-validation-v0.1.json": "9c3afa446b972c5adb268cf3bdb9515f915670a7fd98fc53b8f409239e45ca6a",
+    "eval-results/candidate-live-validation-v0.2.json": "3b302fa9101eaa27f9ea87a4a4dec5551dba4f65edcecd5bfe5b442a4a7d280d",
+    "eval-results/candidate-live-regression-v0.1.txt": "ec5e8ae75121eae5e36a26405d4dae7529f31a68ec04c20494c8afd513a9d02b",
+    "eval-results/candidate-live-feishu-v0.1.json": "f7dbc9eb8005ad6b2c38100376b0dcf8dd0dfdd0835e6dccbc038ce649a590d5"
+  }
+}

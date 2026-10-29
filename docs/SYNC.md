@@ -390,3 +390,20 @@ G01已在受控模拟范围内修复。当前权限保留时可读取历史任�
 93项开发资产、88份既有冻结材料、98份此前结果、原ZIP及锁定应用/知识来源保持原字节。v0.4结果保留原路径，修复前源码为18e9833；本轮源码及哈希见[交付摘要](../eval-results/candidate-query-fix-delivery-v0.5.json)。GitHub再次核实PRIVATE。候选仍未冻结；A2为显式关键词降级，真实向量与生成调用0，正式留出、专业复核和页面接入待后续阶段验证，32个留出场景未制作。
 
 飞书悬停菜单多次未展开时均先读取状态，没有重复上传；参考标注上传成功但侧栏未更新，刷新核对了原文档，未重建。ZIP通过稳定的文档库入口上传一次，再移动一次。最后的只读导航被浏览器任务中断，核对原任务已结束及页面实际落点后，在新任务中读取并保存入口；未重放未知写入。最终浏览器任务正常结束，保留原标签，closedTabIds为空。
+
+## 2026-10-29 百炼真实向量 A1/A2 开发对照
+
+原12份PDF和4个零联网异常夹具完成首轮真实Embedding开发验证；冻结已有text-embedding-v4北京配置、1024维、v0.5路由与v0.2评分。245个非空A2查询/来源实际融合，3个无候选来源不调用，意外降级0。225项完整回归及3456/3456项核验通过。当前保留A1，A2暂不接入页面，结论及局限见报告。
+
+| 交付 | GitHub维护源 | 飞书 |
+| --- | --- | --- |
+| 模型费用及A1/A2对照 | [真实向量验证报告](ai-work/live-vector-comparison-v0.1.md) | [21 AI Work 百炼真实向量检索验证与对比](https://my.feishu.cn/wiki/CxOIws1oDiPyBJkFeE2ckWDonpa) |
+| 原始结果与费用 | [真实执行及逐次账本](../eval-results/candidate-live-dev-v0.1.json)、[独立复算与变化明细](../eval-results/candidate-live-validation-v0.2.json) | 21提供原始记录链接与原生结果表 |
+| 执行冻结与测试 | [调用前配置/价格快照](../data/ai-work-candidate-live-v0.1/execution-snapshot.json)、[16项台账](../data/ai-work-candidate-live-v0.1/run-manifest.json)、[225项回归日志](../eval-results/candidate-live-regression-v0.1.txt) | 21展示当前配置、计量和测试结果 |
+| 云端读回 | [正文、目录、链接及入口核验](../eval-results/candidate-live-feishu-v0.1.json) | 21和AI Work入口刷新核对保存 |
+
+433次真实Embedding请求、25887 Token，按已核验官方原价计算0.0129435元，包含预检。免费额度和实际账单未查询，未把费用核算称作账户实扣。生成调用0。本机密钥、接入地址与业务数据库未同步。
+
+93项开发资产、88份既有冻结材料、104份此前结果、原ZIP、协议/qrels/评分器和锁定应用/知识来源保持原字节。A1的248条候选输出与v0.5一致；原规则业务载荷保持。此次仍为同作者模拟开发集，候选未冻结、32个正式留出场景未制作，R03/P01正式验收与业务收益未完成。
+
+21采用原生Markdown导入并移动到AI Work；正文表格、结束标记、原始结果链接和AI Work入口均重新加载读回，实际表格布局已查看。原13至20及ZIP保留历史快照；内部智能客服未编辑。GitHub仍为PRIVATE，交付摘要见[本轮交付清单](../eval-results/candidate-live-delivery-v0.1.json)。

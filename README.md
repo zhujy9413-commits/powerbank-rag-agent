@@ -12,8 +12,9 @@
 - [MVP 范围](docs/ai-work/MVP.md)
 - [完整 PRD](docs/ai-work/PRD.md)
 - [需求实现与验收对照](docs/ai-work/prd-implementation-audit-v0.1.md)
-- [一致性查询修复与回归](docs/ai-work/candidate-consistency-fix-v0.5.md)：版本核对和背景完整性两个缺口均补齐为2/2组；原12份PDF与4个离线夹具重跑，212项测试、2099项执行/历史核验通过。A1要求/报告组覆盖均100%，真实向量与正式留出待验，候选未冻结。页面保持原规则流程。
-- [RAG 增益验证方案](docs/ai-work/rag-gain-validation-plan-v0.1.md)与[评测清单](docs/ai-work/rag-gain-evaluation-checklist-v0.1.md)保留v0.2口径基线：[R02修订核验](docs/ai-work/rag-gain-r02-revision-v0.2.md)记录评分规则修订；当前执行状态以v0.5回归报告及[运行清单](data/ai-work-candidate-dev-v0.5/run-manifest.json)为准。32个留出场景尚未制作。
+- [百炼真实向量A1/A2对比](docs/ai-work/live-vector-comparison-v0.1.md)：原16场景真实运行，433次Embedding请求、225项回归；费用及耗时已记录，当前保留A1，A2暂不接入页面。
+- [一致性查询修复与回归](docs/ai-work/candidate-consistency-fix-v0.5.md)：版本核对和背景完整性两个缺口均补齐为2/2组；原12份PDF与4个离线夹具重跑，212项测试、2099项执行/历史核验通过。A1要求/报告组覆盖均100%，当轮未调用真实向量；本轮真实对照见21，正式留出待验，候选未冻结。页面保持原规则流程。
+- [RAG 增益验证方案](docs/ai-work/rag-gain-validation-plan-v0.1.md)与[评测清单](docs/ai-work/rag-gain-evaluation-checklist-v0.1.md)保留v0.2口径基线：[R02修订核验](docs/ai-work/rag-gain-r02-revision-v0.2.md)记录评分规则修订；当前执行以[真实向量对照](docs/ai-work/live-vector-comparison-v0.1.md)及[运行清单](data/ai-work-candidate-live-v0.1/run-manifest.json)为准。32个留出场景尚未制作。
 - [开发样本包](docs/ai-work/rag-gain-dev-sample-pack-v0.1.md)、[完整参考标注](docs/ai-work/rag-gain-dev-reference-v0.1.md)及[材料核验报告](docs/ai-work/rag-gain-dev-material-audit-v0.1.md)：12份PDF、4份离线夹具，1693项材料校验通过；[下载ZIP](output/packages/ai-work-rag-gain-dev-v0.1.zip)。
 - [知识库与 RAG 方案](docs/ai-work/RAG-and-knowledge-base.md)
 

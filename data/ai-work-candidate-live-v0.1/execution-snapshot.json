@@ -1,0 +1,69 @@
+{
+  "kind": "live_embedding_development_execution_snapshot",
+  "created_at": "2026-10-29T06:21:33.539704+00:00",
+  "starting_commit": "5dffbb54b4c622ec347215415b7fcb418703b55d",
+  "authorization": "用户本轮明确要求核验百炼模型及费用并执行原16个开发场景的真实向量A1/A2对比；仅此开发运行，最多1元和600请求，不包含生成模型。",
+  "provider": "bailian",
+  "region": "cn-beijing",
+  "requested_model": "text-embedding-v4",
+  "dimensions": 1024,
+  "encoding_format": "float",
+  "api": "synchronous_compatible_embeddings",
+  "batch_size": 10,
+  "per_text_max_tokens": 8192,
+  "price_cny_per_million_input_tokens": "0.5",
+  "account_free_quota": "not_verified_not_subtracted",
+  "billing_settlement": "not_queried",
+  "limits": {
+    "cny": 1,
+    "external_requests": 600,
+    "campaign_seconds": 1800,
+    "single_request_timeout_seconds": 35,
+    "retries": 0
+  },
+  "official_sources": [
+    {
+      "url": "https://help.aliyun.com/zh/model-studio/model-pricing",
+      "facts": "北京同步原价0.5元/百万输入Token；免费额度100万Token且有有效期；账户余额未知"
+    },
+    {
+      "url": "https://help.aliyun.com/zh/model-studio/text-embedding-synchronous-api",
+      "facts": "text-embedding-v4，默认1024维，每请求最多10行，每行8192Token，响应model、id、usage.total_tokens"
+    },
+    {
+      "url": "https://help.aliyun.com/zh/model-studio/rate-limit",
+      "facts": "北京text-embedding-v4当前文档RPM1800、TPM1200000；实际账户限流仍可能不同"
+    }
+  ],
+  "request_plan": {
+    "kind": "offline_request_plan_not_quality",
+    "request_count": 433,
+    "input_count": 660,
+    "utf8_bytes": 72556,
+    "max_text_utf8_bytes": 297,
+    "external_requests": 0
+  },
+  "scope": {
+    "content_pdfs": 12,
+    "offline_fixtures": 4,
+    "query_namespace_rows_per_arm": 248,
+    "arms": [
+      "A1",
+      "A2"
+    ],
+    "new_holdout_materialized": 0,
+    "generation_requests": 0
+  },
+  "model_identity_limit": "核对请求及返回的模型别名；服务未承诺不可变修订ID，不能证明别名内部权重不漂移。",
+  "asset_sha256": {
+    "app/ai_work/candidate.py": "e3a4b60f946ee6fc2f6756b1d3cf649daed4aaf8b9a843bcb785376048e14cef",
+    "app/ai_work/candidate_inputs.py": "1d55b31af5d4bba44c0dc7b87444f4baabcb554d00ea668faffd03c43c371f03",
+    "app/ai_work/live_embedding.py": "7c8cfa872c1fcc53e1bff01c49c12d622fe0ca751f0caf8f9077e8ba3e691499",
+    "scripts/evaluate_candidate_dev.py": "73fceefb40b7b218f2a0e95e230e16ae36313f91741df8ab8141a7af6dfe682f",
+    "scripts/evaluate_candidate_live.py": "fd4b4c54b8b15d8a87427d9b1f4ad4d12d144183ee1d3ddcb6198271877dc70d",
+    "tests/test_live_embedding.py": "b9ce31a4e1f94546af26fd76748d3ce67fbb39d5770d6ee37d1ab6c067084cc5",
+    "data/ai-work-rag-gain-v0.2/protocol.json": "97e63170e8f50375204c79ae2c730669f145ef86c03106c07c7650766834fae4",
+    "data/ai-work-rag-gain-v0.2/qrels-dev-v0.1.json": "cb6ed065ee619d9ff0bb3f7b51efbaa3fdddbfdf0bd25f8b943b8750ed466280",
+    "data/ai-work-rag-gain-dev-v0.1/material-manifest.json": "e524558ee053d970eaaae0297ad4b4445a2099e5f0cf202af20f860bc5700418"
+  }
+}
