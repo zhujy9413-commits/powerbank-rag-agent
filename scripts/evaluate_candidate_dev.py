@@ -133,6 +133,7 @@ def evaluate(raw):
 
 
 def main():
+    from app.ai_work.candidate import VERSION
     p=argparse.ArgumentParser();p.add_argument("--produce",action="store_true");p.add_argument("--ratio",type=float,default=0);p.add_argument("--output",type=Path);p.add_argument("--route",action="store_true")
     args=p.parse_args()
     if args.produce:
@@ -143,7 +144,7 @@ def main():
     # Production has finished; only the evaluator now reads qrels/fixtures.
     with patch("socket.socket",side_effect=AssertionError("network_forbidden")):
         result=evaluate(raw)
-    result.update(kind="development_candidate_run_not_holdout",evaluated_at=datetime.now(timezone.utc).isoformat(),protocol_id="AIWORK-RAG-GAIN-0.2",candidate_version="candidate-retrieval-0.4",
+    result.update(kind="development_candidate_run_not_holdout",evaluated_at=datetime.now(timezone.utc).isoformat(),protocol_id="AIWORK-RAG-GAIN-0.2",candidate_version=VERSION,
         input_config=raw["config"],application_phase=raw["application_phase"],raw_application_runs=raw["cases"],
         summary=dict(content_cases=len(raw["cases"]),offline_cases=len(result["offline"]),offline_cases_passed=sum(x["passed"] for x in result["offline"]),
                      query_namespace_rows_per_arm=248,original_payloads_preserved=all(x["original_payload_preserved"] for x in raw["cases"]),

@@ -1,0 +1,111 @@
+{
+  "kind": "consistency_query_fix_native_feishu_readback",
+  "verified_at_utc": "2026-10-29T03:04:26.205289+00:00",
+  "source_sha256": {
+    "docs/ai-work/candidate-consistency-fix-v0.5.md": "7f2f6d62b9db04583ec86f42fd97f2c6ca72388a0bdf38d69b4471d0e94f8cd2"
+  },
+  "report": {
+    "endMarkerPresent": true,
+    "persistent": true,
+    "directory": [
+      {
+        "pos": "6,4,0,21",
+        "text": "20 AI Work 一致性查询修复与回归",
+        "uid": "firstLevelWikiToken=IX3OwNECai1t7nkBuMOcD3mfnzf&isMainTree=true&level=4&rootNodeId=PERSONAL&wikiToken=K07BwHd4jiCXS9kQwY1cyMUfnbg"
+      }
+    ],
+    "allEditsPersisted": true,
+    "checks": [],
+    "url": "https://my.feishu.cn/wiki/K07BwHd4jiCXS9kQwY1cyMUfnbg",
+    "lastParagraph": "一致性查询修复回归正文结束。​",
+    "tableCount": 3,
+    "editorCount": 54,
+    "cases": [
+      "RG-GAP-DEV-02",
+      "RG-NOISE-DEV-02"
+    ],
+    "markers": [
+      {
+        "present": true,
+        "text": "212项"
+      },
+      {
+        "present": true,
+        "text": "2099项"
+      },
+      {
+        "present": true,
+        "text": "492条"
+      },
+      {
+        "present": true,
+        "text": "99.19%"
+      },
+      {
+        "present": true,
+        "text": "RG-GAP-DEV-02"
+      },
+      {
+        "present": true,
+        "text": "RG-NOISE-DEV-02"
+      },
+      {
+        "present": true,
+        "text": "45项"
+      },
+      {
+        "present": true,
+        "text": "候选尚未冻结"
+      }
+    ],
+    "metricRows": []
+  },
+  "parent_and_links": {
+    "report": {
+      "links": [
+        {
+          "text": "212项回归",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/candidate-query-fix-regression-v0.5.txt"
+        },
+        {
+          "text": "45项候选测试",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/candidate-query-fix-tests-v0.5.txt"
+        },
+        {
+          "text": "2099项核验记录",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/candidate-query-fix-validation-v0.5.json"
+        },
+        {
+          "text": "本轮开发执行",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/candidate-query-fix-dev-v0.5.json"
+        },
+        {
+          "text": "运行清单",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/data/ai-work-candidate-dev-v0.5/run-manifest.json"
+        },
+        {
+          "text": "v0.4结果",
+          "href": "https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/eval-results/candidate-dev-final-v0.4.json"
+        }
+      ],
+      "url": "https://my.feishu.cn/wiki/K07BwHd4jiCXS9kQwY1cyMUfnbg",
+      "nodes": [],
+      "endMarkerRead": true
+    },
+    "parent": {
+      "persistent": true,
+      "matches": true,
+      "url": "https://my.feishu.cn/wiki/UlodwHIzJidrjDkQXVvcApD1nbe",
+      "text": "2026-10-29 RAG开发材料已核验，候选模块v0.5的版本核对和背景完整性两个查询已修复，必要组均覆盖2/2。原16个开发场景（12份PDF和4个离线夹具）已重跑，212项完整回归含45项候选测试通过，2099项评分/执行/历史核验通过。A1要求、报告组覆盖均100%；前5条实际返回精度要求99.19%、报告98.35%。3个报告缺证负例正确收敛，其余492条候选输出与v0.4一致，12份原规则业务载荷未改变。A2仍为显式关键词降级，真实Embedding与生成调用0；候选未冻结，专业复核、正式留出和页面接入待验。20 当前修复与回归 https://my.feishu.cn/wiki/K07BwHd4jiCXS9kQwY1cyMUfnbg ；19 原开发记录 https://my.feishu.cn/wiki/WKQAwmuA7iyqQZk1wv5cuQIpndx ；18 R02口径 https://my.feishu.cn/wiki/J0GdwHG0tijIdEkSJ0Dcvqabnth ；15 开发样本包 https://my.feishu.cn/wiki/Qv6twselVij87akhUquc3ODhnCd ；16 参考标注 https://my.feishu.cn/wiki/P2WpwS5eTiuo1LkAJc3c3w0BnZe ；17 原材料核验 https://my.feishu.cn/wiki/SGC1wDubRi8CCDktyFYcL4MVn0c ；原ZIP https://my.feishu.cn/wiki/QTrAwLDt9iAmUokXwJEcTYVbnib 。原13至19及ZIP保留各次交付时状态；当前执行以20和v0.5运行清单为准，32个留出场景尚未制作。​"
+    }
+  },
+  "visual_inspection": {
+    "viewed": true,
+    "description": "Comparison and metric tables fully readable with navigation panel collapsed",
+    "screenshot_sha256": "35d14b592db6cb767974ff61b6500e682d8de311ee260acb15807f35e91b7dab",
+    "screenshot_not_published": true
+  },
+  "recovery_note": "Import completed before a virtualized parent-tree selector timed out. Read-only inspection confirmed one new root report, then a single native move placed it under AI Work. Persisted readback confirmed directory 6,4,0,21; no repeated import.",
+  "scope": "New report 20 and current AI Work parent status; original reports, sample pack and internal assistant unchanged.",
+  "original_user_tabs_preserved": true
+}

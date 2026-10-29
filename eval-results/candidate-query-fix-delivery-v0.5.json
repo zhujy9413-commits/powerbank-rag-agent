@@ -1,0 +1,80 @@
+{
+  "kind": "consistency_query_fix_development_delivery_not_holdout",
+  "date": "2026-10-29",
+  "candidate_version": "candidate-retrieval-0.5",
+  "repository": {
+    "url": "https://github.com/zhujy9413-commits/powerbank-rag-agent",
+    "visibility_verified": "private",
+    "target": "main",
+    "commit": "Git commit containing this manifest"
+  },
+  "previous_commit": "18e9833f71328ba682fefd62a9f4bfae89505354",
+  "fixed_queries": [
+    {
+      "row_id": "RG-GAP-DEV-02:SPEC-VERSION:requirement",
+      "before_recall": 0.5,
+      "after_recall": 1.0,
+      "after_precision": 1.0
+    },
+    {
+      "row_id": "RG-NOISE-DEV-02:BACKGROUND-CONSISTENCY:requirement",
+      "before_recall": 0.0,
+      "after_recall": 1.0,
+      "after_precision": 1.0
+    }
+  ],
+  "content_cases": 12,
+  "offline_cases_passed": 4,
+  "full_regression_tests": 212,
+  "candidate_tests_included": 45,
+  "new_counterexample_tests_included": 10,
+  "integrity_checks_passed": 2099,
+  "integrity_checks_total": 2099,
+  "a1": {
+    "r01_requirement": 1.0,
+    "r01_report": 1.0,
+    "r02_requirement": 0.9919354838709677,
+    "r02_report": 0.9834710743801653,
+    "negative_report_queries_correct": 3
+  },
+  "unchanged": {
+    "unaffected_query_namespace_arm_outputs": 492,
+    "original_business_payloads": 12,
+    "development_assets": 93,
+    "prior_frozen_assets": 88,
+    "prior_result_files": 98,
+    "original_zip": true,
+    "scoring_protocol_and_qrels": true
+  },
+  "phase": {
+    "candidate_freeze": "pending_professional_review_and_real_vector_preflight",
+    "real_embedding_requests": 0,
+    "real_generation_requests": 0,
+    "holdout_materialized": 0,
+    "ordinary_application_ui": "unchanged_v0.4.3"
+  },
+  "feishu": {
+    "report": "https://my.feishu.cn/wiki/K07BwHd4jiCXS9kQwY1cyMUfnbg",
+    "parent": "https://my.feishu.cn/wiki/UlodwHIzJidrjDkQXVvcApD1nbe",
+    "persisted": true,
+    "native_tables": 3,
+    "result_links": 6,
+    "directory": "6,4,0,21"
+  },
+  "asset_sha256": {
+    "app/ai_work/candidate.py": "e3a4b60f946ee6fc2f6756b1d3cf649daed4aaf8b9a843bcb785376048e14cef",
+    "scripts/evaluate_candidate_dev.py": "73fceefb40b7b218f2a0e95e230e16ae36313f91741df8ab8141a7af6dfe682f",
+    "scripts/validate_candidate_query_fix.py": "d72f7d8b5d3f582206d8218e04aa3955d51bef6559f4880facba92d4102d376c",
+    "tests/test_candidate_consistency_queries.py": "2675e3fd9e693f5250dd7f64c7ee3bd234c5b01c6aaeaf306e10cdaf4d52aaa0",
+    "README.md": "76cc3a770537baf8a20e1fd25ad33a04ee1c0748e0613f4543403cab13885aac",
+    "docs/ai-work/README.md": "47cd0c59fc0f47a3afc3cb22c9b90447164c02a5b9830547b12cc1b386ad0ac4",
+    "docs/SYNC.md": "ae90fa863cc7dfc1a6d6c8a74d6891681dd4c642926899dbb75ae073c9f9081b",
+    "docs/ai-work/candidate-consistency-fix-v0.5.md": "7f2f6d62b9db04583ec86f42fd97f2c6ca72388a0bdf38d69b4471d0e94f8cd2",
+    "data/ai-work-candidate-dev-v0.5/run-manifest.json": "b3a3ddc01010752b9ff20b5fda6596fa81985ab9d55e1c7cc9c580c4b8ed8840",
+    "eval-results/candidate-query-fix-dev-v0.5.json": "52e3c421e8157b520fabf6ffece0856f78d2fa740cb0e916916a597c4ca18ed4",
+    "eval-results/candidate-query-fix-validation-v0.5.json": "4ffe62b60f3be22c64e1f75c73541e3da726ee26e60c8ed4e147d03c68f95c67",
+    "eval-results/candidate-query-fix-tests-v0.5.txt": "06a90b927cf254ab3bd09ff39f77e98d818becc585a14861a9c30ddc9dee1d19",
+    "eval-results/candidate-query-fix-regression-v0.5.txt": "e6ccbec943c49ec08d8b04f607aa112cafedeb035dd5153e272983c3256e5c34",
+    "eval-results/candidate-query-fix-feishu-v0.5.json": "2a1175482442c9bad8e4f10b10b476ff755aec299353e0895cb2de7db2e5a108"
+  }
+}

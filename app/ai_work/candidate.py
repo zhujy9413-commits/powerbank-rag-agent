@@ -13,7 +13,7 @@ import time
 
 from app.knowledge_assistant.core import rank_bm25
 
-VERSION = "candidate-retrieval-0.4"
+VERSION = "candidate-retrieval-0.5"
 IDENTITY = ("namespace", "source_role", "source_path", "page", "section", "version", "task_id", "conditions")
 FIELDS = {
     "response": r"保护响应|响应时间|短接.*(?:切断|耗时)",
@@ -79,23 +79,77 @@ def rrf(keyword_ids, vector_ids, constant=60):
     return sorted(scores, key=lambda ident: (-scores[ident], ident)), scores
 
 
-def route_candidates(query, candidates, namespace):
+def record_ports(text):
+    return set(re.findall(r"(?<![A-Za-z0-9])(?:A1|C1)(?![A-Za-z0-9])", text))
+
+
+def specification_clause(c):
+    # Controlled source metadata identifies clause type, never the newest revision.
+    # Revision selection is enforced against the task's explicit selection upstream.
+    return bool(re.match(r"SPEC(?:[-_\s]|$)", c["section"] or "", re.I))
+
+
+def task_scope(c):
+    return ("仅A1、C1的5 V输出角色" in c["text"] or
+            ("任务" in c["text"] and "显式选定" in c["text"] and "规格" in c["text"]))
+
+
+def query_plan(query, task, report_chunks):
+    """Link query intent to authorized, locatable input facts, never evaluation gold.
+
+    Inventory presence means a candidate observation exists, not that parsing,
+    numerical validity, physical testing or conformity has been confirmed.
+    """
+    if query["field"] != "consistency":
+        return dict(intent="field",focus_fields=[query["field"]])
+    if re.search("版本|规格", query["text"]):
+        return dict(intent="version_consistency",focus_fields=[])
+    if not (re.search("背景|摘要", query["text"]) and re.search("完整|齐全|缺失|缺证",query["text"])):
+        return dict(intent="record_consistency",focus_fields=[])
+    ports=task.get("ports")
+    if not isinstance(ports,list) or not ports or any(p not in {"A1","C1"} for p in ports):
+        return dict(intent="background_completeness",focus_fields=[],inventory=[],resolution="required_ports_unavailable")
+    inventory=[]
+    for port in dict.fromkeys(ports):
+        for field in FIELDS:
+            current,unverified=[],[]
+            for c in report_chunks:
+                if c["source_role"]!="report_observation" or record_ports(c["text"])!={port}:continue
+                matches=[kind for kind,pattern in FIELDS.items() if re.search(pattern,c["text"])]
+                if matches!=[field]:continue
+                conditions=c.get("conditions")
+                same=(bool(query["conditions"]) and all(v is not None for v in query["conditions"].values())
+                      and isinstance(conditions,dict) and all(conditions.get(k)==v for k,v in query["conditions"].items()))
+                (current if same else unverified).append(c["chunk_id"])
+            state="candidate_present" if len(current)==1 else "ambiguous_candidates" if current else "no_matching_candidate"
+            inventory.append(dict(port=port,field=field,state=state,candidate_ids=current,other_or_unknown_condition_ids=unverified))
+    focus=[field for field in FIELDS if any(x["field"]==field and x["state"]!="candidate_present" for x in inventory)]
+    return dict(intent="background_completeness",focus_fields=focus,inventory=inventory,
+                resolution="candidate_inventory_only",claims_physical_test_missing=False)
+
+
+def route_candidates(query, candidates, namespace, plan=None):
     """Shared lexical metadata routing, before either retrieval method.
 
     Uses only query fields, source roles and original words/context links. No
     numeric thresholds, case IDs, gold labels or rule-result guesses are used.
     """
     field,port=query["field"],query["port"]
-    version_query=field=="consistency" and bool(re.search("版本|规格",query["text"]))
+    plan=plan or query_plan(query,{},[])
+    version_query=plan["intent"]=="version_consistency"
     if namespace=="requirement":
+        if version_query:
+            return [c for c in candidates if task_scope(c) or specification_clause(c)]
+        if plan["intent"]=="background_completeness":
+            return [c for c in candidates if any(re.search(FIELDS[f],c["text"]) for f in plan["focus_fields"])]
         return [c for c in candidates if (
-            "仅A1、C1的5 V输出角色" in c["text"]
+            task_scope(c)
             or (field in FIELDS and re.search(FIELDS[field],c["text"]))
             or (field=="consistency" and re.search("摘要|一致|冲突",c["text"]))) ]
     observations=[]
     for c in candidates:
         if c["source_role"]!="report_observation" or version_query:continue
-        ports=set(re.findall(r"(?<![A-Za-z0-9])(?:A1|C1)(?![A-Za-z0-9])",c["text"]))
+        ports=record_ports(c["text"])
         if field=="consistency" or (ports=={port} and re.search(FIELDS[field],c["text"])):
             observations.append(c)
     context_ids={i for c in observations for i in c.get("context_ids",[])}
@@ -163,19 +217,27 @@ class CandidateRetriever:
         if not isinstance(query.get("conditions"),dict):
             raise ValueError("查询条件须显式给出，未知值保留为null。")
         authorized = [c for c in self.chunks if self._authorized(c, namespace)]
+        # Cross-namespace planning sees only this task's authorized original observations.
+        plan=query_plan(query,self.task,[c for c in self.chunks if self._authorized(c,"report") and self._located(c)])
         # Verify originals before indexing or sending any provider text.
         candidates = [dict(c, search_text=c["text"], title=c["source_path"], document_id=c["source_path"])
                       for c in authorized if self._located(c)]
         original_valid_count=len(candidates)
         if self.config.structured_routing:
-            candidates=route_candidates(query,candidates,namespace)
+            candidates=route_candidates(query,candidates,namespace,plan)
         corpus_hash = digest([{k:v for k,v in c.items() if k not in {"search_text","title","document_id"}} for c in candidates])
         retrieval_text=query["text"]
         if self.config.structured_routing:
             # Domain vocabulary expansion, identical for keyword and vector arms.
-            retrieval_text += " "+dict(response="响应时间 短接 切断 耗时",recovery="恢复电压 输出回到",
+            terms=dict(response="响应时间 短接 切断 耗时",recovery="恢复电压 输出回到",
                 temperature="壳温 起值 末值 温差",appearance="外观观察 起火 爆炸 漏液",
-                method="恢复方式",consistency="摘要 原始记录 矛盾")[query["field"]]
+                method="恢复方式",consistency="摘要 原始记录 矛盾")
+            if namespace=="requirement" and plan["intent"]=="version_consistency":
+                retrieval_text += " 任务 选定 规格 版本 "+" ".join(c["section"] for c in candidates if specification_clause(c))
+            elif namespace=="requirement" and plan["intent"]=="background_completeness":
+                retrieval_text += " "+" ".join(terms[field] for field in plan["focus_fields"])
+            else:
+                retrieval_text += " "+terms[query["field"]]
         keyword = rank_bm25(retrieval_text, candidates)[:self.config.per_method]
         if keyword:
             keyword = [(c,s) for c,s in keyword if s >= keyword[0][1]*self.config.min_bm25_ratio]
@@ -236,7 +298,7 @@ class CandidateRetriever:
                     outcome=dict(state="candidate_evidence_pending_review" if accepted else "evidence_insufficient",
                                  accepted_evidence_ids=[s["chunk_id"] for s in accepted], absence_proof_citation=None,
                                  claims_test_not_performed=False),
-                    trace=dict(config=asdict(self.config), retrieval_text=retrieval_text, task_id=self.task["task_id"], actor_role=self.principal.role,
+                    trace=dict(config=asdict(self.config), query_plan=plan, retrieval_text=retrieval_text, task_id=self.task["task_id"], actor_role=self.principal.role,
                                filtered_count=len(self.chunks)-len(authorized), source_validation_rejections=len(authorized)-original_valid_count,
                                upstream_routing_exclusions=original_valid_count-len(candidates),
                                candidate_count=len(candidates), corpus_sha256=corpus_hash,
