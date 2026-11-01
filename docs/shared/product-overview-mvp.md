@@ -2,6 +2,8 @@
 
 版本：v1.0 · 2026-10-26 · 需求设计基线，待实现与验证
 
+本文保留最初产品总览。当前细化范围、分期、页面和验收以[AI Work PRD](../ai-work/PRD.md)及[内部智能客服PRD](../internal-assistant/PRD.md)为准，原始假设和历史验证安排保留编制时状态。
+
 一个内部工作台，两条业务流程。用可追溯的知识帮助资料查找与报告评审。
 
 ## 01 产品定位与证据基础
@@ -132,5 +134,5 @@ P0 是本次验证必需，开发顺序单独管理。客服入口的复杂多�
 | [内部智能客服 PRD](https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/docs/internal-assistant/PRD.md) | 搜索、单轮回答、引用、异常、反馈与评测；多轮属于 P1。 |
 | [知识库与 RAG 共用规范](https://github.com/zhujy9413-commits/powerbank-rag-agent/blob/main/docs/shared/knowledge-base-rag.md) | 两模块共用的知识治理、完整 RAG、数据结构、权限、指标及依据。 |
 
-需求优先级以本文件为准；两份模块 PRD 引用共用底座，避免重复维护不同版本。内容变更需记录对假设、范围和验收的影响。
+模块需求优先级以各自当前PRD为准；本文件维护原始目标和共用范围，知识库规范维护来源、版本、权限与数据契约。模块PRD进一步明确了AI Work的P0规则核对及P1增强、智能客服的P0单轮RAG回答，用户范围和主要业务目标保持一致。
 
