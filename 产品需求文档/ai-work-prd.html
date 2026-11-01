@@ -5,7 +5,7 @@
 @media(max-width:760px){.frame{padding:0 16px}.masthead{padding:26px 0}.masthead h1{font-size:24px}.layout{display:block;margin-top:0}.toc{position:static;max-height:none;margin-bottom:18px;padding:12px 0}.toc nav{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.toc a{font-size:12px;padding:6px}.document{padding:20px 16px;border-radius:5px}.document h2{font-size:21px}.document h3{font-size:18px}.topnav{gap:8px 16px}.topnav button{margin-left:0}.module-grid{grid-template-columns:1fr}.module{padding:22px}.diagram{padding:12px 8px}table{font-size:13px}.table-wrap.is-wide::after{content:"表格可横向滚动查看";display:block;font-size:12px;color:var(--muted);padding-top:8px}.diagram figcaption::after{content:"（流程图可横向滚动查看）";display:block;margin-top:5px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media print{@page{size:A4;margin:16mm 14mm}body{background:#fff;font-size:10.5pt;line-height:1.65}.frame{max-width:none;padding:0}.masthead{background:#fff;color:#18352f;padding:0 0 10mm;border-bottom:1px solid #ccc}.masthead .eyebrow,.masthead p{color:#52634f}.masthead h1{font-size:23pt}.topnav,.toc,.status-note{display:none}.layout{display:block;margin:0}.document{padding:0;border:0}.document h2{font-size:15pt;break-after:avoid}.document h3{font-size:12pt;break-after:avoid}.table-wrap{overflow:visible}table,.table-three,.table-wide{min-width:0;font-size:9pt;line-height:1.55}th,td{padding:6px 7px}tr{break-inside:avoid}thead{display:table-header-group}pre{font-size:9pt;white-space:pre-wrap;break-inside:avoid}.diagram{break-inside:avoid;overflow:visible;padding:10px}.diagram svg{min-width:0;max-width:440px;max-height:220mm}.module-grid{grid-template-columns:1fr}.module{break-inside:avoid}a{color:inherit;text-decoration:none}}
-</style></head><body><header class="masthead"><div class="frame"><div class="eyebrow">充电宝研发评审与知识助手</div><h1>AI Work 整机测试报告评审 PRD</h1><p>v1.2 · 2026-11-01 · 内部产品评审稿</p></div></header><div class="frame"><nav class="topnav" aria-label="产品文档"><a href="index.html">文档首页</a><a href="ai-work-prd.html" class="active" aria-current="page">AI Work PRD</a><a href="internal-assistant-prd.html">内部智能客服 PRD</a><button type="button" onclick="window.print()">打印文档</button></nav></div><div class="frame layout"><aside class="toc" aria-label="章节目录"><h2>章节目录</h2><nav><a href="#section-1">一 业务背景与产品目标</a><a href="#section-2">二 用户与使用场景</a><a href="#section-3">三 MVP 范围与优先级</a><a href="#section-4">四 端到端业务流程</a><a href="#section-5">五 页面与关键交互</a><a href="#section-6">六 核心业务规则</a><a href="#section-7">七 知识库与完整检索增强链路</a><a href="#section-8">八 状态与结果表达</a><a href="#section-9">九 导出与关键数据</a><a href="#section-10">十 异常与恢复</a><a href="#section-11">十一 验收标准</a><a href="#section-12">十二 效果指标与试点口径</a><a href="#section-13">十三 交付与推进顺序</a><a href="#section-14">十四 当前能力与设计差距</a></nav></aside><main class="document" data-source="docs/ai-work/PRD.md" data-source-sha256="644d3ce2ee9c171f3bb188bbd4d9520edd66c96edf0a113bf37678dff53245f6"><p>帮助公司内部产品、研发和测试人员，对照明确采用的标准、内部规范与规格书，核对最新一版充电宝整机保护功能测试报告，形成带原文依据、范围说明和人工处置的问题清单。</p>
+</style></head><body><header class="masthead"><div class="frame"><div class="eyebrow">充电宝研发评审与知识助手</div><h1>AI Work 整机测试报告评审 PRD</h1><p>v0.1.3 · 2026-11-02 · 试用进入条件与执行口径澄清</p></div></header><div class="frame"><nav class="topnav" aria-label="产品文档"><a href="index.html">文档首页</a><a href="ai-work-prd.html" class="active" aria-current="page">AI Work PRD</a><a href="internal-assistant-prd.html">内部智能客服 PRD</a><button type="button" onclick="window.print()">打印文档</button></nav></div><div class="frame layout"><aside class="toc" aria-label="章节目录"><h2>章节目录</h2><nav><a href="#section-1">一 业务背景与产品目标</a><a href="#section-2">二 用户与使用场景</a><a href="#section-3">三 MVP 范围与优先级</a><a href="#section-4">四 端到端业务流程</a><a href="#section-5">五 页面与关键交互</a><a href="#section-6">六 核心业务规则</a><a href="#section-7">七 知识库与完整检索增强链路</a><a href="#section-8">八 状态与结果表达</a><a href="#section-9">九 导出与关键数据</a><a href="#section-10">十 异常与恢复</a><a href="#section-11">十一 验收标准</a><a href="#section-12">十二 效果指标与试点口径</a><a href="#section-13">十三 交付与推进顺序</a><a href="#section-14">十四 当前能力与设计差距</a></nav></aside><main class="document" data-source="docs/ai-work/PRD.md" data-source-sha256="39b59ad8ff0190c256d22884da98722c24577a343fbb478a9e1bb16f07fbe485"><p>帮助公司内部产品、研发和测试人员，对照明确采用的标准、内部规范与规格书，核对最新一版充电宝整机保护功能测试报告，形成带原文依据、范围说明和人工处置的问题清单。</p>
 <div class="table-wrap"><table class="">
 <thead>
 <tr>
@@ -91,6 +91,7 @@
 <th>能力</th>
 <th>优先级</th>
 <th>首版程度与取舍</th>
+<th>对应验收用例</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -98,72 +99,84 @@
 <td>报告导入与任务身份</td>
 <td>P0</td>
 <td>一份主报告，保存文件身份与输入修订；用户确认这是本次采用的报告</td>
+<td>AW-A01、AW-A23</td>
 </tr>
 <tr>
 <td>AW-F02</td>
 <td>解析预览与覆盖提示</td>
 <td>P0</td>
 <td>查看原文、关键字段与未识别区域；修正有依据的解析错误</td>
+<td>AW-A06、AW-A18、AW-A22</td>
 </tr>
 <tr>
 <td>AW-F03</td>
 <td>依据与适用清单确认</td>
 <td>P0</td>
 <td>明确采用版本、规则范围、适用/不适用/待确认单元及理由</td>
+<td>AW-A01、AW-A07、AW-A09</td>
 </tr>
 <tr>
 <td>AW-F04</td>
 <td>逐项核对与证据组织</td>
 <td>P0</td>
 <td>条件一致后比较，要求与报告证据分开保存，缺证与失败单列</td>
+<td>AW-A02至AW-A05、AW-A15、AW-A17</td>
 </tr>
 <tr>
 <td>AW-F05</td>
 <td>人工复核与历史追溯</td>
 <td>P0</td>
 <td>确认、排除、暂无法确认；保留理由和系统原结果</td>
+<td>AW-A08、AW-A11、AW-A19、AW-A20</td>
 </tr>
 <tr>
 <td>AW-F06</td>
 <td>任务恢复与 Excel 导出</td>
 <td>P0</td>
 <td>继续未完成任务，导出范围、结果、证据及复核记录</td>
+<td>AW-A10、AW-A21</td>
 </tr>
 <tr>
 <td>AW-F07</td>
 <td>知识发布、版本与权限底座</td>
 <td>P0依赖</td>
 <td>可由维护者通过简易工具发布；不以完整管理后台作为前提</td>
+<td>AW-A12至AW-A14</td>
 </tr>
 <tr>
 <td>AW-F08</td>
 <td>按检查项补充候选证据</td>
 <td>P1</td>
 <td>证明相对现有流程有增益后受控接入，不自动改变原结论</td>
+<td>AW-A16；启用时单独验收</td>
 </tr>
 <tr>
 <td>AW-F09</td>
 <td>模型辅助归纳与复杂字段对齐</td>
 <td>P1</td>
 <td>生成有来源的待核对说明或映射候选，仍由规则执行明确数值比较</td>
+<td>后续确定范围后单独验收</td>
 </tr>
 <tr>
 <td>AW-F10</td>
 <td>扫描件与复杂布局扩展</td>
 <td>P1</td>
 <td>在代表性输入证明是主要阻塞、关键字段质量可控后进入</td>
+<td>扩展输入范围时单独验收</td>
 </tr>
 <tr>
 <td>AW-F11</td>
 <td>完整知识后台、批量维护与任务便利操作</td>
 <td>P1</td>
 <td>按维护量和实际使用负担排序，不先建设完整平台</td>
+<td>后续单独验收；首版简易维护见AW-F07</td>
 </tr>
 <tr>
 <td>AW-F12</td>
 <td>历史报告对比与整改管理</td>
 <td>P2</td>
 <td>单报告价值成立后另立范围，不纳入首版验收</td>
+<td>不纳入本版验收</td>
 </tr>
 </tbody></table></div>
 <p>P0按依赖分三批交付，避免把“必须做”误当作“同时做”。第一批完成资料与规则准备、报告导入、解析和范围确认；第二批完成逐项核对、证据与异常结果；第三批完成人工复核、任务恢复和导出。每批应能演示对应用户动作，最终以三批连通的完整任务验收。</p>
@@ -221,7 +234,7 @@
 <tr>
 <td>3 确认依据</td>
 <td>选择采用资料与版本</td>
-<td>检查权限、发布状态、型号及适用条件</td>
+<td>按资料角色检查发布或任务确认状态，以及权限、型号与适用条件</td>
 <td>关键依据可用，冲突依据已明确处理</td>
 </tr>
 <tr>
@@ -256,6 +269,7 @@
 <figcaption>AI Work业务流程。局部未知按受影响单元保留未检查状态；复核和导出可以保留已说明的未决项。</figcaption></figure>
 <h2 id="section-5">五 页面与关键交互</h2><h3 id="section-5-1">5.1 任务入口</h3><p>展示任务名称、产品型号、报告身份、最近更新时间、任务状态和待处理项。提供“新建评审”“继续任务”和“查看历史运行”。无任务时说明可上传的材料及范围；无权访问的任务不展示标题和内容。</p>
 <p>任务名称默认生成。任务改名、批量管理和跨任务统计属于后续体验能力，不能用名称代替报告身份。</p>
+<p>重新打开任务时，先检查当前权限，再恢复最近已确认保存的输入修订、对应运行和复核记录。保存中、保存失败或处理未完成的内容不能显示为已完成；未确认保存的编辑须有明确提示，不承诺刷新后能够恢复。</p>
 <h3 id="section-5-2">5.2 解析与依据确认页</h3><p>页面包含报告预览、关键字段、解析覆盖、采用依据和预期清单五个区域。</p>
 <div class="table-wrap is-wide"><table class="table-three">
 <thead>
@@ -393,7 +407,7 @@
 </tr>
 <tr>
 <td>缺失记录</td>
-<td>未找到必要记录显示证据不足，列出待补内容；不能推断物理测试未做</td>
+<td>在确认的解析范围内完成找证后仍缺必要记录，显示证据不足并列出待补内容；解析受阻或服务失败分别处理，不能推断物理测试未做</td>
 </tr>
 <tr>
 <td>背景与结论</td>
@@ -439,10 +453,48 @@
 <tr>
 <td>历史版本与已停用资料</td>
 <td>追溯已有运行</td>
-<td>不默认用于新检查；历史访问仍按当前权限处理</td>
+<td>历史版本须显式采用并校验可用性；已停用资料不能用于新检查，历史访问仍按当前权限处理</td>
 </tr>
 </tbody></table></div>
 <p>入库流程为资料登记、解析预览、原文定位与元数据核验、规则适用性确认、索引构建、发布。索引失败时不切换可见版本；更新和停用保留操作者、原因及版本，不能无痕覆盖。首版允许简易维护工具，完整审批后台后置。</p>
+<p>可复用的标准资料、内部规范和规格书按下表管理。任务报告与任务内依据附件继续走任务内确认、修订和授权流程，不因上传而进入公共知识库。</p>
+<div class="table-wrap is-wide"><table class="table-wide">
+<thead>
+<tr>
+<th>资料状态</th>
+<th>进入条件</th>
+<th>对评审的可用性</th>
+<th>维护动作与记录</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>待核验</td>
+<td>新增资料，或原文、版本、适用条件尚未确认</td>
+<td>不作为公共判定依据，不进入评审检索</td>
+<td>维护者补齐来源、版本、定位与访问范围；专业复核人员确认条款和规则适用性，记录问题与核验意见</td>
+</tr>
+<tr>
+<td>待发布</td>
+<td>必要核验已完成，尚未完成索引与发布</td>
+<td>不向评审任务提供新版本</td>
+<td>查看索引状态与失败原因；索引成功后，由具有发布权限的维护者发布并记录结果；失败保留当前有效快照</td>
+</tr>
+<tr>
+<td>已发布</td>
+<td>原文、核验记录、元数据与索引准备完成，发布成功</td>
+<td>在当前权限、型号、适用条件与本次采用版本范围内使用</td>
+<td>保留发布身份、操作者与时间；内容或适用性修改建立新修订，不覆盖已发布原文和原引用</td>
+</tr>
+<tr>
+<td>已停用</td>
+<td>维护者确认停用并记录原因</td>
+<td>新检查不能采用；历史运行及原文按当前权限追溯</td>
+<td>保留停用时间、原因和历史来源身份，不将停用等同于撤权或直接删除历史证据</td>
+</tr>
+</tbody></table></div>
+<p>简易维护入口至少支持查看原文和定位、填写核验意见、查看索引与发布结果、执行发布或停用。知识维护者负责资料整理和状态操作；条款与规则的专业适用性由指定专业复核人员确认。知识维护权限不自动赋予任务报告访问权限。</p>
+<p>同一文档身份和版本的新提交内容与已有原文冲突时，新提交资料保持待核验，不覆盖已有发布快照；原版本需要停用时另行记录原因。发布时原文、核验元数据和索引须同时就绪，不能先展示新版本再补索引；重试不能重复发布，失败保留原有效快照。新版本发布后，任务可显式选择新依据并生成新运行，已确认输入与历史结果不自动替换；停用和撤权后重新检查资料及缓存的可用性。</p>
+<p>资料已发布不代表其中每项要求都已配置为检查规则。只有完成专业核验、处于可用状态且被本任务采用的规则才能执行比较；未配置项仍保留在范围说明中。</p>
 <p>最小元数据包含文档身份、版本、来源类型、使用范围、型号/项目、条款或页码、原文件哈希、发布状态、访问范围及核验记录。报告资料另绑定任务与输入修订。</p>
 <h3 id="section-7-2">7.2 按检查项运行</h3><div class="table-wrap is-wide"><table class="table-three">
 <thead>
@@ -464,8 +516,8 @@
 </tr>
 <tr>
 <td>3 范围过滤</td>
-<td>当前身份、任务、采用版本及资料状态过滤</td>
-<td>越权或错误版本资料不能进入排序、上下文和输出</td>
+<td>公共依据按发布状态与采用版本过滤；任务材料按已确认输入修订、任务范围与当前授权过滤</td>
+<td>越权或错误版本资料不能进入排序、上下文和输出；已停用依据不能用于新检查，任务内已确认附件不要求先发布为公共知识</td>
 </tr>
 <tr>
 <td>4 召回排序</td>
@@ -743,13 +795,13 @@
 </tr>
 <tr>
 <td>AW-A14</td>
-<td>知识换版或索引失败</td>
-<td>新发布可追溯；失败时继续使用原有效快照</td>
+<td>知识核验、发布与换版</td>
+<td>公共依据中待核验和待发布资料不进入评审检索；发布成功后可按任务条件选用，历史运行不被替换；索引或发布失败保留原有效快照，重试不重复发布，状态操作可追溯。任务内依据附件经来源、版本与适用性确认且获授权后，可绑定本次输入使用，不自动发布为公共知识</td>
 </tr>
 <tr>
 <td>AW-A15</td>
 <td>单元处理异常</td>
-<td>已完成结果可保留，失败不被计作通过；该项为目标需求，当前仍有实现缺口</td>
+<td>已完成结果可保留，失败不被计作通过</td>
 </tr>
 <tr>
 <td>AW-A16</td>
@@ -776,7 +828,23 @@
 <td>有未检查项且人工保留未决</td>
 <td>允许带限制说明完成复核记录与导出；执行状态及未决数量不被清零</td>
 </tr>
+<tr>
+<td>AW-A21</td>
+<td>重新打开未完成任务</td>
+<td>重新校验权限，恢复已确认保存的输入修订、所属运行与复核记录；未完成或未保存内容不显示为已完成</td>
+</tr>
+<tr>
+<td>AW-A22</td>
+<td>有原文依据的解析纠错</td>
+<td>保存原值、修正值、位置、理由、操作者和时间；形成新输入修订并重新确认，旧运行和原PDF保持原记录</td>
+</tr>
+<tr>
+<td>AW-A23</td>
+<td>文件损坏、加密、超限或不支持</td>
+<td>拒绝进入逐项检查并说明具体原因及可执行的补充动作，不显示解析或检查已完成，不影响已有任务记录</td>
+</tr>
 </tbody></table></div>
+<p>第三节列出各功能的对应验收用例。权限、资料指令与知识版本约束还须贯穿适用流程，不能只检查一张页面。AW-A16用于P1补充证据能力的接入验收，未启用该能力时不作为P0交付门槛。</p>
 <p>P0完整任务必须同时通过适用的功能用例、权限与版本边界。真实规则接入还需获得可用材料和专业适用性确认；这与模拟流程验收分别处理。</p>
 <h2 id="section-12">十二 效果指标与试点口径</h2><div class="table-wrap"><table class="">
 <thead>
@@ -807,6 +875,57 @@
 </tr>
 </tbody></table></div>
 <p>只有在质量约束满足后才评价效率。模拟材料验证流程与程序边界，专业参考与实际使用任务用于业务验收。检索专项的覆盖和精度指标用于选择方案，不直接证明减少遗漏、节省人工或减少改板。</p>
+<h3 id="section-12-1">12.1 试用前固定的材料与责任</h3><p>一次试用只覆盖明确选定的型号、报告模板和已核验规则清单。试用负责人在执行前登记下表信息；未落实的字段保留待定，不用模拟姓名、模拟签字或自动测试结果补齐。</p>
+<div class="table-wrap is-wide"><table class="table-three">
+<thead>
+<tr>
+<th>准备项</th>
+<th>启动前应明确的内容</th>
+<th>负责角色</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任务范围</td>
+<td>型号、整机保护项目、工况、支持的PDF模板与大小/页数限制、未配置及排除范围</td>
+<td>产品经理与研发/测试人员</td>
+</tr>
+<tr>
+<td>原始材料</td>
+<td>使用范围、报告身份与修订、依据版本及状态、原文件校验值和可核验位置</td>
+<td>材料提供者与知识维护者</td>
+</tr>
+<tr>
+<td>专业参考</td>
+<td>独立核对的预期检查单元、必要证据、已知问题、条件冲突和无法确定项；保留采用理由</td>
+<td>指定专业复核人员</td>
+</tr>
+<tr>
+<td>使用与运行</td>
+<td>实际使用者、任务访问范围、运行环境、资料保留方式与支持责任</td>
+<td>试用负责人及部署负责人</td>
+</tr>
+<tr>
+<td>对照与判据</td>
+<td>样本数量、难度分组、人员安排、计时起止、遗漏与误提示可接受上限，以及本节已列质量和效率目标</td>
+<td>试用负责人与专业复核人员</td>
+</tr>
+</tbody></table></div>
+<p>专业参考不进入应用检索、提示或规则输入，使用者完成本次评审后再对照。样本量与可接受上限须在看到试用结果前确定；当前未取得真实任务基线，不编制已达成值或预填人数。</p>
+<h3 id="section-12-2">12.2 试用执行与判定</h3><ol>
+<li>冻结本批输入、采用依据、规则和应用配置，记录执行身份；输入变化后另建修订，不继续混算原试用结果。</li>
+<li>对难度可比的任务安排人工流程和工具辅助流程，平衡报告差异与人员熟练度。同一人不先完整读过同一份报告再把第二次阅读当作独立效率对照。</li>
+<li>两种流程均交付可核验的问题清单、依据、范围限制与未决项。从领取材料开始计时，至核对、纠错、复核和可用导出结束；记录等待与失败恢复。知识整理和维护成本另行登记，不用系统响应毫秒代替人员总耗时。</li>
+<li>由专业复核人员对照预先固定的参考，核对遗漏、错误确定结论、误提示、版本和权限。未检查、失败和未决须保留，不能通过排除困难项目改善指标。</li>
+<li>成对完成任务计算总耗时降幅并报告配对中位数；未完成任务同时报告已耗时、未完成原因和任务完成情况，不将其短耗时作为提效成绩，也不从质量记录中删除。</li>
+</ol>
+<p>出现无证据确定符合、错误版本串用或非授权内容泄露时，受影响范围停止扩大，定位原因、修复并回归后再继续。质量约束满足且耗时达到预先约定目标时，才讨论扩大试用；样本不足、未决过多或目标未达时保留观察和改进项，不宣布业务验收通过。复核记录填写完成与本节质量验收分别判定。</p>
+<h3 id="section-12-3">12.3 使用现有模拟资料的人工可用性试用</h3><p>真实材料尚未就绪时，可先由目标角色的实际使用者独立完成下列任务。此阶段使用已有四页模拟报告，记录操作阻塞与理解问题，不评价真实条款正确性或业务提效。</p>
+<ol>
+<li>创建模拟评审任务，确认报告身份、采用依据和检查范围；能说明报告填写的依据与本次采用依据分别是什么。</li>
+<li>找到一处冲突和一处缺证或未检查项，打开对应原文，说明系统为什么保留问题、还缺少什么；核对人工处置与系统原结果分别保留。</li>
+<li>记录明确标为模拟试用的复核理由，导出并重新打开任务；检查未决与未检查标记仍存在，能够解释“复核完成”不等于产品放行。</li>
+</ol>
+<p>记录由谁操作、在哪一步需要协助、误解了什么、能否恢复，以及导出内容是否容易核对。已完成的代理页面走查属于软件流程验证；实际使用者尚未执行的任务保持待执行，不填写模拟的用户评价或完成时间。</p>
 <h2 id="section-13">十三 交付与推进顺序</h2><div class="table-wrap is-wide"><table class="table-three">
 <thead>
 <tr>
@@ -826,9 +945,19 @@
 <td>能解释输入、依据、系统判断及人工处置</td>
 </tr>
 <tr>
+<td>人工可用性试用（模拟资料）</td>
+<td>实际使用者按第12.3节独立操作，记录阻塞和理解问题</td>
+<td>能完成已配置流程并正确理解关键状态；重要操作阻塞已处理，此阶段不代替专业或业务效果验收</td>
+</tr>
+<tr>
+<td>真实资料技术适配</td>
+<td>针对获授权的首批型号/模板接入身份与字段提取，登记真实依据和规则白名单；模拟与真实资料在检索及判断中隔离</td>
+<td>专业确认规则对象、条件、单位、限值和原文对应；代表性完整、冲突、缺证及解析异常输入通过，未支持范围会明确停止相关判断</td>
+</tr>
+<tr>
 <td>小范围试用准备</td>
-<td>合法真实材料、规则白名单、专业复核职责、身份与部署安排</td>
-<td>数据使用、适用性及支持输入范围就绪</td>
+<td>第12.1节的材料、专业参考、人员、对照判据和运行安排</td>
+<td>技术适配验收完成，关键字段和实际责任人已确定</td>
 </tr>
 <tr>
 <td>业务试用</td>
@@ -837,7 +966,10 @@
 </tr>
 </tbody></table></div>
 <p>企业登录与权限来源、资料保留/删除、预算和专业核验责任属于真实试点准备项。未就绪时保持受控演示范围，不用模拟结果代替业务验收。</p>
-<h2 id="section-14">十四 当前能力与设计差距</h2><div class="table-wrap is-wide"><table class="table-three">
+<p>当前原型会拒绝不属于PB-DEMO-01受控模拟模板的报告，并只执行固定模拟规则类型。因此取得真实资料后，须先完成上述技术适配；不能通过改文件名、复制模拟标识或仅更改资料性质来启用真实判断。真实资料接入仍以本PRD的首版范围为限，P1补充候选检索和模型辅助不自动成为试用前置要求。</p>
+<p>当前已完成受控模拟软件验证，人工可用性试用待实际使用者执行，真实资料技术适配待启动。真实业务试用所需的授权材料、专业参考及人员安排尚未就绪，当前不填写真实试用结果或上线日期。</p>
+<h2 id="section-14">十四 当前能力与设计差距</h2><p>本节随受控原型v0.5.0更新实现状态，需求范围与验收口径沿用v0.1.1确认基线。软件流程验证与真实业务验收分别记录，最新本机运行方式见<a href="../docs/ai-work/README.md">模块入口</a>。</p>
+<div class="table-wrap is-wide"><table class="table-three">
 <thead>
 <tr>
 <th>能力</th>
@@ -847,18 +979,18 @@
 </thead>
 <tbody><tr>
 <td>报告评审主流程</td>
-<td>已有受控模拟PDF的解析、确认、规则比较、复核与四表导出</td>
+<td>已有受控模拟PDF的解析、报告身份提取、确认、规则比较、复核与四表导出；单项失败保留其他结果，中断运行恢复为失败记录</td>
 <td>扩展前验证代表性输入和真实规则；不能宣布任意PDF可用</td>
 </tr>
 <tr>
 <td>依据和清单</td>
-<td>原型固定采用模拟来源与固定单元</td>
-<td>动态依据选择、任务内依据附件、适用性与排除理由仍需完善</td>
+<td>可显式选用已发布模拟依据，添加本任务确认的文字依据附件；已配置单元支持适用、不适用及待确认，并保留理由和新旧快照</td>
+<td>仍只执行PB-DEMO-01的固定规则类型；真实规则、其他附件格式及复杂字段重映射尚需验证</td>
 </tr>
 <tr>
 <td>知识库维护</td>
-<td>已有静态知识快照和原文定位</td>
-<td>简易入库/核验/发布/停用链路及维护责任尚需补齐</td>
+<td>已有本机简易登记、核验、索引发布和停用入口；保存原文版本、维护记录，发布失败保留旧快照，任务附件不进入公共知识</td>
+<td>当前限模拟依据、公开摘要和流程资料；实际维护责任、资料授权和专业核验尚需落实</td>
 </tr>
 <tr>
 <td>权限与历史</td>

@@ -21,11 +21,13 @@ def workbook_rows(run):
              ["任务状态", "处理失败" if run["state"] == "failed" else "复核完成" if run["state"] == "review_complete" else "待人工复核"],
              ["待复核项目", run["pending_reviews"]], ["历史运行", "是" if run["historical"] else "否"],
              ["产品与范围", "PB-DEMO-01；A1、C1；5 V输出角色；端口短路保护已有记录"],
-             ["采用依据", "SYN-SPEC-PB01-RevB / SYN-QA-SC-1.0"], ["规则版本", snapshot["rule_version"]],
+             ["采用依据", "；".join(dict.fromkeys(c['document_id']+' / '+c['version'] for c in snapshot['basis'].values()))], ["规则版本", snapshot["rule_version"]],
              ["知识发布", snapshot["publication"]], ["配置内单元", run["configured_units"]],
              ["一致性项", run["consistency_items"]], ["未配置", "、".join(run["unconfigured"])],
              ["结果解释", "未发现问题不等于人工通过；冲突、缺证、失败、未配置不得计为通过。"],
              ["复核解释", "复核完成表示每项已记录处置，可包含暂无法确认；不表示整改关闭或产品放行。"]]
+    for key,label in [('report_number','报告编号'),('report_revision','报告修订'),('report_date','报告日期')]:
+        scope.append([label,report.get('identity',{}).get(key) or '未提供或不唯一'])
     state = run.get("basis_state")
     if state:
         scope += [["依据当前状态核验时间UTC", state["checked_at"]],
@@ -34,6 +36,10 @@ def workbook_rows(run):
                   ["依据变化明细", json.dumps(state["changes"], ensure_ascii=False)]]
     if run.get("error"):
         scope.append(["失败原因", run["error"]])
+    for key, selection in snapshot.get('checklist',{}).items():
+        scope.append(['适用清单 '+key, {'applicable':'适用','not_applicable':'不适用','needs_confirmation':'适用性待确认'}[selection['state']]+'；理由：'+selection['reason']])
+    for state, count in run.get('execution_counts',{}).items():
+        scope.append(['执行统计 '+{'completed':'已检查','not_checked':'未检查','failed':'失败'}[state],count])
     audit=report.get("parse_audit",{})
     scope.append(["解析覆盖", f"候选记录{audit.get('candidate_count','未记录')}；已映射{audit.get('captured_count','未记录')}；未映射{audit.get('unresolved_count','未记录')}；诊断项{len(audit.get('issues',[]))}。映射成功不表示数值及条件已核实。"])
     scope.append(["报告测试条件",json.dumps(report.get("global_conditions",{}),ensure_ascii=False)])
@@ -44,11 +50,11 @@ def workbook_rows(run):
         explanation=item["explanation"]
         if item.get("record_conditions"):
             explanation+="\n记录条件："+json.dumps(item["record_conditions"],ensure_ascii=False)
-        items.append([item["item_id"], item["port"], item["title"], {"completed":"已检查","not_checked":"未检查","failed":"失败"}.get(item["execution"],item["execution"]), RESULTS[item["result"]],
+        items.append([item["item_id"], item["port"], item["title"], {"completed":"已检查","not_checked":"未检查","failed":"失败"}.get(item["execution"],item["execution"]), RESULTS[item["result"]] if item['execution']=='completed' else '无比较结论',
                       item["requirement"], explanation, "是" if item["conditional"] else "否",
                       DISPOSITIONS[rev["disposition"]], rev["reason"]])
         for c in item["basis"]:
-            evidence.append([item["item_id"], "模拟依据", c["document_id"], "版本"+c["version"]+" / "+c["section"], c["text"], c["chunk_id"]])
+            evidence.append([item["item_id"], "任务内模拟依据" if c.get('scope')=='task_basis' else "模拟依据", c["document_id"], "版本"+c["version"]+" / "+c["section"], c["text"], c["chunk_id"]])
         for ref in item["report_evidence"]:
             evidence.append([item["item_id"], "报告提取原文", report["filename"], "PDF第"+str(ref["page"])+"页", ref["quote"], ref["sha256"]])
         if item.get("correction"):

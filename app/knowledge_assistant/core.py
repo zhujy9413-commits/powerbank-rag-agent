@@ -68,6 +68,7 @@ def original_section(text, section):
 
 class Corpus:
     def __init__(self, base=BASE):
+        self.lock = threading.RLock()
         self.base = Path(base)
         manifest = json.loads((self.base / "manifest.json").read_text())
         self.snapshot = manifest["snapshot_id"]
@@ -82,6 +83,16 @@ class Corpus:
             raise ValueError("Duplicate corpus IDs")
         self.digest = hashlib.sha256(json.dumps([{k:v for k,v in c.items() if k != "search_text"} for c in self.chunks], ensure_ascii=False, sort_keys=True).encode()).hexdigest()
 
+    def apply_knowledge(self, knowledge, snapshot):
+        with self.lock:
+            chunks = [dict(c, search_text=search_text(c)) for c in knowledge]
+            chunks += [c for c in self.chunks if c['scope'] != 'knowledge']
+            by_id = {c['chunk_id']:c for c in chunks}
+            if len(by_id) != len(chunks):
+                raise ValueError('知识来源身份重复，未切换快照。')
+            digest = hashlib.sha256(json.dumps([{k:v for k,v in c.items() if k != 'search_text'} for c in chunks], ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+            self.chunks, self.by_id, self.snapshot, self.digest = chunks, by_id, snapshot, digest
+
     def accessible(self, c, principal):
         return principal.role in c["allowed_roles"] and (c["scope"] == "knowledge" or c["scope"].removeprefix("task:") in principal.task_ids)
 
@@ -89,10 +100,13 @@ class Corpus:
         c = self.by_id.get(chunk_id)
         if not c or not self.accessible(c, principal):
             raise PermissionError("资料不存在或当前身份无权访问。")
-        p = (self.base / c["path"]).resolve()
-        if not p.is_relative_to(self.base.resolve()):
-            raise PermissionError("原文位置无效。")
-        original=p.read_text()
+        if 'managed_original' in c:
+            original=c['managed_original']
+        else:
+            p = (self.base / c["path"]).resolve()
+            if not p.is_relative_to(self.base.resolve()):
+                raise PermissionError("原文位置无效。")
+            original=p.read_text()
         return {**card(c), "original_text": original, "excerpt": c["text"],
                 "excerpt_kind": "verbatim" if c["text"] in original else "index_summary",
                 "original_excerpt": original_section(original,c["section"])}
@@ -101,12 +115,14 @@ class Corpus:
         if task_id and task_id not in principal.task_ids:
             raise PermissionError("当前身份无权访问所选任务。")
         return [c for c in self.chunks if self.accessible(c, principal)
-                and (c["publication_status"] == "active" or include_archived)
+                and (c["publication_status"] == "active" or include_archived and c["publication_status"] in {'archived','disabled'})
                 and (c["scope"] == "knowledge" or c["scope"] == f"task:{task_id}")]
 
 
 def card(c):
-    return {k:c.get(k) for k in ["chunk_id", "document_id", "title", "section", "text", "version", "publication_status", "material_type", "page", "source_url", "scope"]}
+    result = {k:c.get(k) for k in ["chunk_id", "document_id", "title", "section", "text", "version", "publication_status", "material_type", "page", "source_url", "scope"]}
+    result.update({k:c[k] for k in ['source_role','content_sha256','knowledge_version_id','applicability'] if k in c})
+    return result
 
 
 def rank_bm25(question, candidates):
@@ -159,15 +175,18 @@ class Assistant:
 
     def vector_ready(self, config=None):
         config = config or self.settings.snapshot()
-        return bool(self.vectors and self.vectors["embedding_config"] == self.fingerprint(config))
+        return bool(self.vectors and self.vectors.get('corpus_digest',self.corpus.digest)==self.corpus.digest and self.vectors["embedding_config"] == self.fingerprint(config))
 
-    def build_vectors(self):
+    def build_vectors(self, principal=None):
         if not self.index_lock.acquire(blocking=False):
             raise ValueError("正在建立索引，请等待当前任务完成。")
         try:
             config = self.settings.snapshot()
-            chunks = self.corpus.chunks
+            # Knowledge maintenance does not confer access to every task report.
+            chunks = self.corpus.candidates(principal, True) if principal else self.corpus.chunks
             vectors = self.embedder(config, [c["search_text"] for c in chunks])
+            if len(vectors)!=len(chunks) or not vectors or any(not v or len(v)!=len(vectors[0]) or any(not isinstance(n,(int,float)) or not math.isfinite(n) for n in v) for v in vectors):
+                raise ProviderError('向量数量、维度或数值无效，原索引保持不变。')
             data = dict(corpus_digest=self.corpus.digest, embedding_config=self.fingerprint(config),
                         vectors={c["chunk_id"]:v for c,v in zip(chunks,vectors)})
             self.vector_path.parent.mkdir(exist_ok=True,parents=True)
@@ -179,9 +198,13 @@ class Assistant:
         finally:
             self.index_lock.release()
 
-    def search(self, question, principal, *, include_archived=False, task_id=None, top_k=6):
-        candidates = self.corpus.candidates(principal,include_archived,task_id)
-        revisions = {v.lower() for v in re.findall(r"rev\s*([ab])(?![a-z0-9])",question,re.I)}
+    def search(self, question, principal, *, include_archived=False, task_id=None, top_k=6, document_ids=None, version_ids=None):
+        candidates = self.corpus.candidates(principal,include_archived or bool(document_ids) or bool(version_ids),task_id)
+        if document_ids:
+            candidates=[c for c in candidates if c['document_id'] in document_ids or c['scope'] != 'knowledge']
+        if version_ids:
+            candidates=[c for c in candidates if c.get('knowledge_version_id',c['document_id']) in version_ids or c['scope']!='knowledge']
+        revisions = {v.lower() for v in re.findall(r"rev\s*([a-z0-9]+(?:[._-][a-z0-9]+)*)(?![a-z0-9])",question,re.I)}
         if revisions:
             candidates = [c for c in candidates if not c["document_id"].startswith("SYN-SPEC") or c["version"].lower() in revisions]
         if revisions == {"a"}:
@@ -240,16 +263,39 @@ class Assistant:
         selected.sort(key=lambda c:positions.get(c["chunk_id"],len(ranked)))
         return selected,method,warning
 
-    def ask(self, question, principal, *, mode="search", include_archived=False, task_id=None):
+    def ask(self, question, principal, *, mode="search", include_archived=False, task_id=None, document_ids=None, version_ids=None, model=None):
         if not isinstance(question,str) or not question.strip() or len(question)>1500:
             raise ValueError("请输入1至1500字的问题。")
-        if mode not in {"search","answer"} or type(include_archived) is not bool:
+        if not isinstance(mode,str) or mode not in {"search","answer"} or type(include_archived) is not bool:
             raise ValueError("请求模式或版本范围无效。")
         if task_id is not None and (not isinstance(task_id,str) or task_id not in principal.task_ids):
             raise PermissionError("当前身份无权访问所选任务。")
+        if document_ids is not None and (not isinstance(document_ids,list) or len(document_ids)>8 or any(not isinstance(d,str) for d in document_ids)):
+            raise ValueError('所选资料范围无效，最多选择8份资料。')
+        document_ids=list(dict.fromkeys(document_ids or []))
+        if version_ids is not None and (not isinstance(version_ids,list) or len(version_ids)>8 or any(not isinstance(v,str) for v in version_ids)):
+            raise ValueError('所选资料版本无效，最多选择8个版本。')
+        version_ids=list(dict.fromkeys(version_ids or []))
+        permitted=self.corpus.candidates(principal,True,task_id)
+        available={c['document_id'] for c in permitted}
+        available_versions={c.get('knowledge_version_id',c['document_id']) for c in permitted}
+        if any(d not in available for d in document_ids) or any(v not in available_versions for v in version_ids):
+            raise PermissionError('所选资料不存在或当前身份无权访问。')
+        if model is not None and (not isinstance(model,str) or len(model)>100):
+            raise ValueError('型号范围无效。')
         start=time.monotonic()
         question=question.strip()
-        evidence,method,warning=self.search(question,principal,include_archived=include_archived,task_id=task_id)
+        retrieval_error=False
+        try:
+            kwargs=dict(include_archived=include_archived,task_id=task_id)
+            if document_ids:kwargs['document_ids']=document_ids
+            if version_ids:kwargs['version_ids']=version_ids
+            evidence,method,warning=self.search(question,principal,**kwargs)
+        except PermissionError:
+            raise
+        except Exception:
+            evidence,method,warning=[], 'unavailable', None
+            retrieval_error=True
         result=dict(request_id=str(uuid4()),status="search_results" if evidence else "insufficient_evidence",mode=mode,
             query=question,claims=[],limitations=[],sources=[card(c) for c in evidence],
             snapshot=self.corpus.snapshot,corpus_digest=self.corpus.digest,
@@ -258,10 +304,30 @@ class Assistant:
                        generation="not_requested",prompt_version=PROMPT_VERSION,citation_check="not_run",semantic_review="pending"),usage={})
         if warning:
             result["limitations"].append("向量查询失败，已使用关键词检索。"+warning)
+        if document_ids:result['scope']['document_ids']=document_ids
+        if version_ids:result['scope']['version_ids']=version_ids
+        if model:result['scope']['model']=model
         guard=None
-        if not evidence:
+        selected=[c for c in permitted if c['document_id'] in document_ids or c.get('knowledge_version_id',c['document_id']) in version_ids]
+        selected_revs={c['version'].lower() for c in selected if re.fullmatch('[AB]',c['version'],re.I)}
+        query_revs={v.lower() for v in re.findall(r'rev\s*([a-z0-9]+(?:[._-][a-z0-9]+)*)(?![a-z0-9])',question,re.I)}
+        available_revs={re.sub(r'^rev','',c['version'],flags=re.I).lower() for c in permitted if c['scope']=='knowledge'}
+        if retrieval_error:
+            result['status']='retrieval_failed'
+            result['trace']['error_stage']='retrieval'
+            guard='检索服务处理失败，尚未完成查找；不能据此判断资料不存在。请稍后重试。'
+        elif model and model!='PB-DEMO-01' or any(m!='PB-DEMO-01' for m in re.findall(r'\bPB-[A-Za-z0-9-]+\b',question)):
+            result['status']='needs_scope'
+            guard='当前模拟产品资料不支持所选型号，请确认型号或补充获授权资料。'
+        elif selected_revs and query_revs and not query_revs <= selected_revs:
+            result['status']='needs_scope'
+            guard='问题中的版本与所选资料范围冲突，请确认后提交完整新请求。'
+        elif query_revs and not query_revs <= available_revs:
+            result['status']='needs_scope'
+            guard='当前授权资料中未找到所指的完整版本范围，请核对版本或补充资料；不以其他版本替代。'
+        elif not evidence:
             guard="在当前授权范围内未找到相关证据，请补充资料名称或具体问题。"
-        elif re.search(r"reva(?![a-z0-9])",compact(question)) and not include_archived:
+        elif re.search(r"reva(?![a-z0-9])",compact(question)) and not include_archived and not document_ids and not version_ids:
             result["status"]="needs_scope"
             guard="本次未启用历史资料查询；请明确包含归档版本后再检索。"
         elif principal.role=="employee" and any(x in question for x in ["内部模拟规范","内部规格","内部规范"]):
@@ -276,7 +342,7 @@ class Assistant:
         scoped = scope_answer(question,evidence) if mode == "answer" and not guard else None
         recorded = response_record_answer(question,evidence) if mode == "answer" and not guard and not scoped else None
         if guard:
-            if result["status"] not in {"needs_scope"}:
+            if result["status"] not in {"needs_scope","retrieval_failed"}:
                 result["status"]="insufficient_evidence"
             result["limitations"].append(guard)
             result["trace"]["generation"]="skipped_insufficient_scope_or_evidence"

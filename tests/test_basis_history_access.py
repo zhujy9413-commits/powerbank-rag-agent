@@ -52,15 +52,21 @@ class BasisHistoryAccessTests(unittest.TestCase):
         self.assertEqual(self.service.corpus.source(CID, USER)["publication_status"], "disabled")
         self.assertEqual(before, self.persisted())
 
-    def test_disabled_blocks_create_confirm_and_fresh_run(self):
+    def test_disabled_blocks_confirm_and_fresh_run_but_allows_unconfirmed_import(self):
         self.source["publication_status"] = "disabled"
         before = self.persisted()
-        for action in [lambda: self.service.create(USER, {"sample": True}),
-                       lambda: self.confirm(2),
+        for action in [lambda: self.confirm(2),
                        lambda: self.service.run(USER, self.tid, dict(self.request, idempotency_key="basis-access-new"))]:
             with self.assertRaises(ValueError):
                 action()
         self.assertEqual(before, self.persisted())
+        fresh=self.service.create(USER, {'sample':True})
+        self.assertFalse(fresh['snapshots'][-1]['confirmed'])
+        self.assertFalse(fresh['basis_state']['current_usable'])
+        with self.assertRaises(ValueError):
+            self.service.confirm(USER,fresh['task_id'],dict(revision=1,acknowledged=True,corrections={}))
+        with self.assertRaises(ConflictError):
+            self.service.run(USER,fresh['task_id'],dict(revision=1,idempotency_key='unconfirmed-import'))
 
     def test_idempotency_after_disable_returns_saved_run_without_evaluation(self):
         self.source["publication_status"] = "disabled"
@@ -104,15 +110,17 @@ class BasisHistoryAccessTests(unittest.TestCase):
         self.assertEqual(old["snapshot"], self.run["snapshot"])
         self.assertEqual(old["items"], self.run["items"])
 
-    def test_invalid_format_and_material_change_allow_history_only(self):
+    def test_invalid_format_and_material_change_allow_history_and_unconfirmed_import(self):
         original = deepcopy(self.source)
         for field, value in [("text", "维护中的未发布格式"), ("material_type", "public_metadata"), ("publication_status", "archived")]:
             with self.subTest(field=field):
                 self.source.clear(); self.source.update(original); self.source[field] = value
                 self.assertFalse(self.service.catalog(USER)["basis_state"]["current_usable"])
                 self.assertEqual(self.service.result(USER, self.rid)["snapshot"], self.run["snapshot"])
+                fresh=self.service.create(USER, {'sample':True})
+                self.assertFalse(fresh['snapshots'][-1]['confirmed'])
                 with self.assertRaises(ValueError):
-                    self.service.create(USER, {"sample": True})
+                    self.service.confirm(USER,fresh['task_id'],dict(revision=1,acknowledged=True,corrections={}))
         self.source.clear(); self.source.update(original)
         recovery = self.service.corpus.by_id["SYN-SPEC-PB01-RevB-REC"]
         recovery["text"] = "恢复电压 4..75 V 至 5.25 V，含边界"

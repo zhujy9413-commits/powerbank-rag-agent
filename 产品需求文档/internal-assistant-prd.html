@@ -5,7 +5,7 @@
 @media(max-width:760px){.frame{padding:0 16px}.masthead{padding:26px 0}.masthead h1{font-size:24px}.layout{display:block;margin-top:0}.toc{position:static;max-height:none;margin-bottom:18px;padding:12px 0}.toc nav{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.toc a{font-size:12px;padding:6px}.document{padding:20px 16px;border-radius:5px}.document h2{font-size:21px}.document h3{font-size:18px}.topnav{gap:8px 16px}.topnav button{margin-left:0}.module-grid{grid-template-columns:1fr}.module{padding:22px}.diagram{padding:12px 8px}table{font-size:13px}.table-wrap.is-wide::after{content:"表格可横向滚动查看";display:block;font-size:12px;color:var(--muted);padding-top:8px}.diagram figcaption::after{content:"（流程图可横向滚动查看）";display:block;margin-top:5px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media print{@page{size:A4;margin:16mm 14mm}body{background:#fff;font-size:10.5pt;line-height:1.65}.frame{max-width:none;padding:0}.masthead{background:#fff;color:#18352f;padding:0 0 10mm;border-bottom:1px solid #ccc}.masthead .eyebrow,.masthead p{color:#52634f}.masthead h1{font-size:23pt}.topnav,.toc,.status-note{display:none}.layout{display:block;margin:0}.document{padding:0;border:0}.document h2{font-size:15pt;break-after:avoid}.document h3{font-size:12pt;break-after:avoid}.table-wrap{overflow:visible}table,.table-three,.table-wide{min-width:0;font-size:9pt;line-height:1.55}th,td{padding:6px 7px}tr{break-inside:avoid}thead{display:table-header-group}pre{font-size:9pt;white-space:pre-wrap;break-inside:avoid}.diagram{break-inside:avoid;overflow:visible;padding:10px}.diagram svg{min-width:0;max-width:440px;max-height:220mm}.module-grid{grid-template-columns:1fr}.module{break-inside:avoid}a{color:inherit;text-decoration:none}}
-</style></head><body><header class="masthead"><div class="frame"><div class="eyebrow">充电宝研发评审与知识助手</div><h1>内部智能客服 知识检索与问答 PRD</h1><p>v1.2 · 2026-11-01 · 内部产品评审稿</p></div></header><div class="frame"><nav class="topnav" aria-label="产品文档"><a href="index.html">文档首页</a><a href="ai-work-prd.html">AI Work PRD</a><a href="internal-assistant-prd.html" class="active" aria-current="page">内部智能客服 PRD</a><button type="button" onclick="window.print()">打印文档</button></nav></div><div class="frame layout"><aside class="toc" aria-label="章节目录"><h2>章节目录</h2><nav><a href="#section-1">一 业务背景与产品目标</a><a href="#section-2">二 用户与典型场景</a><a href="#section-3">三 MVP 与优先级</a><a href="#section-4">四 用户流程</a><a href="#section-5">五 页面与交互</a><a href="#section-6">六 输入理解与回答规则</a><a href="#section-7">七 知识库与RAG设计</a><a href="#section-8">八 引用、版本与权限</a><a href="#section-9">九 状态、异常与恢复</a><a href="#section-10">十 数据与服务契约</a><a href="#section-11">十一 验收标准</a><a href="#section-12">十二 效果指标与推进顺序</a><a href="#section-13">十三 当前能力与设计差距</a></nav></aside><main class="document" data-source="docs/internal-assistant/PRD.md" data-source-sha256="d0459779c7915bc88e00518caee3a4b5d1e09362dda439a2032548ca332e8fe5"><p>为公司内部产品、研发和测试人员提供充电宝整机保护功能知识的搜索与单轮问答，帮助使用者找到适用资料、理解要求并核对原文。</p>
+</style></head><body><header class="masthead"><div class="frame"><div class="eyebrow">充电宝研发评审与知识助手</div><h1>内部智能客服 知识检索与问答 PRD</h1><p>v0.1.3 · 2026-11-02 · 试用进入条件与执行口径澄清</p></div></header><div class="frame"><nav class="topnav" aria-label="产品文档"><a href="index.html">文档首页</a><a href="ai-work-prd.html">AI Work PRD</a><a href="internal-assistant-prd.html" class="active" aria-current="page">内部智能客服 PRD</a><button type="button" onclick="window.print()">打印文档</button></nav></div><div class="frame layout"><aside class="toc" aria-label="章节目录"><h2>章节目录</h2><nav><a href="#section-1">一 业务背景与产品目标</a><a href="#section-2">二 用户与典型场景</a><a href="#section-3">三 MVP 与优先级</a><a href="#section-4">四 用户流程</a><a href="#section-5">五 页面与交互</a><a href="#section-6">六 输入理解与回答规则</a><a href="#section-7">七 知识库与RAG设计</a><a href="#section-8">八 引用、版本与权限</a><a href="#section-9">九 状态、异常与恢复</a><a href="#section-10">十 数据与服务契约</a><a href="#section-11">十一 验收标准</a><a href="#section-12">十二 效果指标与推进顺序</a><a href="#section-13">十三 当前能力与设计差距</a></nav></aside><main class="document" data-source="docs/internal-assistant/PRD.md" data-source-sha256="dd7d96805f79d35d74703a84b12fc420eabdbc9d82f4951a46b40633f0ebfeab"><p>为公司内部产品、研发和测试人员提供充电宝整机保护功能知识的搜索与单轮问答，帮助使用者找到适用资料、理解要求并核对原文。</p>
 <div class="table-wrap"><table class="">
 <thead>
 <tr>
@@ -79,6 +79,7 @@
 <th>能力</th>
 <th>优先级</th>
 <th>首版要求</th>
+<th>对应验收用例</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -86,60 +87,70 @@
 <td>资料搜索</td>
 <td>P0</td>
 <td>支持关键词或自然语言搜索，返回当前可访问的资料与命中位置</td>
+<td>QA-A01、QA-A06、QA-A21</td>
 </tr>
 <tr>
 <td>QA-F02</td>
 <td>单轮RAG回答</td>
 <td>P0</td>
 <td>基于本次检索证据回答，保留对象、版本与必要条件</td>
+<td>QA-A02、QA-A10、QA-A12、QA-A17、QA-A22</td>
 </tr>
 <tr>
 <td>QA-F03</td>
 <td>原文与引用查看</td>
 <td>P0</td>
 <td>结论可定位到对应资料，索引摘要与原文分开展示</td>
+<td>QA-A07、QA-A11、QA-A12、QA-A13</td>
 </tr>
 <tr>
 <td>QA-F04</td>
 <td>范围、无依据与冲突处理</td>
 <td>P0</td>
 <td>有歧义先补条件，无足够证据不编造，不混用不同来源角色</td>
+<td>QA-A03至QA-A05、QA-A08、QA-A15、QA-A16、QA-A18、QA-A19</td>
 </tr>
 <tr>
 <td>QA-F05</td>
 <td>简单反馈</td>
 <td>P0</td>
 <td>记录有用/有误、问题类型和可选备注，关联本次请求</td>
+<td>QA-A14、QA-A20</td>
 </tr>
 <tr>
 <td>QA-F06</td>
 <td>知识发布与访问底座</td>
 <td>P0依赖</td>
 <td>可追溯入库、审核、索引和发布；检索与原文执行同一授权</td>
+<td>QA-A06、QA-A09、QA-A13、QA-A14</td>
 </tr>
 <tr>
 <td>QA-F07</td>
 <td>多轮追问与会话记忆</td>
 <td>P1</td>
 <td>单轮稳定且有连续追问需求后，单独处理型号/版本切换和会话隔离</td>
+<td>扩展多轮范围时单独验收</td>
 </tr>
 <tr>
 <td>QA-F08</td>
 <td>复杂查询规划与检索优化</td>
 <td>P1</td>
 <td>对存在的检索缺口比较查询改写、语义召回和重排序的收益与成本</td>
+<td>后续按具体检索缺口单独验收</td>
 </tr>
 <tr>
 <td>QA-F09</td>
 <td>完整知识管理与反馈后台</td>
 <td>P1</td>
 <td>维护量形成实际瓶颈后建设审批、批量处理、回滚和运营界面</td>
+<td>后续单独验收；首版简易维护见QA-F06</td>
 </tr>
 <tr>
 <td>QA-F10</td>
 <td>跨硬件领域与外部客服</td>
 <td>P2</td>
 <td>另立知识、权限、用户和服务边界，不沿用本版效果结论</td>
+<td>不纳入本版验收</td>
 </tr>
 </tbody></table></div>
 <p>P0分三批推进。第一批打通知识入库、授权搜索和原文查看；第二批接入有依据回答及条件、版本和缺证处理；第三批补齐反馈、失败恢复和完整任务验收。向量检索可作为召回方案参与比较，未建立向量索引时须说明实际使用方式，不能伪报混合检索已生效。</p>
@@ -355,6 +366,43 @@
 <p>关键条件不明时只追问会改变回答的部分。不能把模型记忆写成已从公司知识库确认的事实，也不能把相似度显示为答案正确概率。</p>
 <h2 id="section-7">七 知识库与RAG设计</h2><h3 id="section-7-1">7.1 知识进入与更新</h3><p>资料按来源分类，包括已发布的行业标准资料、公司规范、产品规格、项目流程知识及经显式授权的任务材料。公共知识、任务内依据、测试报告和历史资料保持角色边界。</p>
 <p>维护流程为来源登记、解析与定位预览、元数据和使用范围核验、切分与索引、发布、更新或停用。来源不清、版本冲突或关键内容不可读时保持待核验；索引失败不切换发布版本。反馈不能直接变成新知识或新规则。</p>
+<p>可复用的标准资料、内部规范、规格书和流程知识按下表管理。经授权的任务材料继续绑定原任务与显式查询范围，不因参与一次回答而进入公共知识库。</p>
+<div class="table-wrap is-wide"><table class="table-wide">
+<thead>
+<tr>
+<th>资料状态</th>
+<th>进入条件</th>
+<th>对查询的可用性</th>
+<th>维护动作与记录</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>待核验</td>
+<td>新增资料，或来源、版本、定位、适用范围尚未确认</td>
+<td>不进入公共搜索、排序和回答上下文</td>
+<td>维护者核对原文和元数据，登记问题与核验意见；专业条款由指定专业复核人员确认适用性</td>
+</tr>
+<tr>
+<td>待发布</td>
+<td>必要核验已完成，尚未完成索引与发布</td>
+<td>普通查询不使用该新版本</td>
+<td>查看索引状态与失败原因；索引成功后由具有发布权限的维护者发布，记录发布结果；失败保留当前有效快照</td>
+</tr>
+<tr>
+<td>已发布</td>
+<td>原文、核验记录、元数据与索引准备完成，发布成功</td>
+<td>按当前权限、所选对象与版本进入检索和回答</td>
+<td>保留发布身份、操作者与时间；内容或适用性修改建立新修订，不覆盖历史原文与引用</td>
+</tr>
+<tr>
+<td>已停用</td>
+<td>维护者确认停用并记录原因</td>
+<td>不进入默认新查询；显式历史查看或版本比较按当前授权处理，并提示停用状态</td>
+<td>保留停用原因、时间及历史来源身份；撤权后停止访问相关内容与缓存</td>
+</tr>
+</tbody></table></div>
+<p>首版简易维护入口至少支持查看原文与定位、填写核验意见、查看索引与发布结果、执行发布或停用。反馈处理先定位到原请求和知识版本，再进入相应资料的核验流程；不能通过将反馈标成已处理直接发布知识。</p>
+<p>同一文档身份和版本的新提交内容与已有原文冲突时，新提交资料保持待核验，不覆盖已有发布快照；原版本需要停用时另行记录原因。发布时原文、核验元数据和索引须同时就绪，不能先展示新版本再补索引；重试不重复发布，失败保留原有效快照。发布成功后，后续默认查询采用新的有效快照，显式选定的授权版本仍分别处理；已经交付的回答保留当时依据，不自动回写。停用或撤权后重新检查来源与缓存的可用性。</p>
 <p>每份资料至少登记文档与版本身份、标题、来源类型、型号/项目/领域、适用范围、发布状态、访问范围、原文位置、文件哈希、核验和发布记录。片段保留表头、脚注、单位及相邻条件；跨页表格不能只留下孤立数字。</p>
 <h3 id="section-7-2">7.2 单轮检索与回答</h3><div class="table-wrap is-wide"><table class="table-three">
 <thead>
@@ -371,8 +419,8 @@
 </tr>
 <tr>
 <td>2 检索前过滤</td>
-<td>按当前身份、发布快照、所选对象/版本和任务过滤</td>
-<td>未授权及范围不符资料不能进入候选</td>
+<td>默认使用当前有效的已发布公共知识；历史查看或版本比较按显式所选版本检索，任务材料按所选任务与输入修订过滤</td>
+<td>所有来源均校验当前授权、对象与适用范围；已停用资料只在显式历史查看或比较中使用并提示状态，任务材料不要求先发布为公共知识</td>
 </tr>
 <tr>
 <td>3 召回</td>
@@ -525,7 +573,7 @@
 <tr>
 <td>QA-A04</td>
 <td>历史版本或不同要求</td>
-<td>按显式选择检索，展示版本差异和适用性限制</td>
+<td>按显式选择检索，展示版本差异和适用性限制；有权访问的已停用版本可用于显式历史查看或比较，提示停用状态，不进入默认新查询</td>
 </tr>
 <tr>
 <td>QA-A05</td>
@@ -555,22 +603,22 @@
 <tr>
 <td>QA-A10</td>
 <td>超时或生成中断</td>
-<td>状态准确，不显示伪成功；搜索结果可继续使用</td>
+<td>状态准确，不显示伪成功；已有且仍有权访问的搜索结果可继续使用，不能将服务失败解释为资料不存在</td>
 </tr>
 <tr>
 <td>QA-A11</td>
 <td>报告中的观察与规范要求混合</td>
-<td>来源角色不混淆，记录与要求分别引用</td>
+<td>来源角色不混淆，记录与要求分别引用；任务材料仅在显式所选任务、输入修订及当前授权范围内参与检索，无须发布为公共知识，也不进入默认公共查询</td>
 </tr>
 <tr>
 <td>QA-A12</td>
 <td>引用能打开但不支持结论</td>
-<td>拦截或降为无法确认，不只检查引用ID存在</td>
+<td>移除不受支持的确定结论，按剩余证据交付部分回答或无充分依据；校验服务异常显示处理失败，不只检查引用ID存在</td>
 </tr>
 <tr>
 <td>QA-A13</td>
-<td>知识更新与停用</td>
-<td>当前查询按有效快照处理，历史身份可追溯，权限仍现时校验</td>
+<td>知识核验、发布与停用</td>
+<td>待核验和待发布资料不进入公共检索或上下文；发布成功后默认新查询使用新快照，历史回答不被改写；失败保留原有效快照，重试不重复发布；停用资料退出默认检索，历史查看仍校验当前权限</td>
 </tr>
 <tr>
 <td>QA-A14</td>
@@ -597,7 +645,28 @@
 <td>问题正文与范围选择矛盾</td>
 <td>显示冲突并等待确认，型号或版本未确定前不生成该适用结论</td>
 </tr>
+<tr>
+<td>QA-A19</td>
+<td>改变型号、版本或任务但未重新提交</td>
+<td>旧结果继续绑定原请求并标明上次范围，不自动改挂或重新生成；提交后以完整新条件处理，原内容仍按当前权限访问</td>
+</tr>
+<tr>
+<td>QA-A20</td>
+<td>反馈保存失败后重试</td>
+<td>失败保留填写内容并提示未保存；重试成功只产生一条关联原请求和知识版本的记录，不自动发布为知识</td>
+</tr>
+<tr>
+<td>QA-A21</td>
+<td>空输入或查询超限</td>
+<td>空输入不提交；超限时说明需缩短输入，保留原问题供修改，不静默截断型号、版本或关键条件</td>
+</tr>
+<tr>
+<td>QA-A22</td>
+<td>未配置生成模型</td>
+<td>授权资料搜索与原文查看仍可使用；回答模式说明当前不可用并保留可用搜索结果，不伪装已完成模型生成</td>
+</tr>
 </tbody></table></div>
+<p>第三节将P0能力对应到本节用例；权限、资料指令与知识版本约束须贯穿适用流程。P1和P2在确定扩展范围后单独定义验收，不混入本版P0完成条件。</p>
 <p>P0用例分别覆盖搜索、回答、版本、无依据及权限，不能只以几道演示问题的成功结果验收。</p>
 <h2 id="section-12">十二 效果指标与推进顺序</h2><div class="table-wrap"><table class="">
 <thead>
@@ -632,8 +701,60 @@
 </tr>
 </tbody></table></div>
 <p>业务试用以质量约束满足后的时间改善为目标；试用前用真实任务基线确定数值目标并固定，当前不填写已实现的节省比例。问答和报告评审分别建立问题、证据及可接受答案标注，不互相借用准确率或收益。</p>
-<p>推进顺序为需求与页面评审、受控资料端到端演示、代表性问题验证、小范围实际任务试用。专业资料、身份、部署与维护责任明确后，再讨论扩大知识范围和多轮能力。</p>
-<h2 id="section-13">十三 当前能力与设计差距</h2><div class="table-wrap is-wide"><table class="table-three">
+<h3 id="section-12-1">12.1 真实知识接入与试用进入条件</h3><p>当前维护工具接收受控模拟依据、公开资料摘要与产品流程资料，本机演示身份未接入企业授权。接入真实公司知识须先完成以下准备；实际资料不能仅改为“模拟材料”标签后进入现有演示流程。</p>
+<div class="table-wrap is-wide"><table class="table-three">
+<thead>
+<tr>
+<th>准备项</th>
+<th>可开始试用的条件</th>
+<th>负责角色</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>首批知识范围</td>
+<td>明确文档、来源角色、对象、版本、原文使用范围及适用条件；专业条款完成对应核验</td>
+<td>知识维护者与指定专业复核人员</td>
+</tr>
+<tr>
+<td>技术与权限</td>
+<td>真实资料类型、文档解析/定位、索引发布及真实身份/任务授权完成接入；默认业务查询不混入模拟要求或其他任务记录</td>
+<td>研发与部署负责人</td>
+</tr>
+<tr>
+<td>专业参考问题</td>
+<td>从实际搜索/查证任务整理问题、必要条件、参考证据、可接受回答与无法回答的边界，独立保存在评测侧</td>
+<td>专业复核人员与实际使用者</td>
+</tr>
+<tr>
+<td>运行安排</td>
+<td>数据流向、模型处理与保留条件、超时及调用预算、维护责任和问题处理路径明确</td>
+<td>试用负责人及部署负责人</td>
+</tr>
+<tr>
+<td>对照与目标</td>
+<td>固定样本数量与分组、人员安排、正确完成任务的判据、计时起止和耗时改善目标</td>
+<td>试用负责人及专业复核人员</td>
+</tr>
+</tbody></table></div>
+<p>问题至少覆盖找文件、查要求、条件缺失、显式版本比较、知识缺口、报告观察与要求混合及权限边界。实际数量与时间改善目标在试用启动前确定；未确定时可继续做技术适配，不启动业务效果验收。真实资料不得依靠相似标题、模型记忆或已能打开的引用替代原文核验。</p>
+<h3 id="section-12-2">12.2 试用执行与判定</h3><ol>
+<li>固定知识快照、索引与运行配置，参考问题和可接受答案保存在评测侧，不进入实际检索或提示。</li>
+<li>在难度可比的查证任务上比较原资料查找方式与助手流程，平衡人员熟练度，避免同一人先完整看到同题参考答案再参与计时。</li>
+<li>分别核验搜索是否取得适用资料、问答结论是否被证据支持；检查来源角色、对象、版本、必要条件、无依据处理和权限。引用ID存在、短句能定位和结论语义成立分别记录。</li>
+<li>记录从开始查找到正确理解并确认依据的总耗时，包含阅读、等待、补条件、纠错和重查；失败、未完成及维护处理成本单列保留，不只统计成功请求或点赞。</li>
+<li>按预先固定的质量和时间目标决定继续、返修或扩大。无依据确定回答、错误跨版本串用及非授权内容泄露的目标均为0；出现此类问题先处理受影响范围并回归。仅完成的可比任务用于成对效率计算，同时报告未完成情况和样本限制。</li>
+</ol>
+<p>当前引用校验已覆盖身份、摘录及有限的角色/记录约束，一般性的语义支持质量仍需专业参考检验。自动回归及模拟页面操作不替代本节试用，也不提供客服真实时间收益。搜索与问答分开验收，客服不借用AI Work的效率目标或测试结果。</p>
+<h3 id="section-12-3">12.3 使用现有模拟资料的人工可用性试用</h3><p>真实公司资料尚未就绪时，目标角色的实际使用者可先使用现有受控知识包完成下列任务，验证是否容易完成查证。使用者无需先提供公司资料，也不将此阶段视为真实知识正确性或时间收益验收。</p>
+<ol>
+<li>搜索模拟规格RevB并打开同版原文，说明资料卡片、索引片段和完整原文分别提供什么信息。</li>
+<li>显式选择历史RevA与RevB查看差异，修改范围但不提交时，能认出下方仍为上次请求；需要补条件时能回填并提交完整新请求。</li>
+<li>查询本包未收录的完整技术条款或准确限值，能理解当前资料不足；提交一条明确标为模拟试用的反馈，并核对是否保存。</li>
+</ol>
+<p>记录操作身份、求助点、对引用/版本/缺证提示的误解，以及能否找到下一步。代理代操作不填作实际使用者体验；尚未执行的项目保留待执行，反馈点赞不计作任务正确完成。</p>
+<p>推进顺序为需求与页面评审、受控资料端到端演示、模拟资料人工可用性试用、真实知识与身份技术接入、代表性问题验证、小范围实际任务试用。当前已完成受控模拟软件验证，人工可用性试用待实际使用者执行，真实知识与身份接入待启动；专业资料、参考问题、人员和运行安排就绪后，再执行业务试用与讨论扩大知识范围或多轮能力。</p>
+<h2 id="section-13">十三 当前能力与设计差距</h2><p>本节随受控原型v0.5.0更新实现状态，需求范围与验收口径沿用v0.1.1确认基线。本轮验证采用隔离模拟资料，未新增真实模型调用或真实业务收益结论，运行方式见<a href="../docs/internal-assistant/README.md">模块入口</a>。</p>
+<div class="table-wrap is-wide"><table class="table-three">
 <thead>
 <tr>
 <th>能力</th>
@@ -643,7 +764,7 @@
 </thead>
 <tbody><tr>
 <td>搜索与回答</td>
-<td>已有本机单轮原型、关键词检索及可配置模型接入</td>
+<td>已有本机单轮原型、关键词检索及可配置模型接入；可显式选择资料版本，版本冲突待确认，服务失败与无依据分别记录</td>
 <td>真实部署的数据流向、预算与服务条件需单独落实</td>
 </tr>
 <tr>
@@ -658,8 +779,13 @@
 </tr>
 <tr>
 <td>知识维护</td>
-<td>当前使用有来源标识的静态知识包</td>
-<td>入库、核验、发布、换版和停用工具及责任仍需完善</td>
+<td>原受控知识包可通过本机维护工具新增版本、核验、发布和停用；原文与来源身份保留，发布失败不切换快照，旧版本可显式查询</td>
+<td>实际维护责任、真实合法语料、专业适用性和企业身份仍需落实</td>
+</tr>
+<tr>
+<td>反馈维护</td>
+<td>反馈重试去重，维护入口可处理当前演示身份有权查看的反馈；处理状态不自动发布知识</td>
+<td>跨人员协作和实际企业任务授权尚未接入</td>
 </tr>
 <tr>
 <td>企业运行与收益</td>
