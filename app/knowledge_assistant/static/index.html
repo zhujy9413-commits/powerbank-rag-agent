@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>充电宝研发评审与知识助手</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script><script src="/work.js" defer></script><script src="/maintenance.js" defer></script></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>充电宝研发评审与知识助手</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script><script src="/work.js" defer></script><script src="/maintenance.js" defer></script><script src="/demo.js" defer></script></head>
 <body>
 <aside class="sidebar">
   <a class="brand" href="/" aria-label="知识助手首页"><span class="brand-mark">P<span>+</span></span><span>研发知识助手<small>POWERBANK KNOWLEDGE</small></span></a>
@@ -19,6 +19,14 @@
     <h1>查找研发要求，保留每一处依据。</h1>
     <p class="intro">搜索规格、标准资料与评审规范。每次提问独立处理，回答保留来源和适用范围。</p>
     <div class="notice" id="modelNotice"><span class="notice-icon">i</span><div><strong id="modeHeadline">正在读取运行状态</strong><p id="modeDescription"></p></div><button id="connectInline">连接模型</button></div>
+    <details id="demoPanel" class="demo-panel" open>
+      <summary>演示数据与验证 <span id="demoCount">正在读取样本</span></summary>
+      <p class="demo-intro">先看具体数据，再搜索并核对是否找到对应原文。数值来自模拟资料。</p>
+      <label for="demoCaseSelect">选择演示问题</label><select id="demoCaseSelect" disabled></select>
+      <div id="demoCaseData"></div>
+      <button id="useDemoCase" type="button" disabled>填入问题与范围</button>
+      <p id="demoPrepareStatus" class="field-help" role="status"></p>
+    </details>
     <form id="queryForm" class="query-box">
       <div class="query-modes"><label><input type="radio" name="mode" value="search" checked> 仅搜索资料</label><label><input type="radio" name="mode" value="answer"> 基于资料回答</label><span class="single-turn">单轮提问</span></div>
       <label class="sr-only" for="query">输入研发问题</label>
@@ -32,6 +40,7 @@
     <div id="liveStatus" class="live-status" role="status" aria-live="polite"></div>
     <section id="results" hidden>
       <p id="resultScope" class="work-meta"></p><button id="refillScope" hidden>补充条件后重新提交</button>
+      <section id="demoVerification" class="demo-verification" aria-live="polite" hidden></section>
       <div class="result-top"><h2 id="resultTitle">相关资料</h2><span id="resultMeta"></span></div>
       <section class="answer-panel" id="answerPanel" hidden><div class="answer-heading"><strong id="answerState"></strong><span id="answerKind"></span></div><div id="claims"></div><div id="limitations"></div></section>
       <div class="evidence-heading"><h3>来源与证据</h3><span>查看版本与原文后，再用于研发判断</span></div>

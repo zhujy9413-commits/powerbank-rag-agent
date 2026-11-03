@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-02",
+  "material_type": "synthetic",
+  "operation": "助手代操作的受控模拟复核与应用原生Excel导出",
+  "run_id": "RUN-40336db002e1",
+  "task_id": "AW-42072cad2365",
+  "input_revision": 2,
+  "state": "review_complete",
+  "pending_reviews": 0,
+  "execution_counts": {
+    "已检查": 11,
+    "未检查": 1
+  },
+  "system_result_counts": {
+    "未发现问题": 5,
+    "按记录比较不符合": 2,
+    "无比较结论": 1,
+    "证据不足": 2,
+    "冲突": 2
+  },
+  "review_dispositions": {
+    "确认系统结果": 8,
+    "暂无法确认": 4
+  },
+  "unresolved_items": [
+    "C1-01",
+    "C1-03",
+    "C1-04",
+    "C1-05"
+  ],
+  "review_history_entries": 12,
+  "report_sha256": "a34040a9a092f6d0dad158a012a8a9e1150c06721075011992f50c3a303792dd",
+  "excel": "outputs/simulated-review/RUN-40336db002e1-reviewed.xlsx",
+  "excel_sha256": "52fdde9b6df2bc28be304631b544943595cd21a16e894cc7d3b789abe4244272",
+  "professional_or_business_acceptance": false,
+  "actual_user_usability_trial": false,
+  "notes": "复核完成表示12项均有处置记录；4项仍未决，原冲突、缺证与未检查保留，不表示产品放行。"
+}

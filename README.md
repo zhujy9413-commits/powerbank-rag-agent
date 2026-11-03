@@ -30,6 +30,8 @@
 python3 -m app.knowledge_assistant.server --local-dir .local/mvp-preview-v0.5.0 --port 0
 ```
 
+2026-11-03演示材料补充：内部智能客服增加8个带具体数据、原文位置与检索对照的演示场景，并完成D01正常问答、D05冲突和D08缺依据的页面流程核对；[流程结果](eval-results/internal-assistant-workflow-2026-11-03.json)区分1次真实模型生成、记录模板与缺依据拦截。AI Work完成[12项模拟复核](eval-results/ai-work-simulated-review-2026-11-02.json)，8项确认系统结果、4项未决，提供[应用原生Excel](outputs/simulated-review/RUN-40336db002e1-reviewed.xlsx)。本次发布范围独立通过[264项Python回归](eval-results/demo-sync-published-regression-2026-11-03.txt)及[检索对照页面逻辑检查](eval-results/demo-view-checks-2026-11-03.txt)；本地含未发布A1实验的393项记录不作为公开仓库测试数量。两份PRD继续v0.1.3，模拟代操作不计作真人可用性或业务效果。
+
 ## AI Work｜整机测试报告评审
 
 2026-10-29 页面v0.4.3：已修复依据停用后历史访问被一并阻断的问题。当前权限保留时可查历史任务、PDF与导出，停用依据不能用于新检查，撤权仍拒绝访问。141个自动测试、35项专项HTTP及51项既有流程检查通过。见[停用依据历史访问修复与回归](docs/ai-work/basis-history-access-v0.4.3.md)。

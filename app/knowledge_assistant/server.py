@@ -13,6 +13,7 @@ from urllib.parse import urlparse, unquote
 from .core import Assistant, Corpus, Principal, ROOT, card
 from .providers import Settings, ProviderError
 from .maintenance import KnowledgeMaintenance
+from .demo import demo_catalog
 from app.ai_work.review import ReviewService, ConflictError
 from app.ai_work.export import export_xlsx
 
@@ -165,7 +166,7 @@ class Handler(BaseHTTPRequestHandler):
         if not self.host_ok():
             return self.send_data(403,{"error":"仅允许本机访问。"})
         route=unquote(urlparse(self.path).path)
-        assets={"/":("index.html","text/html; charset=utf-8"),"/app.js":("app.js","text/javascript; charset=utf-8"),"/work.js":("work.js","text/javascript; charset=utf-8"),"/maintenance.js":("maintenance.js","text/javascript; charset=utf-8"),"/style.css":("style.css","text/css; charset=utf-8")}
+        assets={"/":("index.html","text/html; charset=utf-8"),"/app.js":("app.js","text/javascript; charset=utf-8"),"/work.js":("work.js","text/javascript; charset=utf-8"),"/maintenance.js":("maintenance.js","text/javascript; charset=utf-8"),"/demo.js":("demo.js","text/javascript; charset=utf-8"),"/style.css":("style.css","text/css; charset=utf-8")}
         if route in assets:
             name,mime=assets[route]
             return self.send_data(200,(STATIC/name).read_bytes(),mime)
@@ -178,6 +179,8 @@ class Handler(BaseHTTPRequestHandler):
         if not self.session_ok():
             return self.send_data(401,{"error":"请刷新页面以建立本机演示会话。"})
         try:
+            if route=="/api/demo-cases":
+                return self.send_data(200,demo_catalog(self.server.corpus,principal))
             if route=="/api/knowledge":
                 return self.send_data(200,self.server.knowledge.listing(principal))
             if route=="/api/maintenance-feedback":

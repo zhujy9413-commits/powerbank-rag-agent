@@ -1,0 +1,188 @@
+{
+  "date": "2026-11-03",
+  "scope": "3个已有模拟开发场景的助手代操作技术验收",
+  "independent_evaluation": false,
+  "professional_or_business_acceptance": false,
+  "cases": [
+    {
+      "case_id": "D01",
+      "request_id": "d9a291e2-909a-47db-b907-2e9bf0535cd7",
+      "query": "模拟规格RevB的恢复电压范围是多少，是否包含两端？",
+      "status": "answered",
+      "claims": [
+        {
+          "text": "模拟规格RevB的恢复电压范围是4.75 V至5.25 V，包含两端。",
+          "is_inference": false,
+          "evidence": [
+            {
+              "chunk_id": "SYN-SPEC-PB01-RevB-REC",
+              "quote": "模拟条款SPEC-REC，RevB。恢复电压4.75 V 至 5.25 V，含边界。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+            }
+          ]
+        }
+      ],
+      "limitations": [],
+      "scope": {
+        "include_archived": false,
+        "task_id": null,
+        "version_ids": [
+          "SEED-SYN-SPEC-PB01-RevB"
+        ],
+        "model": "PB-DEMO-01"
+      },
+      "snapshot": "LOCAL-8f31e3273b297b3b",
+      "corpus_digest": "45b8986cf03f7b7e8d2bffa5731ee905f1485832668085e6362e0176c027beca",
+      "usage": {
+        "prompt_tokens": 843,
+        "completion_tokens": 52,
+        "total_tokens": 895
+      },
+      "generation": "completed",
+      "retrieval_method": "bm25",
+      "retrieved_chunk_ids": [
+        "SYN-SPEC-PB01-RevB-REC",
+        "SYN-SPEC-PB01-RevB-SCOPE"
+      ],
+      "provider_attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "usage": {
+            "prompt_tokens": 843,
+            "completion_tokens": 52,
+            "total_tokens": 895
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "D05",
+      "request_id": "5304552c-fe83-4d13-bd24-6a12f7c4b620",
+      "query": "R02的0.68 s按演示规范怎么看，同时摘要写了80 ms？",
+      "status": "conflict",
+      "claims": [
+        {
+          "text": "模拟记录R02属于C1端口，保护响应记载为0.68 s。",
+          "is_inference": false,
+          "evidence": [
+            {
+              "chunk_id": "TR-P2-RESPONSE",
+              "quote": "R01 A1保护响应80 ms；R02 C1保护响应0.68 s。报告均填写通过。"
+            }
+          ]
+        },
+        {
+          "text": "模拟摘要S01同样属于C1端口，记载为80 ms；与R02换算后的680 ms不一致，存在同端口摘要与明细冲突。",
+          "is_inference": true,
+          "evidence": [
+            {
+              "chunk_id": "TR-P1-SUMMARY",
+              "quote": "报告填写依据RevA，恢复电压4.50 V至5.50 V。S01：C1保护响应80 ms，摘要填写通过。S02按上述电压区间填写通过。"
+            },
+            {
+              "chunk_id": "TR-P2-RESPONSE",
+              "quote": "R01 A1保护响应80 ms；R02 C1保护响应0.68 s。报告均填写通过。"
+            }
+          ]
+        },
+        {
+          "text": "仅按模拟记录R02作条件性比较：0.68 s = 680 ms，680 ms > 500 ms，超过模拟上限。",
+          "is_inference": true,
+          "evidence": [
+            {
+              "chunk_id": "TR-P2-RESPONSE",
+              "quote": "R01 A1保护响应80 ms；R02 C1保护响应0.68 s。报告均填写通过。"
+            },
+            {
+              "chunk_id": "SYN-NORM-RESPONSE",
+              "quote": "模拟阈值响应时间不大于500 ms。1 s = 1000 ms，缺单位不直接判断。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+            }
+          ]
+        },
+        {
+          "text": "摘要与明细冲突保留未决，不能静默选择数值或认定通过。",
+          "is_inference": false,
+          "evidence": [
+            {
+              "chunk_id": "SYN-NORM-CONFLICT",
+              "quote": "摘要与记录冲突须同时引用，保留未决；只可作条件性比较，不静默取值或通过。模拟材料，仅用于软件流程与评测；数值为人为构造，不代表国家标准、企业实际要求或实测结果。"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "同端口摘要与原始记录的数值冲突仍需负责人核实；以上仅为模拟记录下的条件性计算。"
+      ],
+      "scope": {
+        "include_archived": false,
+        "task_id": "DEMO-TASK-001",
+        "version_ids": [
+          "SEED-SYN-QA-SC-1.0"
+        ],
+        "model": "PB-DEMO-01"
+      },
+      "snapshot": "LOCAL-8f31e3273b297b3b",
+      "corpus_digest": "45b8986cf03f7b7e8d2bffa5731ee905f1485832668085e6362e0176c027beca",
+      "usage": {},
+      "generation": "not_requested_record_template",
+      "retrieval_method": "bm25",
+      "retrieved_chunk_ids": [
+        "TR-P2-RESPONSE",
+        "SYN-NORM-RESPONSE",
+        "SYN-NORM-CONFLICT",
+        "TR-P1-SUMMARY",
+        "SYN-NORM-RECOVERY",
+        "SYN-NORM-RANGE"
+      ],
+      "provider_attempts": []
+    },
+    {
+      "case_id": "D08",
+      "request_id": "ea4abd2c-655b-455a-acc3-5fef83710ae0",
+      "query": "请给GB/T 35590-2017短路条款原文和准确限值。",
+      "status": "insufficient_evidence",
+      "claims": [],
+      "limitations": [
+        "当前标准资料仅为题录或公告摘要，未收录完整技术条款，无法确认条款原文与数值限值。"
+      ],
+      "scope": {
+        "include_archived": false,
+        "task_id": null,
+        "version_ids": [
+          "SEED-PUB-01",
+          "SEED-POLICY-REVIEW"
+        ]
+      },
+      "snapshot": "LOCAL-8f31e3273b297b3b",
+      "corpus_digest": "45b8986cf03f7b7e8d2bffa5731ee905f1485832668085e6362e0176c027beca",
+      "usage": {},
+      "generation": "skipped_insufficient_scope_or_evidence",
+      "retrieval_method": "bm25",
+      "retrieved_chunk_ids": [
+        "PUB-01-C1",
+        "POL-EVIDENCE"
+      ],
+      "provider_attempts": []
+    }
+  ],
+  "ui_checks": {
+    "D01_same_version_original_opened": true,
+    "D05_all_four_cited_sources_opened": true,
+    "D08_no_claims_and_explicit_missing_clause": true,
+    "feedback_two_submissions_same_id": true,
+    "feedback_single_record_after_page_refresh": true
+  },
+  "feedback": {
+    "case": "D08",
+    "submissions": 2,
+    "saved_records": 1,
+    "state": "pending",
+    "note": "模拟流程验收（助手代操作）：对D08登记资料缺失，核验反馈保存与重试去重。"
+  },
+  "live_model_requests": 1,
+  "total_tokens": 895,
+  "original_model_and_vector_files_unchanged": true,
+  "new_application_defects_observed": [],
+  "original_database_tables_unchanged": true,
+  "temporary_model_configuration_removed": true
+}
